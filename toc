@@ -1,0 +1,30 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="messages-for-rabbitmq" audience="service" href="/docs/services/messages-for-rabbitmq/index.html"}
+Databases For Redis
+
+	{: .navgroup id="learn"}
+	index.md
+	getting-started.md
+
+	{: .topicgroup}
+	The Service Dashboard
+		dashboard-overview.md
+	{: .navgroup-end}
+
+	{: .navgroup id="howto"}
+	howto-using-ibmcloud-cli.md
+
+	{: .topicgroup}
+	Connecting to Databases for Redis
+		connecting-ibmcloud-app.md
+	{: .navgroup-end}
+
+	{: .navgroup id="reference"}
+	reference-architecture.md
+	reference-versions.md
+	reference-access-management.md
+	reference-activity-tracker.md
+	reference-key-protect.md
+	{: .navgroup-end}
