@@ -44,9 +44,9 @@ If your application is running on Cloud Foundry, you need to create an alias for
 
 `ibmcloud resource service-alias alias-name --instance-name instance-name`
 
-The alias name can be the same as the database service instance name. So, for a {{site.data.keyword.databases-for-elasticsearch}} service named "example-queue", use the following command:
+The alias name can be the same as the database service instance name. So, for a {{site.data.keyword.messages-for-rabbitmq}} service named "example-queue", use the following command:
 
-`ibmcloud resource service-alias example-queue --instance-name example-queue`
+`ibmcloud resource service-alias example-rabbit --instance-name example-rabbit`
 
 
 

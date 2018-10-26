@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="messages-for-rabbitmq" audience="service" href="/docs/services/messages-for-rabbitmq/index.html"}
+{: .toc subcollection="messages-for-rabbitmq" audience="service" href="/docs/services/messages-for-rabbitmq/index.html" path="services/messages-for-rabbitmq"}
 Databases For Redis
 
 	{: .navgroup id="learn"}
@@ -14,10 +14,12 @@ Databases For Redis
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
+	howto-admin-password.md
+	howto-getting-connection-strings.md
 	howto-using-ibmcloud-cli.md
 
 	{: .topicgroup}
-	Connecting to Databases for Redis
+	Connecting to Messages for RabbitMQ
 		connecting-ibmcloud-app.md
 	{: .navgroup-end}
 
