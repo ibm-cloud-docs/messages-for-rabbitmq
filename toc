@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="messages-for-rabbitmq" audience="service" href="/docs/services/messages-for-rabbitmq/index.html" path="services/messages-for-rabbitmq"}
-Databases For Redis
+Messages For RabbitMQ
 
 	{: .navgroup id="learn"}
 	index.md
