@@ -14,7 +14,7 @@ lastupdated: "2018-10-26"
 
 # Provisioning {{site.data.keyword.messages-for-rabbitmq}}
 
-To create an {{site.data.keyword.messages-for-rabbitmq_full}} deployment, you need to create an {{site.data.keyword.cloud}} service instance. A service instance can represent different types of service. The service type is determined by the service ID and you need to specify the appropriate service ID when you create a new service instance. The service ID for {{site.data.keyword.messages-for-rabbitmq}} is `databases_for_elasticsearch`.
+To create an {{site.data.keyword.messages-for-rabbitmq_full}} deployment, you need to create an {{site.data.keyword.cloud}} service instance. A service instance can represent different types of service. The service type is determined by the service ID and you need to specify the appropriate service ID when you create a new service instance. The service ID for {{site.data.keyword.messages-for-rabbitmq}} is `messages-for-rabbitmq`.
 
 
 ## Using the catalog

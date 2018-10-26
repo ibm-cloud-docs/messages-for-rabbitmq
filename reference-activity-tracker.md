@@ -31,6 +31,12 @@ The table lists the events that get sent to Activity Tracker from {{site.data.ke
 
 Action|Description
 -------|-------
-placeholder|placeholder
+`messages-for-rabbitmq.backup.create`|A backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
+`messages-for-rabbitmq.user-password.update`|A user's password was updated. A "-failure" flag is included in the message if the attempt to update a user's password failed.
+`messages-for-rabbitmq.user.create`|A user was created. A "-failure" flag is included in the message if the attempt to create a user failed.
+`messages-for-rabbitmq.user.delete`|A user was deleted. A "-failure" flag is included in the message if the attempt to delete a user failed.
+`messages-for-rabbitmq.backup.restore`|A restore from backup was created. If the attempted restore failed, a "-failure" flag is included in the message.
+`messages-for-rabbitmq.resources.scale`|A scaling operation was performed. If the scaling operation failed, a "-failure" flag is included in the message.
+`messages-for-rabbitmq.whitelisted-ips-list.update`|The whitelist was modified. A "-failure" flag is included in the message if the attempt to modify the whitelist failed.
 {: caption="Table 1. List of Events and Event Descriptions" caption-side="top"}
 

@@ -26,7 +26,7 @@ Applications running in {{site.data.keyword.cloud_notm}} can be bound to your {{
     - route: example-helloworld-nodejs.mybluemix.net
     memory:  128M
     services:
-      - example-elasticsearch
+      - example-rabbit
   ```
 
 - Change the route value to something unique. The route that you choose determines the subdomain of your application's URL: <host>.mybluemix.net.
@@ -44,7 +44,7 @@ If your application is running on Cloud Foundry, you need to create an alias for
 
 `ibmcloud resource service-alias alias-name --instance-name instance-name`
 
-The alias name can be the same as the database service instance name. So, for a {{site.data.keyword.messages-for-rabbitmq}} service named "example-queue", use the following command:
+The alias name can be the same as the database service instance name. So, for a {{site.data.keyword.messages-for-rabbitmq}} service named "example-rabbit", use the following command:
 
 `ibmcloud resource service-alias example-rabbit --instance-name example-rabbit`
 

@@ -11,6 +11,8 @@ Messages For RabbitMQ
 	{: .topicgroup}
 	The Service Dashboard
 		dashboard-overview.md
+		dashboard-backups.md
+		dashboard-settings.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
@@ -21,6 +23,7 @@ Messages For RabbitMQ
 	{: .topicgroup}
 	Connecting to Messages for RabbitMQ
 		connecting-ibmcloud-app.md
+		connecting-external.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}

@@ -14,7 +14,7 @@ lastupdated: "2018-10-26"
 
 # Getting Connection Strings
 
-In order to connect to {{site.data.keyword.messages-for-rabbitmq_full}}, you need some connection strings. A {{site.data.keyword.messages-for-rabbitmq}} deployment is provisioned with an admin user, after [setting the admin password](./howto-admin-password), you can use its connection strings to connect to your deployment.
+In order to connect to {{site.data.keyword.messages-for-rabbitmq_full}}, you need database users and some connection strings. A {{site.data.keyword.messages-for-rabbitmq}} deployment is provisioned with an admin user, and after [setting the admin password](./howto-admin-password), you can use its connection strings to connect to your deployment.
 
 The simplest way to retrieve connection information is from the [cloud databases plug-in](./howto-using-ibmcloud-cli.html). Use the `ibmcloud cdb deployment-connections` command to display a formatted connection URI for any user on your deployment. For example, to retrieve a connection string for the admin user on a deployment named  "example-rabbit", use the following command.
 
@@ -71,9 +71,18 @@ ibmcloud cdb deployment-connections example-deployment -u <newusername> --all
 If you don't specify a user, the `deployment-connections` commands return information for the admin user by default.
 {: .tip}
 
+### Generating _Service Credentials_ for existing users.
+
+Creating a new user from the CLI doesn't automatically populate that user's connection strings into _Service Credentials_. If you want to add them there, you can create a new credential with the existing user information.
+
+Enter the user name and password in the JSON field _Add Inline Configuration Parameters_, or specify a file where the JSON information is stored. For example, `{"existing_credentials":{"username":"Robert","password":"supersecure"}}`.
+
+Generating credentials from an existing user does not check for or create that user.
+{: tip}
+
 ## Connection String Breakdown
 
-Work in Progress
+This is a work in progress.
 
 ## Generating Connection Strings via API
 

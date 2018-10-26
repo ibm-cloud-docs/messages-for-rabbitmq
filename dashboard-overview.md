@@ -14,15 +14,15 @@ lastupdated: "2018-10-22"
 
 # Service Overview
 
-The _Overview_ page shows you information about your {{site.data.keyword.messages-for-rabbitmq_full}} database. The overview includes essential identifying information.
+The _Overview_ page shows you information about your {{site.data.keyword.messages-for-rabbitmq_full}} deployment. The overview includes essential identifying information.
 
 ## Deployment Details
 
-The _Deployment Details_ panel shows details of your service.
+The _Deployment Details_ panel shows a quick description of your deployment.
 
 ### Type
 
-The type of database that is offered by the service, and the database version that your service uses. In this case, it is `redis`.
+The type of database that is offered by the service, and the database version that your service uses.
 
 ### ID
 

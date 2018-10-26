@@ -15,7 +15,7 @@ lastupdated: "2018-10-15"
 
 {{site.data.keyword.messages-for-rabbitmq_full}} is a managed cloud database service that runs in containers that are orchestrated by Kubernetes. It is fully integrated into the {{site.data.keyword.cloud_notm}} ecosystem. The database, storage, and monitoring all run in {{site.data.keyword.cloud_notm}}.
 
-## Elasticsearch Databases
+## RabbitMQ Nodes
 
 {{site.data.keyword.databases-for-messages-for-rabbitmq}} deployments contain a cluster with three nodes. All three nodes are equal peers. The cluster is spread over the region's availability zones. If one data member becomes unreachable, your cluster continues to operate normally.
 
@@ -29,7 +29,7 @@ All {{site.data.keyword.messages-for-rabbitmq}} deployments have encryption at r
 
 ## Portals
 
-{{site.data.keyword.messages-for-rabbitmq}} connections are managed by 2 HAProxy portals. The portals are then placed behind a Kubernetes endpoint. This endpoint provides the connection for your applications. Having two portals behind it allows for applications to maintain connectivity if one of the portals becomes unreachable.
+{{site.data.keyword.messages-for-rabbitmq}} connections are managed by 2 HAProxy portals. The portals are then placed behind a Kubernetes endpoint. This endpoint provides the connection for your applications. Having two portals behind the endpoint allows for applications to maintain connectivity if one of the portals becomes unreachable.
 
 ### Encryption in Transit
 
