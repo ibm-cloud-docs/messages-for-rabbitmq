@@ -39,7 +39,7 @@ Node|`ampqlib`|[Link](https://www.npmjs.com/package/amqplib)
 Java|RabbitMQ Java Client Library|[Link](http://www.rabbitmq.com/java-client.html)
 Ruby|`Bunny`|[Link](http://rubybunny.info/)
 Python|`pika`|[Link](https://pika.readthedocs.io/en/0.10.0/index.html)
-{: caption="Table 2. Common Elasticsearch drivers" caption-side="top"}
+{: caption="Table 2. Common RabbitMQ drivers" caption-side="top"}
 
 ## Driver TLS and self-signed certificate support
 
