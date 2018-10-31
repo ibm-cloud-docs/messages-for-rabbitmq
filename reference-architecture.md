@@ -27,13 +27,13 @@ All backup storage for {{site.data.keyword.messages-for-rabbitmq}} is on {{site.
 
 All {{site.data.keyword.messages-for-rabbitmq}} deployments have encryption at rest. Your data and backups reside on servers that have volume-level encryption enabled.
 
-## Portals
+## Connections
 
-{{site.data.keyword.messages-for-rabbitmq}} connections are managed by 2 HAProxy portals. The portals are then placed behind a Kubernetes endpoint. This endpoint provides the connection for your applications. Having two portals behind the endpoint allows for applications to maintain connectivity if one of the portals becomes unreachable.
+{{site.data.keyword.messages-for-rabbitmq}} is configured to accept connections on two TCP listeners which are placed behind a Kubernetes endpoint. This endpoint provides the connection for your applications. Having two listeners behind the endpoint allows for applications to maintain connectivity if one of the listeners becomes unreachable.
 
 ### Encryption in Transit
 
-All {{site.data.keyword.messages-for-rabbitmq}} HAProxy portals are TLS/SSL enabled and support TLS version 1.2. Self-signed certificates are provided to enable applications to validate the server upon connection. The RabbitMQ node-to-node traffic is also TLS encrypted.
+All {{site.data.keyword.messages-for-rabbitmq}} connections are TLS/SSL enabled and support TLS version 1.2. Self-signed certificates are provided to enable applications to validate the server upon connection. The RabbitMQ node-to-node traffic is also TLS encrypted.
 
 ## Access Management
 
