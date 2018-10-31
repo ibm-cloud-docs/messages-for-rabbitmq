@@ -10,7 +10,7 @@ This repo contains the documentation for the IBM Cloud Messages for RabbitMQ ser
 
 The output from these docs is available on the IBM Cloud staging server: 
 
-- [About IBM Cloud Messages for RabbitMQ](https://console.stage1.bluemix.net/docs/services/messages-for-rabbitmq/index.html#about-messages-for-rabbitmq)
+- [About IBM Cloud Messages for RabbitMQ](https://console.test.cloud.ibm.com/docs/services/messages-for-rabbitmq/index.html#about-messages-for-rabbitmq)
 
 ## Resources
 
