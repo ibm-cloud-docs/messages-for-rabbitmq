@@ -29,7 +29,7 @@ All {{site.data.keyword.messages-for-rabbitmq}} deployments have encryption at r
 
 ## Connections
 
-{{site.data.keyword.messages-for-rabbitmq}} is configured to accept connections on two TCP listeners which are placed behind a Kubernetes endpoint. This endpoint provides the connection for your applications. Having two listeners behind the endpoint allows for applications to maintain connectivity if one of the listeners becomes unreachable.
+{{site.data.keyword.messages-for-rabbitmq}} is configured to accept connections on two TCP listeners, which are placed behind a Kubernetes endpoint. This endpoint provides the connection for your applications. Having two listeners behind the endpoint allows for applications to maintain connectivity if one of the listeners becomes unreachable.
 
 ### Encryption in Transit
 

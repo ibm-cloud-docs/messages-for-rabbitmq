@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017,2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-11-13"
 ---
 
 {:new_window: target="_blank"}
@@ -11,7 +11,7 @@ lastupdated: "2018-10-15"
 {:pre: .pre}
 {:tip: .tip}
 
-# Using Command line Tools for {{site.data.keyword.messages-for-rabbitmq}}
+# Using the {{site.data.keyword.cloud_notm}} CLI for {{site.data.keyword.messages-for-rabbitmq}}
 
 Use the {{site.data.keyword.cloud_notm}} CLI and the cloud databases plug-in to access and manage {{site.data.keyword.messages-for-rabbitmq_full}}.
 

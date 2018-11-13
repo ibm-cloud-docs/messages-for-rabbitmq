@@ -25,11 +25,25 @@ Full documentation on generating and retrieving connection strings is on the [Ge
 
 ## Connecting with a language's driver
 
-All the information a driver needs to make a connection to your deployment is in the "rabbitmq" section of your connection strings. The table contains a breakdown for reference.
+The information a driver needs to make a connection to your deployment is in the "amqps" section of your connection strings. The table contains a breakdown for reference.
 
-Table is a work in progress
+Field Name|Index|Description
+----------|-----|-----------
+`Type`||Type of connection - for RabbitMQ, it is "uri"
+`Scheme`||Scheme for a URI - for RabbitMQ, it is "amqps"
+`Path`||Path for a uri
+`Authentication`|`Username`|The username that you use to connect.
+`Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
+`Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
+`Hosts`|`0...`|A hostname and port to connect to
+`Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
+`Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
+`Certificate`|Base64|A base64 encoded version of the certificate.
+{: caption="Table 1. `RabbitMQ`/`uri` connection information" caption-side="top"}
 
-Many RabbitMQ drivers will be able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example, `sample connection string goes here`
+* `0...` indicates that there might be one or more of these entries in an array.
+
+Many RabbitMQ drivers are able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example, `sample connection string goes here`
 
 The table covers a few of the common RabbitMQ drivers.
 

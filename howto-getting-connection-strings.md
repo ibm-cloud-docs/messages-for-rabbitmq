@@ -14,7 +14,7 @@ lastupdated: "2018-10-26"
 
 # Getting Connection Strings
 
-In order to connect to {{site.data.keyword.messages-for-rabbitmq_full}}, you need database users and some connection strings. A {{site.data.keyword.messages-for-rabbitmq}} deployment is provisioned with an admin user, and after [setting the admin password](./howto-admin-password), you can use its connection strings to connect to your deployment.
+In order to connect to {{site.data.keyword.messages-for-rabbitmq_full}}, you need database users and some connection strings. A {{site.data.keyword.messages-for-rabbitmq}} deployment is provisioned with an admin user, and after you [set the admin password](./howto-admin-password), you can use its connection strings to connect to your deployment.
 
 The simplest way to retrieve connection information is from the [cloud databases plug-in](./howto-using-ibmcloud-cli.html). Use the `ibmcloud cdb deployment-connections` command to display a formatted connection URI for any user on your deployment. For example, to retrieve a connection string for the admin user on a deployment named  "example-rabbit", use the following command.
 
@@ -28,7 +28,7 @@ ibmcloud cdb cxn example-rabbit -u admin
 
 ## Generating Connection Strings for additional users
 
-Access to your {{site.data.keyword.messages-for-rabbitmq}} deployment is not just limited to the admin user. You may create additional users and retrieve connection strings specific to them by using the _Service Credentials_ panel, the {site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
+Access to your {{site.data.keyword.messages-for-rabbitmq}} deployment is not just limited to the admin user. You can create additional users and retrieve connection strings specific to them by using the _Service Credentials_ panel, the {site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
 
 ## Generating Connection Strings from _Service Credentials_
 
@@ -82,13 +82,50 @@ Generating credentials from an existing user does not check for or create that u
 
 ## Connection String Breakdown
 
-This is a work in progress.
+The "ampqs" section contains information that is suited for your applications that make connections to RabbitMQ.
+
+Field Name|Index|Description
+----------|-----|-----------
+`Type`||Type of connection - for RabbitMQ, it is "uri"
+`Scheme`||Scheme for a URI - for RabbitMQ, it is "amqps"
+`Path`||Path for a uri
+`Authentication`|`Username`|The username that you use to connect.
+`Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
+`Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
+`Hosts`|`0...`|A hostname and port to connect to
+`Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
+`Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
+`Certificate`|Base64|A base64 encoded version of the certificate.
+{: caption="Table 1. `RabbitMQ`/`uri` connection information" caption-side="top"}
+
+* `0...` indicates that there might be one or more of these entries in an array.
+
+For more information on using this information to connect, see the [Connecting an External Application](./connecting-external.html) page.
+
+### The CLI Section
+
+The "CLI" section contains information that is suited for the management plugin and command-line clients that make connections to RabbitMQ.
+
+Field Name|Index|Description
+----------|-----|-----------
+`Bin`||The recommended binary to create a connection; in this case it is `rabbitmqadmin`.
+`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command line parameters.
+`Environment`||A list of key/values you set as environment variables.
+`Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
+`Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
+`Certificate`|Name|The allocated name for the self-signed certificate.
+`Type`||The type of package that uses this connection information; in this case `cli`. 
+{: caption="Table 2. `rabbitmqadmin`/`cli` connection information" caption-side="top"}
+
+* `0...` indicates that there might be one or more of these entries in an array.
+
+For more information on using this information, see the [Connecting with a command line client](./connecting-cli-client) page.
 
 ## Generating Connection Strings via API
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint. Examples and documentation is available in the [API Reference](https://console.{DomainName}/apidocs/cloud-databases-api#creates-a-database-level-user).
 
-To retrieve user's connection strings, use the base URL with the `/users/{userid}/connections` endpoint. Examples and documentation is also available in the [API Reference](https://console.{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-b7f6f4).
+To retrieve user's connection strings, use the base URL with the `/users/{userid}/connections` endpoint. Examples and documentation are also available in the [API Reference](https://console.{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-b7f6f4).
 
 
 
