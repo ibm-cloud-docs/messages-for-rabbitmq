@@ -19,7 +19,7 @@ To create an {{site.data.keyword.messages-for-rabbitmq_full}} deployment, you ne
 
 ## Using the catalog
 
-You can create a {{site.data.keyword.messages-for-rabbitmq}} service from the [{{site.data.keyword.messages-for-rabbitmq}} page](https://console.{DomainName}/catalog/services/messages-for-rabbitmq/) in the {{site.data.keyword.cloud_notm}} catalog.
+You can create a {{site.data.keyword.messages-for-rabbitmq}} service from the [{{site.data.keyword.messages-for-rabbitmq}} page](https://{DomainName}/catalog/services/messages-for-rabbitmq/) in the {{site.data.keyword.cloud_notm}} catalog.
 
 ![Catalog Deployment Page](images/catalog-deployment.png)
 
@@ -44,7 +44,7 @@ The database takes some time to deploy. The user is navigated back to the {{site
 
 ## Using the Command Line
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
 
 To create a {{site.data.keyword.messages-for-rabbitmq}} deployment, you use the CLI to request a service instance with a `dmessages-for-rabbitmq` service ID.
 
@@ -54,7 +54,7 @@ The command template is:
 ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region>
 ```
 
-More information about this command, in general, is available in the [CLI reference for resource groups](https://console.{DomainName}/docs/cli/reference/ibmcloud/cli_resource_group.html#ibmcloud_resource_service_instance_create).
+More information about this command, in general, is available in the [CLI reference for resource groups](https://{DomainName}/docs/cli/reference/ibmcloud/cli_resource_group.html#ibmcloud_resource_service_instance_create).
 
 In the specific case of creating a {{site.data.keyword.messages-for-rabbitmq}} deployment, set the service name (quote any name with spaces in it). Then, set `messages-for-rabbitmq` as the service ID. Enter `standard` for the service plan ID and `us-south` (or your region) for the region.
 

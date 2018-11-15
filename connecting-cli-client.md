@@ -16,7 +16,7 @@ lastupdated: "2018-11-09"
 
 {{site.data.keyword.messages-for-rabbitmq_full}} deployments have the RabbitMQ management plugin enabled by default, which enables access to your RabbitMQ from a web browser or from a command line client. 
 
-The management plugin connection information is in the "cli" section of your connection strings. The table contains a breakdown for reference.
+The management plugin connection information is in the "cli" section of your [connection strings](./howto-getting-connection-strings.html). The table contains a breakdown for reference.
 
 Field Name|Index|Description
 ----------|-----|-----------
