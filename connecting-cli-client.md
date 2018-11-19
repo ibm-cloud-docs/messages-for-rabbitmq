@@ -16,24 +16,27 @@ lastupdated: "2018-11-09"
 
 {{site.data.keyword.messages-for-rabbitmq_full}} deployments have the RabbitMQ management plugin enabled by default, which enables access to your RabbitMQ from a web browser or from a command line client. 
 
-The management plugin connection information is in the "cli" section of your [connection strings](./howto-getting-connection-strings.html). The table contains a breakdown for reference.
+## Connecting with a browser
+
+The URL connection information is in the "https" section of your [connection strings](./howto-getting-connection-strings.html). The table contains a breakdown for reference.
 
 Field Name|Index|Description
 ----------|-----|-----------
-`Bin`||The recommended binary to create a connection; in this case it is `rabbitmqadmin`.
-`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command line parameters.
-`Environment`||A list of key/values you set as environment variables.
-`Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
-`Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
-`Certificate`|Name|The allocated name for the self-signed certificate.
-`Type`||The type of package that uses this connection information; in this case `cli`. 
-{: caption="Table 1. `rabbitmqadmin`/`cli` connection information" caption-side="top"}
+`Type`||Type of connection - for RabbitMQ, it is "uri"
+`Scheme`||Scheme for a URI - for RabbitMQ, it is "https"
+`Path`||Path for a uri
+`Authentication`|`Username`|The username that you use to connect.
+`Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
+`Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
+`Hosts`|`0...`|A hostname and port to connect to
+`Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
+`Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
+`Certificate`|Base64|A base64 encoded version of the certificate.
+{: caption="Table 1. `https`/`uri` connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-## Connecting with a browser
-
-The web address for your RabbitMQ deployment is composed of the _host_ and _port_ parts of your connection strings. The are combined into a URL: `https://<host>:<port>`.
+The web address for your RabbitMQ deployment is in the "composed" field of your connection strings. They are combined into a URL: `https://<host>:<port>`.
 
 For example, `https://1a619c43-6425-4abb-8df0-0c7b1b3a3001.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:31797`
 
@@ -51,8 +54,22 @@ The `rabbitmqadmin` binary is available directly from your deployment. The downl
 `rabbitmqadmin` is also available with a full, local installation of the RabbitMQ package. However, if the version of the package you download doesn't match the deployment's RabbitMQ version, it might not connect.
 {: .tip}
 
-
 ## Connecting with `rabbitmqadmin`
+
+The `rabbitmqadmin` connection information is in the "cli" section of your [connection strings](./howto-getting-connection-strings.html). The table contains a breakdown for reference.
+
+Field Name|Index|Description
+----------|-----|-----------
+`Bin`||The recommended binary to create a connection; in this case it is `rabbitmqadmin`.
+`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command line parameters.
+`Environment`||A list of key/values you set as environment variables.
+`Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
+`Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
+`Certificate`|Name|The allocated name for the self-signed certificate.
+`Type`||The type of package that uses this connection information; in this case `cli`. 
+{: caption="Table 1. `rabbitmqadmin`/`cli` connection information" caption-side="top"}
+
+* `0...` indicates that there might be one or more of these entries in an array.
 
 The example command lists all the exchanges in your RabbitMQ.
 

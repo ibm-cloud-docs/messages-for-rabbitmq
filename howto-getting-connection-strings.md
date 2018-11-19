@@ -82,7 +82,9 @@ Generating credentials from an existing user does not check for or create that u
 
 ## Connection String Breakdown
 
-The "ampqs" section contains information that is suited for your applications that make connections to RabbitMQ.
+### The `amqps` Section
+
+The "amqps" section contains information that is suited for your applications that make connections to RabbitMQ.
 
 Field Name|Index|Description
 ----------|-----|-----------
@@ -102,7 +104,7 @@ Field Name|Index|Description
 
 For more information on using this information to connect, see the [Connecting an External Application](./connecting-external.html) page.
 
-### The CLI Section
+### The CLI and https Sections
 
 The "CLI" section contains information that is suited for the management plugin and command-line clients that make connections to RabbitMQ.
 
@@ -119,7 +121,25 @@ Field Name|Index|Description
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-For more information on using this information, see the [Connecting with a command line client](./connecting-cli-client) page.
+The "https" section contains information that you can use to access the RabbitMQ management plugin via web browser.
+
+Field Name|Index|Description
+----------|-----|-----------
+`Type`||Type of connection - for RabbitMQ, it is "uri"
+`Scheme`||Scheme for a URI - for RabbitMQ, it is "https"
+`Path`||Path for a uri
+`Authentication`|`Username`|The username that you use to connect.
+`Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
+`Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
+`Hosts`|`0...`|A hostname and port to connect to
+`Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
+`Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
+`Certificate`|Base64|A base64 encoded version of the certificate.
+{: caption="Table 3. `https`/`uri` connection information" caption-side="top"}
+
+* `0...` indicates that there might be one or more of these entries in an array.
+
+For more information on using this information, see the [Connecting with the RabbitMQ Management Plugin](./connecting-cli-client) page.
 
 ## Generating Connection Strings via API
 
