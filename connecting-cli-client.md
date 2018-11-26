@@ -40,9 +40,8 @@ The web address for your RabbitMQ deployment is in the "composed" field of your 
 
 For example, `https://1a619c43-6425-4abb-8df0-0c7b1b3a3001.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:31797`
 
-Since {{site.data.keyword.messages-for-rabbitmq}} deployments are signed with a self-signed certificate, you will most likely get a security warning when you first try to open the page. You can verify the correct certificate by comparing it with the decoded certificate provided in your connection strings and add an exception to your browser.
-
-You are next taken to a login page with a prompt to enter the username and password. After you have signed in, you can see an _Overview_ of your RabbitMQ. 
+Since {{site.data.keyword.messages-for-rabbitmq}} deployments are signed with a self-signed certificate, you will most likely get a security warning when you first try to open the page. You can use the browser to view the certificate information, verify that it is issued by {{site.data.keyword.databases-for}}, and add a security exception for the page.
+You are next asked to enter your username and password. After you have signed in, you can see an _Overview_ of your RabbitMQ deployment. 
 
 Documentation can be found on the [RabbitMQ Management Plugin](https://www.rabbitmq.com/management.html) page.
 

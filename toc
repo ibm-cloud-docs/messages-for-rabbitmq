@@ -16,6 +16,7 @@ Messages For RabbitMQ
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
+	howto-provisioning.md
 	howto-admin-password.md
 	howto-getting-connection-strings.md
 	howto-using-ibmcloud-cli.md

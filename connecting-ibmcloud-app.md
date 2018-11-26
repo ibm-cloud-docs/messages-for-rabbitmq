@@ -14,7 +14,7 @@ lastupdated: "2018-10-15"
 
 # Connecting an {{site.data.keyword.cloud_notm}} application
 
-Applications running in {{site.data.keyword.cloud_notm}} can be bound to your {{site.data.keyword.mesages-for-rabbitmq_full}} service. 
+Applications running in {{site.data.keyword.cloud_notm}} can be bound to your {{site.data.keyword.messages-for-rabbitmq_full}} service. 
 
 {{site.data.keyword.cloud_notm}} uses a manifest file - `manifest.yml` to associate an application with a service. Follow these steps to create your manifest file.
 - In an editor, open a new file and add the text:
@@ -35,7 +35,7 @@ Applications running in {{site.data.keyword.cloud_notm}} can be bound to your {{
 
 You can verify that the services are connected by navigating to the _Connections_ panel. If the deployment and the application are connected, the connection shows up in both services.
 
-The sample app in the [Getting Started](./getting-started.html) tutorial provides a sample Cloud Foundry application that uses Node.js and demonstrates how to bind the sample application to the {{site.data.keyword.messages-to-rabbitmq}} service.
+The sample app in the [Getting Started](./getting-started.html) tutorial provides a sample Cloud Foundry application that uses Node.js and demonstrates how to bind the sample application to the {{site.data.keyword.messages-for-rabbitmq}} service.
 
 ## Creating a Cloud Foundry alias
 {: #create-alias}

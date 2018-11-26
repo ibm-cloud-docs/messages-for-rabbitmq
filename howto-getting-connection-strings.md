@@ -28,7 +28,7 @@ ibmcloud cdb cxn example-rabbit -u admin
 
 ## Generating Connection Strings for additional users
 
-Access to your {{site.data.keyword.messages-for-rabbitmq}} deployment is not just limited to the admin user. You can create additional users and retrieve connection strings specific to them by using the _Service Credentials_ panel, the {site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
+Access to your {{site.data.keyword.messages-for-rabbitmq}} deployment is not just limited to the admin user. You can create additional users and retrieve connection strings specific to them by using the _Service Credentials_ panel, the {{site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
 
 ## Generating Connection Strings from _Service Credentials_
 

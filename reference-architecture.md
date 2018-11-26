@@ -17,7 +17,7 @@ lastupdated: "2018-10-15"
 
 ## RabbitMQ Nodes
 
-{{site.data.keyword.databases-for-messages-for-rabbitmq}} deployments contain a cluster with three nodes. All three nodes are equal peers. The cluster is spread over the region's availability zones. If one data member becomes unreachable, your cluster continues to operate normally.
+{{site.data.keyword.messages-for-rabbitmq}} deployments contain a cluster with three nodes. All three nodes are equal peers. The cluster is spread over the region's availability zones. If one data member becomes unreachable, your cluster continues to operate normally.
 
 ### Storage
 
