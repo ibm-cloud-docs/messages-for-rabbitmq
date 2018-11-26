@@ -14,7 +14,7 @@ lastupdated: "2018-11-09"
 
 # Connecting with the RabbitMQ Management Plugin
 
-{{site.data.keyword.messages-for-rabbitmq_full}} deployments have the RabbitMQ management plugin enabled by default, which enables access to your RabbitMQ from a web browser or from a command line client. 
+{{site.data.keyword.messages-for-rabbitmq_full}} deployments have the RabbitMQ management plugin enabled by default, which enables access to your RabbitMQ from a web browser or from a command-line client. 
 
 ## Connecting with a browser
 
@@ -60,7 +60,7 @@ The `rabbitmqadmin` connection information is in the "cli" section of your [conn
 Field Name|Index|Description
 ----------|-----|-----------
 `Bin`||The recommended binary to create a connection; in this case it is `rabbitmqadmin`.
-`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command line parameters.
+`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command-line parameters.
 `Environment`||A list of key/values you set as environment variables.
 `Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
 `Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
@@ -84,7 +84,7 @@ rabbitmqadmin --username=admin --password=$PASSWORD --ssl --ssl-ca-cert-file=0b2
 * `--port=` : The parameter that specifies the port the RabbitMQ server is listening on. 
 * `list exchanges` : A `rabbitmqadmin` command to list the database members of the RabbitMQ deployment. 
 
-Documentation and other examples for `rabbitmqadmin` are on the RabbitMQ [Management Command Line Tool](https://www.rabbitmq.com/management-cli.html) page.
+Documentation and other examples for `rabbitmqadmin` are on the RabbitMQ [Management Command-Line Tool](https://www.rabbitmq.com/management-cli.html) page.
 
 ## Using the self-signed certificate
 

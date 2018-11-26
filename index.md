@@ -36,9 +36,9 @@ More information on IAM roles and actions for the {{site.data.keyword.messages-f
 
 {{site.data.keyword.messages-for-rabbitmq}} provides a UI, accessible by selecting _Manage_ from the left sidebar of your service and opening the management panel. You get a quick [Overview](./dashboard-overview.html) of your service as well as configuration settings on the [Settings](./dashboard-settings.html) tab and access to your backups on the [Backups](./dashboard-backups.html) tab.
 
-### Using the {{site.data.keyword.cloud_notm}} command line interface
+### Using the {{site.data.keyword.cloud_notm}} command-line interface
 
-The {{site.data.keyword.cloud_notm}} command line interface provides in interactive terminal for your {{site.data.keyword.cloud_notm}} account and your {{site.data.keyword.cloud_notm}} services. The cloud databases plug-in extends this functionality to your {{site.data.keyword.messages-for-rabbitmq}} deployments. More information and installation instructions are on the [Using {{site.data.keyword.cloud_notm}} CLI for {{site.data.keyword.messages-for-rabbitmq}}](./howto-using-ibmcloud-cli.html) page.
+The {{site.data.keyword.cloud_notm}} command-line interface provides in interactive terminal for your {{site.data.keyword.cloud_notm}} account and your {{site.data.keyword.cloud_notm}} services. The cloud databases plug-in extends this functionality to your {{site.data.keyword.messages-for-rabbitmq}} deployments. More information and installation instructions are on the [Using {{site.data.keyword.cloud_notm}} CLI for {{site.data.keyword.messages-for-rabbitmq}}](./howto-using-ibmcloud-cli.html) page.
 
 ### Using the cloud databases API
 
@@ -48,7 +48,7 @@ You can use the {{site.data.keyword.cloud_notm}} databases API to manage your se
 
 General information on getting connection strings can be found on the [Getting Connection Strings](./howto-getting-connection-strings) page.
 
-{{site.data.keyword.messages-for-rabbitmq}} deployments are secured with authentication and SSL/TLS encrypted connections. Deployments have an admin user provided by default. [Set the admin password](./howto-admin-password.html) to use it to access your deployment. Deployments also have the RabbitMQ management plugin enabled by default. If you want to manage the RabbitMQ through the browser or the command-line, [connect by using the RabbitMQ Management Plugin](./connecting-cli-client.html).
+{{site.data.keyword.messages-for-rabbitmq}} deployments are secured with authentication and SSL/TLS encrypted connections. Deployments are provisioned with an admin user. [Set the admin password](./howto-admin-password.html) to use it to access your deployment. The RabbitMQ management plugin enabled on deployments by default. If you want to manage the RabbitMQ through the browser or the command-line, [connect by using the RabbitMQ Management Plugin](./connecting-cli-client.html).
 
 Specific guidance on connecting with RabbitMQ drivers is on the [Connecting External Applications](./connecting-external.html) page. If you want to connect a Cloud Foundry application that is running in {{site.data.keyword.cloud_notm}}, see the [Connecting an {{site.data.keyword.cloud_notm}} Application](./connecting-ibmcloud-app.html) page. The [Getting Started tutorial](./getting-started.html) provides a sample application that can run locally or on {{site.data.keyword.cloud_notm}} to test-drive your {{site.data.keyword.messages-for-rabbitmq}} deployment.
 
