@@ -16,6 +16,7 @@ Messages For RabbitMQ
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
+	howto-provisioning.md
 	howto-admin-password.md
 	howto-getting-connection-strings.md
 	howto-using-ibmcloud-cli.md
@@ -30,6 +31,7 @@ Messages For RabbitMQ
 	{: .navgroup id="reference"}
 	reference-architecture.md
 	reference-versions.md
+	reference-security.md
 	reference-access-management.md
 	reference-activity-tracker.md
 	reference-key-protect.md

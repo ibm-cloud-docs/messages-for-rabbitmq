@@ -25,7 +25,7 @@ You can create a {{site.data.keyword.messages-for-rabbitmq}} service from the [{
 
 When you create the deployment from the catalog, you need to specify the following parameters.
 
-1. **The service name** - The name can be any string and is the name that is used on the web and in the command line to identify the new database deployment.
+1. **The service name** - The name can be any string and is the name that is used on the web and in the command-line to identify the new database deployment.
 2. **The region** - The region in which the database deployment resides.
 3. **The database version** - The major version of the database to be created within the deployment. The latest minor version is always be used automatically. 
 
@@ -42,9 +42,9 @@ Once you select the appropriate settings, click **Create** to start the provisio
 
 The database takes some time to deploy. The user is navigated back to the {{site.data.keyword.cloud_notm}} Dashboard.
 
-## Using the Command Line
+## Using the Command-Line
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command-line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
 
 To create a {{site.data.keyword.messages-for-rabbitmq}} deployment, you use the CLI to request a service instance with a `dmessages-for-rabbitmq` service ID.
 
