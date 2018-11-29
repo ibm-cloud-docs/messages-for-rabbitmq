@@ -28,7 +28,7 @@ ibmcloud cdb cxn example-rabbit -u admin
 
 ## Generating Connection Strings for additional users
 
-Access to your {{site.data.keyword.messages-for-rabbitmq}} deployment is not just limited to the admin user. You can create additional users and retrieve connection strings specific to them by using the _Service Credentials_ panel, the {site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
+Access to your {{site.data.keyword.messages-for-rabbitmq}} deployment is not just limited to the admin user. You can create additional users and retrieve connection strings specific to them by using the _Service Credentials_ panel, the {{site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
 
 ## Generating Connection Strings from _Service Credentials_
 
@@ -44,7 +44,7 @@ The new credentials appear in the table, and the connection strings are availabl
 
 Because {{site.data.keyword.messages-for-rabbitmq}} is an IAM service, you can use [Service IDs](https://{DomainName}/docs/iam/serviceid.html#serviceids) to manage access to this service. For example, by using an IAM-managed Service ID, that user gets an RabbitMQ user and connection string in _Service Credentials_, and has API key access to the {{site.data.keyword.cloud_notm}} Databases API.  If you have a Service ID, enter its information under _Select Service ID_.
 
-## Generating Connection Strings from the command line
+## Generating Connection Strings from the command-line
 
 If you manage your service through the {{site.data.keyword.cloud_notm}} CLI and the cloud databases plug-in, you can generate a new user and connection strings with `cdb user-create`. For example, to create a new user for a deployment named "example-deployment", use the following command.
 
@@ -111,7 +111,7 @@ The "CLI" section contains information that is suited for the management plugin 
 Field Name|Index|Description
 ----------|-----|-----------
 `Bin`||The recommended binary to create a connection; in this case it is `rabbitmqadmin`.
-`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command line parameters.
+`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command-line parameters.
 `Environment`||A list of key/values you set as environment variables.
 `Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
 `Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
@@ -143,7 +143,7 @@ For more information on using this information, see the [Connecting with the Rab
 
 ## Generating Connection Strings via API
 
-The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint. Examples and documentation is available in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#creates-a-database-level-user).
+The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint. Examples and documentation are available in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#creates-a-database-level-user).
 
 To retrieve user's connection strings, use the base URL with the `/users/{userid}/connections` endpoint. Examples and documentation are also available in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-b7f6f4).
 

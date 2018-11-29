@@ -17,7 +17,7 @@ lastupdated: "2018-10-15"
 
 ## RabbitMQ Nodes
 
-{{site.data.keyword.databases-for-messages-for-rabbitmq}} deployments contain a cluster with three nodes. All three nodes are equal peers. The cluster is spread over the region's availability zones. If one data member becomes unreachable, your cluster continues to operate normally.
+{{site.data.keyword.messages-for-rabbitmq}} deployments contain a cluster with three nodes. All three nodes are equal peers. The cluster is spread over the region's availability zones. If one data member becomes unreachable, your cluster continues to operate normally.
 
 ### Storage
 
@@ -37,5 +37,5 @@ All {{site.data.keyword.messages-for-rabbitmq}} connections are TLS/SSL enabled 
 
 ## Access Management
 
-{{site.data.keyword.messages-for-rabbitmq}} is an IAM-integrated service. Access to the service is governed by the roles and attributes that are consistent with IAM-integrated services across the {{site.data.keyword.cloud_notm}}. For more information about IAM, see the [What is IAM?](https://{DomainName}/docs/iam/index.html#iamoverview) documentation. For details on how IAM affects access to {{site.data.keyword.databases-for-redis}}, see the [Managing Access](./access-management.html) page.
+{{site.data.keyword.messages-for-rabbitmq}} is an IAM-integrated service. Access to the service is governed by the roles and attributes that are consistent with IAM-integrated services across the {{site.data.keyword.cloud_notm}}. For more information about IAM, see the [What is IAM?](https://{DomainName}/docs/iam/index.html#iamoverview) documentation. For details on how IAM affects access to {{site.data.keyword.messages-for-rabbitmq}}, see the [Managing Access](./reference-access-management.html) page.
 

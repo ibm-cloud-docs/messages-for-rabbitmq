@@ -49,7 +49,7 @@ The table covers a few of the common RabbitMQ drivers.
 
 Language|Driver|Documentation
 ----------|-----------
-Node|`ampqlib`|[Link](https://www.npmjs.com/package/amqplib)
+Node|`amqplib`|[Link](https://www.npmjs.com/package/amqplib)
 Java|RabbitMQ Java Client Library|[Link](http://www.rabbitmq.com/java-client.html)
 Ruby|`Bunny`|[Link](http://rubybunny.info/)
 Python|`pika`|[Link](https://pika.readthedocs.io/en/0.10.0/index.html)
