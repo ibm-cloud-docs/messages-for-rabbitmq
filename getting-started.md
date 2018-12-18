@@ -13,7 +13,7 @@ lastupdated: "2018-11-27"
 
 
 # Getting started tutorial
-This tutorial uses a sample app (coming soon) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.messages-for-rabbitmq_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
+This tutorial uses a [sample app](https://github.com/IBM-Cloud/cloudmessages-rabbitmq-helloworld-nodejs) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.messages-for-rabbitmq_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
 {: shortdesc}
 
 If you have already created your deployment and just want to connect to your RabbitMQ, you can skip to [getting your connection strings](https://console.bluemix.net/docs/services/messages-for-rabbitmq/howto-getting-connection-strings.html) and [connecting with the RabbitMQ Management Plugin](https://console.bluemix.net/docs/services/messages-for-rabbitmq/connecting-cli-client.html).
