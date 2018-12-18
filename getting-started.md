@@ -42,7 +42,7 @@ You can not connect an application to the service until provisioning has complet
 Clone the Hello World app to your local environment from your terminal by using the following command:
 
 ```
-git clone https://github.com/IBM-Cloud/clouddatabases-rabbitmq-helloworld-nodejs.git
+git clone https://github.com/IBM-Cloud/cloudmessages-rabbitmq-helloworld-nodejs.git
 ```
 
 ## Step 3. Install the app dependencies
