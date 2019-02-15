@@ -36,7 +36,7 @@ Applications running in {{site.data.keyword.cloud_notm}} can be bound to your {{
 
 You can verify that the services are connected by navigating to the _Connections_ panel. If the deployment and the application are connected, the connection shows up in both services.
 
-The sample app in the [Getting Started]((/docs/services/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started) tutorial provides a sample Cloud Foundry application that uses Node.js and demonstrates how to bind the sample application to the {{site.data.keyword.messages-for-rabbitmq}} service.
+The sample app in the [Getting Started](/docs/services/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started) tutorial provides a sample Cloud Foundry application that uses Node.js and demonstrates how to bind the sample application to the {{site.data.keyword.messages-for-rabbitmq}} service.
 
 ## Creating a Cloud Foundry alias
 {: #create-alias}
