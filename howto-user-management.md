@@ -31,7 +31,7 @@ It is the only user that is initially granted access to all the settings and con
 
 ## _Service Credential_ Users
 
-Users that you create through the _Service Credentials_ panel are given full permissions to configure, write, and read on the default Virtual Host.  
+Users that you [create through the _Service Credentials_ panel](./howto-getting-connection-strings.html#generating-connection-strings-from-service-credentials) are given full permissions to configure, write, and read on the default Virtual Host.  
 
 They are also automatically tagged with the "monitoring" tag, allowing them users to access the management plugin and see all connections and channels as well as node-related information. These users given a limited view of the _Admin_ tab and the functions that are found there. 
 
