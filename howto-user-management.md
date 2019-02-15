@@ -41,7 +41,7 @@ If you need users created from _Service Credentials_ to have more privileges, yo
 
 You can bypass creating users in _Service Credentials_ and create users directly in RabbitMQ. The RabbitmQ Management Plugin UI has a tab for user creation and management available to the admin user on your deployment.
 
-Users created directly in RabbitMQ will not appear in _Service Credentials_, but you can [add them there]() if you choose. Note, that these users will not be integrated with IAM controls, even if added to _Service Credentials_.
+Users created directly in RabbitMQ will not appear in _Service Credentials_, but you can [add them there](./howto-getting-connection-strings.html#generating-service-credentials-for-existing-users) if you choose. Note, that these users will not be integrated with IAM controls, even if added to _Service Credentials_.
 
 ## The `ibm` user
 
