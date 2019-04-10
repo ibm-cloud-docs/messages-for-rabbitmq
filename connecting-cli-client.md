@@ -22,7 +22,11 @@ subcollection: messages-for-rabbitmq
 
 ## RabbitMQ Management UI
 
-The URL connection information is in the "https" section of your [connection strings](/docs/services/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings). The table contains a breakdown for reference.
+From the _Connections_ panel of your deployment's _Dashboard Overview_ there is a button to open RabbitMQ Management UI.
+
+![Link to open RabbitMQ Management UI](images/management_ui_launch_button.png)
+
+The URL connection information is also in the "https" section of your [connection strings](/docs/services/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings). The table contains a breakdown for reference.
 
 Field Name|Index|Description
 ----------|-----|-----------
