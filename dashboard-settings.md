@@ -88,7 +88,7 @@ A new, randomly generated password appears, or you can type your own password in
 
 **Note:** Changing the password changes the credentials that you or any other services that use the admin user to connect. It can cause these services to disconnect and experience downtime.
 
-## Service Endpoints
+## Setting Service Endpoints
 
 The _Service Endpoints_ panel allows you to configure which type of endpoints you can use to connect to your deployment. By default, deployments are provisioned with public endpoints, allowing connections from the public internet. Enabling a private endpoint on your deployment opens connections to be made from IBM Cloud's internal network. Both types of endpoints can exist on your deployment. 
 
