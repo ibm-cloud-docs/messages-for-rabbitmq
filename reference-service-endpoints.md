@@ -3,7 +3,7 @@ Copyright:
   years: 2019
 lastupdated: "2019-04-08"
 
-subcollection: messages-for-rabbitmq
+subcollection: cloud-databases
 
 ---
 
@@ -18,6 +18,9 @@ subcollection: messages-for-rabbitmq
 {: #service-endpoints}
 
 All {{site.data.keyword.databases-for}} deployments offer integration with [{{site.data.keyword.cloud_notm}} Service Endpoints](/docs/services/service-endpoint?topic=service-endpoint-about#about). It allows you to enable connections to your deployments from the public internet and over the {{site.data.keyword.cloud_notm}} private network.
+
+Service Endpoints are only available in {{site.data.keyword.cloud_notm}} Mulit-Zone Regions. If your deployments are in `Oslo 01` you aren't able to use private endpoints since it is a Single-Zone Region. Deployments in all other regions are able to use Service Endpoints.
+{: .tip}
 
 ## Public Endpoints
 
@@ -44,7 +47,7 @@ To configure your deployment's endpoints on provision, use the _Endpoints_ field
 
 Service Endpoints are enabled through an optional parameter when you provision through the CLI and API. Provisioning is handled by the Resource Controller, and you pass the `service-endpoints` parameter one of the options `public`, `private`, or `public-and-private`. 
 
-For more information, see the [Provisioning](/docs/services/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning) page.
+For more information, see the [Provisioning](/docs/services/cloud-databases?topic=cloud-databases-provisioning) page.
 
 {{site.data.keyword.databases-for}} deployments except {{site.data.keyword.databases-for-mongodb}} allow for both public and private networking to be enabled at the same time.
 {: .tip}
@@ -59,6 +62,8 @@ Changing the type of endpoints available on your deployment does not cause any d
 
 You can use either public or private connection strings with any set of credentials you make on your deployment. By default, the connection strings for a set of credentials are filled with strings for connecting over a public endpoint. If you are using private endpoints, you can specify that connection strings containing the private endpoint be generated instead. 
 
-When creating credentials, use the either `{ "service-endpoints": "public" }` / `{ "service-endpoints": "private" }` parameters to specify which endpoint gets filled into the connection strings. This parameter can be used with _Serivce Endpoints_ panel and the API.
+When creating credentials in _Service Credentials_, use the either `{ "service-endpoints": "public" }` / `{ "service-endpoints": "private" }` parameters to specify which endpoint gets filled into the connection strings. 
+
+In the API you can use the [`/deployments/{id}/users/{userid}/connections/{endpoint_type}`](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026) to retrieve connection strings for both public or private endpoints.
 
 If you only have private endpoints on your deployments, then all new credentials have private endpoints in the connection strings.

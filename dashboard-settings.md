@@ -88,13 +88,13 @@ A new, randomly generated password appears, or you can type your own password in
 
 **Note:** Changing the password changes the credentials that you or any other services that use the admin user to connect. It can cause these services to disconnect and experience downtime.
 
-## Setting Service Endpoints
+## Configuring Service Endpoints
 
 The _Service Endpoints_ panel allows you to configure which type of endpoints you can use to connect to your deployment. By default, deployments are provisioned with public endpoints, allowing connections from the public internet. Enabling a private endpoint on your deployment opens connections to be made from IBM Cloud's internal network. Both types of endpoints can exist on your deployment. 
 
 Changing the type of endpoints available on your deployment does not cause any downtime from a database perspective, however, if you disable an endpoint that is currently being used by you or your applications, those connections are dropped.
 
-More information on Service Endpoints is on the [Service Endpoints Integration](/docs/services/messages-for-rabbitmq?topic=messages-for-rabbitmq-servce-endpoints) page.
+More information is on Service Endpoints is on the [Service Endpoints Integration](/docs/services/messages-for-rabbitmq?topic=messages-for-rabbitmq-servce-endpoints) page.
 
 ## Whitelisting
 

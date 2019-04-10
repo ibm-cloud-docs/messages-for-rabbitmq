@@ -44,9 +44,7 @@ Field Name|Index|Description
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-The web address for your RabbitMQ deployment is in the "composed" field of your connection strings. They are combined into a URL: `https://<host>:<port>`.
-
-For example, `https://1a619c43-6425-4abb-8df0-0c7b1b3a3001.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:31797`
+The web address for your RabbitMQ deployment is in the "composed" field of your connection strings.
 
 Since {{site.data.keyword.messages-for-rabbitmq}} deployments are signed with a self-signed certificate, you will most likely get a security warning when you first try to open the page. You can use the browser to view the certificate information, verify that it is issued by {{site.data.keyword.databases-for}}, and add a security exception for the page.
 

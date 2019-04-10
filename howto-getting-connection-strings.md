@@ -24,7 +24,7 @@ Connection Strings for your deployment are displayed on the _Dashboard Overview_
 
 ![Connections panel on the Dashboard Overview](images/connections_panel.png)
 
-You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-b7f6f4).
+You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
 ## Credentials and Connection Strings for additional users
 
@@ -33,7 +33,7 @@ Access to your {{site.data.keyword.messages-for-rabbitmq}} deployment is not jus
 Not all users get the same privileges with respect to administering RabbitMQ. To read more about which users get what privileges see the [Managing Users](/docs/services/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management) page.
 {: .tip} 
 
-## Generating Credentials from _Service Credentials_
+## Getting Credentials and Connection Strings from _Service Credentials_
 
 1. Navigate to the service dashboard for your service.
 2. Click _Service Credentials_ to open the _Service Credentials_ panel.
@@ -48,7 +48,7 @@ The new credentials appear in the table, and the connection strings are availabl
 
 Because {{site.data.keyword.messages-for-rabbitmq}} is an IAM service, you can use [Service IDs](/docs/iam?topic=iam-serviceids) to manage access to this service. For example, by using an IAM-managed Service ID, that user gets an RabbitMQ user and connection string in _Service Credentials_, and has API key access to the {{site.data.keyword.cloud_notm}} Databases API.  If you have a Service ID, enter its information under _Select Service ID_.
 
-## Generating Credentials from the command-line
+## Getting Credentials and Connection Strings from the command-line
 
 If you manage your service through the {{site.data.keyword.cloud_notm}} CLI and the [cloud databases plug-in](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference), you can generate a new user and connection strings with `cdb user-create`. For example, to create a new user for a deployment named "example-deployment", use the following command.
 
@@ -167,7 +167,7 @@ For more information on using this information, see the [Connecting with the Rab
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint. Examples and documentation are available in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#creates-a-database-level-user).
 
-To retrieve user's connection strings, use the base URL with the `/users/{userid}/connections` endpoint. Examples and documentation are also available in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-b7f6f4).
+To retrieve user's connection strings, use the base URL with the `/users/{userid}/connections` endpoint. Examples and documentation are also available in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
 
 
