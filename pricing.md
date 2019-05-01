@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2017,2019
-lastupdated: "2019-04-30"
+  years: 2019
+lastupdated: "2019-05-01"
 
-subcollection: databases-for-redis
+subcollection: messages-for-rabbitmq
 
 ---
 
