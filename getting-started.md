@@ -186,7 +186,7 @@ To start exploring your {{site.data.keyword.messages-for-rabbitmq}} service, see
 
 - [Dashboard Overview](https://cloud.ibm.com/docs/services/messages-for-rabbitmq/dashboard-overview.html)
 - [Backups](https://cloud.ibm.com/docs/services/messages-for-rabbitmq/dashboard-backups.html)
-- [Settings](https://cloud.ibm.com/docs/services/messages-for-rabbitmq/dashboard-settings.html)
+- [Creating Users and Getting Connection Strings](https://cloud.ibm.com/docs/services/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings)
 
 
 [ibm_cloud_signup_url]: https://ibm.biz/messages-for-rabbitmq-signup
