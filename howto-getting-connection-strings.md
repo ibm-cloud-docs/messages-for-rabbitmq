@@ -15,7 +15,7 @@ subcollection: messages-for-rabbitmq
 {:tip: .tip}
 
 
-# Getting Credentials and Connection Strings
+# Creating Users and Getting Connection Strings
 {: #connection-strings}
 
 In order to connect to {{site.data.keyword.messages-for-rabbitmq_full}}, you need some users and some connection strings. Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Connections_ panel.
