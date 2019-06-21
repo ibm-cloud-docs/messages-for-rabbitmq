@@ -31,7 +31,7 @@ Messages For RabbitMQ
 		connecting-cli-client.md
 	
 	howto-resources-scaling.md
-	howto-backups.md
+	/cloud-databases/cloud-databases-dashboard-backups
 	/cloud-databases/cloud-databases-whitelisting
 	howto-plugins.md
 	{: .navgroup-end}
