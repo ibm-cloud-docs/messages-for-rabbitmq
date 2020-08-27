@@ -30,6 +30,15 @@ From the _Connections_ pane of your deployment's _Dashboard Overview_, there is 
 
 The URL connection information is also in the "https" section of your [connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings). The web address for your RabbitMQ deployment is in the "composed" field of your connection strings.
 
+Since {{site.data.keyword.messages-for-rabbitmq}} deployments are signed with a self-signed certificate, you might encounter a security warning when you first try to open the page. You can configure your system to trust the [provided self-signed certificate](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-external-app#tls-and-self-signed-certificate-support). Review your browser's or your system's documentation on how to do this.
+
+You are next asked to enter your username and password. After you have signed in, you can see an _Overview_ of your RabbitMQ deployment. 
+
+You can use any user on your deployment to access the UI. Some features are only available to the admin user provisioned with your deployment.
+{: .tip} 
+
+General usage documentation can be found on the [RabbitMQ Management plug-in](https://www.rabbitmq.com/management.html) page.
+
 ### Connecting through private endpoints
 {: #private-endpoints}
 
@@ -41,16 +50,6 @@ The URL connection information is also in the "https" section of your [connectio
 * From your workstation, run `ssh -D 2345 user@vsi-host` This starts an SSH session and open a SOCKS proxy on port 2345 that forwards all traffic through the VSI
 * Configure your browser to use a SOCKS5 proxy on `localhost:2345`
 * From your browser, navigate to the {{site.data.keyword.messages-for-rabbitmq}} management endpoint URL. For example, `https://bfdb-4263-8ad2-c9a4beaf4591.8f7bfc8f3faa4218afd56e0.databases.appdomain.cloud:323232`
-
-
-Since {{site.data.keyword.messages-for-rabbitmq}} deployments are signed with a self-signed certificate, you might encounter a security warning when you first try to open the page. You can add a security exception for the page through your browser, or configure your system to trust the [provided self-signed certificate](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-external-app#tls-and-self-signed-certificate-support). Review your browser's or your system's documentation on how to do this.
-
-You are next asked to enter your username and password. After you have signed in, you can see an _Overview_ of your RabbitMQ deployment. 
-
-You can use any user on your deployment to access the UI. Some features are only available to the admin user provisioned with your deployment.
-{: .tip} 
-
-General usage documentation can be found on the [RabbitMQ Management plug-in](https://www.rabbitmq.com/management.html) page.
 
 ## RabbitMQ Management HTTP API
 
