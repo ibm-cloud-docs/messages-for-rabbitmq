@@ -33,15 +33,20 @@ The default virtual host is configured to mirror its queues across all nodes in 
 
 You can modify high-availability by adding a policy and setting it with a higher priority, but the default policy cannot be removed. Any additional virtual hosts do not have a high-availability policy set by default.  It is recommended that you to add a high-availability policy to all your virtual hosts.
 
-### Mirrored Queues
-
-In the default configuration uses [mirrored queues](https://www.rabbitmq.com/ha.html#what-is-mirroring), each queue has a primary located on one member of the cluster and mirrors of the queues exist on the other members of the cluster. Messages published to the queue first go to the primary and are then replicated to the mirrors. Something happens to the primary node, the oldest synchronized mirror is promoted to primary.
-
 ### Quorum Queues
+{: #quorum-queues}
 
 Starting in RabbitMQ 3.8, high-availability can be managed with [quorum queues](https://www.rabbitmq.com/quorum-queues.html). Using quorum queues can significantly improve high-availability of a deployment, specifically in cases where queues exist long-term and their durability is more important than other features. Quorum queues manage high-availability by maintaining a quorum using the Raft Consensus Algorithm, and the current primary and a majority of the replicas agree on the contents of the queue. If something happens to the primary node, the replicas elect the next primary.
 
 The RabbitMQ documentation covers the [use-cases](https://www.rabbitmq.com/quorum-queues.html#use-cases), as well as how to [implement quorum queues in your cluster](https://www.rabbitmq.com/quorum-queues.html#usage).
+
+For more information on quorum queues and the preferred status of RabbitMQ 3.8, review this [blog post announcement](https://cms.ibm.com/cloud/blog/announcements/ibm-cloud-messages-for-rabbitmq-38-is-now-preferred).  
+
+### Mirrored Queues
+
+While quorum queues are prefferred, the default configuration in RabbitMQ 3.7 and prior uses [mirrored queues](https://www.rabbitmq.com/ha.html#what-is-mirroring), each queue has a primary located on one member of the cluster and mirrors of the queues exist on the other members of the cluster. Messages published to the queue first go to the primary and are then replicated to the mirrors. Something happens to the primary node, the oldest synchronized mirror is promoted to primary.
+
+
 
 ## High-Availability for your Application
 
@@ -70,7 +75,7 @@ Checking your deployment's logs helps you monitor the state of HA and replicatio
 
 The RabbitMQ documentation provides an excellent [Reliability Guide](https://www.rabbitmq.com/reliability.html) that covers a wide-range of topics related to making sure that your cluster is functioning and your data is resilient. It also covers features that are available to you as a user to  monitor the deployment, connections, queues, and messages to ensure smooth operations.
 
-## SLA
+## High availability, disaster recovery, and SLA resources
 
-{{site.data.keyword.messages-for-rabbitmq}} deployments conform to the {{site.data.keyword.cloud_notm}} [SLA terms](/docs/overview?topic=overview-slas).
+{{site.data.keyword.messages-for-rabbitmq}} deployments conform to the {{site.data.keyword.cloud_notm}} Databases [HA, DR, and SLA](/cloud-databases/cloud-databases-ha-dr) terms.
 
