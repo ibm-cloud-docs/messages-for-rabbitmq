@@ -64,7 +64,7 @@ RabbitMQ and RabbitMQ drivers support various features to help you design a resi
 
 Several minutes of database unavailability or connection interruption are not expected. Open a [support ticket](https://cloud.ibm.com/unifiedsupport/cases/add) with details if you have time periods longer than a minute with no connectivity so we can investigate.
 
-### {{site.data.keyword.messages-for-rabbitmq}} Connection Limits 
+## {{site.data.keyword.messages-for-rabbitmq}} Connection Limits 
 
 At provision, {{site.data.keyword.messages-for-rabbitmq}} has 4 different endpoints and sets the maximum number of connections per node and for each endpoint as follows: 
 
