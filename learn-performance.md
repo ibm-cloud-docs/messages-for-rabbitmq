@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  years: 2018, 2020
-lastupdated: "2020-03-16"
+  years: 2018, 2021
+lastupdated: "2021-03-30"
 
 keywords: rabbitmq, databases, memory alarms, disk alarms, monitoring, disk I/O
 
@@ -24,7 +24,7 @@ subcollection: messages-for-rabbitmq
 
 ## Monitoring your deployment
 
-{{site.data.keyword.messages-for-rabbitmq}} deployments offer an integration with the [{{site.data.keyword.cloud_notm}} Monitoring service](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-sysdig-monitoring) for basic monitoring of resource usage on your deployment. Many of the available metrics, like disk usage and IOPS, are presented to help you configure [autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling) on your deployment. Observing trends in your usage and configuring the autoscaling to respond to them can help alleviate performance problems before your databases become unstable due to resource exhaustion.
+{{site.data.keyword.messages-for-rabbitmq}} deployments offer an integration with the [{{site.data.keyword.monitoringfull}} service](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-sysdig-monitoring) for basic monitoring of resource usage on your deployment. Many of the available metrics, like disk usage and IOPS, are presented to help you configure [autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling) on your deployment. Observing trends in your usage and configuring the autoscaling to respond to them can help alleviate performance problems before your databases become unstable due to resource exhaustion.
 
 ## RabbitMQ Memory Usage
 
