@@ -49,8 +49,8 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 ## Observability
 The _Observability_ tab provides access to the IBM Cloud monitoring, logging, and event tracking integrations available for your deployment. 
 - [{{site.data.keyword.at_full}}](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker)
-- [{{site.data.keyword.loganalysisfull}}](/docs/messages-for-rabbitmq?topic=cloud-databases-logging)
-- [{{site.data.keyword.monitoringfull}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-sysdig-monitoring)
+- [{{site.data.keyword.la_full}}](/docs/messages-for-rabbitmq?topic=cloud-databases-logging)
+- [{{site.data.keyword.monitoringfull}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-monitoring)
 ## Settings
 The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can 
 - view encryption details. Encryption at rest is enabled for all {{site.data.keyword.messages-for-rabbitmq}} deployments. If you brought your own encryption key from [Key Protect](/docs/messages-for-rabbitmq?topic=cloud-databases-key-protect), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
