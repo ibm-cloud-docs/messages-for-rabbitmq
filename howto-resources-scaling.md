@@ -16,6 +16,7 @@ subcollection: messages-for-rabbitmq
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # Scaling Disk, Memory, and CPU
 {: #resources-scaling}
@@ -41,6 +42,17 @@ You cannot scale down storage. If your data set size has decreased, you can reco
 ### RAM
 
 RabbitMQ throttles publishing when it detects it is using 40% of available memory to keep memory usage from growing uncontrollably during spike of activity. If you find that you regularly hit the limit, you can allocate more memory to your deployment. Adding memory to the total allocation adds memory to the members equally.
+
+### Queue Rebalancing
+
+If you notice that one RabbitMQ db node is occupying significantly more resources than another, it is likely that the queues are not evenly distributed between the nodes. This can happen for the following possible reasons:
+
+- You are connected to only one of the VIPs and all the queues are created on a single node.
+- There was a rolling restart, which moves the queues to the formation that was restarted first.
+
+Triggering even distribution of queues will cause load until all queues are evenly distributed so this action should not be performed while the formation is under pressure or outscaled. {: .note}
+
+To evenly distribute the queues, you can use the [RabbitMQ Management API](https://cdn.rawgit.com/rabbitmq/rabbitmq-management/v3.8.9/priv/www/api/index.html) to run an https `POST` call `/api/rebalance/queues` against your formation.
 
 ### Dedicated Cores
 
