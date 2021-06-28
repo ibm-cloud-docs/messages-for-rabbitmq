@@ -48,7 +48,7 @@ RabbitMQ throttles publishing when it detects it is using 40% of available memor
 If you notice that one RabbitMQ node is occupying significantly more resources than another, it is likely that the queues are not evenly distributed between the nodes. This can happen for the following possible reasons:
 
 - You are connected to only one of the VIPs and all the queues are created on a single node.
-- There was a rolling restart, which moves the queues to the deployment that was restarted first.
+- There was a rolling restart, which moves the queues to the node that was restarted first.
 
 Triggering even distribution of queues will cause load until all queues are evenly distributed so this action should not be performed while the deployment is under pressure or outscaled. 
 {: .note}
