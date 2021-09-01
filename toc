@@ -16,7 +16,7 @@ Messages For RabbitMQ
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
-	{: .topicgroup}
+	{: .topicgroup}}
 	IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
 		/cloud-databases/cloud-databases-satellite-get-started
 		/cloud-databases/cloud-databases-satellite-aws
