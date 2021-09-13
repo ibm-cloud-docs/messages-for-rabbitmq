@@ -68,10 +68,10 @@ Several minutes of database unavailability or connection interruption are not ex
 
 At provision, {{site.data.keyword.messages-for-rabbitmq}} has 4 different endpoints and sets the maximum number of connections per node and for each endpoint as follows: 
 
-  * **HTTPS**: 1024 x 3 nodes = 3072
-  * **AMQPS**: 20000 x 3 nodes = 60000
-  * **MQTTS**: 20000 x 3 nodes = 60000
-  * **STOMPS**: 20000 x 3 nodes = 60000
+   * **HTTPS**: 1024 x 3 nodes = 3072
+   * **AMQPS**: 20000 x 3 nodes = 60000
+   * **MQTTS**: 20000 x 3 nodes = 60000
+   * **STOMPS**: 20000 x 3 nodes = 60000
 
 If the number of connections to the database exceeds the connection limit, new connections fail and return an error.
 

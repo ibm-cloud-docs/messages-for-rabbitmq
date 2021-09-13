@@ -26,7 +26,7 @@ If you have already created your deployment and just want to connect to your Rab
 
 ## Before you begin
 
-Make sure that you have an [{{site.data.keyword.cloud_notm}} account][ibm_cloud_signup_url]{:new_window}.
+Make sure that you have an [{{site.data.keyword.cloud_notm}} account][ibm_cloud_signup_url]{: new_window}.
 
 You also need to install [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/downloads).
 
