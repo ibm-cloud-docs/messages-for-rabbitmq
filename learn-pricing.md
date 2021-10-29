@@ -20,7 +20,7 @@ subcollection: messages-for-rabbitmq
 # Pricing
 {: #pricing}
 
-An {{site.data.keyword.messages-for-rabbitmq_full}} Standard plan deploys as one highly available RabbitMQ cluster with three data members. Your data is replicated across members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.messages-for-rabbitmq}} deployments have a minimum of 1 GB of disk and 1 GB of RAM per data member.
+A {{site.data.keyword.messages-for-rabbitmq_full}} Standard plan deploys as one highly available RabbitMQ cluster with three data members. Your data is replicated across members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.messages-for-rabbitmq}} deployments have a minimum of 1 GB of disk and 1 GB of RAM per data member.
 
 ## Cost Breakdown
 
@@ -40,6 +40,17 @@ Month Total per hour = $.022/Hour
 All prices here are in US dollars. To see pricing in your local currency, you can to use the pricing calculator.
 {: .tip}
 
+## IBM Cloud Databases enabled by IBM Cloud Satellite Pricing
+
+{{site.data.keyword.messages-for-rabbitmq_full}} deployments are deployable into IBM Cloud Satellite locations. The management fee for these Cloud Databases is $45 per vCPU per month, with a 6 vCPU minimum.
+
+Resources | Breakdown | Price
+-------|-------|-------
+6 vCPUs per month | 2 members x 6 GB x $45 | $540
+{: caption="Table 2. Pricing example for  6 vCPUs and two data members" caption-side="top"}
+
+Total per month = $49.80/Month
+
 ## Using the Pricing Calculator
 
 Templates are provided for ease of use and provide balanced resource allocations appropriate for general purpose workloads. The **Custom** tab can be used to configure Disk, RAM, and vCPU, as desired.
@@ -54,7 +65,7 @@ Users also receive their total disk space purchased, per database, in free backu
 
 ## Dedicated Cores Pricing
 
-You have the option of selecting the CPU allocation for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. The cost of dedicated cores is $30 per core per month, and each member gets the selected number of cores. For example, if you provision a deployment with 3 dedicated cores per member, that is a total of 9 cores, and billed at $270 per month. 
+You have the option of selecting the CPU allocation for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. The cost of dedicated cores is $30 per core per month, and each member gets the selected number of cores. For example, if you provision a deployment with 3 dedicated cores per member, that is a total of 9 cores, and billed at $270 per month.
 
 Dedicated cores are an optional feature. The default `Shared CPU` setting provisions your deployment on hosts with shared compute resources and incurs no additional charge.
 
@@ -68,4 +79,3 @@ Disk | 5 GB per member | 4 TB per member | 1024 MB per member
 RAM | 1 GB per member | 112 GB per member | 128 MB per member
 CPU (if enabled) | 3 CPUs per member | 28 CPUs per member| 1 CPU per member
 {: caption="Table 2. Per Member Scaling Limits" caption-side="top"}
-
