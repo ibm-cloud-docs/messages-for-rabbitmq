@@ -83,7 +83,7 @@ Field Name|Index|Description
 
 The example command lists all the exchanges in your RabbitMQ.
 
-```
+```shell
 rabbitmqadmin --username=admin --password=$PASSWORD --ssl --ssl-ca-cert-file=0b22f14b-7ba2-11e8-b8e9-568642342d40 --host=1a619c43-6415-4abb-8df0-0c7b1b3a3001.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud --port=31797 list exchanges
 ```
 
