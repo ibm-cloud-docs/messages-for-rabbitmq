@@ -70,7 +70,7 @@ Field Name|Index|Description
 `ssl`||The TLS/SSL setting needed for a connection. Should always be `true`.
 `Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
 `Certificate`|`Base64`|A base64 encoded version of the certificate.
-{: caption="Table 2. `RabbitMQ`/`stomp_ssl` connection information" caption-side="top"}
+{: caption="Table 2. RabbitMQ/stomp_ssl connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
