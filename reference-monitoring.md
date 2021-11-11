@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-02"
+lastupdated: "2021-11-11"
 
 keywords: rabbitmq, monitoring, metrics, iops, disk usage, memory usage
 
@@ -24,18 +24,19 @@ Monitoring for {{site.data.keyword.messages-for-rabbitmq_full}} deployments is p
 
 To access {{site.data.keyword.monitoringfull_notm}} from your deployment, use the _Monitoring_ link from the right menu. (If you do not already have a monitoring service in the same region as your deployment it says _Add monitoring_.)
 
-![The Monitoring link in a deployment](images/monitoring-ui-link.png)
+![The Monitoring link in a deployment](images/monitoring-ui-link.png){: caption="Figure 1. The Monitoring link in a deployment" caption-side="bottom"}
 
 To access your deployment's monitoring dashboard from {{site.data.keyword.monitoringfull_notm}}, it's in the sidebar, under _IBM_.
 
 ## Monitoring Availability
+{: #monitoring-availability}
 
 {{site.data.keyword.monitoringfull_notm}} is available for deployments in every region. Deployments in Multi-zone Regions (MZRs) - `eu-gb`, `eu-de`, `us-east`, `us-south`, `jp-tok`, `au-syd` - have their metrics in the corresponding region.
 
 If you have deployments that are in a Single-zone Region (SZR) - `che01`, or `seo01` - then your logs are forwarded to an {{site.data.keyword.monitoringfull_notm}} instance in another region. You need to provision {{site.data.keyword.monitoringfull_notm}} instances in the region where your metrics are forwarded to. Metrics for deployments in `seo01` and `che01` go to `jp-tok`. 
 
 ## Available Metrics
-{: metrics-by-plan}
+{: #metrics-by-plan}
 
 | Metric Name |
 |-----------|
@@ -182,10 +183,10 @@ How much memory your deployment is using.
 {: caption="Table 11. Used memory for an instance metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
-{: attributes}
+{: #attributes}
 
 ### Global Attributes
-{: global-attributes}
+{: #global-attributes}
 
 The following attributes are available for segmenting all of the metrics listed.
 
@@ -199,7 +200,7 @@ The following attributes are available for segmenting all of the metrics listed.
 {: caption="Table 12. Global Attributes Metadata" caption-side="top"}
 
 ### Additional Attributes
-{: additional-attributes}
+{: #additional-attributes}
 
 The following attributes are available for segmenting one or more attributes as described in the reference . See the individual metrics for segmentation options.
 

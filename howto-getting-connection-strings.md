@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017,2019
-lastupdated: "2019-05-02"
+  years: 2017, 2019
+lastupdated: "2021-11-11"
 
 keywords: rabbitmq, databases, connection strings
 
@@ -22,7 +22,7 @@ subcollection: messages-for-rabbitmq
 
 In order to connect to {{site.data.keyword.messages-for-rabbitmq_full}}, you need some users and some connection strings. Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Endpoints_ panel.
 
-![Endpoints panel](images/getting-started-endpoints-panel.png)
+![Endpoints panel](images/getting-started-endpoints-panel.png){: caption="Figure 1. Endpoints panel" caption-side="bottom"}
 
 You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
@@ -30,6 +30,7 @@ A {{site.data.keyword.messages-for-rabbitmq}} deployment is provisioned with an 
 {: .tip}
 
 ## Credentials and Connection Strings for additional users
+{: #cred-connection-strings-additional-users}
 
 Access to your {{site.data.keyword.messages-for-rabbitmq}} deployment is not limited to the root user. You can create users by using the _Service Credentials_ panel, the {{site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
 
@@ -38,6 +39,7 @@ All users on your deployment can use the connection strings, including connectio
 Not all users get the same privileges with respect to administering RabbitMQ. To read more about which users get what privileges see the [Managing Users](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management) page.
 
 ### From _Service Credentials_
+{: #cred-connection-strings-additional-users-service-cred}
 
 1. Navigate to the service dashboard for your service.
 2. Click _Service Credentials_ to open the _Service Credentials_ panel.
@@ -49,19 +51,20 @@ Not all users get the same privileges with respect to administering RabbitMQ. To
 The new credentials appear in the table, and the connection strings are available as JSON in a click-to-copy field under _View Credentials_.
 
 ### From the CLI
+{: #cred-connection-strings-additional-users-cli}
 
 If you manage your service through the {{site.data.keyword.cloud_notm}} CLI and the [cloud databases plug-in](/docs/cli?topic=cli-install-ibmcloud-cli), you can create a new user with `cdb user-create`. For example, to create a new user for an "example-deployment", use the following command.
-```
+```shell
 ibmcloud cdb user-create example-deployment <newusername> <newpassword>
 ```
 
 Once the task is finished, you can retrieve the new user's connection strings with the `ibmcloud cdb deployment-connections` command.
-```
+```shell
 ibmcloud cdb deployment-connections example-deployment -u <newusername> [--endpoint-type <endpoint type>]
 ```
 
 Full connection information is returned by the `ibmcloud cdb deployment-connections` command with the `--all` flag. To retrieve all the connection information for a deployment named  "example-deployment", use the following command.
-```
+```shell
 ibmcloud cdb deployment-connections example-deployment -u <newusername> --all [--endpoint-type <endpoint type>]
 ```
 
@@ -69,10 +72,12 @@ If you don't specify a user, the `deployment-connections` commands return inform
 
 To use the `ibmcloud cdb` CLI commands, you must [install the {{site.data.keyword.databases-for}} plugin](/docs/databases-for-mongodb?topic=databases-cli-plugin-cdb-reference#installing-the-cloud-databases-cli-plug-in).
 {: .tip}
+
 ### From the API
+{: #cred-connection-strings-additional-users-api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint.
-```
+```shell
 curl -X POST 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users' \
 -H "Authorization: Bearer $APIKEY" \
 -H "Content-Type: application/json" \
@@ -80,11 +85,12 @@ curl -X POST 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{i
 ```
 
 To retrieve user's connection strings, use the base URL with the `/users/{userid}/connections` endpoint. You have to specify in the path which user and which type of endpoint (public or private) is used in the returned connection strings. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
-```
+```shell
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users/{userid}/connections/{endpoint_type}'
 ```
 
 ### Adding users to _Service Credentials_ 
+{: #adding-users-service-cred}
 
 Creating a new user from the CLI or API doesn't automatically populate that user's connection strings into _Service Credentials_. If you want to add them there, you can create a new credential with the existing user information.
 
@@ -94,8 +100,10 @@ Generating credentials from an existing user does not check for or create that u
 {: tip}
 
 ## Connection String Breakdown
+{: #connection-strings-breakdown}
 
 ### The `amqps` Section
+{: #amqps-section}
 
 The "amqps" section contains information that is suited for your applications that make connections to RabbitMQ.
 
@@ -111,13 +119,14 @@ Field Name|Index|Description
 `Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
 `Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
 `Certificate`|`Base64`|A base64 encoded version of the certificate.
-{: caption="Table 1. `RabbitMQ`/`uri` connection information" caption-side="top"}
+{: caption="Table 1. RabbitMQ/uri connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
 For more information on using this information to connect, see the [Connecting an External Application](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-external-app) page.
 
 ### The `stomp_ssl` Section
+{: #stomp_ssl-section}
 
 The `stomp_ssl` section contains the information that a STOMP client needs to connect to your deployment.
 
@@ -132,11 +141,12 @@ Field Name|Index|Description
 `ssl`||The TLS/SSL setting needed for a connection. Should always be `true`.
 `Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
 `Certificate`|`Base64`|A base64 encoded version of the certificate.
-{: caption="Table 2. `RabbitMQ`/`stomp_ssl` connection information" caption-side="top"}
+{: caption="Table 2. RabbitMQ/stomp_ssl connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
 ### The `mqtts` Section
+{: #mqtts-section}
 
 The `mqtts` section contains the information that an MQTT client needs to connect to your deployment.
 
@@ -151,11 +161,12 @@ Field Name|Index|Description
 `Composed`|`0...`|A URI combining Authentication, Host, and Port used to connect.
 `Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
 `Certificate`|`Base64`|A base64 encoded version of the certificate.
-{: caption="Table 2. `RabbitMQ`/`mqtts` connection information" caption-side="top"}
+{: caption="Table 2. RabbitMQ/mqtts connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
 ### The CLI and https Sections
+{: #cli-https-section}
 
 The `CLI` section contains information that is suited for the management plugin and command-line clients that make connections to RabbitMQ.
 
@@ -168,7 +179,7 @@ Field Name|Index|Description
 `Certificate`|`Base64`|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
 `Certificate`|`Name`|The allocated name for the self-signed certificate.
 `Type`||The type of package that uses this connection information; in this case `cli`. 
-{: caption="Table 3. `rabbitmqadmin`/`cli` connection information" caption-side="top"}
+{: caption="Table 3. rabbitmqadmin/cli connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
@@ -186,7 +197,7 @@ Field Name|Index|Description
 `Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
 `Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
 `Certificate`|`Base64`|A base64 encoded version of the certificate.
-{: caption="Table 4. `https`/`uri` connection information" caption-side="top"}
+{: caption="Table 4. https/uri connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 

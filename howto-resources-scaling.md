@@ -1,8 +1,8 @@
 ---
 
-Copyright:
+copyright:
   years: 2019, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-11-11"
 
 keywords: rabbitmq, databases, manual scaling, disk I/O, memory, CPU
 
@@ -24,6 +24,7 @@ subcollection: messages-for-rabbitmq
 You can manually adjust the amount of resources available to your {{site.data.keyword.messages-for-rabbitmq_full}} deployment to suit your workload and the size of your data.
 
 ## Resource Breakdown
+{: #resources-breakdown}
 
 {{site.data.keyword.messages-for-rabbitmq}} deployments have three data members in a cluster, and resources are allocated to all three members equally. For example, the minimum storage of an RabbitMQ deployment is 3072 MB, which equates to an initial size of 1024 MB per member. The minimum RAM for an RabbitMQ deployment is 3072 MB, which equates to an initial allocation of 1024 MB per member.
 
@@ -31,6 +32,7 @@ Billing is based on the _total_ amount of resources that are allocated to the se
 {: .tip}
 
 ### Disk Usage
+{: #disk-usage}
 
 Storage shows the amount of disk space that is allocated to your service. Each member gets an equal share of the allocated space. Your data is replicated across three data members in the RabbitMQ cluster, so the total amount of storage you use is approximately three times the size of your data set.
 
@@ -40,10 +42,12 @@ You cannot scale down storage. If your data set size has decreased, you can reco
 {: .tip} 
 
 ### RAM
+{: #ram}
 
 RabbitMQ throttles publishing when it detects it is using 40% of available memory to keep memory usage from growing uncontrollably during spike of activity. If you find that you regularly hit the limit, you can allocate more memory to your deployment. Adding memory to the total allocation adds memory to the members equally.
 
 ### Queue Rebalancing
+{: #queue-rebalancing}
 
 If you notice that one RabbitMQ node is occupying significantly more resources than another, it is likely that the queues are not evenly distributed between the nodes. This can happen for the following possible reasons:
 
@@ -56,10 +60,12 @@ Triggering even distribution of queues will cause load until all queues are even
 To evenly distribute the queues, you can use the [RabbitMQ Management API](https://cdn.rawgit.com/rabbitmq/rabbitmq-management/v3.8.9/priv/www/api/index.html) to run an https `POST` call `/api/rebalance/queues` against your deployment.
 
 ### Dedicated Cores
+{: #dedicated-cores}
 
 You can enable or increase the CPU allocation to the deployment. With dedicated cores, your resource group is given a single-tenant host with a reserve of CPU shares. Your deployment is then guaranteed the minimum number of CPUs you specify. The default of 0 dedicated cores uses compute resources on shared hosts. Going from a 0 to a >0 CPU count provisions and moves your deployment to new hosts, and your databases are restarted as part of that move. Going from >0 to a 0 CPU count, moves your deployment to a shared host and also restarts your databases as part of the move.
 
 ## Scaling Considerations
+{: #scaling-considerations}
 
 - Scaling your deployment up might cause your RabbitMQ to restart. If you scale RAM or CPU and your deployment needs to be moved to a host with more capacity, then the RabbitMQ is restarted as part of the move.
 
@@ -74,14 +80,16 @@ You can enable or increase the CPU allocation to the deployment. With dedicated 
 - If you find consistent trends in resource usage or would like to set up scaling when certain resource thresholds are reached, checkout enabling [autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling) on your deployment.
 
 ## Scaling via the UI
+{: #scaling-ui}
 
 A visual representation of your data members and their resource allocation is available on the _Resources_ tab of your deployment's _Manage_ page. 
 
-![The Scale Resources Panel in _Resources_](images/scaling-update.png)
+![The Scale Resources Panel in Resources](images/scaling-update.png){: caption="Figure 1. The Scale Resources Panel in _Resources_" caption-side="bottom"}
 
 Adjust the slider to increase or decrease the resources that are allocated to your service. The slider controls how much memory or disk is allocated per member. The UI currently uses a coarser-grained resolution of 8 GB increments for disk and 1 GB increments for memory. The UI shows the total allocated memory or disk for the position of the slider. Click **Scale** to trigger the scaling operations and return to the dashboard overview. 
 
 ## Resources and Scaling in the CLI 
+{: #resources-scaling-ui}
 
 [{{site.data.keyword.cloud_notm}} CLI cloud databases plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) supports viewing and scaling the resources on your deployment. Use the command `cdb deployment-groups` to see current resource information for your service, including which resource groups are adjustable. To scale any of the available resource groups, use `cdb deployment-groups-set` command. 
 
@@ -89,7 +97,7 @@ For example, the command to view the resource groups for a deployment named "exa
 `ibmcloud cdb deployment-groups example-deployment`
 
 This produces the output:
-```
+```shell
 Group   member
 Count   3
 |
@@ -121,16 +129,17 @@ The `cdb deployment-groups-set` command allows either the total RAM or total dis
 `ibmcloud cdb deployment-groups-set example-deployment member --memory 6144`
 
 ## Scaling via the API
+{: #scaling-api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. Use it with the `/groups` endpoint if you need to manage or automate scaling programmatically.
 
 To view the current and scalable resources on a deployment,
-```
+```shell
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups'
 ```
 
 To scale the memory of a deployment to 2048 MB of RAM for each memory member (for a total memory of 6144 MB).
-```
+```shell
 curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups/member' \
 -H "Authorization: Bearer $APIKEY" \
 -H "Content-Type: application/json" \

@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017,2018
-lastupdated: "2021-11-01"
+  years: 2017, 2018
+lastupdated: "2021-11-11"
 
 keywords: rabbitmq, databases
 
@@ -23,6 +23,7 @@ Your applications and drivers use connection strings to make a connection to {{s
 The connection strings can be used by any of the credentials you have created on your deployment. While you can use the admin user for all of your connections and applications, it might be better to create users specifically for your applications to connect with. Documentation on creating users is on the [Creating Users and Getting Connection Strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings) page.
 
 ## Connecting with a language's driver
+{: #connecting-lang-driver}
 
 The information a driver needs to make a connection to your deployment is in the `amqps` section of your connection strings. The table contains a breakdown for reference.
 
@@ -56,6 +57,7 @@ Here are a few of the common RabbitMQ drivers:
 * [Pika Python protocol](https://pika.readthedocs.io/en/stable/)
 
 ## Connecting with a `STOMP` client
+{: #connecting-stomp-client}
 
 The information a STOMP client needs to make a connection to your deployment is in the `stomp_ssl` section of your connection strings. The table below contains a breakdown for reference.
 
@@ -75,6 +77,7 @@ Field Name|Index|Description
 * `0...` indicates that there might be one or more of these entries in an array.
 
 ## Connecting with an `MQTT` client
+{: #connecting-mqtt-client}
 
 The information that an MQTT client uses to connect can be found in the `mqtts` section of your connection strings. The table contains a reference.
 
@@ -96,10 +99,12 @@ Field Name|Index|Description
 * `0...` indicates that there might be one or more of these entries in an array.
 
 ## TLS and self-signed certificate support
+{: #tls-cert-support}
 
 All connections to {{site.data.keyword.messages-for-rabbitmq}} are TLS 1.2 enabled, so the driver or client you use to connect needs to be able to support encryption. Your deployment also comes with a self-signed certificate so the driver can verify the server upon connection.
 
 ### Using the self-signed certificate
+{: #using-selfsigned-cert}
 
 1. Copy the certificate information from the _Endpoints_ panel or the Base64 field of the connection information.
 2. If needed, decode the Base64 string into text.
@@ -108,5 +113,6 @@ All connections to {{site.data.keyword.messages-for-rabbitmq}} are TLS 1.2 enabl
 5. (optional) If your driver or client supports it you can add the certificate its (or your system's) certificate store.
 
 ### CLI plug-in support for the self-signed certificate
+{: #cli-plugin-support-selfsigned-cert}
 
 You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the driver or client.
