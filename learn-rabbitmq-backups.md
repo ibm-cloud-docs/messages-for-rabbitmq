@@ -1,8 +1,8 @@
 ---
 
-Copyright:
+copyright:
   years: 2020
-lastupdated: "2020-09-25"
+lastupdated: "2021-11-11"
 
 keywords: messages, backups, 
 
@@ -10,7 +10,7 @@ subcollection: messages-for-rabbitmq
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -28,6 +28,7 @@ Review the [management responsibilities and terms and conditions](/docs/messages
 
 
 ## Concepts and suggestions 
+{: #concepts-suggestions}
 
 The expected operation for a {{site.data.keyword.messages-for-rabbitmq}} deployment is to keep queues short: messages are written and read in a short cycle with focus on throughput. {{site.data.keyword.messages-for-rabbitmq}} deployments are not intended as a data store like other {{site.data.keyword.cloud}} offerings. 
 
