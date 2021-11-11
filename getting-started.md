@@ -127,7 +127,7 @@ Change the `name` value. The name that you choose is displayed in your {{site.da
 Update the `services` value to match the alias of the service you created in [Create a Cloud Foundry alias for the database service](#create-alias).
 
 ## Step 8. Push the app to {{site.data.keyword.cloud_notm}}.
-{: #rabbitmq-update-manifest}
+{: #push-app}
 
 If the service is not finished provisioning from Step 1, this step fails. You can check its progress on your {{site.data.keyword.cloud_notm}} _Dashboard_.
 {: .tip}
@@ -139,7 +139,7 @@ ibmcloud cf push
 ```
 
 ## Step 9. Check that the app is connected to your {{site.data.keyword.messages-for-rabbitmq}} service
-{: #rabbitmq-update-manifest}
+{: #check-app-connection}
 
 Go to your {{site.data.keyword.messages-for-rabbitmq}} service dashboard
 

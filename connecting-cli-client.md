@@ -23,7 +23,7 @@ subcollection: messages-for-rabbitmq
 {{site.data.keyword.messages-for-rabbitmq_full}} deployments have the RabbitMQ management plug-in enabled by default, which enables access to your RabbitMQ from a web browser, API, or from the command line. 
 
 ## RabbitMQ Management UI
-{: #rabbitmq-management-plugin}
+{: #rabbitmq-management-ui}
 
 From the _Connections_ pane of your deployment's _Dashboard Overview_, there is a button to open RabbitMQ Management UI.
 
