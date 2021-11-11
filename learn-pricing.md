@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2021-11-21"
+lastupdated: "2021-11-11"
 
 keywords: rabbitmq, databases, pricing, resources, scaling
 

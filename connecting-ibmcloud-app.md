@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2021-11-11"
 
 keywords: rabbitmq, databases
 
