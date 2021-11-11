@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017,2020
-lastupdated: "2020-08-26"
+  years: 2017, 2020
+lastupdated: "2021-11-10"
 
 keywords: rabbitmq, databases
 
@@ -18,15 +18,16 @@ subcollection: messages-for-rabbitmq
 
 
 # Connecting with the RabbitMQ Management Plug-in
-{: #management-plugin}
+{: #rabbitmq-management-plugin}
 
 {{site.data.keyword.messages-for-rabbitmq_full}} deployments have the RabbitMQ management plug-in enabled by default, which enables access to your RabbitMQ from a web browser, API, or from the command line. 
 
 ## RabbitMQ Management UI
+{: #rabbitmq-management-plugin}
 
 From the _Connections_ pane of your deployment's _Dashboard Overview_, there is a button to open RabbitMQ Management UI.
 
-![Link to open RabbitMQ Management UI](images/management_ui_launch_button.png)
+![Link to open RabbitMQ Management UI](images/management_ui_launch_button.png){: caption="Figure 1. Link to open RabbitMQ Management UI" caption-side="bottom"}
 
 The URL connection information is also in the "https" section of your [connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings). The web address for your RabbitMQ deployment is in the "composed" field of your connection strings.
 
@@ -40,13 +41,14 @@ You can use any user on your deployment to access the UI. Some features are only
 General usage documentation can be found on the [RabbitMQ Management plug-in](https://www.rabbitmq.com/management.html) page.
 
 ### Connecting through private endpoints
-{: #private-endpoints}
+{: #rabbitmq-private-endpoints}
 
 {{site.data.keyword.messages-for-rabbitmq}} also offers both private and public cloud service endpoints. If you want to access the Management UI from a browser that is not on the private network, you must take these additional steps as listed in the [Connecting Through Private Endpoints](/docs/messages-for-rabbitmq?topic=cloud-databases-service-endpoints#private-endpoint-connections) documentation for {{site.data.keyword.cloud}} Databases.
 
 After you have configured your environment for private endpoint access, you can navigate to the {{site.data.keyword.messages-for-rabbitmq}} management endpoint URL from your browser. For example, `https://bfdb-4263-8ad2-c9a4beaf4591.8f7bfc8f3faa4218afd56e0.databases.appdomain.cloud:323232`
 
 ## RabbitMQ Management HTTP API
+{: #rabbitmq-management-http-api}
 
 The Management plug-in also provides an [API](https://www.rabbitmq.com/management.html#http-api) for your RabbitMQ deployment. The base endpoint the same HTTP URL as the browser URL with `/api`. For example,
 `https://1a619c43-6425-4abb-8df0-0c7b1b3a3001.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:31797/api/`
@@ -57,6 +59,7 @@ Documentation and examples are provided with your deployment at the browser URL 
 `https://1a619c43-6425-4abb-8df0-0c7b1b3a3001.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:31797/api/index.html`
 
 ## Installing `rabbitmqadmin`
+{: #rabbitmq-install-rabbitmqadmin}
 
 The `rabbitmqadmin` binary is available directly from your deployment. The download and installation instructions are found on `/cli` page of the management plug-in. For example,
 `https://1a619c43-6425-4abb-8df0-0c7b1b3a3001.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:31797/cli`
@@ -65,6 +68,7 @@ The `rabbitmqadmin` binary is available directly from your deployment. The downl
 {: .tip}
 
 ## Connecting with `rabbitmqadmin`
+{: #rabbitmq-connecting-rabbitmqadmin}
 
 The `rabbitmqadmin` connection information is in the "cli" section of your [connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings). The table contains a breakdown for reference.
 
@@ -98,6 +102,7 @@ rabbitmqadmin --username=admin --password=$PASSWORD --ssl --ssl-ca-cert-file=0b2
 Documentation and other examples for `rabbitmqadmin` are on the RabbitMQ [Management Command-Line Tool](https://www.rabbitmq.com/management-cli.html) page.
 
 ## Using the self-signed certificate
+{: #rabbitmq-selfsigned-cert}
 
 1. Copy the certificate information from the Base64 field of the connection information. 
 2. Decode the Base64 string into text and save it to a file. (You can use the Name that is provided or your own file name).
