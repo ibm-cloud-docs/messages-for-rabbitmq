@@ -94,7 +94,7 @@ Field Name|Index|Description
 `Composed`|`0...`|A URI combining Authentication, Host, and Port used to connect.
 `Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
 `Certificate`|`Base64`|A base64 encoded version of the certificate.
-{: caption="Table 2. RabbitMQ/mqtts connection information" caption-side="top"}
+{: caption="Table 3. RabbitMQ/mqtts connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
