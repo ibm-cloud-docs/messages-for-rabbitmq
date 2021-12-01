@@ -67,7 +67,7 @@ You can enable or increase the CPU allocation to the deployment. With dedicated 
 ## Scaling Considerations
 {: #scaling-considerations}
 
-- Scaling your deployment up might cause your databases to restart. If your scaled deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
+- Scaling your deployment up might cause your RabbitMQ to restart. If your scaled deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
 
 - Scaling down RAM or CPU does not trigger restarts.
 
