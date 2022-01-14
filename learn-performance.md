@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-11-11"
+lastupdated: "2022-01-14"
 
 keywords: rabbitmq, databases, memory alarms, disk alarms, monitoring, disk I/O
 
@@ -54,7 +54,7 @@ The number of Input-Output Operations per second (IOPS) is limited by the type o
 ## Quorum Queues
 {: #quorum-queues}
 
-Starting in RabbitMQ 3.8, high-availability can be managed with [quorum queues](https://www.rabbitmq.com/quorum-queues.html). Using quorum queues impacts performance; it needs more memory and disk space for the WAL that it uses to maintain state for operations. It also needs more disk I/O as it persists all data on disk. If you have implemented quorum queues, or are considering them, the RabbitMQ documentation has a good write up of their affect on both [resource use](https://www.rabbitmq.com/quorum-queues.html#resource-use) and [performance](https://www.rabbitmq.com/quorum-queues.html#performance).
+Starting in RabbitMQ 3.8, high-availability can be managed with [quorum queues](https://www.rabbitmq.com/quorum-queues.html). Using quorum queues impacts performance; it needs more memory and disk space for the WAL that it uses to maintain state for operations. It also needs more disk I/O as it persists all data on disk. If you have implemented quorum queues, or are considering them, the RabbitMQ documentation has a good write up of their effect on both [resource use](https://www.rabbitmq.com/quorum-queues.html#resource-use) and [performance](https://www.rabbitmq.com/quorum-queues.html#performance).
 
 ## RabbitMQ Alarm Monitoring
 {: #alarm-monitoring}
