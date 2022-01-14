@@ -62,6 +62,12 @@ toc:
           label: Tutorials
           topics: 
           - /cloud-databases/cloud-databases-tutorial-getting-started
+          - /cloud-databases/cloud-databases-logging
+          - reference-monitoring.md
+      - topicgroup: 
+          label: Logging and monitoring
+          topics: 
+          - /cloud-databases/cloud-databases-activity-tracker
           - /cloud-databases/cloud-databases-tutorial-k8s-app
       - topicgroup: 
           label: Enhancing security
@@ -84,9 +90,6 @@ toc:
           topics: 
           - /cloud-databases/cloud-databases-vpes
           - /cloud-databases/cloud-databases-service-endpoints
-      - reference-monitoring.md
-      - /cloud-databases/cloud-databases-activity-tracker
-      - /cloud-databases/cloud-databases-logging
       - /cloud-databases/cloud-databases-key-protect
       - /cloud-databases/cloud-databases-iam
       - /cloud-databases/cloud-databases-hpcs
