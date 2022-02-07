@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2021-11-11"
+lastupdated: "2022-02-07"
 
-keywords: rabbitmq, databases, jms, shovel, delayed, stomp
+keywords: rabbitmq, databases, jms, shovel, delayed, stomp, mqtt
 
 subcollection: messages-for-rabbitmq
 
@@ -61,3 +61,8 @@ The RabbitMQ JMS Topic Exchange plug-in is enabled by default for {{site.data.ke
 The RabbitMQ JMS Client is required to communicate with the plug-in. Review the [JMS Client documentation page](https://www.rabbitmq.com/jms-client.html) that is provided by RabbitMQ for more detailed information on installation and configuration, along with examples.
 
 More detailed information about the JMS plug-in can also be found in the RabbitMQ JMS Topic Exchange plug-in [GitHub repo](https://github.com/rabbitmq/rabbitmq-jms-topic-exchange). 
+
+## MQTT Plug-in
+{: #mqtt-plugin}
+
+The MQTT plug-in is enabled by default for {{site.data.keyword.messages-for-rabbitmq}} deployments. Information on using the MQTT plug-in is available on the [MQTT Plugin](https://www.rabbitmq.com/mqtt.html) page. 
