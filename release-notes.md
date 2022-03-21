@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2022-03-15"
+lastupdated: "2022-03-21"
 
-keywords: messages-for-rabbitmq-group release notes
+keywords: messages-for-rabbitmq release notes
 
 subcollection: messages-for-rabbitmq
 
