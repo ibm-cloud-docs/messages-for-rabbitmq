@@ -5,7 +5,7 @@
 toc:
   properties:
     subcollection: messages-for-rabbitmq
-    service-name: messages-for-rabbitmq-group
+    service-name: messages-for-rabbitmq
     version: 2
     category: database
     audience: service
