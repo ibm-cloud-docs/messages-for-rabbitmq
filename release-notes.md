@@ -46,4 +46,3 @@ General Availability of {{site.data.keyword.messages-for-rabbitmq_full}}
 
 IBM Cloud Messages for RabbitMQ 3.8 is Now Preferred
 :  RabbitMQ 3.8 Preferred status. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-messages-for-rabbitmq-38-is-now-preferred).
-
