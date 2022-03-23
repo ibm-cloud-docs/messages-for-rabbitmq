@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-23"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -32,6 +32,13 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 
 General Availability of {{site.data.keyword.messages-for-rabbitmq_full}}
 :  {{site.data.keyword.messages-for-rabbitmq_full}} added to the [IBM Cloud Databases](https://www.ibm.com/cloud/databases) family. See blog post announcement [here](https://www.ibm.com/cloud/blog/ibm-cloud-databases-for-etcd-elasticsearch-and-messages-for-rabbitmq-are-now-generally-available).
+
+## 13 April 2020
+{: #databases-for-rabbitmq-13apr2020}
+{: release-note}
+
+{{site.data.keyword.messages-for-rabbitmq_full}} autoscaling
+:  We are excited to announce that autoscaling of your deployments based on disk capacity and disk I/O utilization is now available for {{site.data.keyword.messages-for-rabbitmq_full}} via the UI, API, and CLI. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-databases-portfolio-introduces-autoscaling).
 
 ## 21 July 2020
 {: #databases-for-rabbitmq-21jul2020}
