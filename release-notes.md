@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-24"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -25,6 +25,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 25 January 2022
+{: #databases-for-rabbitmq-25jan2022}
+{: release-note}
+
+{{site.data.keyword.messages-for-rabbitmq_full}} 3.8 End of Life in July, 2022
+:  On July 12, 2022, Messages for RabbitMQ version 3.8 reaches its end of life. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022).
 
 ## 21 July 2020
 {: #databases-for-rabbitmq-21jul2020}
