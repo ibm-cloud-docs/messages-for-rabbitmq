@@ -33,6 +33,13 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {{site.data.keyword.messages-for-rabbitmq_full}} 3.8 End of Life in July, 2022
 :  On July 12, 2022, Messages for RabbitMQ version 3.8 reaches its end of life. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022).
 
+## 30 June 2021
+{: #messages-for-rabbitmq-30jun2021}
+{: release-note}
+
+General Availability of {{site.data.keyword.messages-for-rabbitmq_full}} support for IBM Cloud Databases enabled by IBM Cloud Satellite.
+:  A distributed cloud provides consistent security and services across environments, centralized workload visibility, reduced latency, easier compliance and higher application development velocity. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/deploy-managed-cloud-native-databases-anywhere-with-ibm-cloud-satellite).
+
 ## 21 July 2020
 {: #messages-for-rabbitmq-21jul2020}
 {: release-note}
