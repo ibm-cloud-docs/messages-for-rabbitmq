@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020
-lastupdated: "2021-11-11"
+  years: 2020, 2022
+lastupdated: "2022-04-01"
 
 keyowrds: rabbitmq, upgrading, major versions, changing versions
 
@@ -64,6 +64,6 @@ curl -X POST \
     "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
     "resource_plan_id": "messages-for-rabbitmq-standard",
     "backup_id": "crn:v1:bluemix:public:messages-for-rabbitmq:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:06392e97-df90-46d8-98e8-cb67e9e0a8e6",
-    "version":3.8
+    "version":3.9
   }'
 ```
