@@ -64,7 +64,7 @@ To use the plugin, declare an exchange with the type `x-delayed-type`. To delay 
 The [RabbitMQ STOMP plugin](https://www.rabbitmq.com/stomp.html), `rabbitmq_stomp`, supports sending [STOMP-formatted](http://stomp.github.io/) messages through RabbitMQ. The plugin enables a port to handle STOMP traffic on your deployment, and it is TLS/SSL secured. The connection information for STOMP clients is in the `stomp_ssl` section of your deployment's [connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings#the-stomp_ssl-section).
 
 ## RabbitMQ Management plugin
-{: #rabbitmq-management-plugin}
+{: #rabbitmq-management-plugin-info}
 
 The RabbitMQ Management plugin, `rabbitmq_management`, provides access to your deployment through a web browser, `rabbitmqadmin`, and through the RabbitMQ API. For more information on using this information, see the [Connecting with the RabbitMQ Management Plugin](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-management-plugin) page. 
 
