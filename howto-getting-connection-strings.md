@@ -200,3 +200,5 @@ Field Name|Index|Description
 {: caption="Table 4. https/uri connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
+
+For more information on using this information, see the [Connecting with the RabbitMQ Management Plugin](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-management-plugin) page.

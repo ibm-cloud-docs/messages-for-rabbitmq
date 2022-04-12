@@ -66,7 +66,7 @@ The [RabbitMQ STOMP plugin](https://www.rabbitmq.com/stomp.html), `rabbitmq_stom
 ## RabbitMQ Management plugin
 {: #rabbitmq-management-plugin}
 
-The RabbitMQ Management plugin, `rabbitmq_management`, provides access to your deployment through a web browser, `rabbitmqadmin`, and through the RabbitMQ API. 
+The RabbitMQ Management plugin, `rabbitmq_management`, provides access to your deployment through a web browser, `rabbitmqadmin`, and through the RabbitMQ API. For more information on using this information, see the [Connecting with the RabbitMQ Management Plugin](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-management-plugin) page. 
 
 ## JMS plugin
 {: #jms-plugin}
