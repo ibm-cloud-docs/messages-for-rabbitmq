@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2021-11-11"
+  years: 2018, 2022
+lastupdated: "2022-06-07"
 
 keywords: rabbitmq, databases
 
@@ -16,6 +16,8 @@ subcollection: messages-for-rabbitmq
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:deprecated: .deprecated}
+
 
 # Connecting an {{site.data.keyword.cloud_notm}} application
 {: #ibmcloud-app}
@@ -74,6 +76,9 @@ The sample app in the [Getting Started](/docs/messages-for-rabbitmq?topic=messag
 
 ### Creating a Cloud Foundry alias
 {: #creating-cloudfoundry-alias}
+
+{{site.data.keyword.ibmcf_full}} is deprecated. As of 30 November 2022 new {{site.data.keyword.ibmcf_full}} applications cannot be created and only existing users will be able to deploy applications. End-of-support happens on 1 June 2023. Any instances that still exist on 1 June 2023 will be deleted. For more information, see [Deprecation of IBM Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
+{: deprecated}
 
 Log in to the {{site.data.keyword.cloud_notm}} CLI and use the command:
 
