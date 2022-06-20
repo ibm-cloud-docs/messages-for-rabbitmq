@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-11-11"
+  years: 2017, 2022
+lastupdated: "2022-06-20"
 
-keywords: rabbitmq, databases
+keywords: rabbitmq, rabbitmq admin password
 
 subcollection: messages-for-rabbitmq
 
@@ -21,14 +21,14 @@ subcollection: messages-for-rabbitmq
 
 The {{site.data.keyword.messages-for-rabbitmq_full}} service is provisioned with an admin user.
 
-You have to set the admin password before you can use it to connect. To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select _Manage_ from the service dashboard to open the management panel for your service. Open the _Settings_ tab, and use the _Change Database Admin Password_ panel to set a new admin password.
+You must set the admin password before you can use it to connect. To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select _Manage_ from the service dashboard to open the management panel for your service. Open the _Settings_ tab, and use the _Change Database Admin Password_ panel to set a new admin password.
 
 ![The Change Database Admin Password Panel in Settings](images/settings-admin-password.png){: caption="Figure 1. The Change Database Admin Password Panel in _Settings_" caption-side="bottom"}
 
-## Setting the admin password via the command line
+## Setting the admin password by using the command line
 {: #setting-password-cli}
 
-Use the `cdb user-password` command from the [{{site.data.keyword.databases-for}} CLI Plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) to set the admin password with the command line.
+Use the `cdb user-password` command from the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) to set the admin password with the command line.
 
 For example, to set the admin password for a deployment named "example-deployment", use the following command.
 ```shell
