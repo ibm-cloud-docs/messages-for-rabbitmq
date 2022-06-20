@@ -50,7 +50,7 @@ You cannot connect an application to the service until provisioning is complete.
 
 Clone the Hello World app to your local environment from your terminal by using the following command:
 
-```shell
+```sh
 git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples.git
 ```
 
@@ -63,7 +63,7 @@ From your terminal, change the directory to where the sample app is located.
 
 Install the dependencies listed in the `package.json` file.
   
-```shell
+```sh
 npm install
 ```
 
@@ -77,7 +77,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
 
 Connect to {{site.data.keyword.cloud_notm}} in the command-line tool and follow the prompts to log in.
 
-```shell
+```sh
 ibmcloud login
 ```
 
@@ -85,7 +85,7 @@ If you have a federated user ID, use the `ibmcloud login --sso` command to log i
 
 Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} org and space.
 
-```shell
+```sh
 ibmcloud target --cf
 ```
 
@@ -109,7 +109,7 @@ The alias name can be the same as the database service instance name. For exampl
 
 In an editor, open a new file and add the following text:
 
-```shell
+```sh
 ---
 applications:
 - name:    example-helloworld-nodejs
@@ -134,7 +134,7 @@ If the service is not finished provisioning from Step 1, this step fails. You ca
 
 When you push the app, it is automatically bound to the service specified in the manifest file.
 
-```shell
+```sh
 ibmcloud cf push
 ```
 
@@ -163,7 +163,7 @@ Instead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it 
 - Your new credentials are now listed. Click **View credentials** in the corresponding row of the table to view the credentials, and click the **Copy** icon to copy your credentials.
 - In your editor of choice, create a new file with the following, inserting your credentials as shown:
 
-```shell
+```sh
 {
   "services": {
     "messages-for-rabbitmq": [
@@ -180,7 +180,7 @@ To avoid accidentally exposing your credentials when you push an application to 
 {: .tip}
 
 Now start the local server.
-```shell
+```sh
 npm start
 ```
 
