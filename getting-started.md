@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-11-10"
+  years: 2018, 2022
+lastupdated: "2021-06-20"
 
-subcollection: messages-for-rabbitmq
+subcollection: messages-for-rabbitmq, rabbitmq getting started
 
 ---
 
@@ -18,14 +18,14 @@ subcollection: messages-for-rabbitmq
 # Getting Started Tutorial
 {: #getting-started}
 
-This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples/tree/node/rabbitmq) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.messages-for-rabbitmq_full}} service. The application creates, reads from, and writes to a database that uses data supplied through the app's web interface.
+This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples/tree/node/rabbitmq) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.messages-for-rabbitmq_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
 {: shortdesc}
 
-If you have already created your deployment and just want to connect to your RabbitMQ, you can skip to [getting your connection strings](https://cloud.ibm.com/docs/messages-for-rabbitmq/howto-getting-connection-strings.html) and [connecting with the RabbitMQ Management Plugin](https://cloud.ibm.com/docs/messages-for-rabbitmq/connecting-cli-client.html).
+If you have already created your deployment and want to connect to your RabbitMQ, you can skip to [getting your connection strings](https://cloud.ibm.com/docs/messages-for-rabbitmq/howto-getting-connection-strings.html) and [connecting with the RabbitMQ Management plug-in](https://cloud.ibm.com/docs/messages-for-rabbitmq/connecting-cli-client.html).
 {: .tip}
 
 ## Before you begin
-{: #rabbitmq-before-begin}
+{: #before-you-begin}
 
 Make sure that you have an [{{site.data.keyword.cloud_notm}} account][ibm_cloud_signup_url]{: .external}.
 
@@ -34,7 +34,7 @@ You also need to install [Node.js](https://nodejs.org/) and [Git](https://git-sc
 Review the [`Getting to production`](/docs/cloud-databases?topic=cloud-databases-best-practices) documentation for general guidance on setting up a basic {{site.data.keyword.messages-for-rabbitmq_full}} deployment.
 
 ## Step 1. Create a {{site.data.keyword.messages-for-rabbitmq}} service instance
-{: #rabbitmq-create-service}
+{: #create-service-instance}
 
 You can create a {{site.data.keyword.messages-for-rabbitmq}} service from the [{{site.data.keyword.messages-for-rabbitmq}} page](https://cloud.ibm.com/catalog/messages-for-rabbitmq/) in the {{site.data.keyword.cloud_notm}} catalog.
 
@@ -42,20 +42,20 @@ Choose a service name, region, organization and space to provision the service i
 
 Click **Create** to provision your service. Provisioning can take a while to complete. You are taken back to your {{site.data.keyword.cloud_notm}} _Dashboard_ while the service is provisioning. 
 
-You cannot connect an application to the service until provisioning has completed.
+You cannot connect an application to the service until provisioning is complete.
 {: .tip}
 
 ## Step 2. Clone the Hello World sample app from GitHub
-{: #rabbitmq-clone-sample-app}
+{: #clone-sample-app}
 
 Clone the Hello World app to your local environment from your terminal by using the following command:
 
-```shell
+```sh
 git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples.git
 ```
 
 ## Step 3. Install the app dependencies
-{: #rabbitmq-install-dependencies}
+{: #install-app-dependencies}
 
 Use npm to install dependencies.
 
@@ -63,21 +63,21 @@ From your terminal, change the directory to where the sample app is located.
 
 Install the dependencies listed in the `package.json` file.
   
-```shell
+```sh
 npm install
 ```
 
 ## Step 4. Download and install the {{site.data.keyword.cloud_notm}} CLI tool
-{: #rabbitmq-install-cli}
+{: #install-cli-tool}
 
 The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli/reference/bluemix_cli/download_cli.html).
 
 ## Step 5. Connect to {{site.data.keyword.cloud_notm}}
-{: #rabbitmq-connect-cloud}
+{: #connect-cloud}
 
-Connect to {{site.data.keyword.cloud_notm}} in the command line tool and follow the prompts to log in.
+Connect to {{site.data.keyword.cloud_notm}} in the command-line tool and follow the prompts to log in.
 
-```shell
+```sh
 ibmcloud login
 ```
 
@@ -85,14 +85,14 @@ If you have a federated user ID, use the `ibmcloud login --sso` command to log i
 
 Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} org and space.
 
-```shell
+```sh
 ibmcloud target --cf
 ```
 
 By using the same values that you used when creating the service, choose from the provided options. 
 
 ## Step 6. Create a Cloud Foundry alias for the database service.
-{: #rabbitmq-create-alias}
+{: #create-cloudfoundry-alias}
 
 Make the database service discoverable by Cloud Foundry applications by giving it a Cloud Foundry alias. 
 
@@ -103,13 +103,13 @@ The alias name can be the same as the database service instance name. For exampl
 `ibmcloud resource service-alias-create example-rabbitmq --instance-name example-rabbitmq`
 
 ## Step 7. Update the app's manifest file
-{: #rabbitmq-update-manifest}
+{: #update-app-manifest}
 
 {{site.data.keyword.cloud_notm}} uses a manifest file - `manifest.yml` to associate an application with a service. Follow these steps to create your manifest file.
 
 In an editor, open a new file and add the following text:
 
-```shell
+```sh
 ---
 applications:
 - name:    example-helloworld-nodejs
@@ -127,19 +127,19 @@ Change the `name` value. The name that you choose is displayed in your {{site.da
 Update the `services` value to match the alias of the service you created in [Create a Cloud Foundry alias for the database service](#create-alias).
 
 ## Step 8. Push the app to {{site.data.keyword.cloud_notm}}.
-{: #rabbitmq-update-manifest}
+{: #push-app}
 
 If the service is not finished provisioning from Step 1, this step fails. You can check its progress on your {{site.data.keyword.cloud_notm}} _Dashboard_.
 {: .tip}
 
 When you push the app, it is automatically bound to the service specified in the manifest file.
 
-```shell
+```sh
 ibmcloud cf push
 ```
 
 ## Step 9. Check that the app is connected to your {{site.data.keyword.messages-for-rabbitmq}} service
-{: #rabbitmq-update-manifest}
+{: #check-app-connection}
 
 Go to your {{site.data.keyword.messages-for-rabbitmq}} service dashboard
 
@@ -148,12 +148,12 @@ Select _Connections_ from the dashboard menu. Your application is listed under _
 If your application is not listed, repeat Steps 7 and 8, making sure that you entered the correct details in [manifest.yml](#update-manifest).
 
 ## Step 10. Use the app
-{: #rabbitmq-use-app}
+{: #use-app}
 
 Now, when you visit `<route>.{region}.cf.appdomain.cloud/` you can see the contents of your {{site.data.keyword.messages-for-rabbitmq}} collection. As you add words and their definitions, they are added to the database and displayed. If you stop and restart the app, you see any words and definitions that were already added are now listed.
 
 ## Running the app locally
-{: #rabbitmq-run-app-local}
+{: #run-app-local}
 
 Instead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it locally to test the connection to your {{site.data.keyword.messages-for-rabbitmq}} service instance. To connect to the service, you need to create a set of service credentials.
 
@@ -163,7 +163,7 @@ Instead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it 
 - Your new credentials are now listed. Click **View credentials** in the corresponding row of the table to view the credentials, and click the **Copy** icon to copy your credentials.
 - In your editor of choice, create a new file with the following, inserting your credentials as shown:
 
-```shell
+```sh
 {
   "services": {
     "messages-for-rabbitmq": [
@@ -180,14 +180,14 @@ To avoid accidentally exposing your credentials when you push an application to 
 {: .tip}
 
 Now start the local server.
-```shell
+```sh
 npm start
 ```
 
 The app is now running at `http://localhost:8080`. You can add words and definitions to your {{site.data.keyword.messages-for-rabbitmq}} database. When you stop and restart the app, any words you added are displayed when you refresh the page.
 
 ## Next steps
-{: #rabbitmq-next-steps}
+{: #next-steps}
 
 To understand more about how the [sample app](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples/tree/node/rabbitmq) works, you can read the application's readme file, or the code comments in `server.js`, which give some information about the app's functions.
 
