@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-11-11"
+  years: 2018, 2022
+lastupdated: "2022-06-20"
 
-keywords: deployment, crn, task, gui, api endpoint
+keywords: deployment, crn, task, gui, api endpoint, dashboard
 
 subcollection: messages-for-rabbitmq
 
@@ -20,7 +20,7 @@ subcollection: messages-for-rabbitmq
 # The Dashboard Overview
 {: #dashboard-overview}
 
-The _Overview_ page shows you information about your {{site.data.keyword.messages-for-rabbitmq_full}} deployment. The overview includes essential identifying information.
+The _Overview_ page shows information about your {{site.data.keyword.messages-for-rabbitmq_full}} deployment. The overview includes essential identifying information.
 
 ## Overview
 {: #overview}
@@ -33,17 +33,17 @@ The type of database that is offered by the service, and the database version th
 ### ID
 {: #id}
 
-The ID is a [CRN (Cloud Resource Name)](/docs/account?topic=account-crn) which uniquely identifies the database deployment. The CRN is used to refer to the database in the API and can be used with the CLI.The _Overview_ pane shows details of your service.
+The ID is a [CRN (Cloud Resource Name)](/docs/account?topic=account-crn) which uniquely identifies the database deployment. The CRN is used to refer to the database in the API and can be used with the CLI. The _Overview_ pane shows details of your service.
 
 ### Recent Tasks
 {: #recent-tasks}
 
-Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recent completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24-48 hours. Unsuccessful tasks can show for 7-8 days. Tasks can also be retrieved from the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-running-tasks-on-a-deployment) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [{{site.data.keyword.at_full}} integration](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker).
+Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recently completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24 - 48 hours. Unsuccessful tasks can show for 7 - 8 days. Tasks can also be retrieved from the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-running-tasks-on-a-deployment) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [{{site.data.keyword.at_full}} integration](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker).
 
 ### Endpoints
 {: #endpoints}
 
-The _Endpoints_ pane within the _Overview_ pane contains connection strings for your deployment. Each tab contains connection information tailored to the type of connection or the protocol that uses it. Basic information includes things like _hostname_ and _port_, as well as the TLS self-signed certificate, TLS/SSL parameters, and the default database of your deployment.
+The _Endpoints_ pane within the _Overview_ pane contains connection strings for your deployment. Each tab contains connection information that is tailored to the type of connection or the protocol that uses it. Basic information includes things like _hostname_ and _port_, as well as the TLS self-signed certificate, TLS/SSL parameters, and the default database of your deployment.
 
 Reference tables for the different connection types are available on the [Getting Credentials and Connection Strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings) page.
 
@@ -66,7 +66,7 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 ## Observability
 {: #observability}
 
-The _Observability_ tab provides access to the IBM Cloud monitoring, logging, and event tracking integrations available for your deployment. 
+The _Observability_ tab provides access to the IBM Cloud Monitoring, logging, and event tracking integrations available for your deployment. 
 - [{{site.data.keyword.at_full}}](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker)
 - [{{site.data.keyword.la_full}}](/docs/messages-for-rabbitmq?topic=cloud-databases-logging)
 - [{{site.data.keyword.monitoringfull}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-monitoring)
@@ -87,7 +87,7 @@ You can generate a new set of credentials for cases where you want to manually [
 ## Connections
 {: #connections}
 
-Shows connected resources. You can use the `Create connection` button to to bind this service to another resource.
+Shows connected resources. You can use the `Create connection` button to bind this service to another resource.
 
 ## View docs
 {: #view-docs}
