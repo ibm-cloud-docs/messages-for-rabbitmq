@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2021-11-11"
+  years: 2020, 2022
+lastupdated: "2022-06-20"
 
-keywords: messages, backups, 
+keywords: messages, backups, rabbitmq backups, messages for rabbitmq backups
 
 subcollection: messages-for-rabbitmq
 
