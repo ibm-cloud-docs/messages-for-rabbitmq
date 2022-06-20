@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2017, 2018
-lastupdated: "2021-11-11"
+  years: 2017, 2022
+lastupdated: "2022-06-20"
 
-keywords: rabbitmq, databases
+keywords: rabbitmq, rabbitmq connecting, connecting to rabbitmq
 
 subcollection: messages-for-rabbitmq
 
