@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-11-30"
+  years: 2019, 2022
+lastupdated: "2022-06-20"
 
-keywords: rabbitmq, databases, manual scaling, disk I/O, memory, CPU
+keywords: rabbitmq, databases, manual scaling, disk I/O, memory, CPU, rabbitmq scaling
 
 subcollection: messages-for-rabbitmq
 
@@ -26,7 +26,7 @@ You can manually adjust the amount of resources available to your {{site.data.ke
 ## Resource Breakdown
 {: #resources-breakdown}
 
-{{site.data.keyword.messages-for-rabbitmq}} deployments have three data members in a cluster, and resources are allocated to all three members equally. For example, the minimum storage of an RabbitMQ deployment is 3072 MB, which equates to an initial size of 1024 MB per member. The minimum RAM for an RabbitMQ deployment is 3072 MB, which equates to an initial allocation of 1024 MB per member.
+{{site.data.keyword.messages-for-rabbitmq}} deployments have three data members in a cluster, and resources are allocated to all three members equally. For example, the minimum storage of a RabbitMQ deployment is 3072 MB, which equates to an initial size of 1024 MB per member. The minimum RAM for a RabbitMQ deployment is 3072 MB, which equates to an initial allocation of 1024 MB per member.
 
 Billing is based on the _total_ amount of resources that are allocated to the service.
 {: .tip}
@@ -36,7 +36,7 @@ Billing is based on the _total_ amount of resources that are allocated to the se
 
 Storage shows the amount of disk space that is allocated to your service. Each member gets an equal share of the allocated space. Your data is replicated across three data members in the RabbitMQ cluster, so the total amount of storage you use is approximately three times the size of your data set.
 
-Disk allocation affects the performance of the disk, with larger disks having higher performance. Baseline Input-Output Operations per second (IOPS) performance for disk is 10 IOPS for each GB. Hitting IOPS limits consistently can cause throughput and message processing delays, which can be alleviated by scaling up disk space.
+Disk allocation affects the performance of the disk, with larger disks having higher performance. Baseline input/output operations per second (IOPS) performance for disk is 10 IOPS for each GB. Reaching IOPS limits consistently causes throughput and message processing delays, which can be alleviated by scaling up disk space.
 
 You cannot scale down storage. If your data set size has decreased, you can recover space by backing up and restoring to a new deployment.
 {: .tip} 
@@ -44,7 +44,7 @@ You cannot scale down storage. If your data set size has decreased, you can reco
 ### RAM
 {: #ram}
 
-RabbitMQ throttles publishing when it detects it is using 40% of available memory to keep memory usage from growing uncontrollably during spike of activity. If you find that you regularly hit the limit, you can allocate more memory to your deployment. Adding memory to the total allocation adds memory to the members equally.
+RabbitMQ throttles publishing when it detects it is using 40% of available memory to keep memory usage from growing uncontrollably during spike of activity. If you find that you regularly reach the limit, you can allocate more memory to your deployment. Adding memory to the total allocation adds memory to the members equally.
 
 ### Queue Rebalancing
 {: #queue-rebalancing}
@@ -54,7 +54,7 @@ If you notice that one RabbitMQ node is occupying significantly more resources t
 - You are connected to only one of the VIPs and all the queues are created on a single node.
 - There was a rolling restart, which moves the queues to the node that was restarted first.
 
-Triggering even distribution of queues will cause load until all queues are evenly distributed so this action should not be performed while the deployment is under pressure or outscaled. 
+Triggering even distribution of queues causes load until all queues are evenly distributed so this action should not be performed while the deployment is under pressure or outscaled. 
 {: .note}
 
 To evenly distribute the queues, you can use the [RabbitMQ Management API](https://cdn.rawgit.com/rabbitmq/rabbitmq-management/v3.8.9/priv/www/api/index.html) to run an https `POST` call `/api/rebalance/queues` against your deployment.
@@ -71,13 +71,13 @@ You can enable or increase the CPU allocation to the deployment. With dedicated 
 
 - Scaling down RAM or CPU does not trigger restarts.
 
-- Disk can not be scaled down.
+- Disk cannot be scaled down.
 
 - A few scaling operations can be more long running than others. Enabling dedicated cores moves your deployment to its own host and can take longer than just adding more cores. Similarly, drastically increasing CPU, RAM, or Disk can take longer than smaller increases to account for provisioning more underlying hardware resources.
 
 - Scaling operations are logged in [{{site.data.keyword.at_full}}](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker).
 
-- If you find consistent trends in resource usage or would like to set up scaling when certain resource thresholds are reached, checkout enabling [autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling) on your deployment.
+- If you find consistent trends in resource usage or would like to set up scaling when certain resource thresholds are reached, see [Autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling).
 
 ## Scaling via the UI
 {: #scaling-ui}
@@ -97,7 +97,7 @@ For example, the command to view the resource groups for a deployment named "exa
 `ibmcloud cdb deployment-groups example-deployment`
 
 This produces the output:
-```shell
+```sh
 Group   member
 Count   3
 |
@@ -128,18 +128,18 @@ The deployment has three members, with 3072 MB of RAM disk allocated in total. T
 The `cdb deployment-groups-set` command allows either the total RAM or total disk allocation to be set, in MB. For example, to scale the memory of the "example-deployment" to 2048 MB of RAM for each memory member (for a total memory of 6144 MB), you use the command:  
 `ibmcloud cdb deployment-groups-set example-deployment member --memory 6144`
 
-## Scaling via the API
+## Scaling in the API
 {: #scaling-api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. Use it with the `/groups` endpoint if you need to manage or automate scaling programmatically.
 
 To view the current and scalable resources on a deployment,
-```shell
+```sh
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups'
 ```
 
 To scale the memory of a deployment to 2048 MB of RAM for each memory member (for a total memory of 6144 MB).
-```shell
+```sh
 curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups/member' \
 -H "Authorization: Bearer $APIKEY" \
 -H "Content-Type: application/json" \
