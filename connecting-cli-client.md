@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2017, 2020
-lastupdated: "2022-04-13"
+  years: 2017, 2022
+lastupdated: "2022-06-20"
 
-keywords: rabbitmq, databases
+keywords: rabbitmq, rabbitmq management
 
 subcollection: messages-for-rabbitmq
 
@@ -17,10 +17,10 @@ subcollection: messages-for-rabbitmq
 {:tip: .tip}
 
 
-# Connecting with the RabbitMQ Management Plugin
+# Connecting with the RabbitMQ Management plug-in
 {: #rabbitmq-management-plugin}
 
-{{site.data.keyword.messages-for-rabbitmq_full}} deployments have the RabbitMQ management plugin enabled by default, which enables access to your RabbitMQ from a web browser, API, or from the command line. 
+{{site.data.keyword.messages-for-rabbitmq_full}} deployments have the RabbitMQ management plug-in enabled by default, which enables access to your RabbitMQ from a web browser, API, or from the command line. 
 
 ## RabbitMQ Management UI
 {: #rabbitmq-management-ui}
@@ -38,7 +38,7 @@ You are next asked to enter your username and password. After you have signed in
 You can use any user on your deployment to access the UI. Some features are only available to the admin user provisioned with your deployment.
 {: .tip} 
 
-General usage documentation can be found on the [RabbitMQ Management plugin](https://www.rabbitmq.com/management.html) page.
+General usage documentation can be found on the [RabbitMQ Management plug-in](https://www.rabbitmq.com/management.html) page.
 
 ### Connecting through private endpoints
 {: #rabbitmq-private-endpoints}
@@ -50,10 +50,10 @@ After you have configured your environment for private endpoint access, you can 
 ## RabbitMQ Management HTTP API
 {: #rabbitmq-management-http-api}
 
-The Management plugin also provides an [API](https://www.rabbitmq.com/management.html#http-api) for your RabbitMQ deployment. The base endpoint the same HTTP URL as the browser URL with `/api`. For example,
+The Management plug-in also provides an [API](https://www.rabbitmq.com/management.html#http-api) for your RabbitMQ deployment. The base endpoint the same HTTP URL as the browser URL with `/api`. For example,
 `https://1a619c43-6425-4abb-8df0-0c7b1b3a3001.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:31797/api/`
 
-The API uses `application/json` data and requires basic authentication. You can use any user that you created on your deployment to access the UI. However, some features might only be available to the admin user.
+The API uses `application/json` data and requires basic authentication. You can use any user that you created on your deployment to access the UI. However, some features might be available only to the admin user.
 
 Documentation and examples are provided with your deployment at the browser URL with `/api/index.html`. For example,
 `https://1a619c43-6425-4abb-8df0-0c7b1b3a3001.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:31797/api/index.html`
@@ -61,7 +61,7 @@ Documentation and examples are provided with your deployment at the browser URL 
 ## Installing `rabbitmqadmin`
 {: #rabbitmq-install-rabbitmqadmin}
 
-The `rabbitmqadmin` binary is available directly from your deployment. The download and installation instructions are found on `/cli` page of the management plugin. For example,
+The `rabbitmqadmin` binary is available directly from your deployment. The download and installation instructions are found on `/cli` page of the management plug-in. For example,
 `https://1a619c43-6425-4abb-8df0-0c7b1b3a3001.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:31797/cli`
 
 `rabbitmqadmin` is also available with a full, local installation of the RabbitMQ package. However, if the version of the package you download doesn't match the deployment's RabbitMQ version, it might not connect.
@@ -108,4 +108,4 @@ Documentation and other examples for `rabbitmqadmin` are on the RabbitMQ [Manage
 2. Decode the Base64 string into text and save it to a file. (You can use the Name that is provided or your own file name).
 3. Provide the path to the `--ssl-ca-cert-file` parameter.
 
-You can also display the decoded certificate for your deployment with the CLI plugin with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the `--ssl-ca-cert-file` parameter.
+You can also display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the `--ssl-ca-cert-file` parameter.
