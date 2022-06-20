@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-11-10"
+  years: 2018, 2022
+lastupdated: "2021-06-20"
 
-subcollection: messages-for-rabbitmq
+subcollection: messages-for-rabbitmq, rabbitmq getting started
 
 ---
 
@@ -18,10 +18,10 @@ subcollection: messages-for-rabbitmq
 # Getting Started Tutorial
 {: #getting-started}
 
-This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples/tree/node/rabbitmq) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.messages-for-rabbitmq_full}} service. The application creates, reads from, and writes to a database that uses data supplied through the app's web interface.
+This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples/tree/node/rabbitmq) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.messages-for-rabbitmq_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
 {: shortdesc}
 
-If you have already created your deployment and just want to connect to your RabbitMQ, you can skip to [getting your connection strings](https://cloud.ibm.com/docs/messages-for-rabbitmq/howto-getting-connection-strings.html) and [connecting with the RabbitMQ Management Plugin](https://cloud.ibm.com/docs/messages-for-rabbitmq/connecting-cli-client.html).
+If you have already created your deployment and want to connect to your RabbitMQ, you can skip to [getting your connection strings](https://cloud.ibm.com/docs/messages-for-rabbitmq/howto-getting-connection-strings.html) and [connecting with the RabbitMQ Management plug-in](https://cloud.ibm.com/docs/messages-for-rabbitmq/connecting-cli-client.html).
 {: .tip}
 
 ## Before you begin
@@ -42,7 +42,7 @@ Choose a service name, region, organization and space to provision the service i
 
 Click **Create** to provision your service. Provisioning can take a while to complete. You are taken back to your {{site.data.keyword.cloud_notm}} _Dashboard_ while the service is provisioning. 
 
-You cannot connect an application to the service until provisioning has completed.
+You cannot connect an application to the service until provisioning is complete.
 {: .tip}
 
 ## Step 2. Clone the Hello World sample app from GitHub
@@ -75,7 +75,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
 ## Step 5. Connect to {{site.data.keyword.cloud_notm}}
 {: #connect-cloud}
 
-Connect to {{site.data.keyword.cloud_notm}} in the command line tool and follow the prompts to log in.
+Connect to {{site.data.keyword.cloud_notm}} in the command-line tool and follow the prompts to log in.
 
 ```shell
 ibmcloud login
