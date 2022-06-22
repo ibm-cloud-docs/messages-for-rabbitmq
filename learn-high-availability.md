@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2022-01-18"
+  years: 2018, 2022
+lastupdated: "2022-06-22"
 
-keywords: rabbitmq, databases, ha
+keywords: rabbitmq, databases, ha, rabbitmq ha, rabbitmq high availability
 
 subcollection: messages-for-rabbitmq
 
