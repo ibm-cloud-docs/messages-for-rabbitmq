@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-11"
+  years: 2020, 2022
+lastupdated: "2022-06-23"
 
-keywords: rabbitmq, monitoring, metrics, iops, disk usage, memory usage
+keywords: rabbitmq, monitoring, metrics, iops, disk usage, memory usage, rabbitmq monitoring
 
 subcollection: messages-for-rabbitmq
 
@@ -20,7 +20,7 @@ subcollection: messages-for-rabbitmq
 # Monitoring Integration
 {: #monitoring}
 
-Monitoring for {{site.data.keyword.messages-for-rabbitmq_full}} deployments is provided through integration with the {{site.data.keyword.monitoringfull}} service. Your deployments forward selected information so you can monitor deployment health and resource usage. To see your {{site.data.keyword.messages-for-rabbitmq}} dashboards in {{site.data.keyword.monitoringfull_notm}}, you have to [Enable Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling) in the same region as your deployment. If you have deployments in more than one region, you have to provision {{site.data.keyword.monitoringfull_notm}} and enable platform metrics in each region.
+Monitoring for {{site.data.keyword.messages-for-rabbitmq_full}} deployments is provided through integration with the {{site.data.keyword.monitoringfull}} service. Your deployments forward select information so you can monitor deployment health and resource usage. To see your {{site.data.keyword.messages-for-rabbitmq}} dashboards in {{site.data.keyword.monitoringfull_notm}}, you must [Enable Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling) in the same region as your deployment. If you have deployments in more than one region, you must provision {{site.data.keyword.monitoringfull_notm}} and enable platform metrics in each region.
 
 To access {{site.data.keyword.monitoringfull_notm}} from your deployment, use the _Monitoring_ link from the right menu. (If you do not already have a monitoring service in the same region as your deployment it says _Add monitoring_.)
 
@@ -40,10 +40,10 @@ If you have deployments that are in a Single-zone Region (SZR) - `che01`, or `se
 
 | Metric Name |
 |-----------|
-| [IO utilization in percent 5 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m) | 
-| [IO utilization in percent 15 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) | 
-| [IO utilization in percent 30 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m) | 
-| [IO utilization in percent 60 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m) | 
+| [IO utilization in percent 5-minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m) | 
+| [IO utilization in percent 15-minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) | 
+| [IO utilization in percent 30-minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m) | 
+| [IO utilization in percent 60-minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m) | 
 | [IOPS read and write total count for an instance.](#ibm_messages_for_rabbitmq_disk_iops_read_write_total) | 
 | [Max allowed memory for an instance.](#ibm_messages_for_rabbitmq_memory_limit_bytes) | 
 | [Total disk space for an instance.](#ibm_messages_for_rabbitmq_disk_total_bytes) | 
@@ -52,7 +52,7 @@ If you have deployments that are in a Single-zone Region (SZR) - `che01`, or `se
 | [Used memory for an instance.](#ibm_messages_for_rabbitmq_memory_used_bytes) | 
 {: caption="Table 1: Available Metrics Reference Table" caption-side="top"}
 
-### IO utilization in percent 5 minute average
+### IO utilization in percent 5-minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available.
@@ -65,7 +65,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance` |
 {: caption="Table 2. IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-### IO utilization in percent 15 minute average
+### IO utilization in percent 15-minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available.
@@ -78,7 +78,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance` |
 {: caption="Table 3. IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-### IO utilization in percent 30 minute average
+### IO utilization in percent 30-minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available.
@@ -91,7 +91,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance` |
 {: caption="Table 4. IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-### IO utilization in percent 60 minute average
+### IO utilization in percent 60-minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available.
@@ -193,20 +193,20 @@ The following attributes are available for segmenting all of the metrics listed.
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
 | `Cloud Type` | `ibm_ctype` | The cloud type is a value of public, dedicated, or local. |
-| `Location` | `ibm_location` | The location of the monitored resource - this may be a region, data center, or global. |
-| `Resource` | `ibm_resource` | The resource being measured by the service - typically a identifying name or GUID. |
+| `Location` | `ibm_location` | The location of the monitored resource - this might be a region, data center, or global. |
+| `Resource` | `ibm_resource` | The resource being measured by the service - typically an identifying name or GUID. |
 | `Resource Type` | `ibm_resource_type` | The type of the resource being measured by the service. |
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID associated with this metric. |
 {: caption="Table 12. Global Attributes Metadata" caption-side="top"}
 
-### Additional Attributes
+### More Attributes
 {: #additional-attributes}
 
-The following attributes are available for segmenting one or more attributes as described in the reference . See the individual metrics for segmentation options.
+The following attributes are available for segmenting one or more attributes as described in the reference. See the individual metrics for segmentation options.
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
-| `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance the metric is associated with. |
-| `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance, which isn't necessarily a unique value depending on the name provided by the user. |
+| `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. |
+| `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance, which isn't necessarily a unique value, depending on the name that is provided by the user. |
 | `Resource group` | `ibm_resource_group_name` | The resource group where the service instance was created. |
 {: caption="Table 13. Additional Attributes Metadata" caption-side="top"}
