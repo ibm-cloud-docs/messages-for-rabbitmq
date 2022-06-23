@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2021-11-11"
+  years: 2018, 2022
+lastupdated: "2022-06-23"
 
-keywords: rabbitmq, databases, soc, hipaa, gdpr, terms
+keywords: rabbitmq, databases, soc, hipaa, gdpr, terms, rabbitmq security compliance
 
 subcollection: messages-for-rabbitmq
 
@@ -37,7 +37,7 @@ subcollection: messages-for-rabbitmq
 - [Backups](/docs/messages-for-rabbitmq?topic=cloud-databases-dashboard-backups) are included in the service. {{site.data.keyword.messages-for-rabbitmq}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage&cloud-object-storage-about-cloud-object-storage) and are also [encrypted](/docs/cloud-object-storage?topic=cloud-object-storage-security).
 - RabbitMQ backups contain only definitions, topology, and metadata. Messages are not stored in backups.
 - All {{site.data.keyword.messages-for-rabbitmq}} deployments are configured with replication. Deployments contain a cluster with three nodes where all three nodes are equal peers. Queues are mirrored on all three nodes.
-- If you deploy to an {{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the datacenter. 
+- If you deploy to an {{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the data center. 
 - If you deploy to an {{site.data.keyword.cloud_notm}} Multi-Zone Region (MZR), the nodes are spread over the region's availability zone locations.
 
 ## SOC 2 Type 2 Certification
@@ -50,7 +50,7 @@ You can request an SOC 2 Type 2 report from the customer portal or contact your 
 ## ISO 27017, ISO 27018
 {: #iso-27017-iso-27018}
 
-{{site.data.keyword.messages-for-rabbitmq}} conforms to the guidelines for information security controls applicable to the provision and use of cloud services defined in [ISO 27017](https://www.iso.org/standard/43757.html) and [ISO 27018](https://www.iso.org/standard/76559.html).
+{{site.data.keyword.messages-for-rabbitmq}} conforms to the guidelines for information security controls applicable to the provision and use of cloud services that are defined in [ISO 27017](https://www.iso.org/standard/43757.html){: .external} and [ISO 27018](https://www.iso.org/standard/76559.html){: .external}.
 
 ## General Data Protection Regulation (GDPR) 
 {: #-gdpr}
@@ -83,5 +83,3 @@ A full list of PCI DSS-ready {{site.data.keyword.cloud_notm}} Platform services,
 
 - [The IBM Privacy Policy](https://www.ibm.com/privacy/us/en/)
 - [The IBM Cloud Notices and Terms of Use](/docs/overview/terms-of-use?topic=overview-terms)
-
-
