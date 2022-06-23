@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2019, 2020
-lastupdated: "2021-11-11"
+  years: 2019, 2022
+lastupdated: "2022-06-23"
 
-keywords: rabbitmq, databases, pricing, resources, scaling
+keywords: rabbitmq, databases, pricing, resources, scaling, rabbitmq pricing
 
 subcollection: messages-for-rabbitmq
 
@@ -32,13 +32,13 @@ A {{site.data.keyword.messages-for-rabbitmq_full}} Standard plan deploys as one 
 Resources | Breakdown | Price
 -------|-------|-------
 1 GB-Month disk | 3 members x 1 GB x $0.58 | $1.74
-1 GB-Month RAM | 3 members x 1 GB  x $5 | $15
+1 GB-Month RAM | 3 members x 1 GB x $5 | $15
 {: caption="Table 1. Pricing example for three data members" caption-side="top"}
 
 Total per month = $16.74  
 Month Total per hour = $.022/Hour  
 
-All prices here are in US dollars. To see pricing in your local currency, you can to use the pricing calculator.
+All prices here are in US dollars. To see pricing in your local currency, you can use the pricing calculator.
 {: .tip}
 
 ## IBM Cloud Databases enabled by IBM Cloud Satellite Pricing
@@ -56,7 +56,7 @@ Total per month = $49.80/Month
 ## Using the Pricing Calculator
 {: #using-pricing-calc}
 
-Templates are provided for ease of use and provide balanced resource allocations appropriate for general purpose workloads. The **Custom** tab can be used to configure Disk, RAM, and vCPU, as desired.
+Templates are provided for ease of use and provide balanced resource allocations appropriate for general-purpose workloads. The **Custom** tab can be used to configure Disk, RAM, and vCPU, as wanted.
 
 For pricing estimation, use the **Add to Estimate** button at the bottom of the [{{site.data.keyword.messages-for-rabbitmq}} catalog page](https://cloud.ibm.com/catalog/messages-for-rabbitmq). Input your total consumption across three data members into the calculator. For example, 1 GB of disk and 1 GB of RAM across three data members would be priced at 3 GB of disk and 3 GB of RAM respectively.
 
