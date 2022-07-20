@@ -38,7 +38,7 @@ You are next asked to enter your username and password. After you have signed in
 You can use any user on your deployment to access the UI. Some features are only available to the admin user provisioned with your deployment.
 {: .tip} 
 
-General usage documentation can be found on the [RabbitMQ Management plug-in](https://www.rabbitmq.com/management.html) page.
+General usage documentation can be found on the [RabbitMQ Management plug-in](https://www.rabbitmq.com/management.html){: .external} page.
 
 ### Connecting through private endpoints
 {: #rabbitmq-private-endpoints}
@@ -72,22 +72,22 @@ The `rabbitmqadmin` binary is available directly from your deployment. The downl
 
 The `rabbitmqadmin` connection information is in the "cli" section of your [connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings). The table contains a breakdown for reference.
 
-Field Name|Index|Description
-----------|-----|-----------
-`Bin`||The recommended binary to create a connection; in this case it is `rabbitmqadmin`.
-`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command-line parameters.
-`Environment`||A list of keys or values you set as environment variables.
-`Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
-`Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
-`Certificate`|Name|The allocated name for the self-signed certificate.
-`Type`||The type of package that uses this connection information; in this case `cli`. 
-{: caption="Table 1. rabbitmqadmin/cli connection information" caption-side="top"}
+| Field Name | Index | Description |
+| ---------- | ----- | ----------- |
+| `Bin` | | The recommended binary to create a connection; in this case it is `rabbitmqadmin`. |
+| `Composed` | | A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` | as command-line parameters. |
+| `Environment` | | A list of keys or values you set as environment variables. |
+| `Arguments` | 0... | The information that is passed as arguments to the command shown in the Bin field. |
+| `Certificate` | Base64 | A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
+| `Certificate` | Name | The allocated name for the self-signed certificate. |
+| `Type` | | The type of package that uses this connection information; in this case `cli`.  |
+{: caption="Table 1. rabbitmqadmin/cli connection information" caption-side="bottom"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
 The example command lists all the exchanges in your RabbitMQ.
 
-```shell
+```sh
 rabbitmqadmin --username=admin --password=$PASSWORD --ssl --ssl-ca-cert-file=0b22f14b-7ba2-11e8-b8e9-568642342d40 --host=1a619c43-6415-4abb-8df0-0c7b1b3a3001.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud --port=31797 list exchanges
 ```
 
@@ -99,7 +99,7 @@ rabbitmqadmin --username=admin --password=$PASSWORD --ssl --ssl-ca-cert-file=0b2
 * `--port=` - The parameter that specifies the port the RabbitMQ server is listening on. 
 * `list exchanges` - A `rabbitmqadmin` command to list the database members of the RabbitMQ deployment. 
 
-Documentation and other examples for `rabbitmqadmin` are on the RabbitMQ [Management Command-Line Tool](https://www.rabbitmq.com/management-cli.html) page.
+Documentation and other examples for `rabbitmqadmin` are on the RabbitMQ [Management Command-Line Tool](https://www.rabbitmq.com/management-cli.html){: .external} page.
 
 ## Using the self-signed certificate
 {: #rabbitmq-selfsigned-cert}
