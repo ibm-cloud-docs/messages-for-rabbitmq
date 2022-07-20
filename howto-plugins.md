@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-20"
+lastupdated: "2022-07-20"
 
 keywords: rabbitmq, databases, jms, shovel, delayed, stomp, mqtt, rabbitmq plug-in
 
@@ -25,15 +25,15 @@ RabbitMQ supports various plug-ins to extend its core functions. {{site.data.key
 ## Available {{site.data.keyword.messages-for-rabbitmq}} plug-ins
 {: #plug-ins-available}
 
-Plug-in | Name 
--------|-------
-[Shovel plug-in](#shovel-plug-in) | `rabbitmq_shovel` 
-[Shovel Management plug-in](#delayed-message-plug-in)| `rabbitmq_shovel_management`
-[Delayed Message plug-in](#delayed-message-plug-in) | `rabbitmq_delayed_message_exchange`
-[STOMP plug-in](#stomp-plug-in) | `rabbitmq_stomp`
-[RabbitMQ Management plug-in](#rabbitmq-management-plug-in) | `rabbitmq_management`
-[JMS plug-in](#jms-plug-in) | `rabbitmq_jms_topic_exchange`
-[MQTT plug-in](#mqtt-plug-in) | `rabbitmq_mqtt`
+| Plug-in | Name  |
+| ------- | ------- |
+| [Shovel plug-in](#shovel-plug-in) | `rabbitmq_shovel`  |
+| [Shovel Management plug-in](#delayed-message-plug-in)| `rabbitmq_shovel_management` |
+| [Delayed Message plug-in](#delayed-message-plug-in) | `rabbitmq_delayed_message_exchange` |
+| [STOMP plug-in](#stomp-plug-in) | `rabbitmq_stomp` |
+| [RabbitMQ Management plug-in](#rabbitmq-management-plug-in) | `rabbitmq_management` |
+| [JMS plug-in](#jms-plug-in) | `rabbitmq_jms_topic_exchange` |
+| [MQTT plug-in](#mqtt-plug-in) | `rabbitmq_mqtt` |
 {: caption="Table 1. Available RabbitMQ plug-ins" caption-side="top"}
 
 
