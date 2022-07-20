@@ -107,18 +107,18 @@ Generating credentials from an existing user does not check for or create that u
 
 The "amqps" section contains information that is suited for your applications that make connections to RabbitMQ.
 
-Field Name|Index|Description
-----------|-----|-----------
-`Type`||Type of connection - for RabbitMQ, it is "uri"
-`Scheme`||Scheme for a URI - for RabbitMQ, it is "amqps"
-`Path`||Path for a uri
-`Authentication`|`Username`|The username that you use to connect.
-`Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
-`Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
-`Hosts`|`0...`|A hostname and port to connect to
-`Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
-`Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
-`Certificate`|`Base64`|A base64 encoded version of the certificate.
+| Field Name | Index | Description |
+| ----------|-----|----------- |
+| `Type` | | Type of connection - for RabbitMQ, it is "uri" |
+| `Scheme` | | Scheme for a URI - for RabbitMQ, it is "amqps" |
+| `Path` | | Path for a uri |
+| `Authentication` | `Username` | The username that you use to connect. |
+| `Authentication` | `Password` | A password for the user - might be shown as `$PASSWORD` |
+| `Authentication` | `Method` | How authentication takes place; "direct" authentication is handled by the driver. |
+| `Hosts` | `0...` | A hostname and port to connect to |
+| `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path |
+| `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
+| `Certificate` | `Base64`|A base64 encoded version of the certificate. |
 {: caption="Table 1. RabbitMQ/uri connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
@@ -130,17 +130,17 @@ For more information on using this information to connect, see the [Connecting a
 
 The `stomp_ssl` section contains the information that a STOMP client needs to connect to your deployment.
 
-Field Name|Index|Description
-----------|-----|-----------
-`Type`||Type of connection - for STOMP, it is `stomp`
-`Authentication`|`Username`|The username that you use to connect.
-`Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
-`Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
-`Hosts`|`0...`|A hostname and port to connect to, also contains the protocol name "stomp-ssl"
-`Composed`|`0...`|A URI combining Authentication, Host, and TLS/SSL
-`ssl`||The TLS/SSL setting needed for a connection. Should always be `true`.
-`Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
-`Certificate`|`Base64`|A base64 encoded version of the certificate.
+| Field Name | Index | Description  |
+| ---------- | ----- | ----------- |
+| `Type` | | Type of connection - for STOMP, it is `stomp` |
+| `Authentication` | `Username`|The username that you use to connect. |
+| `Authentication` | `Password`|A password for the user - might be shown as `$PASSWORD` |
+| `Authentication` | `Method`|How authentication takes place; "direct" authentication is handled by the driver. |
+| `Hosts` | `0...` | A hostname and port to connect to, also contains the protocol name "stomp-ssl" |
+| `Composed` | `0...` | A URI combining Authentication, Host, and TLS/SSL |
+| `ssl` | | The TLS/SSL setting needed for a connection. Should always be `true`. |
+| `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
+| `Certificate` | `Base64` | A base64 encoded version of the certificate. |
 {: caption="Table 2. RabbitMQ/stomp_ssl connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
@@ -150,17 +150,17 @@ Field Name|Index|Description
 
 The `mqtts` section contains the information that an MQTT client needs to connect to your deployment.
 
-Field Name|Index|Description
-----------|-----|-----------
-`Type`||Type of connection - for `MQTTS` it is `uri`.
-`Scheme`|| Scheme for a URI - in this case it is `mqtts`.
-`Authentication`|`Username`|The username that you use to connect.
-`Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
-`Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
-`Hosts`|`0...`|A hostname and port to connect to.
-`Composed`|`0...`|A URI combining Authentication, Host, and Port used to connect.
-`Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
-`Certificate`|`Base64`|A base64 encoded version of the certificate.
+| Field Name | Index | Description |
+| ---------- | ----- | ----------- |
+| `Type` | | Type of connection - for `MQTTS` it is `uri`. |
+| `Scheme` | | Scheme for a URI - in this case it is `mqtts`. |
+| `Authentication` | `Username` | The username that you use to connect. |
+| `Authentication` | `Password` | A password for the user - might be shown as `$PASSWORD` |
+| `Authentication` | `Method` | How authentication takes place; "direct" authentication is handled by the driver. |
+| `Hosts` | `0...` | A hostname and port to connect to. |
+| `Composed` | `0...` | A URI combining Authentication, Host, and Port used to connect. |
+| `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
+| `Certificate` | `Base64` | A base64 encoded version of the certificate. |
 {: caption="Table 2. RabbitMQ/mqtts connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
@@ -170,33 +170,33 @@ Field Name|Index|Description
 
 The `CLI` section contains information that is suited for the management plug-in and command-line clients that make connections to RabbitMQ.
 
-Field Name|Index|Description
-----------|-----|-----------
-`Bin`||The recommended binary to create a connection; in this case it is `rabbitmqadmin`.
-`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command-line parameters.
-`Environment`||A list of key/values you set as environment variables.
-`Arguments`|`0...`|The information that is passed as arguments to the command shown in the Bin field.
-`Certificate`|`Base64`|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
-`Certificate`|`Name`|The allocated name for the self-signed certificate.
-`Type`||The type of package that uses this connection information; in this case `cli`. 
+| Field Name | Index | Description |
+| ---------- | ----- | ----------- |
+| `Bin` | | The recommended binary to create a connection; in this case it is `rabbitmqadmin`. |
+| `Composed` | | A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command-line parameters. |
+| `Environment` | | A list of key/values you set as environment variables. |
+| `Arguments` | `0...` | The information that is passed as arguments to the command shown in the Bin field. |
+| `Certificate` | `Base64` | A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
+| `Certificate` | `Name` | The allocated name for the self-signed certificate. |
+| `Type` | | The type of package that uses this connection information; in this case `cli`.  |
 {: caption="Table 3. rabbitmqadmin/cli connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
 The `https` section contains information that you can use to access the RabbitMQ management plug-in via web browser.
 
-Field Name|Index|Description
-----------|-----|-----------
-`Type`||Type of connection - for RabbitMQ, it is `uri`
-`Scheme`||Scheme for a URI - for RabbitMQ, it is `https`
-`Path`||Path for a URI
-`Authentication`|`Username`|The username that you use to connect.
-`Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
-`Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
-`Hosts`|`0...`|A hostname and port to connect to
-`Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
-`Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
-`Certificate`|`Base64`|A base64 encoded version of the certificate.
+| Field Name|Index|Description |
+| ---------- | ----- | ----------- |
+| `Type` | | Type of connection - for RabbitMQ, it is `uri` |
+| `Scheme` | | Scheme for a URI - for RabbitMQ, it is `https` |
+| `Path` | | Path for a URI |
+| `Authentication` | `Username`|The username that you use to connect. |
+| `Authentication` | `Password`|A password for the user - might be shown as `$PASSWORD` |
+| `Authentication` | `Method`|How authentication takes place; "direct" authentication is handled by the driver. |
+| `Hosts` | `0...` | A hostname and port to connect to |
+| `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path |
+| `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
+| `Certificate` | `Base64` | A base64 encoded version of the certificate. |
 {: caption="Table 4. https/uri connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
