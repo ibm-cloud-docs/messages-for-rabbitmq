@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-07-20"
 
 keywords: rabbitmq, databases, pricing, resources, scaling, rabbitmq pricing
 
@@ -29,10 +29,10 @@ A {{site.data.keyword.messages-for-rabbitmq_full}} Standard plan deploys as one 
 **RAM per data member** - gigabytes of RAM that are allocated to a {{site.data.keyword.messages-for-rabbitmq}} data member.  
 **Backup storage** - amount of storage used for backups by a {{site.data.keyword.messages-for-rabbitmq}} deployment.
 
-Resources | Breakdown | Price
--------|-------|-------
-1 GB-Month disk | 3 members x 1 GB x $0.58 | $1.74
-1 GB-Month RAM | 3 members x 1 GB x $5 | $15
+| Resources | Breakdown | Price |
+| ------- | ------- | ------- |
+| 1 GB-Month disk | 3 members x 1 GB x $0.58 | $1.74 |
+| 1 GB-Month RAM | 3 members x 1 GB x $5 | $15 |
 {: caption="Table 1. Pricing example for three data members" caption-side="top"}
 
 Total per month = $16.74  
@@ -46,9 +46,9 @@ All prices here are in US dollars. To see pricing in your local currency, you ca
 
 {{site.data.keyword.messages-for-rabbitmq_full}} deployments are deployable into IBM Cloud Satellite locations. The management fee for these Cloud Databases is $45 per vCPU per month, with a 6 vCPU minimum.
 
-Resources | Breakdown | Price
--------|-------|-------
-6 vCPUs per month | 2 members x 6 GB x $45 | $540
+| Resources | Breakdown | Price |
+| ------- | ------- | ------- |
+| 6 vCPUs per month | 2 members x 6 GB x $45 | $540 |
 {: caption="Table 2. Pricing example for  6 vCPUs and two data members" caption-side="top"}
 
 Total per month = $49.80/Month
@@ -79,9 +79,9 @@ Dedicated cores are an optional feature. The default `Shared CPU` setting provis
 
 {{site.data.keyword.messages-for-rabbitmq}} deployments have minimum and maximum allocation for disk and RAM as shown. Scaling deployments through the API/CLI provides more granularity and also allows a user to scale a database instance up to 4 TB of disk per member.
 
-Resource | Minimum | Maximum | Scaling Granularity (API/CLI)
-----------|-----|-----|-------
-Disk | 5 GB per member | 4 TB per member | 1024 MB per member
-RAM | 1 GB per member | 112 GB per member | 128 MB per member
-CPU (if enabled) | 3 CPUs per member | 28 CPUs per member| 1 CPU per member
-{: caption="Table 2. Per Member Scaling Limits" caption-side="top"}
+| Resource | Minimum | Maximum | Scaling Granularity (API/CLI) |
+| ---------- | ----- | ----- | ------- |
+| Disk | 5 GB per member | 4 TB per member | 1024 MB per member |
+| RAM | 1 GB per member | 112 GB per member | 128 MB per member |
+| CPU (if enabled) | 3 CPUs per member | 28 CPUs per member| 1 CPU per member |
+{: caption="Table 3. Per Member Scaling Limits" caption-side="top"}
