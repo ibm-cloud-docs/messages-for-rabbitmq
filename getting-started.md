@@ -30,7 +30,7 @@ If you have already created your deployment and want to connect to your RabbitMQ
 ## Before you begin
 {: #before-you-begin}
 
-Make sure that you have an [{{site.data.keyword.cloud_notm}} account][ibm_cloud_signup_url]{: .external}.
+Make sure that you have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: .external}.
 
 You also need to install [Node.js](https://nodejs.org/){: .external} and [Git](https://git-scm.com/downloads){: .external}.
 
