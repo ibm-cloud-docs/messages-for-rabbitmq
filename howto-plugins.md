@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-09-13"
 
 keywords: rabbitmq, databases, jms, shovel, delayed, stomp, mqtt, rabbitmq plug-in
 
@@ -66,7 +66,7 @@ The [RabbitMQ STOMP plug-in](https://www.rabbitmq.com/stomp.html){: .external}, 
 ## RabbitMQ Management plug-in
 {: #rabbitmq-management-plug-in-info}
 
-The RabbitMQ Management plug-in, `rabbitmq_management`, provides access to your deployment through a web browser, `rabbitmqadmin`, and through the RabbitMQ API. For more information, see [Connecting with the RabbitMQ Management plug-in](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-management-plug-in). 
+The RabbitMQ Management plug-in, `rabbitmq_management`, provides access to your deployment through a web browser, `rabbitmqadmin`, and through the RabbitMQ API. For more information, see [Connecting with the RabbitMQ Management plug-in](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-management-plugin). 
 
 ## JMS plug-in
 {: #jms-plug-in}
