@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2022-04-01"
+  years: 2018, 2022
+lastupdated: "2022-10-11"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 11 October 2022
+{: #messages-for-rabbitmq-11oct2022}
+{: release-note}
+
+Protecting {{site.data.keyword.messages-for-rabbitmq_full}} resources with context-based restrictions
+:  Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/messages-for-rabbitmq?topic=cloud-databases-cbr).
 
 ## 25 January 2022
 {: #messages-for-rabbitmq-25jan2022}
