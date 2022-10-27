@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-10-27"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -32,7 +32,7 @@ Deploying and Connecting a Cloud Databases Instance Tutorial
 {: release-note}
 
 Protecting {{site.data.keyword.messages-for-rabbitmq_full}} resources with context-based restrictions
-:  Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/messages-for-rabbitmq?topic=cloud-databases-cbr).
+:  Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/messages-for-rabbitmq?topic=cloud-databases-cbr&interface=ui).
 
 ## 25 January 2022
 {: #messages-for-rabbitmq-25jan2022}
