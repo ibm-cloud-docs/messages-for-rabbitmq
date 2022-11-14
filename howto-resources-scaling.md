@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-20"
+lastupdated: "2022-11-14"
 
 keywords: rabbitmq, databases, manual scaling, disk I/O, memory, CPU, rabbitmq scaling
 
@@ -17,6 +17,8 @@ subcollection: messages-for-rabbitmq
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
+{{site.data.keyword.attribute-definition-list}}
+
 
 # Scaling Disk, Memory, and CPU
 {: #resources-scaling}
@@ -81,6 +83,7 @@ You can enable or increase the CPU allocation to the deployment. With dedicated 
 
 ## Scaling via the UI
 {: #scaling-ui}
+{: ui}
 
 A visual representation of your data members and their resource allocation is available on the _Resources_ tab of your deployment's _Manage_ page. 
 
@@ -90,6 +93,7 @@ Adjust the slider to increase or decrease the resources that are allocated to yo
 
 ## Resources and Scaling in the CLI 
 {: #resources-scaling-ui}
+{: cli}
 
 [{{site.data.keyword.cloud_notm}} CLI cloud databases plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) supports viewing and scaling the resources on your deployment. Use the command `cdb deployment-groups` to see current resource information for your service, including which resource groups are adjustable. To scale any of the available resource groups, use `cdb deployment-groups-set` command. 
 
@@ -130,6 +134,7 @@ The `cdb deployment-groups-set` command allows either the total RAM or total dis
 
 ## Scaling in the API
 {: #scaling-api}
+{: api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. Use it with the `/groups` endpoint if you need to manage or automate scaling programmatically.
 
@@ -149,4 +154,4 @@ curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{
     }'
 ```
 
-More information is in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#get-currently-available-scaling-groups-from-a-depl).
+For more information, see the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#get-currently-available-scaling-groups-from-a-depl).
