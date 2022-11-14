@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-20"
+lastupdated: "2022-11-14"
 
 keywords: rabbitmq, rabbitmq admin password
 
@@ -15,6 +15,7 @@ subcollection: messages-for-rabbitmq
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Setting the Admin Password
 {: #admin-password}
@@ -25,8 +26,9 @@ You must set the admin password before you can use it to connect. To set the pas
 
 ![The Change Database Admin Password Panel in Settings](images/settings-admin-password.png){: caption="Figure 1. The Change Database Admin Password Panel in _Settings_" caption-side="bottom"}
 
-## Setting the admin password by using the command line
+## Setting the admin password through the CLI
 {: #setting-password-cli}
+{: cli}
 
 Use the `cdb user-password` command from the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) to set the admin password with the command line.
 
@@ -37,6 +39,7 @@ ibmcloud cdb user-password example-deployment admin <newpassword>
 
 ## Setting the admin password via the API
 {: #setting-password-api}
+{: api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. Use it with the `/deployments/{id}/users/{username}` endpoint to set the admin password.
 
