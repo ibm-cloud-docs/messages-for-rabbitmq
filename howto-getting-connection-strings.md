@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-20"
+lastupdated: "2022-11-14"
 
 keywords: rabbitmq, databases, rabbitmq connection strings
 
@@ -15,6 +15,7 @@ subcollection: messages-for-rabbitmq
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Creating Users and Getting Connection Strings
@@ -38,8 +39,9 @@ All users on your deployment can use the connection strings, including connectio
 
 Not all users get the same privileges regarding administering RabbitMQ. To read more about which users get what privileges see the [Managing Users](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management) page.
 
-### From _Service Credentials_
+### From the _Service Credentials_ UI
 {: #cred-connection-strings-additional-users-service-cred}
+{: ui}
 
 1. Navigate to the service dashboard for your service.
 2. Click _Service Credentials_ to open the _Service Credentials_ panel.
@@ -52,6 +54,7 @@ The new credentials appear in the table, and the connection strings are availabl
 
 ### From the CLI
 {: #cred-connection-strings-additional-users-cli}
+{: cli}
 
 If you manage your service through the {{site.data.keyword.cloud_notm}} CLI and the [cloud databases plug-in](/docs/cli?topic=cli-install-ibmcloud-cli), you can create a new user with `cdb user-create`. For example, to create a new user for an "example-deployment", use the following command.
 ```sh
@@ -75,6 +78,7 @@ To use the `ibmcloud cdb` CLI commands, you must [install the {{site.data.keywor
 
 ### From the API
 {: #cred-connection-strings-additional-users-api}
+{: api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint.
 ```sh
