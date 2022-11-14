@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-20"
+lastupdated: "2022-11-14"
 
 keywords: rabbitmq, rabbitmq management
 
@@ -15,6 +15,7 @@ subcollection: messages-for-rabbitmq
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Connecting with the RabbitMQ Management plug-in
@@ -25,7 +26,7 @@ subcollection: messages-for-rabbitmq
 ## RabbitMQ Management UI
 {: #rabbitmq-management-ui}
 
-From the _Connections_ pane of your deployment's _Dashboard Overview_, there is a button to open RabbitMQ Management UI.
+From _Connections_ in your deployment's _Dashboard Overview_, open RabbitMQ Management UI.
 
 ![Link to open RabbitMQ Management UI](images/management_ui_launch_button.png){: caption="Figure 1. Link to open RabbitMQ Management UI" caption-side="bottom"}
 
@@ -35,10 +36,10 @@ Since {{site.data.keyword.messages-for-rabbitmq}} deployments are signed with a 
 
 You are next asked to enter your username and password. After you have signed in, you can see an _Overview_ of your RabbitMQ deployment. 
 
-You can use any user on your deployment to access the UI. Some features are only available to the admin user provisioned with your deployment.
+Use any user on your deployment to access the UI. Some features are only available to the admin user provisioned with your deployment.
 {: .tip} 
 
-General usage documentation can be found on the [RabbitMQ Management plug-in](https://www.rabbitmq.com/management.html){: .external} page.
+For more information, see the [RabbitMQ Management plug-in](https://www.rabbitmq.com/management.html){: .external} page.
 
 ### Connecting through private endpoints
 {: #rabbitmq-private-endpoints}
