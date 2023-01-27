@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-01-26"
+lastupdated: "2023-01-27"
 
 keywords: rabbitmq, databases, ha, rabbitmq ha, rabbitmq high availability
 
@@ -10,11 +10,7 @@ subcollection: messages-for-rabbitmq
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # High-Availability 
 {: #high-availability}
@@ -29,7 +25,9 @@ subcollection: messages-for-rabbitmq
 ## RabbitMQ Resource Considerations
 {: #rabbitmq-resource-consider}
 
-As a message broker implemented in Erlang, RabbitMQ is thoroughly dependent on CPU cores to schedule its processes. If too few cores are available to run these processes, performance can suffer. If too few CPU resources are available to process them, RabbitMQ closes connections. Consider [cpu-contention](https://www.rabbitmq.com/runtime.html#cpu-contention){: external} and choose a resource configuration that provides enough CPU cores for RabbitMQ running as a production system. Having dedicated CPU resources in your RabbitMQ deployment also prevents the impact of noisy neighbors on resources, such as CPU and memory.
+As a message broker implemented in Erlang, RabbitMQ is thoroughly dependent on CPU cores to schedule its processes. Consider [cpu-contention](https://www.rabbitmq.com/runtime.html#cpu-contention){: external} and choose a resource configuration that provides enough CPU cores for RabbitMQ running as a production system. Having dedicated CPU resources in your RabbitMQ deployment also prevents the impact of noisy neighbors on resources, such as CPU and memory.
+
+If too few cores are available to run these processes, performance can suffer. If too few CPU resources are available to process them, RabbitMQ closes connections.{: important}
 
 ## High-Availability Queue Configuration
 {: #high-availability-queue-config}
