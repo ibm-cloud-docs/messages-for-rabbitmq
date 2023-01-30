@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-01-30"
 
-keywords: rabbitmq, databases, ha, rabbitmq ha, rabbitmq high availability
+keywords: rabbitmq, databases, ha, rabbitmq ha, rabbitmq high availability, quorom queues
 
 subcollection: messages-for-rabbitmq
 
@@ -20,14 +20,12 @@ subcollection: messages-for-rabbitmq
 ## RabbitMQ Cluster Configuration
 {: #rabbitmq-cluster-config}
 
-{{site.data.keyword.messages-for-rabbitmq}} provides replication, fail-over, and high-availability features to protect your databases and data from infrastructure maintenance, upgrades, and failures. Deployments contain a cluster with three nodes where users, virtual hosts, queues, exchanges, bindings, runtime parameters, and other distributed state are shared across all three nodes. If a node fails, the node is either deleted or restarted, and then it or a new node is resynced to the cluster. Your deployment remains available to process messages during the resync, although it is a memory-intensive process. Learn more about memory management concerns on the [Performance](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-performance) page.
+{{site.data.keyword.messages-for-rabbitmq}} provides replication, fail-over, and high-availability features to protect your databases and data from infrastructure maintenance, upgrades, and failures. Deployments contain a cluster with three nodes where users, virtual hosts, queues, exchanges, bindings, runtime parameters, and other distributed state are shared across all three nodes. If a node fails, the node is either deleted or restarted, and then it or a new node is resynced to the cluster. Your deployment remains available to process messages during the resync, although it is a memory-intensive process. For more information, see the [Performance](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-performance) page.
 
 ## RabbitMQ Resource Considerations
 {: #rabbitmq-resource-consider}
 
-As a message broker implemented in Erlang, RabbitMQ is thoroughly dependent on CPU cores to schedule its processes. Consider [cpu-contention](https://www.rabbitmq.com/runtime.html#cpu-contention){: external} and choose a resource configuration that provides enough CPU cores for RabbitMQ running as a production system. Having dedicated CPU resources in your RabbitMQ deployment also prevents the impact of noisy neighbors on resources, such as CPU and memory.
-
-If too few cores are available to run these processes, performance can suffer. If too few CPU resources are available to process them, RabbitMQ closes connections.{: important}
+As a message broker implemented in Erlang, RabbitMQ is thoroughly dependent on CPU cores to schedule its processes. If too few cores are available to run these processes, performance can suffer. If too few CPU resources are available to process them, RabbitMQ closes connections. Consider [cpu-contention](https://www.rabbitmq.com/runtime.html#cpu-contention){: external} and choose a resource configuration that provides enough CPU cores for RabbitMQ running as a production system. Having dedicated CPU resources in your RabbitMQ deployment also prevents the impact of noisy neighbors on resources, such as CPU and memory.
 
 ## High-Availability Queue Configuration
 {: #high-availability-queue-config}
@@ -45,7 +43,7 @@ Starting in RabbitMQ 3.8, high-availability can be managed with [quorum queues](
 
 The RabbitMQ documentation covers the [use-cases](https://www.rabbitmq.com/quorum-queues.html#use-cases){: external}, and how to [implement quorum queues in your cluster](https://www.rabbitmq.com/quorum-queues.html#usage){: external}.
 
-For more information on quorum queues and the preferred status of RabbitMQ 3.8, review this [blog post announcement](https://cms.ibm.com/cloud/blog/announcements/ibm-cloud-messages-for-rabbitmq-38-is-now-preferred){: external}.  
+For more information, see [IBM Cloud Messages for RabbitMQ 3.8 is Now Preferred](https://cms.ibm.com/cloud/blog/announcements/ibm-cloud-messages-for-rabbitmq-38-is-now-preferred){: external}.  
 
 ### Mirrored Queues
 {: #mirrored-queues}
