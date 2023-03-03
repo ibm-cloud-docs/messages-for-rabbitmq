@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-07-20"
+  years: 2019, 2023
+lastupdated: "2023-03-03"
 
 keywords: rabbitmq, databases, pricing, resources, scaling, rabbitmq pricing
 
@@ -9,49 +9,12 @@ subcollection: messages-for-rabbitmq
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Pricing
 {: #pricing}
 
 A {{site.data.keyword.messages-for-rabbitmq_full}} Standard plan deploys as one highly available RabbitMQ cluster with three data members. Your data is replicated across members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.messages-for-rabbitmq}} deployments have a minimum of 1 GB of disk and 1 GB of RAM per data member.
-
-## Cost Breakdown
-{: #cost-breakdown}
-
-**Disk storage per data member** - gigabytes of disk that are allocated to a {{site.data.keyword.messages-for-rabbitmq}} data member, or the size of your data.  
-**RAM per data member** - gigabytes of RAM that are allocated to a {{site.data.keyword.messages-for-rabbitmq}} data member.  
-**Backup storage** - amount of storage used for backups by a {{site.data.keyword.messages-for-rabbitmq}} deployment.
-
-| Resources | Breakdown | Price |
-| ------- | ------- | ------- |
-| 1 GB-Month disk | 3 members x 1 GB x $0.58 | $1.74 |
-| 1 GB-Month RAM | 3 members x 1 GB x $5 | $15 |
-{: caption="Table 1. Pricing example for three data members" caption-side="top"}
-
-Total per month = $16.74  
-Month Total per hour = $.022/Hour  
-
-All prices here are in US dollars. To see pricing in your local currency, you can use the pricing calculator.
-{: .tip}
-
-## IBM Cloud Databases enabled by IBM Cloud Satellite Pricing
-{: #cost-breakdown-satellite}
-
-{{site.data.keyword.messages-for-rabbitmq_full}} deployments are deployable into IBM Cloud Satellite locations. The management fee for these Cloud Databases is $45 per vCPU per month, with a 6 vCPU minimum.
-
-| Resources | Breakdown | Price |
-| ------- | ------- | ------- |
-| 6 vCPUs per month | 2 members x 6 GB x $45 | $540 |
-{: caption="Table 2. Pricing example for  6 vCPUs and two data members" caption-side="top"}
-
-Total per month = $49.80/Month
 
 ## Using the Pricing Calculator
 {: #using-pricing-calc}
@@ -59,8 +22,6 @@ Total per month = $49.80/Month
 Templates are provided for ease of use and provide balanced resource allocations appropriate for general-purpose workloads. The **Custom** tab can be used to configure Disk, RAM, and vCPU, as wanted.
 
 For pricing estimation, use the **Add to Estimate** button at the bottom of the [{{site.data.keyword.messages-for-rabbitmq}} catalog page](https://cloud.ibm.com/catalog/messages-for-rabbitmq). Input your total consumption across three data members into the calculator. For example, 1 GB of disk and 1 GB of RAM across three data members would be priced at 3 GB of disk and 3 GB of RAM respectively.
-
-![Pricing calculator estimation with 1 GB of disk and 1 GB of RAM, per member](images/pricing-calc.png){: caption="Figure 1. Pricing calculator estimation" caption-side="bottom"}
 
 ## Backups Pricing
 {: #backups-pricing}
@@ -84,4 +45,4 @@ Dedicated cores are an optional feature. The default `Shared CPU` setting provis
 | Disk | 5 GB per member | 4 TB per member | 1024 MB per member |
 | RAM | 1 GB per member | 112 GB per member | 128 MB per member |
 | CPU (if enabled) | 3 CPUs per member | 28 CPUs per member| 1 CPU per member |
-{: caption="Table 3. Per Member Scaling Limits" caption-side="top"}
+{: caption="Table 1. Per Member Scaling Limits" caption-side="top"}
