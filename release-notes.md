@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-03-09"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -20,18 +20,16 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
-## 24 February 2023
-{: #messages-for-rabbitmq-24feb2023}
+## 09 March 2023
+{: #messages-for-rabbitmq-09mar2023}
 {: release-note}
 
-RabbitMQ 
-:  Messages delivered by a quorum queue and negatively acknowledged with a requeue will be added to the back of the queue until the queue has redelivery limit set. With a redelivery limit, requeueing will use the original position of the message, if possible. With this update, if you get stuck or requeue deliveries at a high rate, you will not indefinitely grow the quorum queue Raft log, potentially driving the node out of disk space. If the original behavior is important to keep, ensure your applications quorum queues have a redelivery limit set.
-Reference: https://github.com/rabbitmq/rabbitmq-server/releases/tag/v3.10.0
-idle_since field now uses RFC 3339 format.
+RabbitMQ Version 3.11 Release
+:  {{site.data.keyword.messages-for-rabbitmq_full}} version 3.11 is now available. With this release, messages delivered by a quorum queue and negatively acknowledged with a requeue will be added to the back of the queue until the queue has redelivery limit set. With a redelivery limit, requeueing will use the original position of the message, if possible. With this update, if you get stuck or requeue deliveries at a high rate, you will not indefinitely grow the quorum queue Raft log, potentially driving the node out of disk space. If the original behavior is important to keep, ensure your applications' quorum queues have a redelivery limit set. This is a **potentially breaking change**. 
 
-Sample value with the previous format: 2022-03-22 11:39:37. With the new format: 2022-03-22T11:39:37.908+01:00.
-Clients of the REST API should be able to parse values in the new format.
-Reference: rabbitmq/rabbitmq-server#4276
+For information on upgrading to a new major version, see [Upgrading to a new Major Version](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading).
+
+`idle_since` field now uses RFC 3339 format. Sample value with the previous format: `2022-03-22 11:39:37`. Sample value with the new format: `2022-03-22T11:39:37.908+01:00`.
 
 ## 19 October 2022
 {: #messages-for-rabbitmq-19oct2022}
