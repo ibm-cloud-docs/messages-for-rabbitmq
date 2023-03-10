@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-10"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -25,7 +25,10 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 RabbitMQ Version 3.11 Release
-:  {{site.data.keyword.messages-for-rabbitmq_full}} version 3.11 is now available. With this release, messages delivered by a quorum queue and negatively acknowledged with a requeue will be added to the back of the queue until the queue has redelivery limit set. With a redelivery limit, requeueing will use the original position of the message, if possible. With this update, if you get stuck or requeue deliveries at a high rate, you will not indefinitely grow the quorum queue Raft log, potentially driving the node out of disk space. If the original behavior is important to keep, ensure your applications' quorum queues have a redelivery limit set. This is a **potentially breaking change**. For information on upgrading to a new major version, see [Upgrading to a new Major Version](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading).
+:  {{site.data.keyword.messages-for-rabbitmq_full}} version 3.11 is now available. With this release, messages that are delivered by a quorum queue and negatively acknowledged with a requeue are added to the back of the queue until the queue has redelivery limit set. With a redelivery limit, requeueing uses the original position of the message, if possible. With this update, if you get stuck or requeue deliveries at a high rate, you do not indefinitely grow the quorum queue Raft log, potentially driving the node out of disk space. If the original behavior is important to keep, ensure your applications' quorum queues have a redelivery limit set. This is a **potentially breaking change**. For more information, see [Upgrading to a new Major Version](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading).
+
+Unmirrored Classic Queues Handling Change
+:  With this update, unmirrored classic queue handling is changed. If a node was to be shut down during maintenance, an unmirrored classic queue was automatically moved to another node. With version 3.11, this behavior is changed to match the documented RabbitMQ behavior. An unmirrored classic transient queue is deleted and an unmirrored classic durable queue is unavailable during that time. For more information, see RabbitMQ's [Classic Queue Mirroring](https://www.rabbitmq.com/ha.html#non-mirrored-queue-behavior-on-node-failure).{: external}
 
 `idle_since` field now uses RFC 3339 format
 :  The `idle_since` field now uses RFC 3339 format. Here is a sample value with the previous format: `2022-03-22 11:39:37`. Here is a sample value with the new format: `2022-03-22T11:39:37.908+01:00`.
@@ -48,7 +51,7 @@ Protecting {{site.data.keyword.messages-for-rabbitmq_full}} resources with conte
 {: #messages-for-rabbitmq-25jan2022}
 {: release-note}
 
-{{site.data.keyword.messages-for-rabbitmq_full}} 3.8 End of Life in July, 2022
+{{site.data.keyword.messages-for-rabbitmq_full}} 3.8 End of Life in July  2022
 :  On July 12, 2022, Messages for RabbitMQ version 3.8 reaches its end of life. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022).
 
 ## 30 June 2021
