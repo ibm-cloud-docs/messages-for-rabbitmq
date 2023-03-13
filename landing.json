@@ -1,6 +1,6 @@
 {
     "title": "IBM Cloud® Messages for RabbitMQ docs",
-    "lastupdated": "2023-03-03",
+    "lastupdated": "2023-03-13",
     "introduction": "RabbitMQ is an open source multi-protocol messaging broker.",
     "section_devtools": {
       "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
@@ -34,6 +34,11 @@
       "view_more": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes",
       "tiles": [
         {
+          "date": "09 March 2023",
+          "title": "RabbitMQ Version 3.11 Release",
+          "description": "IBM Cloud® Messages for RabbitMQ version 3.11 is now available. "
+        },
+        {
           "date": "19 October 2022",
           "title": "Deploying and Connecting an IBM Cloud® Databases Instance Tutorial",
           "description": "This tutorial guides you through the process of deploying a Cloud Databases instance and connecting it to a web front end by creating a webpage that allows visitors to input a word and its definition. These values are then stored in a database running on Cloud Databases. You install the database infrastructure by using Terraform and your web application uses the popular Express framework. The application can then be run locally, or by using Docker."
@@ -42,11 +47,6 @@
           "date": "11 October 2022",
           "title": "Protecting IBM Cloud® Messages for RabbitMQ resources with context-based restrictions",
           "description": "Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for IBM Cloud® resources based on the context of access requests. Access to Cloud Databases resources can be controlled with CBR and identity and access management (IAM) policies."
-        },
-        {
-          "date": "25 January 2022",
-          "title": "IBM Cloud® Messages for RabbitMQ 3.8 End of Life in July, 2022",
-          "description": "On July 12, 2022, Messages for RabbitMQ version 3.8 reaches its end of life."
         }
       ]
     }
