@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-06-22"
+  years: 2018, 2023
+lastupdated: "2023-04-18"
 
 keywords: rabbitmq, databases, memory alarms, disk alarms, monitoring, disk I/O, rabbitmq performance
 
@@ -10,12 +10,7 @@ subcollection: messages-for-rabbitmq
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Performance
 {: #performance}
@@ -75,9 +70,3 @@ The [RabbitMQ HTTP API](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-
 
 Health checks consume system resources. For smaller, less busy deployments, the health check shouldn't take long to give you a response. Larger deployments, or deployments under load, can take some time to return results.
 {: #tip}
-
-## Notes for Compose Users
-{: #notes-compose-users}
-
-If you are migrating to {{site.data.keyword.messages-for-rabbitmq}} from an IBM Cloud Compose For RabbitMQ deployment, you might find the article [Getting Started with Messages for RabbitMQ](https://www.ibm.com/cloud/blog/getting-started-with-ibm-cloud-messages-for-rabbitmq) helpful. The configuration of alarms as well as the lack of autoscaling differs from your previous deployments, and it does have an effect on performance. Testing and tuning your new deployment before moving over production work loads is highly recommended.
-
