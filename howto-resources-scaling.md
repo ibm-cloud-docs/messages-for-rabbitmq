@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-11-14"
+  years: 2019, 2023
+lastupdated: "2023-04-19"
 
 keywords: rabbitmq, databases, manual scaling, disk I/O, memory, CPU, rabbitmq scaling
 
@@ -52,7 +52,7 @@ If you notice that one RabbitMQ node is occupying significantly more resources t
 Triggering even distribution of queues causes load until all queues are evenly distributed so this action should not be performed while the deployment is under pressure or outscaled. 
 {: .note}
 
-To evenly distribute the queues, you can use the [RabbitMQ Management API](https://cdn.rawgit.com/rabbitmq/rabbitmq-management/v3.8.9/priv/www/api/index.html) to run an https `POST` call `/api/rebalance/queues` against your deployment.
+To evenly distribute the queues, you can use the [RabbitMQ Management API](https://rawcdn.githack.com/rabbitmq/rabbitmq-server/v3.11.2/deps/rabbitmq_management/priv/www/api/index.html){: external} to run an https `POST` call `/api/rebalance/queues` against your deployment.
 
 ### Dedicated Cores
 {: #dedicated-cores}
