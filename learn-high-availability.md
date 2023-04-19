@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-04-19"
 
 keywords: rabbitmq, databases, ha, rabbitmq ha, rabbitmq high availability, quorom queues
 
@@ -39,16 +39,14 @@ You can modify high-availability by adding a policy and setting it with a higher
 ### Quorum Queues
 {: #quorum-queues}
 
-Starting in RabbitMQ 3.8, high-availability can be managed with [quorum queues](https://www.rabbitmq.com/quorum-queues.html){: external}. Using quorum queues can significantly improve high-availability of a deployment, specifically in cases where queues exist long term and their durability is more important than other features. Quorum queues manage high-availability by maintaining a quorum that uses the Raft Consensus Algorithm, and the current primary and most of the replicas agree on the contents of the queue. If something happens to the primary node, the replicas elect the next primary.
+High-availability can be managed with [quorum queues](https://www.rabbitmq.com/quorum-queues.html){: external}. Using quorum queues can significantly improve high-availability of a deployment, specifically in cases where queues exist long term and their durability is more important than other features. Quorum queues manage high-availability by maintaining a quorum that uses the Raft Consensus Algorithm, and the current primary and most of the replicas agree on the contents of the queue. If something happens to the primary node, the replicas elect the next primary.
 
-The RabbitMQ documentation covers the [use-cases](https://www.rabbitmq.com/quorum-queues.html#use-cases){: external}, and how to [implement quorum queues in your cluster](https://www.rabbitmq.com/quorum-queues.html#usage){: external}.
-
-For more information, see [IBM Cloud Messages for RabbitMQ 3.8 is Now Preferred](https://cms.ibm.com/cloud/blog/announcements/ibm-cloud-messages-for-rabbitmq-38-is-now-preferred){: external}.  
+The RabbitMQ Documentation covers the [use-cases](https://www.rabbitmq.com/quorum-queues.html#use-cases){: external}, and how to [implement quorum queues in your cluster](https://www.rabbitmq.com/quorum-queues.html#usage){: external}.
 
 ### Mirrored Queues
 {: #mirrored-queues}
 
-While quorum queues are preferred, the default configuration in RabbitMQ 3.7, and previous, uses [mirrored queues](https://www.rabbitmq.com/ha.html#what-is-mirroring){: external}. Mirrored queues are configured with each queue containing a primary on one member of the cluster and mirrors of the queues exist on the other members of the cluster. Messages published to the queue first go to the primary and are then replicated to the mirrors. If something happens to the primary node, the oldest synchronized mirror is promoted to primary.
+While quorum queues are preferred, the default configuration in RabbitMQ 4, and previous, uses [mirrored queues](https://www.rabbitmq.com/ha.html#what-is-mirroring){: external}. Mirrored queues are configured with each queue containing a primary on one member of the cluster and mirrors of the queues exist on the other members of the cluster. Messages published to the queue first go to the primary and are then replicated to the mirrors. If something happens to the primary node, the oldest synchronized mirror is promoted to primary.
 
 
 ## High-Availability for your Application
@@ -58,7 +56,7 @@ Applications that communicate over networks and cloud services are subject to tr
 
 You want to design your applications to handle a temporary loss in connectivity to your deployment or to {{site.data.keyword.cloud_notm}}. 
 
-The RabbitMQ documentation has an overview of what sorts of things you can do to help make your applications robust and stable in its [Production Checklist](https://www.rabbitmq.com/production-checklist.html#apps){: external}, under the _Applications_ section. It includes some general connection management and recovery advice.
+The RabbitMQ Documentation has an overview of what sorts of things you can do to help make your applications robust and stable in its [Production Checklist](https://www.rabbitmq.com/production-checklist.html#apps){: external}, under the _Applications_ section. It includes some general connection management and recovery advice.
 
 RabbitMQ and RabbitMQ drivers support various features to help you design a resilient application.
 - [Consumer Acknowledgments and Publisher Confirms](https://www.rabbitmq.com/confirms.html){: external} - to ensure that messages are sent and received, and to catch and recover from situations where they are not. 
@@ -91,7 +89,7 @@ Checking your deployment's logs helps you monitor the state of HA and replicatio
 ### RabbitMQ Reliability Guide
 {: #rabbitmq-reliability-guide}
 
-The RabbitMQ documentation provides an excellent [Reliability Guide](https://www.rabbitmq.com/reliability.html){: external} that covers a wide range of topics that are related to making sure that your cluster is functioning and your data is resilient. It also covers features that are available to you as a user to monitor the deployment, connections, queues, and messages to ensure smooth operations.
+The RabbitMQ Documentation provides an excellent [Reliability Guide](https://www.rabbitmq.com/reliability.html){: external} that covers a wide range of topics that are related to making sure that your cluster is functioning and your data is resilient. It also covers features that are available to you as a user to monitor the deployment, connections, queues, and messages to ensure smooth operations.
 
 ## High availability, disaster recovery, and SLA resources
 {: #high-availability-disaster-sla}
