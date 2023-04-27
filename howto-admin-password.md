@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-11-14"
+  years: 2017, 2023
+lastupdated: "2023-04-27"
 
 keywords: rabbitmq, rabbitmq admin password
 
@@ -9,12 +9,6 @@ subcollection: messages-for-rabbitmq
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
 {{site.data.keyword.attribute-definition-list}}
 
 # Setting the Admin Password
