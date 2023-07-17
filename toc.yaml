@@ -35,6 +35,7 @@ toc:
           - include: ../cloud-databases/howto-sat-loc.md
           - include: ../cloud-databases/howto-sat-loc-aws.md
           - include: ../cloud-databases/howto-sat-loc-onprem.md
+      - howto-provisioning.md
       - include: ../cloud-databases/howto-provisioning.md
       - include: ../cloud-databases/howto-deprovisioning.md
       - include: ../cloud-databases/closures.md
