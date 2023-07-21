@@ -30,6 +30,7 @@ toc:
       id: howto
       topics:
       - howto-provisioning.md
+      - howto-user-management.md
       - topicgroup: 
           label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
           topics:
@@ -40,9 +41,7 @@ toc:
       - include: ../cloud-databases/howto-deprovisioning.md
       - include: ../cloud-databases/closures.md
       - include: ../cloud-databases/ha-dr.md
-      - howto-admin-password.md
       - howto-getting-connection-strings.md
-      - howto-user-management.md
       - topicgroup: 
           label: Connecting to Messages for RabbitMQ
           topics: 
