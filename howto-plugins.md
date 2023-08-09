@@ -46,7 +46,7 @@ The _Shovel Status_ and _Shovel Management_ links appear under the _Admin_ tab.
 
 ![Admin tab with the Shovel plug-in](images/plugins-shovel-ui.png){: caption="Figure 1. Admin tab with the Shovel plug-in" caption-side="bottom"}
 
-If you do not see the _Admin_ tab, you might need to log in to the management UI with the [admin user](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-admin-password). 
+If you do not see the _Admin_ tab, you might need to log in to the management UI with the [admin user](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#user-management-set-admin-password-ui). 
 {: .tip}
 
 In the RabbitMQ Management API, the Shovel Management plug-in adds endpoints for listing, creating, and deleting shovels. Usage and examples are in the [GitHub repository's documentation](https://github.com/rabbitmq/rabbitmq-shovel-management#usage).

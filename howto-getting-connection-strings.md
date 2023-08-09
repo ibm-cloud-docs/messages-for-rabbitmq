@@ -27,7 +27,7 @@ To connect to {{site.data.keyword.messages-for-rabbitmq_full}}, you need some us
 
 You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
-A {{site.data.keyword.messages-for-rabbitmq}} deployment is provisioned with an admin user, and after you [set the admin password](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-admin-password), you can use its credentials to connect to your deployment.
+A {{site.data.keyword.messages-for-rabbitmq}} deployment is provisioned with an admin user, and after you [set the admin password](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#user-management-set-admin-password-ui), you can use its credentials to connect to your deployment.
 {: .tip}
 
 ## Credentials and Connection Strings for more users
