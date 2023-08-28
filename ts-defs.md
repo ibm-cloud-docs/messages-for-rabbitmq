@@ -25,7 +25,7 @@ If you encounter errors while importing definitions from {{site.data.keyword.mes
 You encounter errors while importing definitions from {{site.data.keyword.messages-for-rabbitmq}} 3.9 to version 3.11.
 {: tsSymptoms}
 
-An error while importing definitions can be due to invalid imported arguments being imported from {{site.data.keyword.messages-for-rabbitmq}} 3.9 to version 3.11. Review the following information to troubleshoot and resolve common connectivity problems:
+[RabbitMQ definitions](https://www.rabbitmq.com/definitions.html){: external} are metadata that RabbitMQ stores about its cluster. This metadata includes information about users, vhosts, queues, exchanges, bindings, and runtime parameters. Definitions can be used to restore a cluster or migrate to a new cluster. An error while importing definitions can be due to invalid imported arguments being imported from {{site.data.keyword.messages-for-rabbitmq}} 3.9 to version 3.11. Review the following information to troubleshoot and resolve common connectivity problems:
 {: tsResolve}
 
 Look into your [logs](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-logging) and search for this line:
@@ -35,7 +35,5 @@ Encountered an error when importing definitions
 ```
 {: pre} 
 
-If this error is found, check which argument is causing the issue.
-
-Once you have identified the argument causing the issue, correct it and try to import the definition again.
+If this error is found, check which argument is causing the issue. Once you have identified the argument causing the issue, correct it and try to import the definition again.
 
