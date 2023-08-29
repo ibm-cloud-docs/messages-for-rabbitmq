@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-08-29"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 29 August 2023
+{: #messages-for-rabbitmq-29aug2023}
+{: release-note}
+
+Definition Troubleshooting Documentation Added
+:  [RabbitMQ definitions](https://www.rabbitmq.com/definitions.html){: external} are metadata that RabbitMQ stores about its cluster. This metadata includes information about users, vhosts, queues, exchanges, bindings, and runtime parameters. Definitions can be used to restore a cluster or migrate to a new cluster. An error while importing definitions can be due to invalid imported arguments being imported from {{site.data.keyword.messages-for-rabbitmq}} 3.9 to version 3.11. For more information, see [Why can't I import definitions from {{site.data.keyword.messages-for-rabbitmq}} version 3.9 to version 3.11?](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-troubleshoot-defs).
 
 ## 23 May 2023
 {: #messages-for-rabbitmq-23may2023}
