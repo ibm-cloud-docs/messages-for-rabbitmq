@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-08-31"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -26,6 +26,13 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 
 Definition Troubleshooting Documentation Added
 :  [RabbitMQ definitions](https://www.rabbitmq.com/definitions.html){: external} are metadata that RabbitMQ stores about its cluster. This metadata includes information about users, vhosts, queues, exchanges, bindings, and runtime parameters. Definitions can be used to restore a cluster or migrate to a new cluster. An error while importing definitions can be due to invalid imported arguments being imported from {{site.data.keyword.messages-for-rabbitmq}} 3.9 to version 3.11. For more information, see [Why can't I import definitions from {{site.data.keyword.messages-for-rabbitmq}} version 3.9 to version 3.11?](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-troubleshoot-defs).
+
+## 20 July 2023
+{: #messages-for-rabbitmq-20jul2023}
+{: release-note}
+
+{{site.data.keyword.messages-for-rabbitmq}} version 3.9 End of Life on September 21, 2023
+:  On September 21, 2023 {{site.data.keyword.messages-for-rabbitmq}} version 3.9 reaches its end of life. On that date, all {{site.data.keyword.messages-for-rabbitmq}} instances on version 3.9 that are still active will have their access removed, in line with our [Database Versioning Policy](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-versioning-policy){: external}. You are expected to be on version 3.11, the latest preferred version of {{site.data.keyword.messages-for-rabbitmq}}. If needed, [upgrade](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading) your database instances.
 
 ## 23 May 2023
 {: #messages-for-rabbitmq-23may2023}
