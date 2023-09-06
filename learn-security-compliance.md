@@ -1,20 +1,16 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-06-23"
+  years: 2018, 2023
+lastupdated: "2023-09-06"
 
-keywords: rabbitmq, databases, soc, hipaa, gdpr, terms, rabbitmq security compliance
+keywords: rabbitmq, databases, soc, hipaa, gdpr, terms, rabbitmq security compliance, pci dss
 
 subcollection: messages-for-rabbitmq
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Security and Compliance
 {: #security-compliance}
@@ -24,17 +20,17 @@ subcollection: messages-for-rabbitmq
 
 {{site.data.keyword.messages-for-rabbitmq_full}} use the following methods to protect data in transit or in storage.
 - All {{site.data.keyword.messages-for-rabbitmq}} connections use TLS/SSL encryption for data in transit. The current supported version of this encryption is TLS 1.2.
-- Access to the Account, Management Console UI, and API is secured via [Identity and Access Management (IAM)](/docs/messages-for-rabbitmq?topic=cloud-databases-iam).
+- Access to the Account, Management Console UI, and API is secured via [Identity and Access Management (IAM)](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-iam).
 - Access to the database is secured through the standard access controls provided by the database. These access controls are configured to require valid database-level credentials that are obtainable only through prior access to the database or through our Management Console UI or API.
-- All {{site.data.keyword.messages-for-rabbitmq}} disk is provided on storage encrypted with LUKS using AES-256. The default keys are managed by [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-about). Bring-your-own-key (BYOK) for encryption is also available through [Key Protect Integration](/docs/messages-for-rabbitmq?topic=cloud-databases-key-protect).
-- IP allowlisting - All deployments support [allowlisting IP addresses](/docs/messages-for-rabbitmq?topic=cloud-databases-allowlisting) to restrict access to the service.
-- Public and Private Networking - {{site.data.keyword.messages-for-rabbitmq}} is integrated with [Service Endpoints](/docs/messages-for-rabbitmq?topic=cloud-databases-service-endpoints). You can select whether to use connections over the public network, the {{site.data.keyword.cloud_notm}} internal network, or both.
-- Dedicated Cores - Allocating dedicated cores to your deployment introduces hypervisor-level isolation to your database instance, using isolated virtual machines to ensure your data processing remains separated from other customers. It also provides a guaranteed minimum amount of CPUs to your deployment. Deployments with dedicated cores in the same Resource Group and {{site.data.keyword.cloud_notm}} Region may share a virtual machine.
+- All {{site.data.keyword.messages-for-rabbitmq}} disk is provided on storage encrypted with LUKS using AES-256. The default keys are managed by [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-about). Bring-your-own-key (BYOK) for encryption is also available through [Key Protect Integration](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-key-protect).
+- IP allowlisting - All deployments support [allowlisting IP addresses](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-allowlisting) to restrict access to the service.
+- Public and Private Networking - {{site.data.keyword.messages-for-rabbitmq}} is integrated with [Service Endpoints](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-service-endpoints). You can select whether to use connections over the public network, the {{site.data.keyword.cloud_notm}} internal network, or both.
+- Dedicated Cores - Allocating dedicated cores to your deployment introduces hypervisor-level isolation to your database instance, using isolated virtual machines to ensure your data processing remains separated from other customers. It also provides a guaranteed minimum number of CPUs to your deployment. Deployments with dedicated cores in the same Resource Group and {{site.data.keyword.cloud_notm}} Region can share a virtual machine.
 
 ## Data Resilience
 {: #data-resilience}
 
-- [Backups](/docs/messages-for-rabbitmq?topic=cloud-databases-dashboard-backups) are included in the service. {{site.data.keyword.messages-for-rabbitmq}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage&cloud-object-storage-about-cloud-object-storage) and are also [encrypted](/docs/cloud-object-storage?topic=cloud-object-storage-security).
+- [Backups](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-dashboard-backups) are included in the service. {{site.data.keyword.messages-for-rabbitmq}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage&cloud-object-storage-about-cloud-object-storage) and are also [encrypted](/docs/cloud-object-storage?topic=cloud-object-storage-security).
 - RabbitMQ backups contain only definitions, topology, and metadata. Messages are not stored in backups.
 - All {{site.data.keyword.messages-for-rabbitmq}} deployments are configured with replication. Deployments contain a cluster with three nodes where all three nodes are equal peers. Queues are mirrored on all three nodes.
 - If you deploy to an {{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the data center. 
@@ -43,9 +39,9 @@ subcollection: messages-for-rabbitmq
 ## SOC 2 Type 2 Certification
 {: #soc2-type2-cert}
 
-{{site.data.keyword.IBM_notm}} provides a Service Organization Controls (SOC) 2 Type 2 report for {{site.data.keyword.messages-for-rabbitmq}}. The reports evaluate IBM's operational controls according to the criteria set by the American Institute of Certified Public Accountants (AICPA) Trust Services Principles. The Trust Services Principles define adequate control systems and establish industry standards for service providers such as IBM Cloud to safeguard their customers' data and information.
+{{site.data.keyword.IBM_notm}} provides a Service Organization Controls (SOC) 2 Type 2 report for {{site.data.keyword.messages-for-rabbitmq}}. The reports evaluate IBM's operational controls according to the criteria set by the American Institute of Certified Public Accountants (AICPA) Trust Services Principles. The Trust Services Principles define adequate control systems and establish industry standards for service providers such as {{site.data.keyword.cloud_notm}} to safeguard their customers' data and information.
 
-You can request an SOC 2 Type 2 report from the customer portal or contact your sales representative. Alternatively, you can open a support ticket with [IBM Cloud support](https://cloud.ibm.com/unifiedsupport/supportcenter){: .external}
+You can request an SOC 2 Type 2 report from the customer portal or contact your sales representative. Alternatively, you can open a support ticket with [{{site.data.keyword.cloud_notm}} support](https://cloud.ibm.com/unifiedsupport/supportcenter){: .external}
 
 ## ISO 27017, ISO 27018
 {: #iso-27017-iso-27018}
@@ -55,8 +51,7 @@ You can request an SOC 2 Type 2 report from the customer portal or contact your 
 ## General Data Protection Regulation (GDPR) 
 {: #-gdpr}
 
-If you have an account with IBM Cloud, your personal data is held by {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.IBM_notm}} Data Processing Addendum (Addendum) applies to the processing of client's personal data by {{site.data.keyword.IBM_notm}} on behalf of client in order to provide {{site.data.keyword.IBM_notm}} standard services.  
-[IBM DPA](https://www.ibm.com/support/customer/zz/en/dpa.html){: .external}
+If you have an account with {{site.data.keyword.cloud_notm}}, your personal data is held by {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.IBM_notm}} Data Processing Addendum (Addendum) applies to the processing of client's personal data by {{site.data.keyword.IBM_notm}} on behalf of client in order to provide {{site.data.keyword.IBM_notm}} standard services.
 
 {{site.data.keyword.messages-for-rabbitmq}} processes limited client Personal Information (PI) in the course of running the service and optimizing the user experience. 
 
@@ -76,10 +71,10 @@ Customers are responsible for the storing, processing, and transmission of their
 
 It is the customer’s responsibility to familiarize themselves with these processes and to manage data retention and removal from the service according to the customer’s policies.
 
-A full list of PCI DSS-ready {{site.data.keyword.cloud_notm}} Platform services, and options to request a PCI DSS AOC and SRM guide, can be found at the [IBM Cloud compliance page](https://www.ibm.com/cloud/compliance/industry).
+A full list of PCI DSS-ready {{site.data.keyword.cloud_notm}} Platform services, and options to request a PCI DSS AOC and SRM guide, can be found at the [{{site.data.keyword.cloud_notm}} compliance page](https://www.ibm.com/cloud/compliance/industry).
 
 ## Terms
 {: #terms}
 
 - [The IBM Privacy Policy](https://www.ibm.com/privacy/us/en/)
-- [The IBM Cloud Notices and Terms of Use](/docs/overview/terms-of-use?topic=overview-terms)
+- [The {{site.data.keyword.cloud_notm}} Notices and Terms of Use](/docs/overview/terms-of-use?topic=overview-terms)
