@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2023
 lastupdated: "2023-09-06"
 
-keywords: rabbitmq, databases, soc, hipaa, gdpr, terms, rabbitmq security compliance, pci dss
+keywords: rabbitmq, databases, soc, hipaa, gdpr, terms, rabbitmq security compliance, pci dss, 
 
 subcollection: messages-for-rabbitmq
 
