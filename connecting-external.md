@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-06-20"
+  years: 2017, 2023
+lastupdated: "2023-09-29"
 
 keywords: rabbitmq, rabbitmq connecting, connecting to rabbitmq
 
@@ -9,18 +9,14 @@ subcollection: messages-for-rabbitmq
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Connecting an external application
 {: #external-app}
 
-Your applications and drivers use connection strings to make a connection to {{site.data.keyword.messages-for-rabbitmq_full}}. Your deployment has connection strings specifically for drivers, clients, and applications. Connection strings are displayed in the *Endpoints* panel of your deployment's *Overview*, and can also be retrieved from the [cloud databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+Your applications and drivers use connection strings to make a connection to {{site.data.keyword.messages-for-rabbitmq_full}}. Your deployment has connection strings specifically for drivers, clients, and applications. Connection strings are displayed in the *Endpoints* panel of your deployment's *Overview*, and can also be retrieved from the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [{{site.data.keyword.databases-for}} API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
-The connection strings can be used by any of the credentials you created on your deployment. While you can use the admin user for all of your connections and applications, it might be better to create users specifically for your applications to connect with. Documentation on creating users is on the [Creating Users and Getting Connection Strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings) page.
+The connection strings can be used by any of the credentials you created on your deployment. While you can use the admin user for all of your connections and applications, it might be better to create users specifically for your applications to connect with. For more information, see [Creating Users and Getting Connection Strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings).
 
 ## Connecting with a language's driver
 {: #connecting-lang-driver}
@@ -102,6 +98,8 @@ The "mqtts" section contains the information that an MQTT client needs to connec
 {: #tls-cert-support}
 
 All connections to {{site.data.keyword.messages-for-rabbitmq}} are TLS 1.2 enabled, so the driver or client you use to connect needs to be able to support encryption. Your deployment also comes with a self-signed certificate so the driver can verify the server upon connection.
+
+For more information, see [{{site.data.keyword.databases-for}} Certificates FAQ](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-faq-cert){: external}.
 
 ### Using the self-signed certificate
 {: #using-selfsigned-cert}
