@@ -31,13 +31,6 @@ toc:
       topics:
       - howto-provisioning.md
       - howto-user-management.md
-      - topicgroup: 
-          label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
-          topics:
-          - include: ../cloud-databases/howto-sat-loc.md
-          - include: ../cloud-databases/howto-sat-loc-aws.md
-          - include: ../cloud-databases/howto-sat-loc-onprem.md
-      - include: ../cloud-databases/howto-provisioning.md
       - include: ../cloud-databases/howto-deprovisioning.md
       - include: ../cloud-databases/closures.md
       - include: ../cloud-databases/ha-dr.md
@@ -56,6 +49,7 @@ toc:
       - include: ../cloud-databases/howto-allowlists.md
       - howto-plugins.md
       - howto-upgrading.md
+      - howto-shovel.md
       - topicgroup:
           label: Managing backups
           topics:
@@ -84,6 +78,12 @@ toc:
           - include: ../cloud-databases/manage-scc.md
           - include: ../cloud-databases/howto-cbr.md
           - include: ../cloud-databases/cbr-tutorial.md
+      - topicgroup: 
+          label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
+          topics:
+          - include: ../cloud-databases/howto-sat-loc.md
+          - include: ../cloud-databases/howto-sat-loc-aws.md
+          - include: ../cloud-databases/howto-sat-loc-onprem.md
   - navgroup: 
       id: reference
       topics:
