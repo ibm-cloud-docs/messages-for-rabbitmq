@@ -21,7 +21,7 @@ Shovel is a plugin for RabbitMQ that enables you to define replication relations
 
 Before configuring Shovel, ensure you have created a user with `admin` permission on both formations. For more information, see [Managing Users and Permissions](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management){: external}.
 
-# Configuring RabbitMQ Shovel
+## Configuring RabbitMQ Shovel
 {: #rabbitmq-shovel-config}
 
 Follow these steps to configure RabbitMQ Shovel:
