@@ -14,12 +14,12 @@ subcollection: messages-for-rabbitmq
 # RabbitMQ Shovel
 {: #rabbitmq-shovel}
 
-Shovel is a plugin for RabbitMQ that enables you to define replication relationships between brokers.
+Shovel is a plug-in for RabbitMQ that enables you to define replication relationships between brokers.
 
 ## Prerequisite
 {: #rabbitmq-shovel-prereqs}
 
-Before configuring Shovel, ensure you have created a user with `admin` permission on both formations. For more information, see [Managing Users and Permissions](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management){: external}.
+Before you configure Shovel, make sure that you create a user with `admin` permission on both formations. For more information, see [Managing Users and Permissions](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management){: external}.
 
 ## Configuring RabbitMQ Shovel
 {: #rabbitmq-shovel-config}
@@ -36,12 +36,12 @@ Follow these steps to configure RabbitMQ Shovel:
    - **Destination**: AMQP 0.9.1
      - *URI*: `amqps://username:password@<target_hostname>:<target_port>?verify=verify_none`
      - *Queue_name*: `target_queue`
-1. Review the details to verify the shovel is created correctly.
+1. Review the details to verify that the shovel is created correctly.
 1. To verify Shovel status, select *Shovel status*.
 1. Now you can add a message to your source queue and it will redirect to the destination queue.
 
 # Things to remember
 {: #rabbitmq-shovel-remember}
 
-- Your Shovel should be created on the destination formation.
-- In RabbitMQ versions 3.12 and newer, it is mandatory to add `verify_none` in the source and destination URI, as detailed in the configiuration procedure.
+- Create your Shovel on the destination formation.
+- In RabbitMQ versions 3.12 and newer, it is mandatory to add `verify_none` in the source and destination URI, as detailed in the configuration procedure.
