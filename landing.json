@@ -1,6 +1,6 @@
 {
     "title": "IBM Cloud® Messages for RabbitMQ docs",
-    "lastupdated": "2023-08-01",
+    "lastupdated": "2023-11-06",
     "introduction": "RabbitMQ is an open source multi-protocol messaging broker.",
     "section_devtools": {
       "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
@@ -21,7 +21,7 @@
       {
         "title": "Creating Users and Getting Connection Strings",
         "description": "To connect to IBM Cloud® Messages for RabbitMQ, you need some users and connection strings.",
-        "href": "https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings&interface=cli"
+        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings&interface=cli"
       }
     ],
     "section_learn": {
@@ -34,19 +34,19 @@
       "view_more": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes",
       "tiles": [
         {
-          "date": "09 March 2023",
-          "title": "RabbitMQ Version 3.11 Release",
-          "description": "IBM Cloud® Messages for RabbitMQ version 3.11 is now available."
+          "date": "06 November 2023",
+          "title": "RabbitMQ Shovel Documentation Added",
+          "description": "Shovel is a plug-in for RabbitMQ that enables you to define replication relationships between brokers. For more information, see RabbitMQ Shovel."
         },
         {
-          "date": "19 October 2022",
-          "title": "Deploying and Connecting an IBM Cloud® Databases Instance Tutorial",
-          "description": "This tutorial guides you through the process of deploying a Cloud Databases instance and connecting it to a web front end by creating a webpage that allows visitors to input a word and its definition. These values are then stored in a database running on Cloud Databases. You install the database infrastructure by using Terraform and your web application uses the popular Express framework. The application can then be run locally, or by using Docker."
+          "date": "29 August 2023",
+          "title": "Definition Troubleshooting Documentation Added",
+          "description": "RabbitMQ definitions are metadata that RabbitMQ stores about its cluster. This metadata includes information about users, vhosts, queues, exchanges, bindings, and runtime parameters. Definitions can be used to restore a cluster or migrate to a new cluster. An error while importing definitions can be due to invalid imported arguments being imported from Messages for RabbitMQ 3.9 to version 3.11. For more information, see Why can't I import definitions from Messages for RabbitMQ version 3.9 to version 3.11?."
         },
         {
-          "date": "11 October 2022",
-          "title": "Protecting IBM Cloud® Messages for RabbitMQ resources with context-based restrictions",
-          "description": "Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for IBM Cloud® resources based on the context of access requests. Access to Cloud Databases resources can be controlled with CBR and identity and access management (IAM) policies."
+          "date": "20 July 2023",
+          "title": "Messages for RabbitMQ version 3.9 End of Life on September 21, 2023",
+          "description": "On September 21, 2023 Messages for RabbitMQ version 3.9 reaches its end of life. On that date, all Messages for RabbitMQ instances on version 3.9 that are still active will have their access removed, in line with our Database Versioning Policy. You are expected to be on version 3.11, the latest preferred version of Messages for RabbitMQ. If needed, upgrade your database instances."
         }
       ]
     }
