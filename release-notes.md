@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-11-06"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -20,12 +20,12 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
-## 01 September 2023
-{: #messages-for-rabbitmq-01sept2023}
+## 06 November 2023
+{: #messages-for-rabbitmq-06nov2023}
 {: release-note}
 
-RabbitMQ Streams now available
-:  RabbitMQ Streams is now available for {{site.data.keyword.messages-for-rabbitmq_full}}. RabbitMQ Streams is similar to queues, but differs in how messages are stored and consumed. Streams are effective for large fan-outs, high throughput scenarios, and large logs. For more information, see RabbitMQ's [Streams](https://www.rabbitmq.com/streams.html){: external}.
+RabbitMQ Shovel Documentation Added
+:  Shovel is a plug-in for RabbitMQ that enables you to define replication relationships between brokers. For more information, see [RabbitMQ Shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel){: external}.
 
 ## 29 August 2023
 {: #messages-for-rabbitmq-29aug2023}
