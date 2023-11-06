@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-11-06"
 
 keyowrds: rabbitmq, upgrading, major versions, changing versions, rabbitmq upgrading, new deployment, major version
 
@@ -24,6 +24,11 @@ Upgrade your new deployment by [restoring a backup](/docs/messages-for-rabbitmq?
 - You can test the new database out of production and act on any application incompatibilities.
 - The entire process can be rerun at any point.
 - A fresh restoration reduces the likelihood that unneeded artifacts of the older version are carried over to the new deployment.
+
+## RabbitMQ Shovel
+{: #upgrading-shovel}
+
+You can use a shovel to move messages from a current cluster to a new cluster during a RabbitMQ version upgrade. For more information, see [RabbitMQ Shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel){: external}.
 
 ## Upgrading in the UI
 {: #upgrading-ui}
