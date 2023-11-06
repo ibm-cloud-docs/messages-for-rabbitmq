@@ -58,6 +58,7 @@ toc:
       - include: ../cloud-databases/howto-allowlists.md
       - howto-plugins.md
       - howto-upgrading.md
+      - howto-shovel.md
       - topicgroup:
           label: Managing backups
           topics:
