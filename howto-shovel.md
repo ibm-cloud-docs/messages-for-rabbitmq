@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023
-lastupdated: "2023-10-13"
+lastupdated: "2023-11-07"
 
 keyowrds: rabbitmq, shovel
 
@@ -40,7 +40,7 @@ Follow these steps to configure RabbitMQ Shovel:
 1. To verify Shovel status, select *Shovel status*.
 1. Now you can add a message to your source queue and it will redirect to the destination queue.
 
-# Things to remember
+## Things to remember
 {: #rabbitmq-shovel-remember}
 
 - Create your Shovel on the destination formation.
