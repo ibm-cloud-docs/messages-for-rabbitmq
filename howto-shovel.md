@@ -24,6 +24,8 @@ Before you configure Shovel, make sure that you create a user with `admin` permi
 ## Configuring RabbitMQ Shovel
 {: #rabbitmq-shovel-config}
 
+Create your Shovel on the destination formation. In RabbitMQ versions 3.12 and newer, it is mandatory to add `verify_none` in the source and destination URI, as detailed in the configuration procedure.
+
 Follow these steps to configure RabbitMQ Shovel:
 
 1. Log in to the [RabbitMQ Management UI](https://www.rabbitmq.com/management.html){: external} and select the **Admin** tab.
@@ -40,8 +42,3 @@ Follow these steps to configure RabbitMQ Shovel:
 1. To verify Shovel status, select *Shovel status*.
 1. Now you can add a message to your source queue and it will redirect to the destination queue.
 
-## Things to remember
-{: #rabbitmq-shovel-remember}
-
-- Create your Shovel on the destination formation.
-- In RabbitMQ versions 3.12 and newer, it is mandatory to add `verify_none` in the source and destination URI, as detailed in the configuration procedure.
