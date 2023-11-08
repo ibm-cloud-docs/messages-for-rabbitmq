@@ -25,7 +25,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 {{site.data.keyword.messages-for-rabbitmq}} Version 3.12 Preview Release
-:  Version 3.12 is released as a Preview. Features in this release: 
+:  Version 3.12 is released as a Preview. Features in this release:
    - [Optimizations](https://blog.rabbitmq.com/posts/2023/05/rabbitmq-3.12-performance-improvements/){: external} for both quorum and classic queues: improved throughput, lower throughput variability, lower latency, lower memory footprint.
    -  More mature and efficient implementation of (non-mirrored) classic queues v2 (CQv2).
    - Classic queue lazy and non-lazy modes no longer apply: classic queues v2 always behave similarly to the lazy mode in earlier release series: moving data to disk aggressively and only keeping a subset of data in memory.
