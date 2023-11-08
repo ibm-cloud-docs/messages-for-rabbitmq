@@ -31,7 +31,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
    - Classic queue lazy and non-lazy modes no longer apply: classic queues v2 always behave similarly to the lazy mode in earlier release series: moving data to disk aggressively and only keeping a subset of data in memory.
     - Significantly [reduced MQTT and Web MQTT memory footprint per connection](https://blog.rabbitmq.com/posts/2023/03/native-mqtt/){: external}.
     - Shovel plug-in now requires to have `verify_none` configured.
-
+   
 For more information, see [RabbitMQ 3.12 Release Notes](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v3.12.0){: external}.
 
 ## 06 November 2023
