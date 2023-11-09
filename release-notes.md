@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-11-08"
+lastupdated: "2023-11-09"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -24,15 +24,17 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #messages-for-rabbitmq-08nov2023}
 {: release-note}
 
-{{site.data.keyword.messages-for-rabbitmq}} Version 3.12 Preview Release
+{{site.data.keyword.messages-for-rabbitmq}} Version 3.12 [Preview](/docs/cloud-databases?topic=cloud-databases-versioning-policy#version-tags){: external} Release
 :  Version 3.12 is released as a Preview. Features in this release:
    - [Optimizations](https://blog.rabbitmq.com/posts/2023/05/rabbitmq-3.12-performance-improvements/){: external} for both quorum and classic queues: improved throughput, lower throughput variability, lower latency, lower memory footprint.
    -  More mature and efficient implementation of (non-mirrored) classic queues v2 (CQv2).
    - Classic queue lazy and non-lazy modes no longer apply: classic queues v2 always behave similarly to the lazy mode in earlier release series: moving data to disk aggressively and only keeping a subset of data in memory.
-    - Significantly [reduced MQTT and Web MQTT memory footprint per connection](https://blog.rabbitmq.com/posts/2023/03/native-mqtt/){: external}.
-    - Shovel plug-in now requires to have `verify_none` configured.
+   - Significantly [reduced MQTT and Web MQTT memory footprint per connection](https://blog.rabbitmq.com/posts/2023/03/native-mqtt/){: external}.
+   - [RabbitMQ Shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel){: external} plug-in now requires to have `verify_none` configured.
    
 For more information, see [RabbitMQ 3.12 Release Notes](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v3.12.0){: external}.
+
+For more information about provisioning a {{site.data.keyword.messages-for-rabbitmq}} instance, see [Provisioning](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning){: external}.
 
 ## 06 November 2023
 {: #messages-for-rabbitmq-06nov2023}
