@@ -1,10 +1,10 @@
 {
     "title": "IBM Cloud® Messages for RabbitMQ docs",
-    "lastupdated": "2023-11-06",
+    "lastupdated": "2023-11-27",
     "introduction": "RabbitMQ is an open source multi-protocol messaging broker.",
     "section_devtools": {
-      "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
-      "cli": "/docs/databases-cli-plugin", 
+      "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction",
+      "cli": "/docs/databases-cli-plugin",
       "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
     },
     "section_recommended": [
@@ -34,6 +34,11 @@
       "view_more": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes",
       "tiles": [
         {
+          "date": "27 Nov 2023",
+          "title": "Monitoring Integreation documentation updated",
+          "description": "Monitoring Integration documentation now lists metrics for all {{site.data.keyword.databases-for}} services."
+        },
+        {
           "date": "06 November 2023",
           "title": "RabbitMQ Shovel Documentation Added",
           "description": "Shovel is a plug-in for RabbitMQ that enables you to define replication relationships between brokers. For more information, see RabbitMQ Shovel."
@@ -42,11 +47,6 @@
           "date": "29 August 2023",
           "title": "Definition Troubleshooting Documentation Added",
           "description": "RabbitMQ definitions are metadata that RabbitMQ stores about its cluster. This metadata includes information about users, vhosts, queues, exchanges, bindings, and runtime parameters. Definitions can be used to restore a cluster or migrate to a new cluster. An error while importing definitions can be due to invalid imported arguments being imported from Messages for RabbitMQ 3.9 to version 3.11. For more information, see Why can't I import definitions from Messages for RabbitMQ version 3.9 to version 3.11?."
-        },
-        {
-          "date": "20 July 2023",
-          "title": "Messages for RabbitMQ version 3.9 End of Life on September 21, 2023",
-          "description": "On September 21, 2023 Messages for RabbitMQ version 3.9 reaches its end of life. On that date, all Messages for RabbitMQ instances on version 3.9 that are still active will have their access removed, in line with our Database Versioning Policy. You are expected to be on version 3.11, the latest preferred version of Messages for RabbitMQ. If needed, upgrade your database instances."
         }
       ]
     }
