@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-11-09"
+lastupdated: "2023-11-27"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -20,6 +20,13 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
+## 27 November 2023
+{: #messages-for-rabbitmq-27nov2023}
+{: release-note}
+
+Monitoring Integreation documentation updated
+:  Monitoring Integration documentation now lists metrics for all {{site.data.keyword.databases-for}} services. For more information, see [Monitoring Integration](/docs/cloud-databases?topic=cloud-databases-monitoring){: external}.
+
 ## 08 November 2023
 {: #messages-for-rabbitmq-08nov2023}
 {: release-note}
@@ -31,7 +38,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
    - Classic queue lazy and non-lazy modes no longer apply: classic queues v2 always behave similarly to the lazy mode in earlier release series: moving data to disk aggressively and only keeping a subset of data in memory.
    - Significantly [reduced MQTT and Web MQTT memory footprint per connection](https://blog.rabbitmq.com/posts/2023/03/native-mqtt/){: external}.
    - [RabbitMQ Shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel){: external} plug-in now requires to have `verify_none` configured.
-   
+
 For more information, see [RabbitMQ 3.12 Release Notes](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v3.12.0){: external}.
 
 For more information about provisioning a {{site.data.keyword.messages-for-rabbitmq}} instance, see [Provisioning](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning){: external}.
