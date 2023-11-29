@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-11-27"
+lastupdated: "2023-11-29"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -49,6 +49,8 @@ For more information about provisioning a {{site.data.keyword.messages-for-rabbi
 
 RabbitMQ Shovel Documentation Added
 :  Shovel is a plug-in for RabbitMQ that enables you to define replication relationships between brokers. For more information, see [RabbitMQ Shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel){: external}.
+
+RabbitMQ Streams is now available for {{site.data.keyword.messages-for-rabbitmq}}. RabbitMQ Streams is similar to queues, but differs in how messages are stored and consumed. Streams are effective for large fan-outs, high throughput scenarios, and large logs. For more information, see [RabbitMQ's Streams]{https://www.rabbitmq.com/streams.html}{: external}.
 
 ## 29 August 2023
 {: #messages-for-rabbitmq-29aug2023}
