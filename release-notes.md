@@ -52,6 +52,14 @@ RabbitMQ Shovel Documentation Added
 
 RabbitMQ Streams is now available for {{site.data.keyword.messages-for-rabbitmq}}. RabbitMQ Streams is similar to queues, but differs in how messages are stored and consumed. Streams are effective for large fan-outs, high throughput scenarios, and large logs. For more information, see [RabbitMQ's Streams]{https://www.rabbitmq.com/streams.html}{: external}.
 
+## 01 September 2023
+{: #messages-for-rabbitmq-01sept2023}
+{: release-note}
+
+RabbitMQ Streams now available
+
+:  RabbitMQ Streams is now available for {{site.data.keyword.messages-for-rabbitmq}}. RabbitMQ Streams is similar to queues, but differs in how messages are stored and consumed. Streams are effective for large fan-outs, high throughput scenarios, and large logs. For more information, see [RabbitMQ's Streams](https://www.rabbitmq.com/streams.html){: external}.
+
 ## 29 August 2023
 {: #messages-for-rabbitmq-29aug2023}
 {: release-note}
