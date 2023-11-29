@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-11-27"
+lastupdated: "2023-11-29"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -24,7 +24,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #messages-for-rabbitmq-27nov2023}
 {: release-note}
 
-Monitoring Integreation documentation updated
+Monitoring Integration documentation updated
 :  Monitoring Integration documentation now lists metrics for all {{site.data.keyword.databases-for}} services. For more information, see [Monitoring Integration](/docs/cloud-databases?topic=cloud-databases-monitoring){: external}.
 
 ## 08 November 2023
@@ -34,7 +34,7 @@ Monitoring Integreation documentation updated
 {{site.data.keyword.messages-for-rabbitmq}} Version 3.12 [Preview](/docs/cloud-databases?topic=cloud-databases-versioning-policy#version-tags){: external} Release
 :  Version 3.12 is released as a Preview. Features in this release:
    - [Optimizations](https://blog.rabbitmq.com/posts/2023/05/rabbitmq-3.12-performance-improvements/){: external} for both quorum and classic queues: improved throughput, lower throughput variability, lower latency, lower memory footprint.
-   -  More mature and efficient implementation of (non-mirrored) classic queues v2 (CQv2).
+   -  More mature and efficient implementation of (nonmirrored) classic queues v2 (CQv2).
    - Classic queue lazy and non-lazy modes no longer apply: classic queues v2 always behave similarly to the lazy mode in earlier release series: moving data to disk aggressively and only keeping a subset of data in memory.
    - Significantly [reduced MQTT and Web MQTT memory footprint per connection](https://blog.rabbitmq.com/posts/2023/03/native-mqtt/){: external}.
    - [RabbitMQ Shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel){: external} plug-in now requires to have `verify_none` configured.
@@ -49,6 +49,8 @@ For more information about provisioning a {{site.data.keyword.messages-for-rabbi
 
 RabbitMQ Shovel Documentation Added
 :  Shovel is a plug-in for RabbitMQ that enables you to define replication relationships between brokers. For more information, see [RabbitMQ Shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel){: external}.
+
+RabbitMQ Streams is now available for {{site.data.keyword.messages-for-rabbitmq}}. RabbitMQ Streams is similar to queues, but differs in how messages are stored and consumed. Streams are effective for large fan-outs, high throughput scenarios, and large logs. For more information, see [RabbitMQ's Streams]{https://www.rabbitmq.com/streams.html}{: external}.
 
 ## 29 August 2023
 {: #messages-for-rabbitmq-29aug2023}
@@ -102,7 +104,7 @@ Protecting {{site.data.keyword.messages-for-rabbitmq_full}} resources with conte
 {: #messages-for-rabbitmq-25jan2022}
 {: release-note}
 
-{{site.data.keyword.messages-for-rabbitmq_full}} 3.8 End of Life in July  2022
+{{site.data.keyword.messages-for-rabbitmq_full}} 3.8 End of Life in July 2022
 :  On July 12, 2022, Messages for RabbitMQ version 3.8 reaches its end of life. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022).
 
 ## 30 June 2021
