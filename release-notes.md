@@ -32,7 +32,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
    - Significantly [reduced MQTT and Web MQTT memory footprint per connection](https://blog.rabbitmq.com/posts/2023/03/native-mqtt/){: external}.
    - [RabbitMQ Shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel){: external} plug-in now requires to have `verify_none` configured.
 
-   For more information on {{site.data.keyword.messages-for}} versioning, see [Versioning](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}
+   For more information on {{site.data.keyword.databases-for}} versioning, see [Versioning](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}
 
 ## 27 November 2023
 {: #messages-for-rabbitmq-27nov2023}
