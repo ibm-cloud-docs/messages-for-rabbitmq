@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-12-18"
+lastupdated: "2023-12-20"
 
 keywords: messages-for-rabbitmq release notes
 
