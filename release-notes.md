@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-12-20"
+lastupdated: "2023-12-21"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -25,14 +25,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 {{site.data.keyword.messages-for-rabbitmq}} Version 3.12 [Preferred](/docs/cloud-databases?topic=cloud-databases-versioning-policy#version-tags){: external} Release
-:  Version 3.12 is released as Preferred. Features in this release:
-   - [Optimizations](https://blog.rabbitmq.com/posts/2023/05/rabbitmq-3.12-performance-improvements/){: external} for both quorum and classic queues: improved throughput, lower throughput variability, lower latency, lower memory footprint.
-   -  More mature and efficient implementation of (nonmirrored) classic queues v2 (CQv2).
-   - Classic queue lazy and non-lazy modes no longer apply: classic queues v2 always behave similarly to the lazy mode in earlier release series: moving data to disk aggressively and only keeping a subset of data in memory.
-   - Significantly [reduced MQTT and Web MQTT memory footprint per connection](https://blog.rabbitmq.com/posts/2023/03/native-mqtt/){: external}.
-   - [RabbitMQ Shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel){: external} plug-in now requires to have `verify_none` configured.
-
-   For more information on {{site.data.keyword.databases-for}} versioning, see [Versioning](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}
+:  For more information about provisioning a {{site.data.keyword.messages-for-rabbitmq}} instance, see [Provisioning](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning){: external}.
 
 ## 27 November 2023
 {: #messages-for-rabbitmq-27nov2023}
