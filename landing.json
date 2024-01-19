@@ -1,6 +1,6 @@
 {
     "title": "IBM Cloud® Messages for RabbitMQ docs",
-    "lastupdated": "2023-12-20",
+    "lastupdated": "2024-01-19",
     "introduction": "RabbitMQ is an open source multi-protocol messaging broker.",
     "section_devtools": {
       "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction",
@@ -34,6 +34,11 @@
       "view_more": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes",
       "tiles": [
         {
+          "date": "19 Jan 2024",
+          "title": "Messages for RabbitMQ version 3.11 End of Life on July 24, 2024",
+          "description": "Action is required before July 24, 2024, for your RabbitMQ 3.11 deployments. After July 24, 2024, Messages for RabbitMQ instances on version 3.11 that are still active will have their access removed, in line with our Database Versioning Policy. You are expected to be on version 3.12, the latest preferred version of Messages for RabbitMQ. For more information, see Upgrading to a new Major Version."
+        },
+        {
           "date": "20 Dec 2023",
           "title": "Messages for RabbitMQ Version 3.12 Preferred Release",
           "description": "Version 3.12 is released as Preferred."
@@ -42,11 +47,6 @@
           "date": "27 Nov 2023",
           "title": "Monitoring Integration documentation updated",
           "description": "Monitoring Integration documentation now lists metrics for all {{site.data.keyword.databases-for}} services."
-        },
-        {
-          "date": "08 November 2023",
-          "title": "Messages for RabbitMQ Version 3.12 Preview Release",
-          "description": "Shovel is a plug-in for RabbitMQ that enables you to define replication relationships between brokers. For more information, see RabbitMQ Shovel."
         }
       ]
     }
