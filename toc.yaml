@@ -53,6 +53,7 @@ toc:
       - howto-plugins.md
       - howto-upgrading.md
       - howto-shovel.md
+      - howto-streams.md
       - topicgroup:
           label: Managing backups
           topics:
