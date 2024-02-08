@@ -185,17 +185,17 @@ connection.close()
 
 Note how an offset isn’t specified in our `basic_consume`: `# Consume messages published to the stream channel.basic_consume( 'test_stream', callback)`. As a result, the consumer starts reading from the most recent offset written to `test_stream` after the consumer starts. *After* has been deliberately emphasized here to allow for the cross-examination of an interesting behavior of streams.
 
-#### How to set an offset
+### How to set an offset
 {: #rabbitmq-streams-howto-consume-offset}
 
-As streams never delete any messages, any consumer can start reading/consuming from any point in the log. This is controlled by the x-stream-offset consumer argument. If it is unspecified the consumer will start reading from the next offset written to the log after the consumer starts. The following values are supported:
+As streams never delete any messages, any consumer can start reading/consuming from any point in the log. This is controlled by the `x-stream-offset` consumer argument. If it is unspecified, the consumer will start reading from the next offset written to the log after the consumer starts. The following values are supported:
 
-- first - start from the first available message in the log
-- last - this starts reading from the last written "chunk" of messages
-- next - same as not specifying any offset
-- Offset - a numerical value specifying an exact offset to attach to the log at.
-- Timestamp - a timestamp value specifying the point in time to attach to the log at. It will clamp to the closest offset, if the timestamp is out of range for the stream it will clamp either the start or end of the log respectively. for eg: 00:00:00 UTC, 1970-01-01. Be aware consumers can receive messages published a bit before the specified timestamp.
-- Interval - a string value specifying the time interval relative to current time to attach the log at. Uses the same specification as x-max-age (see Retention)
+- **first** - start from the first available message in the log
+- **last** - this starts reading from the last written "chunk" of messages
+- **next** - same as not specifying any offset
+- **Offset** - a numerical value specifying an exact offset to attach to the log at.
+- **Timestamp** - a timestamp value specifying the point in time to attach to the log at. It will clamp to the closest offset, if the timestamp is out of range for the stream it will clamp either the start or end of the log respectively, for example: 00:00:00 UTC, 1970-01-01. Be aware consumers can receive messages published a bit before the specified timestamp.
+- **Interval** - a string value specifying the time interval relative to current time to attach the log at. Uses the same specification as `x-max-age`.
 
 The following code example shows how to use the first offset specification:
 
