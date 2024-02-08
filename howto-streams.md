@@ -79,12 +79,12 @@ channel.queue_declare(
 ```
 {: codeblock}
 
-Alternatively, a Stream can be created using the Rabbitmq Management UI. In that case, the Stream type must be specified using the queue type drop-down menu.
+Alternatively, a stream can be created using the Rabbitmq Management UI. In that case, the Stream type must be specified using the queue type drop-down menu.
 
 #### Publishing a RabbitMQ Stream
 {: #rabbitmq-streams-howto-publish}
 
-Publishing messages to a Stream is no different from publishing messages to a queue. As an example, below, the previous snippet has been extended to publish a message to the test_stream declared.
+The following script declares a RabbitMQ stream, `test_stream`, then publishes a message to it through the `basic_publish` function:
 
 ```sh
 import pika, os
@@ -120,17 +120,15 @@ channel.basic_publish(
 ```
 {: codeblock}
 
-To summarize, the script above declared a RabbitMQ Stream, test_stream then published a message to it with the basic_publish function.
-
 #### Consuming a RabbitMQ Stream
 {: #rabbitmq-streams-howto-consume}
 
-Messages can be consumed from a stream the same way queues accomplish this task but with two major differences.
+Messages can be consumed from a stream the same way queues accomplish this task, with two major differences:
 
-1. Consuming messages in RabbitMQ Streams requires setting the QoS prefetch.
-1. You can specify an offset to start reading/consuming from any point in the log stream. If unspecified, the consumer starts reading from the most recent offset written to the log stream after it starts.
+1. Consuming messages in RabbitMQ Streams requires setting the [QoS prefetch](https://www.rabbitmq.com/consumer-prefetch.html){: external}.
+1. Specify an offset to start reading/consuming from any point in the log stream. If unspecified, the consumer starts reading from the most recent offset written to the log stream after it starts.
 
-The following script declares `test_stream` again, setting the QoS prefetch to 100 using the basic_qos function. The consumer triggers the callback function when it processes a new message. The callback function, in turn, invokes the send_welcome_email function that simulates sending an email to a user.
+The following script declares `test_stream` again, setting the QoS prefetch to `100` using the `basic_qos` function. The consumer triggers the callback function when it processes a new message. The callback function then invokes the `send_welcome_email` function that simulates sending an email to a user.
 
 ```sh
 import pika, os, time
@@ -185,9 +183,7 @@ connection.close()
 ```
 {: codeblock}
 
-Notice how an offset isn’t specified in our `basic_consume`: `# Consume messages published to the stream channel.basic_consume( 'test_stream', callback)`
-
-As a result, the consumer would start reading from the most recent offset written to test_stream after the consumer starts. “After” has been deliberately emphasized here to allow for the cross-examination of an interesting behavior of Streams.
+Note how an offset isn’t specified in our `basic_consume`: `# Consume messages published to the stream channel.basic_consume( 'test_stream', callback)`. As a result, the consumer starts reading from the most recent offset written to `test_stream` after the consumer starts. *After* has been deliberately emphasized here to allow for the cross-examination of an interesting behavior of streams.
 
 #### How to set an offset
 {: #rabbitmq-streams-howto-consume-offset}
