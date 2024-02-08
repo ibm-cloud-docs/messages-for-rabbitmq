@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-02-08"
 
 keywords: rabbitmq, streams
 
@@ -14,41 +14,43 @@ subcollection: messages-for-rabbitmq
 # RabbitMQ Streams
 {: #rabbitmq-streams}
 
-RabbitMQ Streams is a persistent replicated data structure  which performs the same tasks as queues in that they buffer messages from producers that are read by consumers. However, streams differ from queues in two ways:
+RabbitMQ Streams is a persistent replicated data structure that functions similarly to queues, buffering messages from producers for consumption by consumers. However, streams differ from queues in two ways:
 - How producers write messages to them.
 - How consumers read messages from them.
 
-Streams model an append-only log of messages that can be repeatedly read until they expire. Streams are always persistent and replicated. A more technical description of this stream behavior is “non-destructive consumer semantics”.
+Streams model an append-only log of messages that can be repeatedly read until they expire. Streams are always persistent and replicated. A more technical description of this stream behavior is “non-destructive consumer semantics."
 
-To read messages from a stream in RabbitMQ, one or more consumers subscribe to it and read the same message as many times as they want. Additionally, Streams are always persistent and replicated. Like queues, consumers talk to a Stream via AMQP-based clients and, by extension, use the AMQP protocol.
+To read messages from a stream in RabbitMQ, one or more consumers subscribe to it and read the same message as many times as they want. Like queues, consumers talk to a stream through AMQP-based clients and, by extension, use the AMQP protocol.
 
 ## Use Cases
 {: #rabbitmq-streams-use-cases}
 
-The use cases where streams shine include:
+The use cases for streams include:
 
-- **Fan-out architectures**: Where many consumers need to read the same message
+- **Fan-out architectures**: Where many consumers need to read the same message.
 - **Replay & time-travel**: Where consumers need to read and reread the same message or start reading from any point in the stream.
 - **Large backlogs**: Streams are designed to store larger amounts of data in an efficient manner with minimal in-memory overhead.
-- **High Throughput**: RabbitMQ Streams process relatively higher volumes of messages per second.
+- **High Throughput**: RabbitMQ Streams processes relatively higher volumes of messages per second.
 
 For more information, see [RabbitMQ Streams](https://www.rabbitmq.com/streams.html){: external}.
 
 ## How to Use RabbitMQ Streams
 {: #rabbitmq-streams-howto}
 
-An AMQP 0.9.1 client library that can specify [optional queue and consumer arguments](https://www.rabbitmq.com/queues.html#optional-arguments){: external} will be able to use streams as regular AMQP 0.9.1 queues.
+An AMQP 0.9.1 client library that can specify [optional queue and consumer arguments](https://www.rabbitmq.com/queues.html#optional-arguments){: external} is able to use streams as regular AMQP 0.9.1 queues.
 
 ### Using with an AMQP Client Library
 {: #rabbitmq-streams-howto-amqp-client-lib}
 
 Like queues, there are three steps to working with RabbitMQ Streams via an AMQP client library:
-- Declare/Instantiate a stream
-- Publish(write) messages to the stream
-- Consume(read) messages from the stream
+1. [Declare/Instantiate a stream](#declaring-a-rabbitmq-stream)
+1. [Publish (write) messages to the stream](#publishing-a-rabbitmq-stream)
+1. [Consume (read) messages from the stream](#consuming-a-rabbitmq-stream)
 
-### Declaring a RabbitMQ Stream
+#### Declaring a RabbitMQ Stream
 {: #rabbitmq-streams-howto-declare}
+
+Declare a RabbitMQ Stream with a command like:
 
 ```sh
 import pika, os
@@ -79,7 +81,7 @@ channel.queue_declare(
 
 Alternatively, a Stream can be created using the Rabbitmq Management UI. In that case, the Stream type must be specified using the queue type drop-down menu.
 
-### Publishing a RabbitMQ Stream
+#### Publishing a RabbitMQ Stream
 {: #rabbitmq-streams-howto-publish}
 
 Publishing messages to a Stream is no different from publishing messages to a queue. As an example, below, the previous snippet has been extended to publish a message to the test_stream declared.
@@ -120,7 +122,7 @@ channel.basic_publish(
 
 To summarize, the script above declared a RabbitMQ Stream, test_stream then published a message to it with the basic_publish function.
 
-### Consuming a RabbitMQ Stream
+#### Consuming a RabbitMQ Stream
 {: #rabbitmq-streams-howto-consume}
 
 Messages can be consumed from a stream the same way queues accomplish this task but with two major differences.
