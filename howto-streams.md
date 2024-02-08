@@ -14,23 +14,23 @@ subcollection: messages-for-rabbitmq
 # RabbitMQ Streams
 {: #rabbitmq-streams}
 
-RabbitMQ Streams is a persistent replicated data structure that functions similarly to queues, buffering messages from producers for consumption by consumers. However, streams differ from queues in two ways:
+RabbitMQ Streams is a persistent replicated data structure that functions similarly to queues, buffering messages from producers for consumption by consumers. However, streams differ in two ways:
 - How producers write messages to them.
 - How consumers read messages from them.
 
-Streams model an append-only log of messages that can be repeatedly read until they expire. Streams are always persistent and replicated. A more technical description of this stream behavior is “non-destructive consumer semantics."
+Streams model an append-only log of messages that can be repeatedly read until they expire. Streams are always persistent and replicated. A more technical description of this stream behavior is “nondestructive consumer semantics."
 
-To read messages from a stream in RabbitMQ, one or more consumers subscribe to it and read the same message as many times as they want. Like queues, consumers talk to a stream through AMQP-based clients and, by extension, use the AMQP protocol.
+To read messages from a stream in RabbitMQ, one or more consumers subscribe to it and read the same message as many times as they want. Consumers talk to a stream through AMQP-based clients and use the AMQP protocol.
 
 ## Use Cases
 {: #rabbitmq-streams-use-cases}
 
 The use cases for streams include:
 
-- **Fan-out architectures**: Where many consumers need to read the same message.
-- **Replay & time-travel**: Where consumers need to read and reread the same message or start reading from any point in the stream.
-- **Large backlogs**: Streams are designed to store larger amounts of data in an efficient manner with minimal in-memory overhead.
-- **High Throughput**: RabbitMQ Streams processes relatively higher volumes of messages per second.
+- Fan-out architectures: Where many consumers need to read the same message.
+- Replay and time-travel: Where consumers need to read and reread the same message or start reading from any point in the stream.
+- Large backlogs: Streams are designed to store larger amounts of data efficiently with minimal in-memory overhead.
+- High Throughput: RabbitMQ Streams processes relatively higher volumes of messages per second.
 
 For more information, see [RabbitMQ Streams](https://www.rabbitmq.com/streams.html){: external}.
 
@@ -42,7 +42,7 @@ An AMQP 0.9.1 client library that can specify [optional queue and consumer argum
 ### Using with an AMQP Client Library
 {: #rabbitmq-streams-howto-amqp-client-lib}
 
-Like queues, there are three steps to working with RabbitMQ Streams via an AMQP client library:
+There are three steps to working with RabbitMQ Streams through an AMQP client library:
 1. [Declare/Instantiate a stream](#declaring-a-rabbitmq-stream)
 1. [Publish (write) messages to the stream](#publishing-a-rabbitmq-stream)
 1. [Consume (read) messages from the stream](#consuming-a-rabbitmq-stream)
@@ -79,12 +79,12 @@ channel.queue_declare(
 ```
 {: codeblock}
 
-Alternatively, a stream can be created using the Rabbitmq Management UI. In that case, the Stream type must be specified using the queue type drop-down menu.
+Alternatively, a stream can be created in the Rabbitmq Management UI. In that case, the Stream type must be specified by using the queue type drop-down menu.
 
 #### Publishing a RabbitMQ Stream
 {: #rabbitmq-streams-howto-publish}
 
-The following script declares a RabbitMQ stream, `test_stream`, then publishes a message to it through the `basic_publish` function:
+The following script declares a RabbitMQ stream (`test_stream`) then publishes a message to it through the `basic_publish` function:
 
 ```sh
 import pika, os
@@ -190,12 +190,12 @@ Note how an offset isn’t specified in our `basic_consume`: `# Consume messages
 
 As streams never delete any messages, any consumer can start reading/consuming from any point in the log. This is controlled by the `x-stream-offset` consumer argument. If it is unspecified, the consumer will start reading from the next offset written to the log after the consumer starts. The following values are supported:
 
-- **first** - start from the first available message in the log
-- **last** - this starts reading from the last written "chunk" of messages
-- **next** - same as not specifying any offset
-- **Offset** - a numerical value specifying an exact offset to attach to the log at.
-- **Timestamp** - a timestamp value specifying the point in time to attach to the log at. It will clamp to the closest offset, if the timestamp is out of range for the stream it will clamp either the start or end of the log respectively, for example: 00:00:00 UTC, 1970-01-01. Be aware consumers can receive messages published a bit before the specified timestamp.
-- **Interval** - a string value specifying the time interval relative to current time to attach the log at. Uses the same specification as `x-max-age`.
+- first - start from the first available message in the log
+- last - this starts reading from the last written "chunk" of messages
+- next - same as not specifying any offset
+- Offset - a numerical value specifying an exact offset to attach to the log at.
+- Timestamp - a timestamp value specifying the point in time to attach to the log at. It clamps to the closest offset, if the timestamp is out of range for the stream it clamps either the start or end of the log, for example: 00:00:00 UTC, 1970-01-01. Be aware that consumers can receive messages published a bit before the specified timestamp.
+- Interval - a string value specifying the time interval relative to current time to attach the log at. Uses the same specification as `x-max-age`.
 
 The following code example shows how to use the first offset specification:
 
@@ -223,11 +223,11 @@ channel.basic_consume(
 ## Other Streams Operations
 {: #rabbitmq-streams-howto-other}
 
-The following operations can be used in a similar way to classic and quorum queues but some have some queue specific behavior:
+The following operations can be used in a similar way to classic and quorum queues but some have some queue-specific behavior:
 - [Declaration](https://www.rabbitmq.com/streams.html#declaring){: external}
 - Queue deletion
 - [Publisher confirms](https://www.rabbitmq.com/confirms.html#publisher-confirms){: external}
 - [Consumption](https://www.rabbitmq.com/consumers.html){: external} (subscription): consumption requires QoS prefetch to be set. The acks works as a credit mechanism to advance the current offset of the consumer.
 - Setting [QoS prefetch](https://www.rabbitmq.com/streams.html#global-qos){: external} for consumers
-- [Consumer acknowledgements](https://www.rabbitmq.com/confirms.html){: external} (keep [QoS Prefetch Limitations](https://www.rabbitmq.com/streams.html#global-qos){: external} in mind)
+- [Consumer acknowledgments](https://www.rabbitmq.com/confirms.html){: external} (keep [QoS Prefetch Limitations](https://www.rabbitmq.com/streams.html#global-qos){: external} in mind)
 - Cancellation of consumers
