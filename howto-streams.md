@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-02-08"
+lastupdated: "2024-02-12"
 
 keywords: rabbitmq, streams
 
@@ -50,7 +50,7 @@ There are three steps to working with RabbitMQ Streams through an AMQP client li
 #### Declaring a RabbitMQ Stream
 {: #rabbitmq-streams-howto-declare}
 
-Declare a RabbitMQ Stream with a command like:
+Create a queue with type `“stream”`. If a queue is already present, it will not be created. Declare a stream with a command like:
 
 ```sh
 import pika, os
@@ -79,7 +79,7 @@ channel.queue_declare(
 ```
 {: codeblock}
 
-Alternatively, a stream can be created in the Rabbitmq Management UI. In that case, the Stream type must be specified by using the queue type drop-down menu.
+Alternatively, a stream can be created by using the RabbitMQ Management Interface. Select **Add a new queue**. Next, in the *Type* dropdown, select *Stream*.
 
 #### Publishing a RabbitMQ Stream
 {: #rabbitmq-streams-howto-publish}
