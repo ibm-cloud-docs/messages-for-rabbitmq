@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-02-12"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -19,6 +19,14 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 12 February 2024
+{: #messages-for-rabbitmq-12feb2024}
+{: release-note}
+
+{{site.data.keyword.messages-for-rabbitmq}} Streams Available
+:  RabbitMQ Streams is a persistent replicated data structure that functions similarly to queues, buffering messages from producers for consumption by consumers.
+For more information, see [RabbitMQ Streams](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-streams){: external}.
 
 ## 19 January 2024
 {: #messages-for-rabbitmq-19jan2024}
