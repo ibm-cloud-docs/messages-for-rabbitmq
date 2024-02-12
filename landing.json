@@ -35,7 +35,7 @@
       "tiles": [
         {
           "date": "12 Feb 2024",
-          "title": "Messages for RabbitMQ version 3.11 End of Life on July 24, 2024",
+          "title": "Messages for RabbitMQ Streams",
           "description": "RabbitMQ Streams is a persistent replicated data structure that functions similarly to queues, buffering messages from producers for consumption by consumers."
         },
         {
