@@ -30,10 +30,10 @@ subcollection: messages-for-rabbitmq
 ## Data Resilience
 {: #data-resilience}
 
-- [Backups](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-dashboard-backups) are included in the service. {{site.data.keyword.messages-for-rabbitmq}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage&cloud-object-storage-about-cloud-object-storage) and are also [encrypted](/docs/cloud-object-storage?topic=cloud-object-storage-security).
+- [Backups](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) are included in the service. {{site.data.keyword.messages-for-rabbitmq}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage&cloud-object-storage-about-cloud-object-storage) and are also [encrypted](/docs/cloud-object-storage?topic=cloud-object-storage-security).
 - RabbitMQ backups contain only definitions, topology, and metadata. Messages are not stored in backups.
 - All {{site.data.keyword.messages-for-rabbitmq}} deployments are configured with replication. Deployments contain a cluster with three nodes where all three nodes are equal peers. Queues are mirrored on all three nodes.
-- If you deploy to an {{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the data center. 
+- If you deploy to an {{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the data center.
 - If you deploy to an {{site.data.keyword.cloud_notm}} Multi-Zone Region (MZR), the nodes are spread over the region's availability zone locations.
 
 ## SOC 2 Type 2 Certification
@@ -48,14 +48,14 @@ You can request an SOC 2 Type 2 report from the customer portal or contact your 
 
 {{site.data.keyword.messages-for-rabbitmq}} conforms to the guidelines for information security controls applicable to the provision and use of cloud services that are defined in [ISO 27017](https://www.iso.org/standard/43757.html){: .external} and [ISO 27018](https://www.iso.org/standard/76559.html){: .external}.
 
-## General Data Protection Regulation (GDPR) 
+## General Data Protection Regulation (GDPR)
 {: #-gdpr}
 
 If you have an account with {{site.data.keyword.cloud_notm}}, your personal data is held by {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.IBM_notm}} Data Processing Addendum (Addendum) applies to the processing of client's personal data by {{site.data.keyword.IBM_notm}} on behalf of client in order to provide {{site.data.keyword.IBM_notm}} standard services.
 
-{{site.data.keyword.messages-for-rabbitmq}} processes limited client Personal Information (PI) in the course of running the service and optimizing the user experience. 
+{{site.data.keyword.messages-for-rabbitmq}} processes limited client Personal Information (PI) in the course of running the service and optimizing the user experience.
 
-{{site.data.keyword.messages-for-rabbitmq}} provides a [Data Sheet Addendum (DSA)](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=040987F07A6111E89D57EFEED3CB8BE9){: .external} with its policies as a Data Processor regarding content and data protection. 
+{{site.data.keyword.messages-for-rabbitmq}} provides a [Data Sheet Addendum (DSA)](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=040987F07A6111E89D57EFEED3CB8BE9){: .external} with its policies as a Data Processor regarding content and data protection.
 
 ## HIPAA
 {: #hipaa}
@@ -65,7 +65,7 @@ If you have an account with {{site.data.keyword.cloud_notm}}, your personal data
 ## PCI DSS
 {: #pci-dss}
 
-{{site.data.keyword.databases-for-rabbitmq}} are compliant with the Payment Card Industry Data Security Standard (PCI DSS). {{site.data.keyword.cloud_notm}} completes annual PCI DSS assessments by using an approved Qualified Security Assessor (QSA), and the resulting Attestations of Compliance (AOCs) and Service Responsibility Matrix (SRM) guides are available upon customer request. Auditors reviewed {{site.data.keyword.databases-for-rabbitmq}} for compliance under PCI DSS version 3.2.1 at Service Provider Level 1. 
+{{site.data.keyword.databases-for-rabbitmq}} are compliant with the Payment Card Industry Data Security Standard (PCI DSS). {{site.data.keyword.cloud_notm}} completes annual PCI DSS assessments by using an approved Qualified Security Assessor (QSA), and the resulting Attestations of Compliance (AOCs) and Service Responsibility Matrix (SRM) guides are available upon customer request. Auditors reviewed {{site.data.keyword.databases-for-rabbitmq}} for compliance under PCI DSS version 3.2.1 at Service Provider Level 1.
 
 Customers are responsible for the storing, processing, and transmission of their cardholder data, and can create cardholder data environments (CDEs) that can store, transmit, or process cardholder data by using {{site.data.keyword.databases-for-rabbitmq}}. Customers can request and use the {{site.data.keyword.cloud_notm}} AOCs and SRM guides when they seek their own PCI DSS certifications. It is the responsibility of the customer to document and operate CDEs and applications that are built by using {{site.data.keyword.cloud_notm}} Platform services in a PCI DSS-compliant manner.
 
