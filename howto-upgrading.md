@@ -14,11 +14,11 @@ subcollection: messages-for-rabbitmq
 # Upgrading to a new Major Version
 {: #upgrading}
 
-When a major version of a database is at its end of life (EOL), it is a good idea to upgrade to a current major version. 
+When a major version of a database is at its end of life (EOL), it is a good idea to upgrade to a current major version.
 
 Find the available versions of RabbitMQ on the [{{site.data.keyword.messages-for-rabbitmq_full}} the catalog](https://cloud.ibm.com/catalog/messages-for-rabbitmq){: external} page, from the {{site.data.keyword.databases-for}} CLI plug-in command [`ibmcloud cdb deployables-show`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show), or through the {{site.data.keyword.databases-for}} API [`/deployables` endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases).
 
-Upgrade your new deployment by [restoring a backup](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-dashboard-backups) of your data into the new version. Restoring from a backup has a number of advantages:
+Upgrade your new deployment by [restoring a backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) of your data into the new version. Restoring from a backup has a number of advantages:
 
 - The original deployment continues running and production work can be uninterrupted.
 - You can test the new database out of production and act on any application incompatibilities.
@@ -31,7 +31,7 @@ Alternatively, you can also use RabbitMQ Shovel to migrate to another version.
 {: #upgrading-ui}
 {: ui}
 
-Upgrade to a new version when [restoring a backup](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-dashboard-backups) from the _Backups_ tab of your _Deployment Overview_. Click **Restore** on a backup to bring up a dialog box where you can choose options for the new deployment. One of the configurable options is the database version, which is auto-populated with the versions available for you to upgrade to. Select a version and click **Restore** to start the provision and restore process.
+Upgrade to a new version when [restoring a backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) from the _Backups_ tab of your _Deployment Overview_. Click **Restore** on a backup to bring up a dialog box where you can choose options for the new deployment. One of the configurable options is the database version, which is auto-populated with the versions available for you to upgrade to. Select a version and click **Restore** to start the provision and restore process.
 
 ## Upgrading through the CLI
 {: #upgrading-cli}
@@ -56,7 +56,7 @@ ibmcloud resource service-instance-create example-upgrade messages-for-rabbitmq 
 {: #upgrading-api}
 {: api}
 
-Complete [the necessary steps to use the resource controller API](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning&interface=api#provision-controller-api) before you use it to upgrade from a backup. 
+Complete [the necessary steps to use the resource controller API](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning&interface=api#provision-controller-api) before you use it to upgrade from a backup.
 
 Next, send the API a `POST` request. The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required. You also supply the `version` and `backup_id`. To use a key protect key, resize the deployment, or allocate dedicated cores, configure the following optional parameters and their values: `key_protect_key`, `members_disk_allocation_mb`, `members_memory_allocation_mb`, or `members_cpu_allocation_count`.
 
