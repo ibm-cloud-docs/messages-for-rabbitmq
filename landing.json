@@ -1,53 +1,53 @@
 {
-  "title": "IBM Cloud® Messages for RabbitMQ docs",
-  "lastupdated": "2024-02-12",
-  "introduction": "RabbitMQ is an open source multi-protocol messaging broker.",
-  "section_devtools": {
-    "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction",
-    "cli": "/docs/databases-cli-plugin",
-    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
-  },
-  "section_recommended": [
-    {
-      "title": "Getting Started",
-      "description": "A brief tutorial to introduce using an IBM Cloud® Messages for RabbitMQ deployment.",
-      "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started"
+    "title": "IBM Cloud® Messages for RabbitMQ docs",
+    "lastupdated": "2024-05-01",
+    "introduction": "RabbitMQ is an open source multi-protocol messaging broker.",
+    "section_devtools": {
+      "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction",
+      "cli": "/docs/databases-cli-plugin",
+      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
     },
-    {
-      "title": "Setting the Admin Password",
-      "description": "The IBM Cloud® Messages for RabbitMQ service is provisioned with a admin user. You must set the admin password before you use it to connect.",
-      "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#user-management-set-admin-password-ui"
-    },
-    {
-      "title": "Creating Users and Getting Connection Strings",
-      "description": "To connect to IBM Cloud® Messages for RabbitMQ, you need some users and connection strings.",
-      "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings&interface=cli"
-    }
-  ],
-  "section_learn": {
-    "developer": "https://developer.ibm.com/depmodels/cloud/",
-    "architecture": "https://www.ibm.com/cloud/architecture",
-    "training": "https://www.ibm.com/training/cloud",
-    "community": "https://community.ibm.com/community/user/publiccloud/home"
-  },
-  "section_updates": {
-    "view_more": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes",
-    "tiles": [
+    "section_recommended": [
       {
-        "date": "12 Feb 2024",
-        "title": "Messages for RabbitMQ Streams",
-        "description": "RabbitMQ Streams is a persistent replicated data structure that functions similarly to queues, buffering messages from producers for consumption by consumers."
+        "title": "Getting Started",
+        "description": "A brief tutorial to introduce using an IBM Cloud® Messages for RabbitMQ deployment.",
+        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started"
       },
       {
-        "date": "19 Jan 2024",
-        "title": "Messages for RabbitMQ version 3.11 End of Life on July 24, 2024",
-        "description": "Action is required before July 24, 2024, for your RabbitMQ 3.11 deployments. After July 24, 2024, Messages for RabbitMQ instances on version 3.11 that are still active will have their access removed, in line with our Database Versioning Policy. You are expected to be on version 3.12, the latest preferred version of Messages for RabbitMQ. For more information, see Upgrading to a new Major Version."
+        "title": "Setting the Admin Password",
+        "description": "The IBM Cloud® Messages for RabbitMQ service is provisioned with a admin user. You must set the admin password before you use it to connect.",
+        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#user-management-set-admin-password-ui"
       },
       {
-        "date": "20 Dec 2023",
-        "title": "Messages for RabbitMQ Version 3.12 Preferred Release",
-        "description": "Version 3.12 is released as Preferred."
+        "title": "Creating Users and Getting Connection Strings",
+        "description": "To connect to IBM Cloud® Messages for RabbitMQ, you need some users and connection strings.",
+        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings&interface=cli"
       }
-    ]
+    ],
+    "section_learn": {
+      "developer": "https://developer.ibm.com/depmodels/cloud/",
+      "architecture": "https://www.ibm.com/cloud/architecture",
+      "training": "https://www.ibm.com/training/cloud",
+      "community": "https://community.ibm.com/community/user/publiccloud/home"
+    },
+    "section_updates": {
+      "view_more": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes",
+      "tiles": [
+        {
+        "date": "1 May 2024",
+        "title": "New hosting models",
+        "description": "You can choose between two hosting models: Isolated Compute and Shared Compute. Isolated Compute is a secure single-tenant offering for complex, highly performant enterprise workloads. Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections."
+        },  
+        {
+          "date": "12 Feb 2024",
+          "title": "Messages for RabbitMQ Streams",
+          "description": "RabbitMQ Streams is a persistent replicated data structure that functions similarly to queues, buffering messages from producers for consumption by consumers."
+        },
+        {
+          "date": "19 Jan 2024",
+          "title": "Messages for RabbitMQ version 3.11 End of Life on July 24, 2024",
+          "description": "Action is required before July 24, 2024, for your RabbitMQ 3.11 deployments. After July 24, 2024, Messages for RabbitMQ instances on version 3.11 that are still active will have their access removed, in line with our Database Versioning Policy. You are expected to be on version 3.12, the latest preferred version of Messages for RabbitMQ. For more information, see Upgrading to a new Major Version."
+        }
+      ]
+    }
   }
-}
