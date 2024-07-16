@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-06-20"
+  years: 2018, 2024
+lastupdated: "2024-07-16"
 
 keywords: deployment, crn, task, gui, api endpoint, dashboard
 
@@ -10,12 +10,7 @@ subcollection: messages-for-rabbitmq
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # The Dashboard Overview
 {: #dashboard-overview}
@@ -67,9 +62,9 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 {: #observability}
 
 The _Observability_ tab provides access to the IBM Cloud Monitoring, logging, and event tracking integrations available for your deployment. 
-- [{{site.data.keyword.at_full}}](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker)
-- [{{site.data.keyword.la_full}}](/docs/messages-for-rabbitmq?topic=cloud-databases-logging)
-- [{{site.data.keyword.monitoringfull}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-monitoring)
+- [{{site.data.keyword.at_full}}](/docs/cloud-databases?topic=cloud-databases-activity-tracker)
+- [{{site.data.keyword.la_full}}](/docs/cloud-databases?topic=cloud-databases-logging)
+- [{{site.data.keyword.monitoringfull}}](cloud-databases?topic=cloud-databases-sysdig-monitor)
 
 ## Settings
 {: #settings}
