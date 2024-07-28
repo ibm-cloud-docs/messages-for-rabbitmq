@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-03"
+lastupdated: "2024-07-28"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision rabbitmq
 
@@ -27,9 +27,9 @@ Provision from the console by specifying the following parameters:
 {: #service_details}
 {: ui}
 
-- **Service name:** The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
-- **Resource group:** If you are organizing your services into [resource groups](/docs/account?topic=account-account_setup), specify the resource group in this field. Otherwise, you can leave it at default. For more information, see [Managing resource groups](/docs/account?topic=account-rgs).
-- **Location:** The deployment's public cloud region or Satellite location.
+- **Service name** - The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
+- **Resource group** - If you are organizing your services into [resource groups](/docs/account?topic=account-account_setup), specify the resource group in this field. Otherwise, you can leave it at default. For more information, see [Managing resource groups](/docs/account?topic=account-rgs).
+- **Location** - The deployment's public cloud region or Satellite location.
 
 ### Hosting model
 {: #hosting_model}
@@ -48,6 +48,9 @@ Fine tune your resource allocation. The available options differ based on your s
 - **Isolated:** Use the table to choose the machine size for each member of your deployment, and specify the disk size.
 - **Shared:** By default, the smallest possible resource allocation is selected. This is ideal for small applications or testing. For larger allocations, select the *Custom* tile, which allows flexible resource configuration with 2+ cores. 
 
+The Shared Compute hosting model supports more fine-grained resource allocations that are not shown in the UI to maintain clarity. For more information, see [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models).
+{: note}
+
 Specify the disk size depending on your requirements. It can be increased after provisioning but cannot be decreased to prevent data loss.
 {: note}
 
@@ -55,9 +58,9 @@ Specify the disk size depending on your requirements. It can be increased after 
 {: #service_configuration}
 {: ui}
 
-- **Database Version:** [Set only at deployment]{: tag-red} The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. For more information, see [Database Versioning Policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}.
-- **Encryption:** If you use [Key Protect](/docs/cloud-databases?topic=cloud-databases-key-protect&interface=ui), an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
-- **Endpoints:** [Set only at deployment]{: tag-red} Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment.
+- **Database Version** - [Set only at deployment]{: tag-red} The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. For more information, see [Database Versioning Policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}.
+- **Encryption** - If you use [Key Protect](/docs/cloud-databases?topic=cloud-databases-key-protect&interface=ui), an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
+- **Endpoints** - [Set only at deployment]{: tag-red} Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment.
 
 After you select the appropriate settings, click **Create** to start the provisioning process.
 
@@ -71,13 +74,14 @@ After you select the appropriate settings, click **Create** to start the provisi
 
 Before provisioning, follow the instructions provided in the documentation to install the [{{site.data.keyword.cloud_notm}} CLI tool](https://www.ibm.com/cloud/cli){: external}.
 
-1. Log in to {{site.data.keyword.cloud_notm}}. If you use a federated user ID, it's important that you switch to a one-time passcode (`ibmcloud login --sso`), or use an API ke(`ibmcloud --apikey key or @key_file`) to authenticate. For more information about how to log in by using the CLI, see [General CLI (ibmcloud) commands](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login){: external} under `ibmcloud login`.
+1. Log in to {{site.data.keyword.cloud_notm}}. If you use a federated user ID, it's important that you switch to a one-time passcode (`ibmcloud login --sso`), or use an API key (`ibmcloud --apikey key or @key_file`) to authenticate. For more information about how to log in by using the CLI, see [General CLI (ibmcloud) commands](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login){: external} under `ibmcloud login`.
 
       ```sh
       ibmcloud login
       ```
       {: pre}
 
+2. Select the [hosting model]([/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=cli) you want your database to be provisioned on. You can change this later.
 
 1. Provision a {{site.data.keyword.messages-for-rabbitmq}} Shared instance with a command like:
 
