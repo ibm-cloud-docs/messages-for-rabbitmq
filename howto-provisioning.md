@@ -97,10 +97,10 @@ Before provisioning, follow the instructions provided in the documentation to in
    ```
    {: pre}
 
-  Provision a {{site.data.keyword.databases-for-elasticsearch}} Isolated instance with the same `"members_host_flavor"` -p parameter, setting it to the desired Isolated size. Available hosting sizes and their `host_flavor value` parameters are listed in [Table 2](#host-flavor-parameter-cli). For example, `{"members_host_flavor": "b3c.4x16.encrypted"}`. Note that since the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM), this request does not accept both, an Isolated size selection and separate CPU and RAM allocation selections.
+  Provision a {{site.data.keyword.databases-for-elasticsearch}} Isolated instance with the same `"members_host_flavor"` -p parameter, setting it to the desired Isolated size. Available hosting sizes and their `host_flavor value` parameters are listed in [Table 2](#host_flavor_table). For example, `{"members_host_flavor": "b3c.4x16.encrypted"}`. Note that since the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM), this request does not accept both, an Isolated size selection and separate CPU and RAM allocation selections.
 
    ```sh
-ibmcloud resource service-instance-create test-database messages-for-rabbitmq standard us-south -p '{"members_host_flavor": "b3c.4x16.encrypted"}'
+   ibmcloud resource service-instance-create test-database messages-for-rabbitmq standard us-south -p '{"members_host_flavor": "b3c.4x16.encrypted"}'
    ```
    {: pre}
 
@@ -136,7 +136,8 @@ The `host_flavor` parameter defines your Compute sizing. To provision a Shared C
 | 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
+{: caption="Table 2. Host flavor sizing parameter" caption-side="bottom"}
+{: #host_flavor_table}
 
 
    You will see a response like:
