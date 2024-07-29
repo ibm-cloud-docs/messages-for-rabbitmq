@@ -197,9 +197,9 @@ The `host_flavor` parameter defines your Compute sizing. To provision a Shared C
                           Status    create succeeded
                           Message   Provisioning messages-for-rabbitmq with version 12 (100%)
    ```
-   {: codeblck}
+   {: codeblock}
 
-1. (Optional) Deleting a service instance. Delete an instance by running a command like this one:
+1. (Optional) Delete an instance by running a command like this one:
 
    ```sh
    ibmcloud resource service-instance-delete <INSTANCE_NAME>
@@ -251,6 +251,119 @@ Follow these steps to provision using the [Resource Controller API](https://clou
    ibmcloud cdb regions --json
    ```
    {: pre}
+
+4. Select the [hosting model]([/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=api) you want your database to be provisioned on. You can change this later. 
+
+A host flavor represents fixed sizes of guaranteed resource allocations. To see which host flavors are available in your region, call the [host flavors capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability) like this:
+
+```sh
+curl -X POST  https://api.{region}.databases.cloud.ibm.com/v5/ibm/capability/flavors  \
+  -H 'Authorization: Bearer <>' \
+  -H 'ContentType: application/json' \
+  -d '{
+    "deployment": {
+      "type": "postgresql",
+      "location": "us-south"
+    },
+  }'
+```
+{: pre}
+
+This returns:
+
+```sh
+{
+  "deployment": {
+    "type": "postgresql",
+    "location": "us-south",
+    "platform": "classic"
+  },
+  "capability": {
+    "flavors": [
+      {
+        "id": "b3c.4x16.encrypted",
+        "name": "4x16",
+        "cpu": {
+          "allocation_count": 4
+        },
+        "memory": {
+          "allocation_mb": 16384
+        },
+        "hosting_size": "xs"
+      },
+      {
+        "id": "b3c.8x32.encrypted",
+        "name": "8x32",
+        "cpu": {
+          "allocation_count": 8
+        },
+        "memory": {
+          "allocation_mb": 32768
+        },
+        "hosting_size": "s"
+      },
+      {
+        "id": "m3c.8x64.encrypted",
+        "name": "8x64",
+        "cpu": {
+          "allocation_count": 8
+        },
+        "memory": {
+          "allocation_mb": 65536
+        },
+        "hosting_size": "s+"
+      },
+      {
+        "id": "b3c.16x64.encrypted",
+        "name": "16x64",
+        "cpu": {
+          "allocation_count": 16
+        },
+        "memory": {
+          "allocation_mb": 65536
+        },
+        "hosting_size": "m"
+      },
+      {
+        "id": "b3c.32x128.encrypted",
+        "name": "32x128",
+        "cpu": {
+          "allocation_count": 32
+        },
+        "memory": {
+          "allocation_mb": 131072
+        },
+        "hosting_size": "l"
+      },
+      {
+        "id": "m3c.30x240.encrypted",
+        "name": "30x240",
+        "cpu": {
+          "allocation_count": 30
+        },
+        "memory": {
+          "allocation_mb": 245760
+        },
+        "hosting_size": "xl"
+      },
+      {
+        "id": "multitenant",
+        "name": "multitenant",
+        "cpu": {
+          "allocation_count": 0
+        },
+        "memory": {
+          "allocation_mb": 0
+        },
+        "hosting_size": ""
+      }
+    ]
+  }
+}
+
+```
+{: pre}
+
 
 
    Once you have all the information, [provision a new resource instance](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} with    the {{site.data.keyword.cloud_notm}} Resource Controller.
