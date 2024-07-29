@@ -107,10 +107,18 @@ Before provisioning, follow the instructions provided in the documentation to in
    | `SERVICE_ENDPOINTS_TYPE` | Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) of your deployment, either `public` or `private`. The default value is `public`. |  |
    | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
    | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
-   | `host_flavor` | For Shared Compute, specify `multitenant`. To provision an Isolated Compute instance, use `{"members_host_flavor": "<host_flavor value>"}`. The `host_flavor value` parameter defines your Isolated Compute sizing. For more information, see [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-types).| |
+   | `host_flavor` | To provision an Isolated or Shared Compute instance, use `{"members_host_flavor": "<host_flavor value>"}`. For Shared Compute, specify `multitenant`. For Isolated Compute, select desired CPU and RAM configuration. For more information, see the table below or [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models).| |
    {: caption="Table 1. Basic command format fields" caption-side="top"}
+
+In the CLI, `service-endpoints` is a flag, not a parameter.
+   {: note}
+
+### The `host flavor` parameter
+{: #host-flavor-parameter-cli}
+{: cli}
+
    
-The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
+The `host_flavor` parameter defines your Compute sizing. To provision a Shared Compute instance, specify `multitenant`. To provision an Isolated Compute instance, input the appropriate value for your desired CPU and RAM configuration.
 
 | **Host flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
@@ -123,8 +131,6 @@ The `host_flavor` parameter defines your Compute sizing. Input the appropriate v
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
 
-CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
-{: note}
 
    You will see a response like:
 
@@ -181,17 +187,19 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
    Updated at:            2023-06-26T19:53:25Z
    Last Operation:
                           Status    create succeeded
-                          Message   Provisioning redis with version 12 (100%)
+                          Message   Provisioning messages-for-rabbitmq with version 12 (100%)
    ```
    {: codeblck}
 
-1. (Optional) Deleting a service instance
-   Delete an instance by running a command like this one:
+1. (Optional) Deleting a service instance. Delete an instance by running a command like this one:
 
    ```sh
    ibmcloud resource service-instance-delete <INSTANCE_NAME>
    ```
    {: pre}
+
+CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
+{: note}
 
 ### The `--parameters` parameter
 {: #flags-params-service-endpoints}
