@@ -262,7 +262,7 @@ curl -X POST  https://api.{region}.databases.cloud.ibm.com/v5/ibm/capability/fla
   -H 'ContentType: application/json' \
   -d '{
     "deployment": {
-      "type": "postgresql",
+      "type": "messages-for-rabbitmq",
       "location": "us-south"
     },
   }'
@@ -274,7 +274,7 @@ This returns:
 ```sh
 {
   "deployment": {
-    "type": "postgresql",
+    "type": "messages-for-rabbitmq",
     "location": "us-south",
     "platform": "classic"
   },
@@ -364,6 +364,36 @@ This returns:
 ```
 {: pre}
 
+As shown, the Isolated Compute host flavors available to a {{site.data.keyword.databases-for-postgresql}} instance in the `us-south` region are:
+
+- `b3c.4x16.encrypted`
+- `b3c.8x32.encrypted`
+- `m3c.8x64.encrypted`
+- `b3c.16x64.encrypted`
+- `b3c.32x128.encrypted`
+- `m3c.30x240.encrypted`
+
+To provision or scale your instance to 4 CPUs and `16384` megabytes or RAM, submit the following command:
+
+```sh
+{
+  "host_flavor": {
+    "id": "`b3c.4x16.encrypted`"
+  }
+}
+```
+{: pre}
+
+To scale your instance up to 8 CPUs and `32768` megabytes of RAM, submit the following command:
+
+```sh
+{
+  "host_flavor": {
+    "id": "b3c.8x32.encrypted"
+  }
+}
+```
+{: pre}
 
 
    Once you have all the information, [provision a new resource instance](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} with    the {{site.data.keyword.cloud_notm}} Resource Controller.
@@ -441,7 +471,7 @@ resource "ibm_database" "<your_database>" {
   name              = "<your_database_name>"
   plan              = "standard"
   location          = "eu-gb"
-  service           = "databases-for-mongodb"
+  service           = "messages-for-rabbitmq"
   resource_group_id = data.ibm_resource_group.group.id
   tags              = ["tag1", "tag2"]
   adminpassword                = "password12"
@@ -479,7 +509,7 @@ resource "ibm_database" "<your_database>" {
   name              = "<your_database_name>"
   plan              = "standard"
   location          = "eu-gb"
-  service           = "databases-for-mongodb"
+  service           = "messages-for-rabbitmq"
   resource_group_id = data.ibm_resource_group.group.id
   tags              = ["tag1", "tag2"]
   adminpassword                = "password12"
