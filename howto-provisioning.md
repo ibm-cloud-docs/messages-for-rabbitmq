@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-07-31"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision rabbitmq
 
@@ -458,48 +458,12 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 
 Use Terraform to manage your infrastructure through the [`ibm_database` Resource for Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database) supports provisioning {{site.data.keyword.databases-for}} deployments.
 
+Select the [hosting model]([/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=terraform) you want your database to be provisioned on. You can change this later. 
+
 Before executing a Terraform script on an existing instance, use the `terraform plan` command to compare the current infrastructure state with the desired state defined in your Terraform files. Any alteration to the `resource_group_id`, `service plan`, `version`, `key_protect_instance`, `key_protect_key`, `backup_encryption_key_crn` attributes recreates your instance. For a list of current argument references with the `Forces new resource` specification, see the [ibm_database Terraform Registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 {: important}
 
-To provision an instance through Isolated Compute:
-
-```terraform
-data "ibm_resource_group" "group" {
-  name = "<your_group>"
-}
-resource "ibm_database" "<your_database>" {
-  name              = "<your_database_name>"
-  plan              = "standard"
-  location          = "eu-gb"
-  service           = "messages-for-rabbitmq"
-  resource_group_id = data.ibm_resource_group.group.id
-  tags              = ["tag1", "tag2"]
-  adminpassword                = "password12"
-  group {
-    group_id = "member"
-    host_flavor {
-      id = "b3c.8x32.encrypted"
-    }
-    disk {
-      allocation_mb = 256000
-    }
-  }
-  users {
-    name     = "user123"
-    password = "password12"
-  }
-  allowlist {
-    address     = "172.168.1.1/32"
-    description = "desc"
-  }
-}
-output "ICD Etcd database connection string" {
-  value = "http://${ibm_database.test_acc.ibm_database_connection.icd_conn}"
-}
-```
-{: codeblock}
-
-To provision an instance through Shared Compute:
+Provision a {{site.data.keyword.databases-for-elasticsearch}} Shared hosting model instance with the `"host_flavor"` parameter set to `multitenant`. See the following example:
 
 ```terraform
 data "ibm_resource_group" "group" {
@@ -543,7 +507,51 @@ output "ICD Etcd database connection string" {
 ```
 {: codeblock}
 
-The `host_flavor` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
+
+Provision a {{site.data.keyword.databases-for-elasticsearch}} Isolated instance with the same `"host_flavor"` parameter, setting it to the desired Isolated size. Available hosting sizes and their `host_flavor value` parameters are listed in [Table 1](#host-flavor-parameter-terraform). For example, `{"host_flavor": "b3c.4x16.encrypted"}`. Note that since the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM), this request does not accept both, an Isolated size selection and separate CPU and RAM allocation selections. 
+
+```terraform
+data "ibm_resource_group" "group" {
+  name = "<your_group>"
+}
+resource "ibm_database" "<your_database>" {
+  name              = "<your_database_name>"
+  plan              = "standard"
+  location          = "eu-gb"
+  service           = "messages-for-rabbitmq"
+  resource_group_id = data.ibm_resource_group.group.id
+  tags              = ["tag1", "tag2"]
+  adminpassword                = "password12"
+  group {
+    group_id = "member"
+    host_flavor {
+      id = "b3c.8x32.encrypted"
+    }
+    disk {
+      allocation_mb = 256000
+    }
+  }
+  users {
+    name     = "user123"
+    password = "password12"
+  }
+  allowlist {
+    address     = "172.168.1.1/32"
+    description = "desc"
+  }
+}
+output "ICD Etcd database connection string" {
+  value = "http://${ibm_database.test_acc.ibm_database_connection.icd_conn}"
+}
+```
+{: codeblock}
+
+
+### The `host flavor` parameter
+{: #host-flavor-parameter-terraform}
+{: terraform}
+
+The `host_flavor` parameter defines your Compute sizing. To provision a Shared Compute instance, specify `multitenant`. To provision an Isolated Compute instance, input the appropriate value for your desired CPU and RAM configuration. 
 
 | **Host flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
