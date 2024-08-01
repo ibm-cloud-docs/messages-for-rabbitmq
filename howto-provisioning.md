@@ -418,10 +418,6 @@ Follow these steps to provision using the [Resource Controller API](https://clou
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required.
 {: required}
 
-
-CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
-{: note}
-
 The fields in the command are described in the table that follows.
    
    | Field | Description | Flag |
@@ -456,7 +452,6 @@ The `host_flavor` parameter defines your Compute sizing. To provision a Shared C
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
-
 
 ## List of additional parameters
 {: #provisioning-parameters-api}
