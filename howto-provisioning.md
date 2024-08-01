@@ -412,10 +412,10 @@ Follow these steps to provision using the [Resource Controller API](https://clou
                "host_flavor": {"id": "<host_flavor_value>"}
           }
          }'
-    ```
+       ```
 {: .pre}
 
-To make a Shared Compute instance 22:22, follow this example:
+To make a Shared Compute instance 23:01, follow this example:
 
    ```sh
    curl -X POST \
