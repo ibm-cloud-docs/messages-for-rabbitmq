@@ -399,22 +399,21 @@ Follow these steps to provision using the [Resource Controller API](https://clou
     3. Once you have all the information, [provision a new resource instance](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} with the {{site.data.keyword.cloud_notm}} Resource Controller.
 
        ```sh
-       curl -X POST \
-         https://resource-controller.cloud.ibm.com/v2/resource_instances \
-         -H 'Authorization: Bearer <>' \
-         -H 'Content-Type: application/json' \
-           -d '{
-           "name": "my-instance",
-           "target": "blue-us-south",
-           "resource_group":     "5g9f447903254bb58972a2f3f5a4c711",
-           "resource_plan_id": "messages-for-rabbitmq-standard"
-           "parameters": {
+   curl -X POST \
+     https://resource-controller.cloud.ibm.com/v2/resource_instances \
+     -H "Authorization: Bearer <>" \
+     -H 'Content-Type: application/json' \
+       -d '{
+       "name": "<INSTANCE_NAME",
+       "location": "<LOCATION>",
+       "resource_group": "RESOURCE_GROUP_ID",
+       "resource_plan_id": "<SERVICE_PLAN_NAME>"
+       "parameters": {
            "host_flavor": {"id": "<host_flavor_value>"}
-        }
       }
      }'
-   ```
-   {: .pre}
+```
+{: .pre}
 
 To make a Shared Compute instance, follow this example: 
    
