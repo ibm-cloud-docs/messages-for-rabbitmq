@@ -410,10 +410,61 @@ Follow these steps to provision using the [Resource Controller API](https://clou
            "resource_plan_id": "messages-for-rabbitmq-standard"
            "parameters": {
            "host_flavor": {"id": "<host_flavor_value>"}
-          }
-         }'
-    ```
-    {: .pre}
+        }
+      }
+     }'
+   ```
+   {: .pre}
+
+To make a Shared Compute instance, follow this example: 
+   
+   ```sh
+   curl -X POST \
+     https://resource-controller.cloud.ibm.com/v2/resource_instances \
+     -H "Authorization: Bearer <>" \
+     -H 'Content-Type: application/json' \
+       -d '{
+       "name": "my-instance",
+       "location": "us-south",
+       "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
+       "resource_plan_id": "messages-for-rabbitmq-standard"
+       "parameters": {
+        "host_flavor": {
+          "id": "multitenant"
+        },
+        "memory": {
+          "allocation_mb": 16384
+        },
+        "cpu": {
+          "allocation_count": 4
+        }
+      }
+     }'
+   ```
+   {: .pre}
+
+Provision a {{site.data.keyword.messages-for-rabbitmq}} Isolated instance with the same `"host_flavor"` parameter, setting it to the desired Isolated size. Available hosting sizes and their `host_flavor value` parameters are listed in [Table 2](#host-flavor-parameter-api). For example, `{"host_flavor": "b3c.4x16.encrypted"}`. Note that since the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM), this request does not accept both, an Isolated size selection and separate CPU and RAM allocation selections.  
+
+   ```sh
+   curl -X POST \
+     https://resource-controller.cloud.ibm.com/v2/resource_instances \
+     -H "Authorization: Bearer <>" \
+     -H 'Content-Type: application/json' \
+       -d '{
+       "name": "my-instance",
+       "location": "us-south",
+       "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
+       "resource_plan_id": "messages-for-rabbitmq-standard"
+       "parameters": {
+        "host_flavor": {
+          "id": "b3c.4x16.encrypted"
+        }
+      }
+     }'
+   ```
+   {: .pre}
+
+
 
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required.
 {: required}
@@ -423,8 +474,8 @@ The fields in the command are described in the table that follows.
    | Field | Description | Flag |
    |-------|------------|------------|
    | `NAME` [Required]{: tag-red} | The instance name can be any string and is the name that is used on the web and in the CLI to identify the new deployment. |  |
-   | `SERVICE_NAME` [Required]{: tag-red} | Name or ID of the service. For {{site.data.keyword.databases-for-elasticsearch}}, use `databases-for-elasticsearch`. |  |
-   | `SERVICE_PLAN_NAME` [Required]{: tag-red} | `enterprise` or `platinum` |  |
+   | `SERVICE_NAME` [Required]{: tag-red} | Name or ID of the service. For {{site.data.keyword.messages-for-rabbitmq}}, use `messages-for-rabbitmq-standard`. |  |
+   | `SERVICE_PLAN_NAME` [Required]{: tag-red} | `standard` |  |
    | `LOCATION` [Required]{: tag-red} | The location where you want to deploy. To retrieve a list of regions, use the `ibmcloud regions` command. |  |
    | `SERVICE_ENDPOINTS_TYPE` | Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) of your deployment, either `public` or `private`. The default value is `public`. |  |
    | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
