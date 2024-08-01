@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-01"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision rabbitmq
 
@@ -271,98 +271,98 @@ Follow these steps to provision using the [Resource Controller API](https://clou
 
     This returns:
 
-```sh
-{
-  "deployment": {
-    "type": "messages-for-rabbitmq",
-    "location": "us-south",
-    "platform": "classic"
-  },
-  "capability": {
-    "flavors": [
-      {
-        "id": "b3c.4x16.encrypted",
-        "name": "4x16",
-        "cpu": {
-          "allocation_count": 4
-        },
-        "memory": {
-          "allocation_mb": 16384
-        },
-        "hosting_size": "xs"
+    ```sh
+    {
+      "deployment": {
+        "type": "messages-for-rabbitmq",
+        "location": "us-south",
+        "platform": "classic"
       },
-      {
-        "id": "b3c.8x32.encrypted",
-        "name": "8x32",
-        "cpu": {
-          "allocation_count": 8
-        },
-        "memory": {
-          "allocation_mb": 32768
-        },
-        "hosting_size": "s"
-      },
-      {
-        "id": "m3c.8x64.encrypted",
-        "name": "8x64",
-        "cpu": {
-          "allocation_count": 8
-        },
-        "memory": {
-          "allocation_mb": 65536
-        },
-        "hosting_size": "s+"
-      },
-      {
-        "id": "b3c.16x64.encrypted",
-        "name": "16x64",
-        "cpu": {
-          "allocation_count": 16
-        },
-        "memory": {
-          "allocation_mb": 65536
-        },
-        "hosting_size": "m"
-      },
-      {
-        "id": "b3c.32x128.encrypted",
-        "name": "32x128",
-        "cpu": {
-          "allocation_count": 32
-        },
-        "memory": {
-          "allocation_mb": 131072
-        },
-        "hosting_size": "l"
-      },
-      {
-        "id": "m3c.30x240.encrypted",
-        "name": "30x240",
-        "cpu": {
-          "allocation_count": 30
-        },
-        "memory": {
-          "allocation_mb": 245760
-        },
-        "hosting_size": "xl"
-      },
-      {
-        "id": "multitenant",
-        "name": "multitenant",
-        "cpu": {
-          "allocation_count": 0
-        },
-        "memory": {
-          "allocation_mb": 0
-        },
-        "hosting_size": ""
+      "capability": {
+        "flavors": [
+          {
+            "id": "b3c.4x16.encrypted",
+            "name": "4x16",
+            "cpu": {
+              "allocation_count": 4
+            },
+            "memory": {
+              "allocation_mb": 16384
+            },
+            "hosting_size": "xs"
+          },
+          {
+            "id": "b3c.8x32.encrypted",
+            "name": "8x32",
+            "cpu": {
+              "allocation_count": 8
+            },
+            "memory": {
+              "allocation_mb": 32768
+            },
+            "hosting_size": "s"
+          },
+          {
+            "id": "m3c.8x64.encrypted",
+            "name": "8x64",
+            "cpu": {
+              "allocation_count": 8
+            },
+            "memory": {
+              "allocation_mb": 65536
+            },
+            "hosting_size": "s+"
+          },
+          {
+            "id": "b3c.16x64.encrypted",
+            "name": "16x64",
+            "cpu": {
+              "allocation_count": 16
+            },
+            "memory": {
+              "allocation_mb": 65536
+            },
+            "hosting_size": "m"
+          },
+          {
+            "id": "b3c.32x128.encrypted",
+            "name": "32x128",
+            "cpu": {
+              "allocation_count": 32
+            },
+            "memory": {
+              "allocation_mb": 131072
+            },
+            "hosting_size": "l"
+          },
+          {
+            "id": "m3c.30x240.encrypted",
+            "name": "30x240",
+            "cpu": {
+              "allocation_count": 30
+            },
+            "memory": {
+              "allocation_mb": 245760
+            },
+            "hosting_size": "xl"
+          },
+          {
+            "id": "multitenant",
+            "name": "multitenant",
+            "cpu": {
+              "allocation_count": 0
+            },
+            "memory": {
+              "allocation_mb": 0
+            },
+            "hosting_size": ""
+          }
+        ]
       }
-    ]
-  }
-}
+    }
 
-```
-{: pre}
+    ```
+    {: pre}
 
     As shown, the Isolated Compute host flavors available to a {{site.data.keyword.databases-for-postgresql}} instance in the `us-south` region are:
 
