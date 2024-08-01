@@ -364,7 +364,7 @@ Follow these steps to provision using the [Resource Controller API](https://clou
     ```
     {: pre}
 
-    As shown, the Isolated Compute host flavors available to a {{site.data.keyword.databases-for-postgresql}} instance in the `us-south` region are:
+    As shown, the Isolated Compute host flavors available to a {{site.data.keyword.messages-for-rabbitmq}} instance in the `us-south` region are:
 
     - `b3c.4x16.encrypted`
     - `b3c.8x32.encrypted`
@@ -384,39 +384,39 @@ Follow these steps to provision using the [Resource Controller API](https://clou
     ```
 {: pre}
 
-To scale your instance up to 8 CPUs and `32768` megabytes of RAM, submit the following command:
+    To scale your instance up to 8 CPUs and `32768` megabytes of RAM, submit the following command:
 
-```sh
-{
-  "host_flavor": {
-    "id": "b3c.8x32.encrypted"
-  }
-}
-```
-    {: pre}
+    ```sh
+    {
+      "host_flavor": {
+        "id": "b3c.8x32.encrypted"
+      }
+    }
+    ```
+        {: pre}
 
 
     3. Once you have all the information, [provision a new resource instance](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} with the {{site.data.keyword.cloud_notm}} Resource Controller.
 
-   ```sh
-   curl -X POST \
-     https://resource-controller.cloud.ibm.com/v2/resource_instances \
-     -H 'Authorization: Bearer <>' \
-     -H 'Content-Type: application/json' \
-       -d '{
-       "name": "my-instance",
-       "target": "blue-us-south",
-       "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
-       "resource_plan_id": "messages-for-rabbitmq-standard"
-       "parameters": {
+       ```sh
+       curl -X POST \
+         https://resource-controller.cloud.ibm.com/v2/resource_instances \
+         -H 'Authorization: Bearer <>' \
+         -H 'Content-Type: application/json' \
+           -d '{
+           "name": "my-instance",
+           "target": "blue-us-south",
+           "resource_group":     "5g9f447903254bb58972a2f3f5a4c711",
+           "resource_plan_id": "messages-for-rabbitmq-standard"
+           "parameters": {
            "host_flavor": {"id": "<host_flavor_value>"}
-      }
-     }'
-```
-{: .pre}
+          }
+         }'
+    ```
+    {: .pre}
 
-   The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required.
-   {: required}
+       The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required.
+       {: required}
 
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
