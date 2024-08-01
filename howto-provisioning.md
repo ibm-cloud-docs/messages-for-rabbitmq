@@ -413,9 +413,9 @@ Follow these steps to provision using the [Resource Controller API](https://clou
           }
          }'
     ```
-{: .codeblock}
+{: .pre}
 
-To make a Shared Compute instance 21:25, follow this example:
+To make a Shared Compute instance 22:22, follow this example:
 
    ```sh
    curl -X POST \
