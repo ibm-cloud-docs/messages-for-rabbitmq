@@ -413,7 +413,7 @@ Follow these steps to provision using the [Resource Controller API](https://clou
           }
          }'
     ```
-    {: .pre}
+{: .pre}
 
 To make a Shared Compute instance, follow this example: 
    
