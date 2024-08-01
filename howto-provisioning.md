@@ -254,22 +254,22 @@ Follow these steps to provision using the [Resource Controller API](https://clou
 
 4. Select the [hosting model](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=api) you want your database to be provisioned on. You can change this later. 
 
-A host flavor represents fixed sizes of guaranteed resource allocations. To see which host flavors are available in your region, call the [host flavors capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability) like this:
+    A host flavor represents fixed sizes of guaranteed resource allocations. To see which host flavors are available in your region, call the [host flavors capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability) like this:
 
-```sh
-curl -X POST  https://api.{region}.databases.cloud.ibm.com/v5/ibm/capability/flavors  \
-  -H 'Authorization: Bearer <>' \
-  -H 'ContentType: application/json' \
-  -d '{
-    "deployment": {
-      "type": "messages-for-rabbitmq",
-      "location": "us-south"
-    },
-  }'
-```
-{: pre}
+    ```sh
+    curl -X POST  https://api.{region}.databases.cloud.ibm.com/v5/ibm/    capability/flavors  \
+      -H 'Authorization: Bearer <>' \
+      -H 'ContentType: application/json' \
+      -d '{
+        "deployment": {
+          "type": "messages-for-rabbitmq",
+          "location": "us-south"
+        },
+      }'
+    ```
+    {: pre}
 
-This returns:
+    This returns:
 
 ```sh
 {
@@ -364,24 +364,24 @@ This returns:
 ```
 {: pre}
 
-As shown, the Isolated Compute host flavors available to a {{site.data.keyword.databases-for-postgresql}} instance in the `us-south` region are:
+    As shown, the Isolated Compute host flavors available to a {{site.data.keyword.databases-for-postgresql}} instance in the `us-south` region are:
 
-- `b3c.4x16.encrypted`
-- `b3c.8x32.encrypted`
-- `m3c.8x64.encrypted`
-- `b3c.16x64.encrypted`
-- `b3c.32x128.encrypted`
-- `m3c.30x240.encrypted`
+    - `b3c.4x16.encrypted`
+    - `b3c.8x32.encrypted`
+    - `m3c.8x64.encrypted`
+    - `b3c.16x64.encrypted`
+    - `b3c.32x128.encrypted`
+    - `m3c.30x240.encrypted`
 
-To provision or scale your instance to 4 CPUs and `16384` megabytes or RAM, submit the following command:
+    To provision or scale your instance to 4 CPUs and `16384` megabytes or RAM, submit the following command:
 
-```sh
-{
-  "host_flavor": {
-    "id": "`b3c.4x16.encrypted`"
-  }
-}
-```
+    ```sh
+    {
+      "host_flavor": {
+        "id": "`b3c.4x16.encrypted`"
+      }
+     }
+    ```
 {: pre}
 
 To scale your instance up to 8 CPUs and `32768` megabytes of RAM, submit the following command:
@@ -393,10 +393,10 @@ To scale your instance up to 8 CPUs and `32768` megabytes of RAM, submit the fol
   }
 }
 ```
-{: pre}
+    {: pre}
 
 
-3. Once you have all the information, [provision a new resource instance](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} with the {{site.data.keyword.cloud_notm}} Resource Controller.
+    3. Once you have all the information, [provision a new resource instance](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} with the {{site.data.keyword.cloud_notm}} Resource Controller.
 
    ```sh
    curl -X POST \
