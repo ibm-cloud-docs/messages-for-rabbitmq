@@ -415,12 +415,27 @@ Follow these steps to provision using the [Resource Controller API](https://clou
     ```
     {: .pre}
 
-       The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required.
-       {: required}
+The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required.
+{: required}
 
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
+
+The fields in the command are described in the table that follows.
+   
+   | Field | Description | Flag |
+   |-------|------------|------------|
+   | `NAME` [Required]{: tag-red} | The instance name can be any string and is the name that is used on the web and in the CLI to identify the new deployment. |  |
+   | `SERVICE_NAME` [Required]{: tag-red} | Name or ID of the service. For {{site.data.keyword.databases-for-elasticsearch}}, use `databases-for-elasticsearch`. |  |
+   | `SERVICE_PLAN_NAME` [Required]{: tag-red} | `enterprise` or `platinum` |  |
+   | `LOCATION` [Required]{: tag-red} | The location where you want to deploy. To retrieve a list of regions, use the `ibmcloud regions` command. |  |
+   | `SERVICE_ENDPOINTS_TYPE` | Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) of your deployment, either `public` or `private`. The default value is `public`. |  |
+   | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
+   | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
+   | `host_flavor` | To provision an Isolated or Shared Compute instance, use `{"members_host_flavor": "<host_flavor value>"}`. For Shared Compute, specify `multitenant`. For Isolated Compute, select desired CPU and RAM configuration. For more information, see the table below, or [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models).| |
+   {: caption="Table 1. Basic command format fields" caption-side="top"}
+
 
 ### The `host flavor` parameter
 {: #host-flavor-parameter-api}
