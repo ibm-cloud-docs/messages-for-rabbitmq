@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-03"
+lastupdated: "2024-08-01"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision rabbitmq
 
@@ -27,9 +27,9 @@ Provision from the console by specifying the following parameters:
 {: #service_details}
 {: ui}
 
-- **Service name:** The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
-- **Resource group:** If you are organizing your services into [resource groups](/docs/account?topic=account-account_setup), specify the resource group in this field. Otherwise, you can leave it at default. For more information, see [Managing resource groups](/docs/account?topic=account-rgs).
-- **Location:** The deployment's public cloud region or Satellite location.
+- **Service name** - The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
+- **Resource group** - If you are organizing your services into [resource groups](/docs/account?topic=account-account_setup), specify the resource group in this field. Otherwise, you can leave it at default. For more information, see [Managing resource groups](/docs/account?topic=account-rgs).
+- **Location** - The deployment's public cloud region or Satellite location.
 
 ### Hosting model
 {: #hosting_model}
@@ -46,7 +46,10 @@ For more information, see [Hosting models](/docs/cloud-databases?topic=cloud-dat
 Fine tune your resource allocation. The available options differ based on your selected hosting model.
 
 - **Isolated:** Use the table to choose the machine size for each member of your deployment, and specify the disk size.
-- **Shared:** By default, the smallest possible resource allocation is selected. This is ideal for small applications or testing. For larger allocations, select the *Custom* tile, which allows flexible resource configuration with 2+ cores. 
+- **Shared:** By default, the smallest possible resource allocation is selected. This is ideal for small applications or testing. For larger allocations, select the *Custom* tile, which allows flexible resource configuration with 2+ cores.
+
+The Shared Compute hosting model supports more fine-grained resource allocations that are not shown in the UI to maintain clarity. For more information, see [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models).
+{: note}
 
 Specify the disk size depending on your requirements. It can be increased after provisioning but cannot be decreased to prevent data loss.
 {: note}
@@ -55,9 +58,9 @@ Specify the disk size depending on your requirements. It can be increased after 
 {: #service_configuration}
 {: ui}
 
-- **Database Version:** [Set only at deployment]{: tag-red} The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. For more information, see [Database Versioning Policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}.
-- **Encryption:** If you use [Key Protect](/docs/cloud-databases?topic=cloud-databases-key-protect&interface=ui), an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
-- **Endpoints:** [Set only at deployment]{: tag-red} Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment.
+- **Database Version** - [Set only at deployment]{: tag-red} The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. For more information, see [Database Versioning Policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}.
+- **Encryption** - If you use [Key Protect](/docs/cloud-databases?topic=cloud-databases-key-protect&interface=ui), an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
+- **Endpoints** - [Set only at deployment]{: tag-red} Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment.
 
 After you select the appropriate settings, click **Create** to start the provisioning process.
 
@@ -69,27 +72,35 @@ After you select the appropriate settings, click **Create** to start the provisi
 {: #create-service-instance-cli}
 {: cli}
 
-Before provisioning, follow the instructions provided in the documentation to install the [{{site.data.keyword.cloud_notm}} CLI tool](https://www.ibm.com/cloud/cli){: external}.
+Before provisioning, follow the instructions provided in the documentation to install the [{{site.data.keyword.cloud_notm}} CLI tool](/docs/cli?topic=cli-install-ibmcloud-cli){: external}.
 
-1. Log in to {{site.data.keyword.cloud_notm}}. If you use a federated user ID, it's important that you switch to a one-time passcode (`ibmcloud login --sso`), or use an API ke(`ibmcloud --apikey key or @key_file`) to authenticate. For more information about how to log in by using the CLI, see [General CLI (ibmcloud) commands](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login){: external} under `ibmcloud login`.
+1. Log in to {{site.data.keyword.cloud_notm}}. If you use a federated user ID, it's important that you switch to a one-time passcode (`ibmcloud login --sso`), or use an API key (`ibmcloud --apikey key or @key_file`) to authenticate. For more information about how to log in by using the CLI, see [General CLI (ibmcloud) commands](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login){: external} under `ibmcloud login`.
 
       ```sh
       ibmcloud login
       ```
       {: pre}
 
+2. Select the [hosting model](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=cli) you want your database to be provisioned on. You can change this later.
 
-1. Provision a {{site.data.keyword.messages-for-rabbitmq}} Shared instance with a command like:
+3. Provision your database with the following command:
 
    ```sh
-   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <SERVICE_ENDPOINTS_TYPE> <RESOURCE_GROUP> -p `{"members_host_flavor": "multitenant"}`
+   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <SERVICE_ENDPOINTS_TYPE> <RESOURCE_GROUP> -p '{"members_host_flavor": "<host_flavor value>"}'
    ```
    {: pre}
 
-   Provision a {{site.data.keyword.databases-for-mongodb}} Isolated instance with the same `"members_host_flavor"` -p flag, and then specify the `host_flavor value` parameter. For example: `{"members_host_flavor": "b3c.4x16.encrypted"}`
+   For example, to provision a {{site.data.keyword.messages-for-rabbitmq}} Shared Compute hosting model instance, use a command like:
 
    ```sh
-   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <SERVICE_ENDPOINTS_TYPE> <RESOURCE_GROUP> -p `{"members_host_flavor": "<host_flavor value>"}`
+   ibmcloud resource service-instance-create test-database messages-for-rabbitmq standard us-south -p '{"members_host_flavor": "multitenant", "members_memory_allocation_mb": "8192"}'
+   ```
+   {: pre}
+
+  Provision a {{site.data.keyword.messages-for-rabbitmq}} Isolated instance with the same `"members_host_flavor"` -p parameter, setting it to the desired Isolated size. Available hosting sizes and their `host_flavor value` parameters are listed in [Table 2](#host_flavor_table). For example, `{"members_host_flavor": "b3c.4x16.encrypted"}`. Note that since the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM), this request does not accept both, an Isolated size selection and separate CPU and RAM allocation selections.
+
+   ```sh
+   ibmcloud resource service-instance-create test-database messages-for-rabbitmq standard us-south -p '{"members_host_flavor": "b3c.4x16.encrypted"}'
    ```
    {: pre}
 
@@ -103,10 +114,18 @@ Before provisioning, follow the instructions provided in the documentation to in
    | `SERVICE_ENDPOINTS_TYPE` | Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) of your deployment, either `public` or `private`. The default value is `public`. |  |
    | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
    | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
-   | `host_flavor` | For Shared Compute, specify `multitenant`. To provision an Isolated Compute instance, use `{"members_host_flavor": "<host_flavor value>"}`. The `host_flavor value` parameter defines your Isolated Compute sizing. For more information, see [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-types).| |
+   | `host_flavor` | To provision an Isolated or Shared Compute instance, use `{"members_host_flavor": "<host_flavor value>"}`. For Shared Compute, specify `multitenant`. For Isolated Compute, select desired CPU and RAM configuration. For more information, see the table below or [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models).| |
    {: caption="Table 1. Basic command format fields" caption-side="top"}
-   
-The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
+
+In the CLI, `service-endpoints` is a flag, not a parameter.
+   {: note}
+
+### The `host flavor` parameter
+{: #host-flavor-parameter-cli}
+{: cli}
+
+
+The `host_flavor` parameter defines your Compute sizing. To provision a Shared Compute instance, specify `multitenant`. To provision an Isolated Compute instance, input the appropriate value for your desired CPU and RAM configuration.
 
 | **Host flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
@@ -117,10 +136,9 @@ The `host_flavor` parameter defines your Compute sizing. Input the appropriate v
 | 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
+{: caption="Table 2. Host flavor sizing parameter" caption-side="bottom"}
+{: #host_flavor_table}
 
-CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
-{: note}
 
    You will see a response like:
 
@@ -177,17 +195,19 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
    Updated at:            2023-06-26T19:53:25Z
    Last Operation:
                           Status    create succeeded
-                          Message   Provisioning redis with version 12 (100%)
+                          Message   Provisioning messages-for-rabbitmq with version 12 (100%)
    ```
-   {: codeblck}
+   {: codeblock}
 
-1. (Optional) Deleting a service instance
-   Delete an instance by running a command like this one:
+1. (Optional) Delete an instance by running a command like this one:
 
    ```sh
    ibmcloud resource service-instance-delete <INSTANCE_NAME>
    ```
    {: pre}
+
+CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
+{: note}
 
 ### The `--parameters` parameter
 {: #flags-params-service-endpoints}
@@ -232,27 +252,242 @@ Follow these steps to provision using the [Resource Controller API](https://clou
    ```
    {: pre}
 
+4. Select the [hosting model](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=api) you want your database to be provisioned on. You can change this later.
 
-   Once you have all the information, [provision a new resource instance](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} with    the {{site.data.keyword.cloud_notm}} Resource Controller.
+    A host flavor represents fixed sizes of guaranteed resource allocations. To see which host flavors are available in your region, call the [host flavors capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability) like this:
+
+    ```sh
+    curl -X POST  https://api.{region}.databases.cloud.ibm.com/v5/ibm/    capability/flavors  \
+      -H 'Authorization: Bearer <>' \
+      -H 'ContentType: application/json' \
+      -d '{
+        "deployment": {
+          "type": "messages-for-rabbitmq",
+          "location": "us-south"
+        },
+      }'
+    ```
+    {: pre}
+
+    This returns:
+
+    ```sh
+    {
+      "deployment": {
+        "type": "messages-for-rabbitmq",
+        "location": "us-south",
+        "platform": "classic"
+      },
+      "capability": {
+        "flavors": [
+          {
+            "id": "b3c.4x16.encrypted",
+            "name": "4x16",
+            "cpu": {
+              "allocation_count": 4
+            },
+            "memory": {
+              "allocation_mb": 16384
+            },
+            "hosting_size": "xs"
+          },
+          {
+            "id": "b3c.8x32.encrypted",
+            "name": "8x32",
+            "cpu": {
+              "allocation_count": 8
+            },
+            "memory": {
+              "allocation_mb": 32768
+            },
+            "hosting_size": "s"
+          },
+          {
+            "id": "m3c.8x64.encrypted",
+            "name": "8x64",
+            "cpu": {
+              "allocation_count": 8
+            },
+            "memory": {
+              "allocation_mb": 65536
+            },
+            "hosting_size": "s+"
+          },
+          {
+            "id": "b3c.16x64.encrypted",
+            "name": "16x64",
+            "cpu": {
+              "allocation_count": 16
+            },
+            "memory": {
+              "allocation_mb": 65536
+            },
+            "hosting_size": "m"
+          },
+          {
+            "id": "b3c.32x128.encrypted",
+            "name": "32x128",
+            "cpu": {
+              "allocation_count": 32
+            },
+            "memory": {
+              "allocation_mb": 131072
+            },
+            "hosting_size": "l"
+          },
+          {
+            "id": "m3c.30x240.encrypted",
+            "name": "30x240",
+            "cpu": {
+              "allocation_count": 30
+            },
+            "memory": {
+              "allocation_mb": 245760
+            },
+            "hosting_size": "xl"
+          },
+          {
+            "id": "multitenant",
+            "name": "multitenant",
+            "cpu": {
+              "allocation_count": 0
+            },
+            "memory": {
+              "allocation_mb": 0
+            },
+            "hosting_size": ""
+          }
+        ]
+      }
+    }
+
+    ```
+    {: pre}
+
+    As shown, the Isolated Compute host flavors available to a {{site.data.keyword.messages-for-rabbitmq}} instance in the `us-south` region are:
+
+    - `b3c.4x16.encrypted`
+    - `b3c.8x32.encrypted`
+    - `m3c.8x64.encrypted`
+    - `b3c.16x64.encrypted`
+    - `b3c.32x128.encrypted`
+    - `m3c.30x240.encrypted`
+
+    To provision or scale your instance to 4 CPUs and `16384` megabytes or RAM, submit the following command:
+
+    ```sh
+    {
+      "host_flavor": {
+        "id": "`b3c.4x16.encrypted`"
+      }
+     }
+    ```
+{: pre}
+
+    To scale your instance up to 8 CPUs and `32768` megabytes of RAM, submit the following command:
+
+    ```sh
+    {
+      "host_flavor": {
+        "id": "b3c.8x32.encrypted"
+      }
+    }
+    ```
+        {: pre}
+
+
+    3. Once you have all the information, [provision a new resource instance](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} with the {{site.data.keyword.cloud_notm}} Resource Controller.
+
+       ```sh
+       curl -X POST \
+         https://resource-controller.cloud.ibm.com/v2/resource_instances \
+         -H "Authorization: Bearer <>" \
+         -H 'Content-Type: application/json' \
+           -d '{
+           "name": "<INSTANCE_NAME",
+           "location": "<LOCATION>",
+           "resource_group": "RESOURCE_GROUP_ID",
+           "resource_plan_id": "<SERVICE_PLAN_NAME>"
+           "parameters": {
+               "host_flavor": {"id": "<host_flavor_value>"}
+          }
+         }'
+       ```
+{: .pre}
+
+To make a Shared Compute instance 23:01, follow this example:
 
    ```sh
    curl -X POST \
      https://resource-controller.cloud.ibm.com/v2/resource_instances \
-     -H 'Authorization: Bearer <>' \
+     -H "Authorization: Bearer <>" \
      -H 'Content-Type: application/json' \
        -d '{
        "name": "my-instance",
-       "target": "blue-us-south",
+       "location": "us-south",
        "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
        "resource_plan_id": "messages-for-rabbitmq-standard"
+       "parameters": {
+        "host_flavor": {
+          "id": "multitenant"
+        },
+        "memory": {
+          "allocation_mb": 16384
+        },
+        "cpu": {
+          "allocation_count": 4
+        }
+      }
      }'
    ```
    {: .pre}
 
-   The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required.
-   {: required}
-   
-The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
+Provision a {{site.data.keyword.messages-for-rabbitmq}} Isolated instance with the same `"host_flavor"` parameter, setting it to the desired Isolated size. Available hosting sizes and their `host_flavor value` parameters are listed in [Table 2](#host-flavor-parameter-api). For example, `{"host_flavor": "b3c.4x16.encrypted"}`. Note that since the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM), this request does not accept both, an Isolated size selection and separate CPU and RAM allocation selections.
+
+   ```sh
+   curl -X POST \
+     https://resource-controller.cloud.ibm.com/v2/resource_instances \
+     -H "Authorization: Bearer <>" \
+     -H 'Content-Type: application/json' \
+       -d '{
+       "name": "my-instance",
+       "location": "us-south",
+       "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
+       "resource_plan_id": "messages-for-rabbitmq-standard"
+       "parameters": {
+        "host_flavor": {
+          "id": "b3c.4x16.encrypted"
+        }
+      }
+     }'
+   ```
+   {: .pre}
+
+
+
+The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required.
+{: required}
+
+The fields in the command are described in the table that follows.
+
+   | Field | Description | Flag |
+   |-------|------------|------------|
+   | `NAME` [Required]{: tag-red} | The instance name can be any string and is the name that is used on the web and in the CLI to identify the new deployment. |  |
+   | `SERVICE_NAME` [Required]{: tag-red} | Name or ID of the service. For {{site.data.keyword.messages-for-rabbitmq}}, use `messages-for-rabbitmq-standard`. |  |
+   | `SERVICE_PLAN_NAME` [Required]{: tag-red} | `standard` |  |
+   | `LOCATION` [Required]{: tag-red} | The location where you want to deploy. To retrieve a list of regions, use the `ibmcloud regions` command. |  |
+   | `SERVICE_ENDPOINTS_TYPE` | Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) of your deployment, either `public` or `private`. The default value is `public`. |  |
+   | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
+   | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
+   | `host_flavor` | To provision an Isolated or Shared Compute instance, use `{"members_host_flavor": "<host_flavor value>"}`. For Shared Compute, specify `multitenant`. For Isolated Compute, select desired CPU and RAM configuration. For more information, see the table below, or [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models).| |
+   {: caption="Table 1. Basic command format fields" caption-side="top"}
+
+
+### The `host flavor` parameter
+{: #host-flavor-parameter-api}
+{: api}
+
+The `host_flavor` parameter defines your Compute sizing. To provision a Shared Compute instance, specify `multitenant`. To provision an Isolated Compute instance, input the appropriate value for your desired CPU and RAM configuration.
 
 | **Host flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
@@ -263,11 +498,10 @@ The `host_flavor` parameter defines your Compute sizing. Input the appropriate v
 | 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 1. Host Flavor sizing parameter" caption-side="bottom"}
+{: caption="Table 2. Host flavor sizing parameter" caption-side="bottom"}
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
-
 
 ## List of additional parameters
 {: #provisioning-parameters-api}
@@ -286,19 +520,21 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 * `members_cpu_allocation_count` - Enables and allocates the number of specified dedicated cores to your deployment. For example, to use two dedicated cores per member, use `"members_cpu_allocation_count":"2"`. If omitted, the default value "Shared CPU" uses compute resources on shared hosts. This parameter only applies to `multitenant'.
 * `service-endpoints` - The [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment, `public` or `private`.
 
-   In the CLI, `service-endpoints` is a flag, not a parameter.
-   {: note}
+
 
 ## Provisioning with Terraform
 {: #provisioning-terraform}
 {: terraform}
 
-Use Terraform to manage your infrastructure through the [`ibm_database` Resource for Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database) supports provisioning {{site.data.keyword.databases-for}} deployments.
-
 Before executing a Terraform script on an existing instance, use the `terraform plan` command to compare the current infrastructure state with the desired state defined in your Terraform files. Any alteration to the `resource_group_id`, `service plan`, `version`, `key_protect_instance`, `key_protect_key`, `backup_encryption_key_crn` attributes recreates your instance. For a list of current argument references with the `Forces new resource` specification, see the [ibm_database Terraform Registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 {: important}
 
-To provision an instance through Isolated Compute:
+Use Terraform to manage your infrastructure through the [`ibm_database` Resource for Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database) supports provisioning {{site.data.keyword.databases-for}} deployments.
+
+Select the [hosting model](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=terraform) you want your database to be provisioned on. You can change this later.
+
+
+Provision a {{site.data.keyword.messages-for-rabbitmq}} Shared hosting model instance with the `"host_flavor"` parameter set to `multitenant`. See the following example:
 
 ```terraform
 data "ibm_resource_group" "group" {
@@ -308,45 +544,7 @@ resource "ibm_database" "<your_database>" {
   name              = "<your_database_name>"
   plan              = "standard"
   location          = "eu-gb"
-  service           = "databases-for-mongodb"
-  resource_group_id = data.ibm_resource_group.group.id
-  tags              = ["tag1", "tag2"]
-  adminpassword                = "password12"
-  group {
-    group_id = "member"
-    host_flavor {
-      id = "b3c.8x32.encrypted"
-    }
-    disk {
-      allocation_mb = 256000
-    }
-  }
-  users {
-    name     = "user123"
-    password = "password12"
-  }
-  allowlist {
-    address     = "172.168.1.1/32"
-    description = "desc"
-  }
-}
-output "ICD Etcd database connection string" {
-  value = "http://${ibm_database.test_acc.ibm_database_connection.icd_conn}"
-}
-```
-{: codeblock}
-
-To provision an instance through Shared Compute:
-
-```terraform
-data "ibm_resource_group" "group" {
-  name = "<your_group>"
-}
-resource "ibm_database" "<your_database>" {
-  name              = "<your_database_name>"
-  plan              = "standard"
-  location          = "eu-gb"
-  service           = "databases-for-mongodb"
+  service           = "messages-for-rabbitmq"
   resource_group_id = data.ibm_resource_group.group.id
   tags              = ["tag1", "tag2"]
   adminpassword                = "password12"
@@ -380,7 +578,51 @@ output "ICD Etcd database connection string" {
 ```
 {: codeblock}
 
-The `host_flavor` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
+
+Provision a {{site.data.keyword.messages-for-rabbitmq}} Isolated instance with the same `"host_flavor"` parameter, setting it to the desired Isolated size. Available hosting sizes and their `host_flavor value` parameters are listed in [Table 1](#host-flavor-parameter-terraform). For example, `{"host_flavor": "b3c.4x16.encrypted"}`. Note that since the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM), this request does not accept both, an Isolated size selection and separate CPU and RAM allocation selections.
+
+```terraform
+data "ibm_resource_group" "group" {
+  name = "<your_group>"
+}
+resource "ibm_database" "<your_database>" {
+  name              = "<your_database_name>"
+  plan              = "standard"
+  location          = "eu-gb"
+  service           = "messages-for-rabbitmq"
+  resource_group_id = data.ibm_resource_group.group.id
+  tags              = ["tag1", "tag2"]
+  adminpassword                = "password12"
+  group {
+    group_id = "member"
+    host_flavor {
+      id = "b3c.8x32.encrypted"
+    }
+    disk {
+      allocation_mb = 256000
+    }
+  }
+  users {
+    name     = "user123"
+    password = "password12"
+  }
+  allowlist {
+    address     = "172.168.1.1/32"
+    description = "desc"
+  }
+}
+output "ICD Etcd database connection string" {
+  value = "http://${ibm_database.test_acc.ibm_database_connection.icd_conn}"
+}
+```
+{: codeblock}
+
+
+### The `host flavor` parameter
+{: #host-flavor-parameter-terraform}
+{: terraform}
+
+The `host_flavor` parameter defines your Compute sizing. To provision a Shared Compute instance, specify `multitenant`. To provision an Isolated Compute instance, input the appropriate value for your desired CPU and RAM configuration.
 
 | **Host flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
