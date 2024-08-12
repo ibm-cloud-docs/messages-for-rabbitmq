@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-05-01"
+lastupdated: "2024-08-12"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -19,6 +19,17 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 12 August 2024
+{: #databases-for-rabbitmq-12aug2024}
+{: release-note}
+
+RabbitMQ v3.13 is live
+: RabbitMQ v3.13 is available on {{site.data.keyword.messages-for-rabbitmq}}. It includes several new features, bug fixes, and optimizations, such as the following:
+  - [MQTT QoS 0 queue type](https://www.rabbitmq.com/docs/mqtt#qos0-queue-type) is available to be used if specific criteria is met.
+  - [Overload protect](https://www.rabbitmq.com/docs/mqtt#overload-protection) against high [memory usage](https://www.rabbitmq.com/docs/memory-use) due to MQTT QoS 0 messages.
+  - Deprecated features are now listed via https API on RabbitMQ Management UI and a warning is logged upon their usage.
+  - Visibility of enabled feature flags via https API and RabbitMQ management UI for administrator users.
 
 ## 1 May 2024
 {: #databases-for-rabbitmq-01may2024}
