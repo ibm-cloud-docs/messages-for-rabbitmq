@@ -214,13 +214,13 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 
 The `service-instance-create` command supports a `-p` flag, which allows JSON-formatted parameters to be passed to the provisioning process. Some parameter values are Cloud Resource Names (CRNs), which uniquely identify a resource in the cloud. All parameter names and values are passed as strings.
 
-For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 9 GB of memory across three members, then the command to provision 3 GBs per member looks like:
+For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 12 GB of memory across three members, then the command to provision 4 GBs per member looks like:
 
 ```sh
 ibmcloud resource service-instance-create messages-for-rabbitmq <INSTANCE_NAME> standard us-south \
 -p \ '{
   "backup_id": "crn:v1:blue:public:messages-for-rabbitmq:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:06392e97-df90-46d8-98e8-cb67e9e0a8e6",
-  "members_memory_allocation_mb": "8192" --service-endpoints="private"
+  "members_memory_allocation_mb": "12288" --service-endpoints="private"
 }'
 ```
 {: pre}
@@ -431,10 +431,10 @@ To make a Shared Compute instance, follow this example:
           "id": "multitenant"
         },
         "memory": {
-          "allocation_mb": 16384
+          "allocation_mb": 12288
         },
         "cpu": {
-          "allocation_count": 4
+          "allocation_count": 3
         }
       }
      }'
@@ -557,7 +557,7 @@ resource "ibm_database" "<your_database>" {
       allocation_count = 3
     }
     memory {
-      allocation_mb = 2048
+      allocation_mb = 12288
     }
     disk {
       allocation_mb = 256000
