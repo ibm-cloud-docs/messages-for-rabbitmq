@@ -60,7 +60,7 @@ Specify the disk size depending on your requirements. It can be increased after 
 
 - **Database Version** - [Set only at deployment]{: tag-red} The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. For more information, see [Database Versioning Policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}.
 - **Encryption** - If you use [Key Protect](/docs/cloud-databases?topic=cloud-databases-key-protect&interface=ui), an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
-- **Endpoints** - [Set only at deployment]{: tag-red} Configure the [Service endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment.
+- **Endpoints** - [Set only at deployment]{: tag-red} Configure the [Service endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment. The default setting is *private*.
 
 After you select the appropriate settings, click **Create** to start the provisioning process.
 
@@ -408,7 +408,8 @@ Follow these steps to provision using the [Resource Controller API](https://clou
            "resource_group": "RESOURCE_GROUP_ID",
            "resource_plan_id": "<SERVICE_PLAN_NAME>"
            "parameters": {
-               "host_flavor": {"id": "<host_flavor_value>"}
+               "host_flavor": {"id": "<host_flavor_value>"},
+               "service-endpoints": "<ENDPOINT>"
           }
          }'
        ```
@@ -430,6 +431,7 @@ To make a Shared Compute instance, follow this example:
         "host_flavor": {
           "id": "multitenant"
         },
+        "service-endpoints": "private",
         "memory": {
           "allocation_mb": 12288
         },
@@ -456,7 +458,8 @@ Provision a {{site.data.keyword.messages-for-rabbitmq}} Isolated instance with t
        "parameters": {
         "host_flavor": {
           "id": "b3c.4x16.encrypted"
-        }
+        },
+        "service-endpoints":"private"
       }
      }'
    ```
@@ -479,6 +482,7 @@ The fields in the command are described in the table that follows.
    | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
    | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
    | `host_flavor` | To provision an Isolated or Shared Compute instance, use `{"members_host_flavor": "<host_flavor value>"}`. For Shared Compute, specify `multitenant`. For Isolated Compute, select desired CPU and RAM configuration. For more information, see the table below, or [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models).| |
+   | `service-endpoints` [Required]{: tag-red} | Configure the [Service endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints){: external} of your deployment, either `public`, `private` or `public-and-private`. | |
    {: caption="Table 1. Basic command format fields" caption-side="top"}
 
 
@@ -517,7 +521,6 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 * `members_memory_allocation_mb` -  Total amount of memory to be shared between the database members within the database. For example, if the value is "6144", and there are three database members, then the deployment gets 6 GB of RAM total, giving 2 GB of RAM per member. If omitted, the default value is used for the database type is used. This parameter only applies to `multitenant'.
 * `members_disk_allocation_mb` - Total amount of disk to be shared between the database members within the database. For example, if the value is "30720", and there are three members, then the deployment gets 30 GB of disk total, giving 10 GB of disk per member. If omitted, the default value for the database type is used. This parameter only applies to `multitenant'.
 * `members_cpu_allocation_count` - Enables and allocates the number of specified dedicated cores to your deployment. For example, to use two dedicated cores per member, use `"members_cpu_allocation_count":"2"`. If omitted, the default value "Shared CPU" uses compute resources on shared hosts. This parameter only applies to `multitenant'.
-* `service-endpoints` - The [Service endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment, `public` or `private`.
 
 
 
