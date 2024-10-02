@@ -201,7 +201,7 @@ The `host_flavor` parameter defines your Compute sizing. To provision a Shared C
 1. (Optional) Delete an instance by running a command like this one:
 
    ```sh
-   ibmcloud resource service-instance-delete <INSTANCE_NAME>
+   ibmcloud resource service-instance-delete <INSTANCE_NAME_OR_CRN>
    ```
    {: pre}
 
@@ -220,8 +220,8 @@ For example, if a database is being provisioned from a particular backup and the
 ibmcloud resource service-instance-create messages-for-rabbitmq <INSTANCE_NAME> standard us-south \
 -p \ '{
   "backup_id": "crn:v1:blue:public:messages-for-rabbitmq:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:06392e97-df90-46d8-98e8-cb67e9e0a8e6",
-  "members_memory_allocation_mb": "12288" --service-endpoints="private"
-}'
+
+  "members_memory_allocation_mb": "8192"}' --service-endpoints="private"
 ```
 {: pre}
 
