@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-09-16"
+lastupdated: "2024-09-29"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 29 September 2024
+{: #messages-for-rabbitmq-29sept2024}
+{: release-note}
+
+{{site.data.keyword.messages-for-rabbitmq}} version 3.12 End of Life on April 30, 2025
+:  Action is required before April 30, 2025, for your RabbitMQ 3.12 deployments. After April 30, 2025, {{site.data.keyword.messages-for-rabbitmq}} instances on version 3.12 that are still active will have their access removed, in line with our database versioning policy. You are expected to be on version 3.13, the latest version of {{site.data.keyword.messages-for-rabbitmq}}. For more information, see [Upgrading to a new major version](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading).
 
 ## 16 September 2024
 {: #databases-for-rabbitmq-16sept2024}
