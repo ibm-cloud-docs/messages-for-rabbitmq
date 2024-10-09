@@ -32,7 +32,7 @@ As a message broker implemented in Erlang, RabbitMQ is thoroughly dependent on C
 
 The default virtual host is configured to mirror its queues across all nodes in the cluster to provide [high-availability](https://www.rabbitmq.com/ha.html){: external}. High availability in RabbitMQ is set by [policy](https://www.rabbitmq.com/parameters.html#policies){: external}. You can view the policy in the [RabbitMQ Management UI, the HTTPS API, or `rabbitmqadmin`](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-management-plugin) when you log in with the [admin account](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management#the-admin-user).
 
-![RabbitMQ policies page](images/ha-policies2.png){: caption="Figure 1. RabbitMQ policies page" caption-side="bottom"}
+![RabbitMQ policies page](images/ha-policies2.png){: caption="RabbitMQ policies page" caption-side="bottom"}
 
 You can modify high-availability by adding a policy and setting it with a higher priority, but the default policy cannot be removed. Any additional virtual hosts do not have a high-availability policy set by default. You should add a high availability policy to all your virtual hosts.
 
@@ -95,4 +95,3 @@ The RabbitMQ Documentation provides an excellent [Reliability Guide](https://www
 {: #high-availability-disaster-sla}
 
 {{site.data.keyword.messages-for-rabbitmq}} deployments conform to the {{site.data.keyword.cloud_notm}} Databases [HA, DR, and SLA](/docs/cloud-databases?topic=cloud-databases-ha-dr) terms.
-

@@ -35,7 +35,7 @@ The information a driver needs to make a connection to your deployment is in the
 | `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path |
 | `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
 | `Certificate` | `Base64` | A base64 encoded version of the certificate. |
-{: caption="Table 1. RabbitMQ/uri connection information" caption-side="top"}
+{: caption="RabbitMQ/uri connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
@@ -68,7 +68,7 @@ The information a STOMP client needs to make a connection to your deployment is 
 | `ssl` | | The TLS/SSL setting needed for a connection. Should always be `true`. |
 | `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
 | `Certificate` | `Base64` | A base64 encoded version of the certificate. |
-{: caption="Table 2. RabbitMQ/stomp_ssl connection information" caption-side="top"}
+{: caption="RabbitMQ/stomp_ssl connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
@@ -90,7 +90,7 @@ The "mqtts" section contains the information that an MQTT client needs to connec
 | `Composed` | `0...` | A URI combining Authentication, Host, and Port used to connect. |
 | `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
 | `Certificate` | `Base64` | A base64 encoded version of the certificate. |
-{: caption="Table 3. RabbitMQ/mqtts connection information" caption-side="top"}
+{: caption="RabbitMQ/mqtts connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 

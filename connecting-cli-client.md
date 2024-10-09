@@ -28,7 +28,7 @@ subcollection: messages-for-rabbitmq
 
 From _Connections_ in your deployment's _Dashboard Overview_, open RabbitMQ Management UI.
 
-![Link to open RabbitMQ Management UI](images/management_ui_launch_button.png){: caption="Figure 1. Link to open RabbitMQ Management UI" caption-side="bottom"}
+![Link to open RabbitMQ Management UI](images/management_ui_launch_button.png){: caption="Link to open RabbitMQ Management UI" caption-side="bottom"}
 
 The URL connection information is also in the "https" section of your [connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings). The web address for your RabbitMQ deployment is in the "composed" field of your connection strings.
 
@@ -82,7 +82,7 @@ The `rabbitmqadmin` connection information is in the "cli" section of your [conn
 | `Certificate` | Base64 | A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
 | `Certificate` | Name | The allocated name for the self-signed certificate. |
 | `Type` | | The type of package that uses this connection information; in this case `cli`.  |
-{: caption="Table 1. rabbitmqadmin/cli connection information" caption-side="bottom"}
+{: caption="rabbitmqadmin/cli connection information" caption-side="bottom"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
