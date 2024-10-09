@@ -242,6 +242,8 @@ To view the current and scalable resources on a deployment, use the [/deployment
 ```sh
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups'
 ```
+{: pre}
+
 ## Scaling with the API
 {: #resources-scaling-api}
 {: api}
