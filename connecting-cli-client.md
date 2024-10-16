@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-11-14"
+  years: 2017, 2024
+lastupdated: "2024-10-16"
 
 keywords: rabbitmq, rabbitmq management
 
@@ -9,14 +9,7 @@ subcollection: messages-for-rabbitmq
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
 {{site.data.keyword.attribute-definition-list}}
-
 
 # Connecting with the RabbitMQ Management plug-in
 {: #rabbitmq-management-plugin}
@@ -28,7 +21,7 @@ subcollection: messages-for-rabbitmq
 
 From _Connections_ in your deployment's _Dashboard Overview_, open RabbitMQ Management UI.
 
-![Link to open RabbitMQ Management UI](images/management_ui_launch_button.png){: caption="Figure 1. Link to open RabbitMQ Management UI" caption-side="bottom"}
+![Link to open RabbitMQ Management UI](images/management_ui_launch_button.png){: caption="Link to open RabbitMQ Management UI" caption-side="bottom"}
 
 The URL connection information is also in the "https" section of your [connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings). The web address for your RabbitMQ deployment is in the "composed" field of your connection strings.
 
@@ -44,7 +37,7 @@ For more information, see the [RabbitMQ Management plug-in](https://www.rabbitmq
 ### Connecting through private endpoints
 {: #rabbitmq-private-endpoints}
 
-{{site.data.keyword.messages-for-rabbitmq}} also offers both private and public cloud service endpoints. If you want to access the Management UI from a browser that is not on the private network, you must take these additional steps as listed in the [Connecting Through Private Endpoints](/docs/messages-for-rabbitmq?topic=cloud-databases-service-endpoints#private-endpoint-connections) documentation for {{site.data.keyword.cloud}} Databases.
+{{site.data.keyword.messages-for-rabbitmq}} also offers both private and public cloud service endpoints. If you want to access the Management UI from a browser that is not on the private network, you must take these additional steps as listed in the [Connecting through private endpoints]([/docs/messages-for-rabbitmq?topic=cloud-databases-service-endpoints#private-endpoint-connections](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-service-endpoints&interface=ui#private-endpoint-connections)) documentation for {{site.data.keyword.cloud}} Databases.
 
 After you have configured your environment for private endpoint access, you can navigate to the {{site.data.keyword.messages-for-rabbitmq}} management endpoint URL from your browser. For example, `https://bfdb-4263-8ad2-c9a4beaf4591.8f7bfc8f3faa4218afd56e0.databases.appdomain.cloud:323232`
 
@@ -82,7 +75,7 @@ The `rabbitmqadmin` connection information is in the "cli" section of your [conn
 | `Certificate` | Base64 | A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
 | `Certificate` | Name | The allocated name for the self-signed certificate. |
 | `Type` | | The type of package that uses this connection information; in this case `cli`.  |
-{: caption="Table 1. rabbitmqadmin/cli connection information" caption-side="bottom"}
+{: caption="rabbitmqadmin/cli connection information" caption-side="bottom"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 

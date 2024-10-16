@@ -23,7 +23,7 @@ subcollection: messages-for-rabbitmq
 
 To connect to {{site.data.keyword.messages-for-rabbitmq_full}}, you need some users and some connection strings. Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Endpoints_ panel.
 
-![Endpoints panel](images/getting-started-endpoints-panel.png){: caption="Figure 1. Endpoints panel" caption-side="bottom"}
+![Endpoints panel](images/getting-started-endpoints-panel.png){: caption="Endpoints panel" caption-side="bottom"}
 
 You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
@@ -123,7 +123,7 @@ The "amqps" section contains information that is suited for your applications th
 | `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path |
 | `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
 | `Certificate` | `Base64`|A base64 encoded version of the certificate. |
-{: caption="Table 1. RabbitMQ/uri connection information" caption-side="top"}
+{: caption="RabbitMQ/uri connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
@@ -145,7 +145,7 @@ The `stomp_ssl` section contains the information that a STOMP client needs to co
 | `ssl` | | The TLS/SSL setting needed for a connection. Should always be `true`. |
 | `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
 | `Certificate` | `Base64` | A base64 encoded version of the certificate. |
-{: caption="Table 2. RabbitMQ/stomp_ssl connection information" caption-side="top"}
+{: caption="RabbitMQ/stomp_ssl connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
@@ -165,7 +165,7 @@ The `mqtts` section contains the information that an MQTT client needs to connec
 | `Composed` | `0...` | A URI combining Authentication, Host, and Port used to connect. |
 | `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
 | `Certificate` | `Base64` | A base64 encoded version of the certificate. |
-{: caption="Table 2. RabbitMQ/mqtts connection information" caption-side="top"}
+{: caption="RabbitMQ/mqtts connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
@@ -183,7 +183,7 @@ The `CLI` section contains information that is suited for the management plug-in
 | `Certificate` | `Base64` | A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
 | `Certificate` | `Name` | The allocated name for the self-signed certificate. |
 | `Type` | | The type of package that uses this connection information; in this case `cli`.  |
-{: caption="Table 3. rabbitmqadmin/cli connection information" caption-side="top"}
+{: caption="rabbitmqadmin/cli connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
@@ -201,7 +201,7 @@ The `https` section contains information that you can use to access the RabbitMQ
 | `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path |
 | `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
 | `Certificate` | `Base64` | A base64 encoded version of the certificate. |
-{: caption="Table 4. https/uri connection information" caption-side="top"}
+{: caption="https/uri connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 

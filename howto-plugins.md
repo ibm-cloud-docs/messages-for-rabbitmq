@@ -34,7 +34,7 @@ RabbitMQ supports various plug-ins to extend its core functions. {{site.data.key
 | [RabbitMQ Management plug-in](#rabbitmq-management-plug-in) | `rabbitmq_management` |
 | [JMS plug-in](#jms-plug-in) | `rabbitmq_jms_topic_exchange` |
 | [MQTT plug-in](#mqtt-plug-in) | `rabbitmq_mqtt` |
-{: caption="Table 1. Available RabbitMQ plug-ins" caption-side="top"}
+{: caption="Available RabbitMQ plug-ins" caption-side="top"}
 
 
 ## Shovel plug-in
@@ -44,7 +44,7 @@ RabbitMQ supports various plug-ins to extend its core functions. {{site.data.key
 
 The _Shovel Status_ and _Shovel Management_ links appear under the _Admin_ tab.
 
-![Admin tab with the Shovel plug-in](images/plugins-shovel-ui.png){: caption="Figure 1. Admin tab with the Shovel plug-in" caption-side="bottom"}
+![Admin tab with the Shovel plug-in](images/plugins-shovel-ui.png){: caption="Admin tab with the Shovel plug-in" caption-side="bottom"}
 
 If you do not see the _Admin_ tab, you might need to log in to the management UI with the [admin user](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#user-management-set-admin-password-ui). 
 {: .tip}
