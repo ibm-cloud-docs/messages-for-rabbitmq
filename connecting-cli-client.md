@@ -37,7 +37,7 @@ For more information, see the [RabbitMQ Management plug-in](https://www.rabbitmq
 ### Connecting through private endpoints
 {: #rabbitmq-private-endpoints}
 
-{{site.data.keyword.messages-for-rabbitmq}} also offers both private and public cloud service endpoints. If you want to access the Management UI from a browser that is not on the private network, you must take these additional steps as listed in the [Connecting through private endpoints]([/docs/messages-for-rabbitmq?topic=cloud-databases-service-endpoints#private-endpoint-connections](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-service-endpoints&interface=ui#private-endpoint-connections)) documentation for {{site.data.keyword.cloud}} Databases.
+{{site.data.keyword.messages-for-rabbitmq}} also offers both private and public cloud service endpoints. If you want to access the Management UI from a browser that is not on the private network, you must take these additional steps as listed in the [Connecting through private endpoints](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-service-endpoints&interface=ui#private-endpoint-connections) documentation for {{site.data.keyword.cloud}} Databases.
 
 After you have configured your environment for private endpoint access, you can navigate to the {{site.data.keyword.messages-for-rabbitmq}} management endpoint URL from your browser. For example, `https://bfdb-4263-8ad2-c9a4beaf4591.8f7bfc8f3faa4218afd56e0.databases.appdomain.cloud:323232`
 
