@@ -2,11 +2,11 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-06"
+lastupdated: "2024-11-12"
 
-keywords:
+keywords: data export, portability
 
-subcollection: repo-name
+subcollection: messages-for-rabbitmq
 
 ---
 
@@ -26,11 +26,11 @@ subcollection: repo-name
 IBM Cloud services provide interfaces and instructions to guide the customer to copy and store the service customer content, including the related configuration, on their own selected location.
 
 The customer then is responsible for the use of the exported data and configuration for the purpose of data portability to other infrastructures.
-This can involve:
+This can involve the following:
 
-- the planning and execution for setting up alternate infrastructure on on different cloud providers or on-prem software that provide similar capabilities to the IBM services
-- the planning and execution for the porting of the required application code on the alternate infrastructure, including the adaptation of customer's application code, deployment automation, etc.
-- the conversion of the exported data and configuration to format required by the alternate infrastructure and adapted applications
+- Planning and execution for setting up alternate infrastructure on on different cloud providers or on-prem software that provide similar capabilities to the IBM services.
+- Planning and execution for the porting of the required application code on the alternate infrastructure, including the adaptation of customer's application code, and deployment automation.
+- Conversion of the exported data and configuration to format required by the alternate infrastructure and adapted applications.
 
 For more information about your responsibilities when using {{site.data.keyword.messages-for-rabbitmq_full}}, see [Shared responsibilities for {{site.data.keyword._service-name_notm}}](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases).
 
@@ -42,16 +42,14 @@ For more information about your responsibilities when using {{site.data.keyword.
 ### Exporting data
 {: #data-portability-exporting-data}
 
-Users could create replication relationship between brokers and export the messages from {{site.data.keyword.messages-for-rabbitmq}} using [RabbitMQ Shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel&interface=ui).
+You can create replication relationship between brokers and export the messages from {{site.data.keyword.messages-for-rabbitmq}} using [RabbitMQ Shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel&interface=ui). Note that the term *formation* refers to *service instance*.
 
 ## Exported data formats
 {: #data-portability-data-formats}
 
-The format of the data exported from the {{site.data.keyword.messages-for-rabbitmq}} will be unchanged.
+The format of the data exported from the {{site.data.keyword.messages-for-rabbitmq}} remains unchanged.
 
 ## Data ownership
 {: #data-ownership}
 
 All exported data are classified as Customer content and therefore apply to them the full customer ownership and licensing rights, as stated in [IBM Cloud Service Agreement](https://www.ibm.com/terms/?id=Z126-6304_WS).
-
-
