@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-12"
+lastupdated: "2024-11-13"
 
 keywords: data export, portability
 
@@ -32,7 +32,7 @@ This can involve the following:
 - Planning and execution for the porting of the required application code on the alternate infrastructure, including the adaptation of customer's application code, and deployment automation.
 - Conversion of the exported data and configuration to format required by the alternate infrastructure and adapted applications.
 
-For more information about your responsibilities when using {{site.data.keyword.messages-for-rabbitmq_full}}, see [Shared responsibilities for {{site.data.keyword._service-name_notm}}](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases).
+For more information about your responsibilities when using {{site.data.keyword.messages-for-rabbitmq_full}}, see [Shared responsibilities for {{site.data.keyword.databases-for}}](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases).
 
 ## Data export procedures
 {: #data-portability-procedures}
