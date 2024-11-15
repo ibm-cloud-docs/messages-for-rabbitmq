@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-06-06"
+  years: 2018, 2024
+lastupdated: "2024-11-15"
 
 keywords: rabbitmq, rabbitmq getting started
 
@@ -176,8 +176,8 @@ Now, when you visit `<route>.{region}.cf.appdomain.cloud/` you can see the conte
 
 Instead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it locally to test the connection to your {{site.data.keyword.messages-for-rabbitmq}} service instance. To connect to the service, you need to create a set of service credentials.
 
-- Select _Service Credentials_ from the main menu to open the Service Credentials view.
-- Click **New Credential**.
+- Select _Service credentials_ from the main menu to open the Service Credentials view.
+- Click **New credential**.
 - Choose a name for your credentials and click **Add**.
 - Your new credentials are now listed. Click **View credentials** in the corresponding row of the table to view the credentials, and click the **Copy** icon to copy your credentials.
 - In your editor of choice, create a new file with the following, inserting your credentials as shown:
@@ -217,6 +217,6 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/cloud
 
 To start exploring your {{site.data.keyword.messages-for-rabbitmq}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](/docs/messages-for-rabbitmq/dashboard-overview.html)
+- [Dashboard overview](/docs/messages-for-rabbitmq/dashboard-overview.html)
 - [Backups](/docs/messages-for-rabbitmq?topic=cloud-databases-dashboard-backups)
-- [Creating Users and Getting Connection Strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings)
+- [Creating users and getting connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings)
