@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-09-29"
+lastupdated: "2024-11-15"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 15 November 2024
+{: #messages-for-rabbitmq-15nov2024}
+{: release-note}
+
+{{site.data.keyword.databases-for}} logs and events are now available on {{site.data.keyword.logs_full}}
+: {{site.data.keyword.databases-for}} has onboarded {{site.data.keyword.logs_full_notm}}, a scalable logging service that persists logs and provides users with capabilities for querying, tailing, and visualizing logs. Customers are expected to use {{site.data.keyword.logs_full_notm}} to review their database logs and events starting **November 15, 2024**. For more information, see [Set up logging and monitoring](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started-cdb-logging-monitoring) and [About IBM Cloud Logs](/docs/cloud-logs?topic=cloud-logs-about-cl).
 
 ## 29 September 2024
 {: #messages-for-rabbitmq-29sept2024}

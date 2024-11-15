@@ -39,7 +39,6 @@ toc:
       topics:
       - howto-provisioning.md
       - howto-user-management.md
-      - include: ../cloud-databases/howto-deprovisioning.md
       - include: ../cloud-databases/closures.md
       - include: ../cloud-databases/ha-dr.md
       - howto-getting-connection-strings.md
@@ -50,13 +49,11 @@ toc:
           - connecting-ibmcloud-app.md
           - connecting-cli-client.md
       - topicgroup:
-          label: Managing Resources
+          label: Managing resources
           topics:
           - howto-resources-scaling.md
           - howto-autoscaling.md
-      - link:
-          label: Allowlisting
-          href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-allowlisting
+          - include: ../cloud-databases/howto-manage-backups.md
       - howto-plugins.md
       - howto-upgrading.md
       - howto-shovel.md
@@ -65,9 +62,6 @@ toc:
           label: Managing backups
           topics:
           - learn-rabbitmq-backups.md
-      - link:
-          label: Managing Cloud Databases backups
-          href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-dashboard-backups
       - topicgroup:
           label: Tutorials
           topics:
@@ -80,28 +74,27 @@ toc:
           - include: ../cloud-databases/disk-util-alerts-tutorial.md
           - include: ../cloud-databases/cbr-tutorial.md
       - topicgroup:
-          label: Logging and monitoring
+          label: Observability
           topics:
-          - link:
-              label: Activity Tracker Integration
-              href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-activity-tracker
-          - link:
-              label: Log Analysis Integration
-              href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-logging
-          - link:
-              label: Monitoring Integration
-              href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring
+          - include: ../cloud-databases/cdb-logging-monitoring.md
+          - include: ../cloud-databases/logging.md
+          - include: ../cloud-databases/reference-monitoring.md 
+          - include: ../cloud-databases/at-events.md  
       - topicgroup:
           label: Enhancing security
           topics:
-          - link:
-              label: Managing security and compliance with Cloud Databases
-              href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-manage-security-compliance
-          - link:
-              label: Protecting Cloud Databases resources with context-based restrictions
-              href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-cbr
+          - include: ../cloud-databases/manage-scc.md
+          - include: ../cloud-databases/howto-cbr.md
+          - include: ../cloud-databases/howto-allowlists.md
+          - include: ../cloud-databases/reference-service-endpoints.md
+          - include: ../cloud-databases/howto-vpes.md
+          - include: ../cloud-databases/reference-iam.md
+          - include: ../cloud-databases/reference-key-protect.md
+          - include: ../cloud-databases/reference-hpcs.md
+          - include: ../cloud-databases/cbr-tutorial.md
+          - include: ../cloud-databases/howto-deprovisioning.md
       - topicgroup:
-          label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
+          label: IBM Cloud Databases enabled by IBM Cloud Satellite
           topics:
           - include: ../cloud-databases/howto-sat-loc.md
           - include: ../cloud-databases/howto-sat-loc-aws.md
@@ -109,23 +102,12 @@ toc:
   - navgroup:
       id: reference
       topics:
-      - link:
-          label: Versioning Policy
-          href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-versioning-policy
-      - link:
-          label: Cloud Databases CLI plug-in
-          href: https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference
+      - include: ../cloud-databases/icd-cli.md
       - link:
           label: Cloud Databases API
           href: https://cloud.ibm.com/apidocs/cloud-databases-api
-      - topicgroup:
-          label: Connecting over Private Networks
-          topics:
-          - include: ../cloud-databases/howto-vpes.md
-          - include: ../cloud-databases/reference-service-endpoints.md
-      - include: ../cloud-databases/reference-key-protect.md
-      - include: ../cloud-databases/reference-iam.md
-      - include: ../cloud-databases/reference-hpcs.md
+      - include: ../cloud-databases/db-version-policy.md
+      - include: ../cloud-databases/learn-getting-to-production.md
       - include: ../cloud-databases/reference-responsibilities.md
       - topic: data-portability.md
         navtitle: Data portability
@@ -137,9 +119,7 @@ toc:
           topics:
           - ts-connect.md
           - ts-defs.md
-          - link:
-              label: Why did my Terraform script delete my instance?
-              href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-troubleshoot-terraform
+          - include: ../cloud-databases/ts-terraform.md
       - topicgroup:
           label: FAQs
           topics:

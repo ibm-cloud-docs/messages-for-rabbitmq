@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-16"
+lastupdated: "2024-11-15"
 
 keywords: deployment, crn, task, gui, api endpoint, dashboard
 
@@ -12,7 +12,7 @@ subcollection: messages-for-rabbitmq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# The Dashboard Overview
+# The Dashboard overview
 {: #dashboard-overview}
 
 The _Overview_ page shows information about your {{site.data.keyword.messages-for-rabbitmq_full}} deployment. The overview includes essential identifying information.
@@ -30,26 +30,27 @@ The type of database that is offered by the service, and the database version th
 
 The ID is a [CRN (Cloud Resource Name)](/docs/account?topic=account-crn) which uniquely identifies the database deployment. The CRN is used to refer to the database in the API and can be used with the CLI. The _Overview_ pane shows details of your service.
 
-### Recent Tasks
+### Recent tasks
 {: #recent-tasks}
 
-Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recently completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24 - 48 hours. Unsuccessful tasks can show for 7 - 8 days. Tasks can also be retrieved from the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-running-tasks-on-a-deployment) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [{{site.data.keyword.at_full}} integration](/docs/cloud-databases?topic=cloud-databases-activity-tracker).
+Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recently completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24 - 48 hours. Unsuccessful tasks can show for 7 - 8 days. Tasks can also be retrieved from the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-running-tasks-on-a-deployment) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [{{site.data.keyword.atracker_full}} integration](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-at_events).
 
 ### Endpoints
 {: #endpoints}
 
 The _Endpoints_ pane within the _Overview_ pane contains connection strings for your deployment. Each tab contains connection information that is tailored to the type of connection or the protocol that uses it. Basic information includes things like _hostname_ and _port_, as well as the TLS self-signed certificate, TLS/SSL parameters, and the default database of your deployment.
 
-Reference tables for the different connection types are available on the [Getting Credentials and Connection Strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings) page.
+Reference tables for the different connection types are available on the [Getting credentials and connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings) page.
 
-Connection strings reflect whether your deployment uses public endpoints, private endpoints or both. You can configure which endpoints are available on your deployment. For more information, see the [Service Endpoints Integration](/docs/messages-for-rabbitmq?topic=cloud-databases-service-endpoints) page.
+Connection strings reflect whether your deployment uses public endpoints, private endpoints or both. You can configure which endpoints are available on your deployment. For more information, see the [Service endpoints integration](/docs/messages-for-rabbitmq?topic=cloud-databases-service-endpoints) page.
 
 You can manage your {{site.data.keyword.messages-for-rabbitmq}} service through the {{site.data.keyword.databases-for}} API. This panel provides the essential information for using the API. For more information about the {{site.data.keyword.databases-for}} API, see the [API reference](https://{DomainName}/apidocs/cloud-databases-api) page.
 
 ## Resources
 {: #resources}
 
-The resources tab contains information and configuration options on the size and resource usage of your deployment. You can 
+The resources tab contains information and configuration options on the size and resource usage of your deployment. You can:
+
 - [Scale disk, memory, and CPU](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-resources-scaling)
 - [Configure Autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling)
 
@@ -61,10 +62,11 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 ## Observability
 {: #observability}
 
-The _Observability_ tab provides access to the IBM Cloud Monitoring, logging, and event tracking integrations available for your deployment. 
-- [{{site.data.keyword.at_full}}](/docs/cloud-databases?topic=cloud-databases-activity-tracker)
-- [{{site.data.keyword.la_full}}](/docs/cloud-databases?topic=cloud-databases-logging)
-- [{{site.data.keyword.monitoringfull}}](cloud-databases?topic=cloud-databases-sysdig-monitor)
+The _Observability_ tab provides access to the {{site.data.keyword.monitoringfull}}, logging, and event tracking integrations available for your deployment.
+
+- [{{site.data.keyword.atracker_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-at_events)
+- [{{site.data.keyword.logs_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-logging)
+- [{{site.data.keyword.monitoringfull}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-monitoring)
 
 ## Settings
 {: #settings}
@@ -74,7 +76,7 @@ The _Settings_ tab contains the UI for many of the tunable settings for your dep
 - [Change the admin password](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#user-management-set-admin-password-ui)
 - [Implement or modify an IP allowlist](/docs/messages-for-rabbitmq?topic=cloud-databases-allowlisting)
 
-## Service Credentials
+## Service credentials
 {: #service-credentials}
 
 You can generate a new set of credentials for cases where you want to manually [connect an app](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-ibmcloud-app) or [external consumer](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-external-app) to an IBM Cloud service. [Learn more](/docs/account?topic=account-service_credentials).
