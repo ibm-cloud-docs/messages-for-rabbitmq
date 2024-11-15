@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-14"
+  years: 2020, 2024
+lastupdated: "2024-11-15"
 
 keywords: rabbitmq, databases, rabbitmq autoscaling, disk I/O, memory
 
@@ -19,7 +19,8 @@ Autoscaling is designed to respond to the short-to-medium term trends in resourc
 
 You can set your deployment to autoscale disk, RAM, or both. 
 
-General Autoscaling parameters
+General Autoscaling parameters:
+
 - When to scale, based on usage over time.
 - By how much to scale, as a percentage of the resources per member.
 - How often to scale, measured either in seconds, minutes, or hours.
@@ -42,12 +43,12 @@ The resource numbers refer to each database node in a deployment. For example, t
 
 - A few scaling operations can be more long running than others. Drastically increasing RAM or Disk can take longer than smaller increases to account for provisioning more underlying hardware resources.
 
-- Autoscaling operations are logged in [{{site.data.keyword.at_full}}](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker).
+- Autoscaling operations are logged in [{{site.data.keyword.atracker_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-at_events).
 
-- Limits
-   - can't set anything to scale in an interval less than 60 seconds.
-   - Maximum Disk = 4 TB per member
-   - Maximum RAM = 112 GB per member
+- Limits:
+   - Can't set anything to scale in an interval less than 60 seconds.
+   - Maximum Disk = 4 TB per member.
+   - Maximum RAM = 112 GB per member.
 
 - Autoscaling does not scale down deployments where disk or memory usage has shrunk. The RAM provisioned to your deployment remains for your future needs, or until you scale down your deployment manually. The disk provisioned to your deployment remains because disk cannot be scaled down.
 
@@ -57,20 +58,22 @@ The resource numbers refer to each database node in a deployment. For example, t
 {: #config-autoscaling-ui}
 {: ui}
 
-The Autoscaling panel is on the _Resources_ tab of your deployment's _Manage_ page. To enable scaling, enter your parameters. Then, check the boxes to enable the parameters you are using. Be sure to click **Save Changes** for your configuration to be saved and your changes to take effect.
+The Autoscaling panel is on the _Resources_ tab of your deployment's _Manage_ page. To enable scaling, enter your parameters. Then, check the boxes to enable the parameters you are using. Be sure to click **Save changes** for your configuration to be saved and your changes to take effect.
 
-To disable autoscaling, clear the boxes for the parameters that you no longer want to use. If you clear all the boxes, autoscaling is unavailable. Click **Save Changes** to save the configuration.
+To disable autoscaling, clear the boxes for the parameters that you no longer want to use. If you clear all the boxes, autoscaling is unavailable. Click **Save changes** to save the configuration.
 
 ## Configuring Autoscaling in the CLI
 {: #config-autoscaling-cli}
 {: cli}
 
 You can get the autoscaling parameters for your deployment through the CLI using the [`cdb deployment-autoscaling`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#-ibmcloud-cdb-deployment-autoscaling-) command.
+
 ```sh
 ibmcloud cdb deployment-autoscaling <deployment name or CRN> member
 ```
 
 To enable and set autoscaling parameters through the CLI, use a JSON object or file with the [`cdb deployment-autoscaling-set`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#-ibmcloud-cdb-deployment-autoscaling-set-) command.
+
 ```sh
 ibmcloud cdb deployment-autoscaling-set <deployment name or CRN> member '{"autoscaling": { "memory": {"scalers": {"io_utilization": {"enabled": true, "over_period": "5m","above_percent": 90}},"rate": {"increase_percent": 10.0, "period_seconds": 300,"limit_mb_per_member": 125952,"units": "mb"}}}}'
 ```
@@ -79,12 +82,14 @@ ibmcloud cdb deployment-autoscaling-set <deployment name or CRN> member '{"autos
 {: #config-autoscaling-api}
 {: api}
 
-You can get the autoscaling parameters for your deployment through the API by sending a `GET` request to the [`/deployments/{id}/groups/{group_id}/autoscaling`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-the-autoscaling-configuration-from-a-deploymen) endpoint. 
+You can get the autoscaling parameters for your deployment through the API by sending a `GET` request to the [`/deployments/{id}/groups/{group_id}/autoscaling`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-the-autoscaling-configuration-from-a-deploymen) endpoint.
+
 ```sh
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups/member/autoscaling'
 ```
 
 To enable and set the autoscaling parameters for your deployment through the API, send a `POST` request to the endpoint. Enabling autoscaling works by setting the `scalers` (`io_utilization` or `capacity`) to `true`.
+
 ```sh
 curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups/member/autoscaling -H 'Authorization: Bearer <>' 
 -H 'Content-Type: application/json' 
@@ -105,4 +110,5 @@ curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{i
       }
     }'
 ```
+
 To disable autoscaling, send the PATCH request with the currently enabled scalers set to `false`. If all of them are set to `false`, then autoscaling is unavailable on your deployment.
