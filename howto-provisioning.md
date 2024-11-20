@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-02"
+lastupdated: 2024-11-20
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision rabbitmq
 
@@ -399,11 +399,13 @@ Follow these steps to provision using the [Resource Controller API](https://clou
          -H 'Content-Type: application/json' \
            -d '{
            "name": "<INSTANCE_NAME",
-           "location": "<LOCATION>",
+           "target": "<LOCATION>",
            "resource_group": "RESOURCE_GROUP_ID",
            "resource_plan_id": "<SERVICE_PLAN_NAME>"
            "parameters": {
                "members_host_flavor": "<members_host_flavor_value>"
+               "service_endpoints":"<endpoint>",
+               "version":"<verison>"
            }
          }'
        ```
@@ -418,17 +420,13 @@ To make a Shared Compute instance, follow this example:
      -H 'Content-Type: application/json' \
        -d '{
        "name": "my-instance",
-       "location": "us-south",
+       "target": "us-south",
        "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
        "resource_plan_id": "messages-for-rabbitmq-standard"
        "parameters": {
         "members_host_flavor": "multitenant", 
-        "memory": {
-          "allocation_mb": 12288
-        },
-        "cpu": {
-          "allocation_count": 3
-        }
+        "members_memory_allocation_mb": 12288, 
+        "members_cpu_allocation_count": 3
       }
      }'
    ```
@@ -443,7 +441,7 @@ Provision a {{site.data.keyword.messages-for-rabbitmq}} Isolated instance with t
      -H 'Content-Type: application/json' \
        -d '{
        "name": "my-instance",
-       "location": "us-south",
+       "target": "us-south",
        "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
        "resource_plan_id": "messages-for-rabbitmq-standard"
        "parameters": {
@@ -463,7 +461,7 @@ The fields in the command are described in the table that follows.
    | `NAME` [Required]{: tag-red} | The instance name can be any string and is the name that is used on the web and in the CLI to identify the new deployment. |  |
    | `SERVICE_NAME` [Required]{: tag-red} | Name or ID of the service. For {{site.data.keyword.messages-for-rabbitmq}}, use `messages-for-rabbitmq`. |  |
    | `SERVICE_PLAN_NAME` [Required]{: tag-red} | `standard` |  |
-   | `LOCATION` [Required]{: tag-red} | The location where you want to deploy. To retrieve a list of regions, use the `ibmcloud regions` command. |  |
+   | `TARGET` [Required]{: tag-red} | The location where you want to deploy. To retrieve a list of regions, use the `ibmcloud regions` command. |  |
    | `SERVICE_ENDPOINTS_TYPE` | Configure the [Service endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) of your deployment, either `public` or `private`. The default value is `public`. |  |
    | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
    | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
