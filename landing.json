@@ -7,32 +7,32 @@
     "section_topics": {
       "links": [
       {
-        "title": "Connecting with the MongoDB Shell",
-        "href": "/docs/databases-for-mongodb?topic=databases-for-mongodb-connecting-cli-client"
+        "title": "Getting started",
+        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started"
+      },
+      {
+        "title": "Context-based restrictions",
+        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-cbr&interface=ui"
       },
       {
         "title": "Upgrading to a new major version",
-        "href": "/docs/databases-for-mongodb?topic=databases-for-mongodb-upgrading&interface=ui"
+        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading&interface=ui"
       },
       {
         "title": "Release notes",
-        "href": "/docs/databases-for-mongodb?topic=databases-for-mongodb-mongodb-relnotes"
+        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes"
       },
       {
-        "title": "Provisioning",
-        "href": "/docs/databases-for-mongodb?topic=databases-for-mongodb-provisioning&interface=ui"
+        "title": "Security and compliance",
+        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-security-compliance"
       },
       {
-        "title": "Plan overview",
-        "href": "/docs/databases-for-mongodb?topic=databases-for-mongodb-mongodb-plans"
+        "title": "Connecting with the RabbitMQ Management plug-in",
+        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-management-plugin"
       },
       {
-        "title": "Service endpoint integration",
-        "href": "/docs/databases-for-mongodb?topic=databases-for-mongodb-service-endpoints&interface=ui"
-      },
-      {
-        "title": "Managing Cloud Database backups",
-        "href": "/docs/databases-for-mongodb?topic=databases-for-mongodb-dashboard-backups&interface=ui"
+        "title": "Using RabbitMQ plug-ins",
+        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-plug-ins"
       }
     ]
   },
