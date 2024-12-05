@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: 2024-11-20
+lastupdated: 2024-12-05
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision rabbitmq
 
