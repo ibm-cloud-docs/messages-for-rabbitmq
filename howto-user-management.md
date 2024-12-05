@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2024
-lastupdated: 2024-12-05
+lastupdated: "2024-12-05"
 
 keywords: rabbitmq, rabbitmq users
 
