@@ -21,7 +21,8 @@ toc:
       - link:
           label: IBM Cloud Databases
           href: https://cloud.ibm.com/docs/cloud-databases
-      - getting-started.md
+      - topic: getting-started.md
+        navtitle: Getting started
       - topicgroup:
           label: Hosting models
           topics: 
