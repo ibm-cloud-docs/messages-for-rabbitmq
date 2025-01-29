@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-11-14"
+  years: 2017, 2025
+lastupdated: "2025-01-29"
 
 keywords: rabbitmq, databases, rabbitmq connection strings
 
@@ -9,16 +9,9 @@ subcollection: messages-for-rabbitmq
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
 {{site.data.keyword.attribute-definition-list}}
 
-
-# Creating Users and Getting Connection Strings
+# Creating users and getting connection strings
 {: #connection-strings}
 
 To connect to {{site.data.keyword.messages-for-rabbitmq_full}}, you need some users and some connection strings. Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Endpoints_ panel.
@@ -30,7 +23,7 @@ You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?t
 A {{site.data.keyword.messages-for-rabbitmq}} deployment is provisioned with an admin user, and after you [set the admin password](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#user-management-set-admin-password-ui), you can use its credentials to connect to your deployment.
 {: .tip}
 
-## Credentials and Connection Strings for more users
+## Credentials and connection strings for more users
 {: #cred-connection-strings-additional-users}
 
 Access to your {{site.data.keyword.messages-for-rabbitmq}} deployment is not limited to the root user. You can create users by using the _Service Credentials_ panel, the {{site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
@@ -103,15 +96,15 @@ Enter the username and password in the JSON field _Add Inline Configuration Para
 Generating credentials from an existing user does not check for or create that user.
 {: tip}
 
-## Connection String Breakdown
+## Connection string breakdown
 {: #connection-strings-breakdown}
 
-### The `amqps` Section
+### The `amqps` section
 {: #amqps-section}
 
 The "amqps" section contains information that is suited for your applications that make connections to RabbitMQ.
 
-| Field Name | Index | Description |
+| Field name | Index | Description |
 | ----------|-----|----------- |
 | `Type` | | Type of connection - for RabbitMQ, it is "uri" |
 | `Scheme` | | Scheme for a URI - for RabbitMQ, it is "amqps" |
@@ -129,12 +122,12 @@ The "amqps" section contains information that is suited for your applications th
 
 For more information on using this information to connect, see the [Connecting an External Application](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-external-app) page.
 
-### The `stomp_ssl` Section
+### The `stomp_ssl` section
 {: #stomp_ssl-section}
 
 The `stomp_ssl` section contains the information that a STOMP client needs to connect to your deployment.
 
-| Field Name | Index | Description  |
+| Field name | Index | Description  |
 | ---------- | ----- | ----------- |
 | `Type` | | Type of connection - for STOMP, it is `stomp` |
 | `Authentication` | `Username`|The username that you use to connect. |
@@ -149,12 +142,12 @@ The `stomp_ssl` section contains the information that a STOMP client needs to co
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-### The `mqtts` Section
+### The `mqtts` section
 {: #mqtts-section}
 
 The `mqtts` section contains the information that an MQTT client needs to connect to your deployment.
 
-| Field Name | Index | Description |
+| Field name | Index | Description |
 | ---------- | ----- | ----------- |
 | `Type` | | Type of connection - for `MQTTS` it is `uri`. |
 | `Scheme` | | Scheme for a URI - in this case it is `mqtts`. |
@@ -169,12 +162,12 @@ The `mqtts` section contains the information that an MQTT client needs to connec
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-### The CLI and https Sections
+### The CLI and https sections
 {: #cli-https-section}
 
 The `CLI` section contains information that is suited for the management plug-in and command-line clients that make connections to RabbitMQ.
 
-| Field Name | Index | Description |
+| Field name | Index | Description |
 | ---------- | ----- | ----------- |
 | `Bin` | | The recommended binary to create a connection; in this case it is `rabbitmqadmin`. |
 | `Composed` | | A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command-line parameters. |
@@ -189,7 +182,7 @@ The `CLI` section contains information that is suited for the management plug-in
 
 The `https` section contains information that you can use to access the RabbitMQ management plug-in via web browser.
 
-| Field Name|Index|Description |
+| Field name|Index|Description |
 | ---------- | ----- | ----------- |
 | `Type` | | Type of connection - for RabbitMQ, it is `uri` |
 | `Scheme` | | Scheme for a URI - for RabbitMQ, it is `https` |
