@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-09-06"
+  years: 2018, 2025
+lastupdated: "2025-01-29"
 
 keywords: rabbitmq, databases, soc, hipaa, gdpr, terms, rabbitmq security compliance, pci dss
 
@@ -12,10 +12,10 @@ subcollection: messages-for-rabbitmq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Security and Compliance
+# Security and compliance
 {: #security-compliance}
 
-## Protection Against Unauthorized Access
+## Protection against unauthorized access
 {: #protection-unauth}
 
 {{site.data.keyword.messages-for-rabbitmq_full}} use the following methods to protect data in transit or in storage.
@@ -27,7 +27,7 @@ subcollection: messages-for-rabbitmq
 - Public and Private Networking - {{site.data.keyword.messages-for-rabbitmq}} is integrated with [Service Endpoints](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-service-endpoints). You can select whether to use connections over the public network, the {{site.data.keyword.cloud_notm}} internal network, or both.
 - Dedicated Cores - Allocating dedicated cores to your deployment introduces hypervisor-level isolation to your database instance, using isolated virtual machines to ensure your data processing remains separated from other customers. It also provides a guaranteed minimum number of CPUs to your deployment. Deployments with dedicated cores in the same Resource Group and {{site.data.keyword.cloud_notm}} Region can share a virtual machine.
 
-## Data Resilience
+## Data resilience
 {: #data-resilience}
 
 - [Backups](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) are included in the service. {{site.data.keyword.messages-for-rabbitmq}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage&cloud-object-storage-about-cloud-object-storage) and are also [encrypted](/docs/cloud-object-storage?topic=cloud-object-storage-security).
