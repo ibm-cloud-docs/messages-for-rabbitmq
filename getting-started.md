@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-11-15"
+  years: 2018, 2025
+lastupdated: "2025-02-20"
 
 keywords: rabbitmq, rabbitmq getting started
 
@@ -23,7 +23,7 @@ completion-time: 30m
 This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples/tree/node/rabbitmq){: .external} to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.messages-for-rabbitmq_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
 {: shortdesc}
 
-If you have already created your deployment and want to connect to your RabbitMQ, you can skip to [getting your connection strings](/docs/messages-for-rabbitmq/howto-getting-connection-strings.html) and [connecting with the RabbitMQ Management plug-in](/docs/messages-for-rabbitmq/connecting-cli-client.html).
+If you have already created your deployment and want to connect to your RabbitMQ, you can skip to [getting your connection strings](/docs/messages-for-rabbitmq/howto-getting-connection-strings) and [connecting with the RabbitMQ Management plug-in](/docs/messages-for-rabbitmq/connecting-cli-client).
 {: .tip}
 
 ## Before you begin
@@ -76,7 +76,7 @@ npm install
 {: #install-cli-tool}
 {: step}
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli).
 
 ## Connect to {{site.data.keyword.cloud_notm}}
 {: #connect-cloud}
@@ -217,6 +217,6 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/cloud
 
 To start exploring your {{site.data.keyword.messages-for-rabbitmq}} service, see the following topics about the service dashboard:
 
-- [Dashboard overview](/docs/messages-for-rabbitmq/dashboard-overview.html)
+- [Dashboard overview](/docs/messages-for-rabbitmq/dashboard-overview)
 - [Backups](/docs/messages-for-rabbitmq?topic=cloud-databases-dashboard-backups)
 - [Creating users and getting connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings)
