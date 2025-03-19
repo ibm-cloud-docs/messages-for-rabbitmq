@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-11-15"
+  years: 2018, 2025
+lastupdated: "2025-03-19"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -19,6 +19,28 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 18 March 2025
+{: #messages-for-rabbitmq-18mar2025}
+{: release-note}
+
+{{site.data.keyword.messages-for-rabbitmq}} version 4 is available in Preview.
+: Customers are encouraged to validate their application on {{site.data.keyword.messages-for-rabbitmq}} version 4. There are important changes in this version in alignment with the [RabbitMQ v4 release](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v4.0.1).
+
+  1. Mirrored (HA) Classic Queues will be unsupported: Starting version 4, [Mirrored Classic Queues](https://www.rabbitmq.com/docs/3.13/ha) will not be supported. When migrating from v3.13 to v4, customers are expected to remove Classic Queue HA policy. More details on the migration will be published soon.
+
+  2. Quorum Queues will be the default queue type: Until v3.13, Classic Queues were the default queue type selected when {{site.data.keyword.messages-for-rabbitmq}} instance is provisioned. Staring v4, Quorum Queues will be the default queue type at the instance creation.
+
+  3. Non-HA Classic Queue: Customers can still choose to use Classic Queues, however, it must be noted that messages cannot be highly-available due to the absence of Classic Queue HA policies. Using this configuration will be outside the scope of the support by {{site.data.keyword.messages-for-rabbitmq}} service.
+
+  4. Feature compatibility: While Quorum Queues are a better queue type when compared to Mirrored Classic Queues, they are not 100% compatible feature wise with Mirrored Classic Queues. For more information, see the [feature matrix table](https://www.rabbitmq.com/docs/3.13/quorum-queues#feature-matrix) and [Migrate your RabbitMQ Mirrored Classic Queues to Quorum Queues](https://www.rabbitmq.com/docs/3.13/migrate-mcq-to-qq).
+
+## 10 March 2025
+{: #messages-for-rabbitmq-10mar2025}
+{: release-note}
+
+{{site.data.keyword.messages-for-rabbitmq}} {{site.data.keyword.satelliteshort}} plan is deprecated
+:   {{site.data.keyword.satellitelong}} is now deprecated due to changes in market expectations, client fit, and lack of adoption. As of March 10 2025, all documentation relating to Satellite has been removed, as well as the ability to select {{site.data.keyword.messages-for-rabbitmq}} {{site.data.keyword.satelliteshort}} plan in the Cloud console.
 
 ## 15 November 2024
 {: #messages-for-rabbitmq-15nov2024}
