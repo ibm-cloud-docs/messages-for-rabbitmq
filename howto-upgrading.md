@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-07"
+  years: 2020, 2025
+lastupdated: "2025-03-25"
 
 keyowrds: rabbitmq, upgrading, major versions, changing versions, rabbitmq upgrading, new deployment, major version
 
@@ -32,6 +32,22 @@ Alternatively, you can also use RabbitMQ Shovel to migrate to another version.
 {: ui}
 
 Upgrade to a new version when [restoring a backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) from the _Backups_ tab of your _Deployment Overview_. Click **Restore** on a backup to bring up a dialog box where you can choose options for the new deployment. One of the configurable options is the database version, which is auto-populated with the versions available for you to upgrade to. Select a version and click **Restore** to start the provision and restore process.
+
+### Upgrading in the UI from v3.13 to v4
+{: #upgrading-ui-v313-to-v4}
+{: ui}
+
+To upgrade your {{site.data.keyword.messages-for-rabbitmq}} instance from v3.13 to v4, perform the following extra step of deleting the high availability related policies before performing Backup-Restore.
+
+Starting from v4, {{site.data.keyword.messages-for-rabbitmq} does not support high availability of Classic Queues, hence, when you try to import definitions from v3.13 to v4, the restore fails because the definitions contain Classic Queue high availability related policies that are not recognized by the policy setting.
+
+To avoid this error and to have a successful upgrade, perform the following steps.
+
+1. Log in to the UI of the v3.13 instance.
+2. Navigate to the **Policies** side panel in the *Admin* tab.
+3. Delete the **ha-all** policy in *Policies* tab.
+4. After deletion of the policy, [take an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=cli#ondemand-backup) of this instance from the IBM Cloud UI.
+5. Upon successful backup creation, restore this particular backup to the v4 instance by following [these steps](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#restore-backup).
 
 ## Upgrading through the CLI
 {: #upgrading-cli}
