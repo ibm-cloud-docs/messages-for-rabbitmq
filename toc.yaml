@@ -11,7 +11,7 @@ toc:
     audience: service
     href: /docs/messages-for-rabbitmq
     console-page: /catalog/services/messages-for-rabbitmq
-    product-page: https://www.ibm.com/cloud/messages-for-rabbitmq
+    product-page: https://www.ibm.com/products/messages-for-rabbitmq
     path: messages-for-rabbitmq
     label: Messages For RabbitMQ
   entries:
@@ -68,13 +68,13 @@ toc:
       - topicgroup:
           label: Tutorials
           topics:
-          - include: ../cloud-databases/howto-tutorials.md
           - include: ../cloud-databases/hello-world-tutorial.md
           - include: ../cloud-databases/terra-postgres-tutorial.md
           - include: ../cloud-databases/terra-mongodb-tutorial.md
           - include: ../cloud-databases/k8-tutorial.md
           - include: ../cloud-databases/truck-tracker-tutorial.md
           - include: ../cloud-databases/disk-util-alerts-tutorial.md
+          - include: ../cloud-databases/cbr-tutorial.md
           - include: ../cloud-databases/cbr-tutorial.md
       - topicgroup:
           label: Observability
@@ -94,14 +94,7 @@ toc:
           - include: ../cloud-databases/reference-iam.md
           - include: ../cloud-databases/reference-key-protect.md
           - include: ../cloud-databases/reference-hpcs.md
-          - include: ../cloud-databases/cbr-tutorial.md
           - include: ../cloud-databases/howto-deprovisioning.md
-      - topicgroup:
-          label: IBM Cloud Databases enabled by IBM Cloud Satellite
-          topics:
-          - include: ../cloud-databases/howto-sat-loc.md
-          - include: ../cloud-databases/howto-sat-loc-aws.md
-          - include: ../cloud-databases/howto-sat-loc-onprem.md
   - navgroup:
       id: reference
       topics:
