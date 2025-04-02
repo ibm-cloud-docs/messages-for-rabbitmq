@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-11-15"
+  years: 2018, 2025
+lastupdated: "2025-04-02"
 
 keywords: deployment, crn, task, gui, api endpoint, dashboard
 
@@ -57,7 +57,7 @@ The resources tab contains information and configuration options on the size and
 ## Backups
 {: #backups}
 
-The _Backups_ tab is the UI for managing your deployments backups. All of the available backups are listed with their timestamps. Click a backup to grab its ID or to restore it into a new deployment. More information is on the [Managing Backups](/docs/messages-for-rabbitmq?topic=cloud-databases-dashboard-backups) page.
+The _Backups_ tab is the UI for managing your deployments backups. All of the available backups are listed with their timestamps. Click a backup to grab its ID or to restore it into a new deployment. More information is on the [Managing backups](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-backups-for-rabbitmq) page.
 
 ## Observability
 {: #observability}
@@ -72,9 +72,9 @@ The _Observability_ tab provides access to the {{site.data.keyword.monitoringful
 {: #settings}
 
 The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can 
-- view encryption details. Encryption at rest is enabled for all {{site.data.keyword.messages-for-rabbitmq}} deployments. If you brought your own encryption key from [Key Protect](/docs/messages-for-rabbitmq?topic=cloud-databases-key-protect), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
+- view encryption details. Encryption at rest is enabled for all {{site.data.keyword.messages-for-rabbitmq}} deployments. If you brought your own encryption key from [Key Protect](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-key-protect&interface=ui), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
 - [Change the admin password](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#user-management-set-admin-password-ui)
-- [Implement or modify an IP allowlist](/docs/messages-for-rabbitmq?topic=cloud-databases-allowlisting)
+- [Implement or modify an IP allowlist](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-allowlisting&interface=ui)
 
 ## Service credentials
 {: #service-credentials}
