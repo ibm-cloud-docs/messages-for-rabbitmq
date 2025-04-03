@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-04-02"
 
 keywords: rabbitmq, rabbitmq getting started
 
@@ -15,7 +15,7 @@ completion-time: 30m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting Started
+# Getting started
 {: #getting-started}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="30m"}
@@ -23,7 +23,7 @@ completion-time: 30m
 This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples/tree/node/rabbitmq){: .external} to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.messages-for-rabbitmq_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
 {: shortdesc}
 
-If you have already created your deployment and want to connect to your RabbitMQ, you can skip to [getting your connection strings](/docs/messages-for-rabbitmq/howto-getting-connection-strings) and [connecting with the RabbitMQ Management plug-in](/docs/messages-for-rabbitmq/connecting-cli-client).
+If you have already created your deployment and want to connect to your RabbitMQ, you can skip to [getting your connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings&interface=ui) and [connecting with the RabbitMQ Management plug-in](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-management-plugin).
 {: .tip}
 
 ## Before you begin
@@ -217,6 +217,6 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/cloud
 
 To start exploring your {{site.data.keyword.messages-for-rabbitmq}} service, see the following topics about the service dashboard:
 
-- [Dashboard overview](/docs/messages-for-rabbitmq/dashboard-overview)
-- [Backups](/docs/messages-for-rabbitmq?topic=cloud-databases-dashboard-backups)
+- [Dashboard overview](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-dashboard-overview)
+- [Backups](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-backups-for-rabbitmq)
 - [Creating users and getting connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings)
