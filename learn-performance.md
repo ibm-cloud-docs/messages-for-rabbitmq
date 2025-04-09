@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-04"
+lastupdated: "2025-04-09"
 
 keywords: rabbitmq, databases, memory alarms, disk alarms, monitoring, disk I/O, rabbitmq performance
 
@@ -44,7 +44,7 @@ More information about memory alarms can be found in the [RabbitMQ documentation
 ## Disk IOPS
 {: #disk-iops}
 
-The number of input/output operations per second (IOPS) is limited by the type of storage volume that is being used. Storage volumes for {{site.data.keyword.messages-for-rabbitmq}} deployments are provisioned on [Block Storage Endurance Volumes in the 10 IOPS per GB tier](/docs/BlockStorage?topic=BlockStorage-orderingthroughConsole#orderingthroughConsoleEndurance). IOPS limits can affect RabbitMQ message throughput and storage operations. Reaching these limits can cause disk to fall behind on reclaiming space after messages are consumed, leading to disk alarms and publisher throttling until activity slows down. You can increase the number IOPS available to your deployment by increasing disk space.
+The number of input/output operations per second (IOPS) is limited by the type of storage volume that is being used. Storage volumes for {{site.data.keyword.messages-for-rabbitmq}} deployments are provisioned on [Block Storage Endurance Volumes in the 10 IOPS per GB tier](/docs/BlockStorage?topic=BlockStorage-orderingBlockStorage&interface=ui). IOPS limits can affect RabbitMQ message throughput and storage operations. Reaching these limits can cause disk to fall behind on reclaiming space after messages are consumed, leading to disk alarms and publisher throttling until activity slows down. You can increase the number IOPS available to your deployment by increasing disk space.
 
 ## Quorum queues
 {: #quorum-queues}
@@ -63,7 +63,7 @@ For more checks related to memory alarms, you can gather information that is rel
 ## Standard health checks
 {: #health-checks}
 
-The [RabbitMQ HTTP API](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-management-plugin#rabbitmq-management-http-api) provides a couple of [health check](https://www.rabbitmq.com/monitoring.html#health-checks){: external} endpoints to verify the state of the RabbitMQ nodes in your deployment. 
+The [RabbitMQ HTTP API](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-management-plugin#rabbitmq-management-http-api) provides a couple of [health check](https://www.rabbitmq.com/monitoring.html#health-checks){: external} endpoints to verify the state of the RabbitMQ nodes in your deployment. 
 
 - [All Nodes](https://www.rabbitmq.com/monitoring.html#node-metrics){: external} - `GET /api/healthcheck/node`
 - [Single Node](https://www.rabbitmq.com/monitoring.html#node-metrics){: external} - `GET /api/healthcheck/node/<node_name>`
