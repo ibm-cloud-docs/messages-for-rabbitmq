@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-04"
 
 keywords: deployment, crn, task, gui, api endpoint, dashboard
 
@@ -33,7 +33,7 @@ The ID is a [CRN (Cloud Resource Name)](/docs/account?topic=account-crn) which u
 ### Recent tasks
 {: #recent-tasks}
 
-Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recently completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24 - 48 hours. Unsuccessful tasks can show for 7 - 8 days. Tasks can also be retrieved from the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-running-tasks-on-a-deployment) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [{{site.data.keyword.atracker_full}} integration](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-at_events).
+Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recently completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24 - 48 hours. Unsuccessful tasks can show for 7 - 8 days. Tasks can also be retrieved from the [Cloud Databases API](/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeploymenttasks) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [{{site.data.keyword.atracker_full}} integration](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-at_events).
 
 ### Endpoints
 {: #endpoints}
@@ -42,7 +42,7 @@ The _Endpoints_ pane within the _Overview_ pane contains connection strings for 
 
 Reference tables for the different connection types are available on the [Getting credentials and connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings) page.
 
-Connection strings reflect whether your deployment uses public endpoints, private endpoints or both. You can configure which endpoints are available on your deployment. For more information, see the [Service endpoints integration](/docs/messages-for-rabbitmq?topic=cloud-databases-service-endpoints) page.
+Connection strings reflect whether your deployment uses public endpoints, private endpoints or both. You can configure which endpoints are available on your deployment. For more information, see the [Service endpoints integration](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-service-endpoints&interface=ui) page.
 
 You can manage your {{site.data.keyword.messages-for-rabbitmq}} service through the {{site.data.keyword.databases-for}} API. This panel provides the essential information for using the API. For more information about the {{site.data.keyword.databases-for}} API, see the [API reference](https://{DomainName}/apidocs/cloud-databases-api) page.
 

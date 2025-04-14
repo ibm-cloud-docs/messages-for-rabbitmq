@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-04-04"
 
 keywords: rabbitmq, databases, rabbitmq connection strings
 
@@ -18,7 +18,7 @@ To connect to {{site.data.keyword.messages-for-rabbitmq_full}}, you need some us
 
 ![Endpoints panel](images/getting-started-endpoints-panel.png){: caption="Endpoints panel" caption-side="bottom"}
 
-You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections) and the [API](/apidocs/cloud-databases-api/cloud-databases-api-v5#getconnection).
 
 A {{site.data.keyword.messages-for-rabbitmq}} deployment is provisioned with an admin user, and after you [set the admin password](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#user-management-set-admin-password-ui), you can use its credentials to connect to your deployment.
 {: .tip}
@@ -66,7 +66,7 @@ ibmcloud cdb deployment-connections example-deployment -u <newusername> --all [-
 
 If you don't specify a user, the `deployment-connections` commands return information for the admin user by default. If you don't specify an endpoint type, the connection string returns the public endpoint by default. If your deployment has only a private endpoint, you must specify `--endpoint-type private` or the commands return an error. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
 
-To use the `ibmcloud cdb` CLI commands, you must [install the {{site.data.keyword.databases-for}} plug-in](/docs/databases-for-mongodb?topic=databases-cli-plugin-cdb-reference#installing-the-cloud-databases-cli-plug-in).
+To use the `ibmcloud cdb` CLI commands, you must [install the {{site.data.keyword.databases-for}} plug-in](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-icd-cli#icd-cli-install).
 {: .tip}
 
 ### From the API
@@ -74,6 +74,7 @@ To use the `ibmcloud cdb` CLI commands, you must [install the {{site.data.keywor
 {: api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint.
+
 ```sh
 curl -X POST 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users' \
 -H "Authorization: Bearer $APIKEY" \
@@ -82,6 +83,7 @@ curl -X POST 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{i
 ```
 
 To retrieve user's connection strings, use the base URL with the `/users/{userid}/connections` endpoint. You must specify in the path which user and which type of endpoint (public or private) is used in the returned connection strings. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
+
 ```sh
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users/{userid}/connections/{endpoint_type}'
 ```
@@ -198,4 +200,4 @@ The `https` section contains information that you can use to access the RabbitMQ
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-For more information on using this information, see the [Connecting with the RabbitMQ Management plug-in](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-management-plugin) page.
+For more information, see [Connecting with the RabbitMQ Management plug-in](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-management-plugin).

@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-12-05"
+  years: 2019, 2025
+lastupdated: "2025-04-04"
 
 keywords: rabbitmq, rabbitmq users
 
@@ -16,7 +16,7 @@ subcollection: messages-for-rabbitmq
 
 {{site.data.keyword.messages-for-rabbitmq_full}} uses RabbitMQ's [built-in access control](https://www.rabbitmq.com/access-control.html#permissions). 
 
-When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given an `admin` user to access and manage RabbitMQ. You can also add users in the _Service Credentials_ panel, which allows for access to RabbitMQ to be integrated with your {{site.data.keyword.cloud_notm}} account and [IAM](/docs/messages-for-rabbitmq?topic=cloud-databases-iam), with the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin), or the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction).
+When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given an `admin` user to access and manage RabbitMQ. You can also add users in the _Service Credentials_ panel, which allows for access to RabbitMQ to be integrated with your {{site.data.keyword.cloud_notm}} account and [IAM](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-iam with the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin), or the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction).
 
 Since {{site.data.keyword.messages-for-rabbitmq}} comes with the RabbitMQ Management plug-in enabled, user access is also controlled by [user tags](https://www.rabbitmq.com/management.html#permissions){: external}. These tags control what information is available to users through the management UI, `rabbitmqadmin`, and the RabbitMQ HTTP API.
 
