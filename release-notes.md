@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-04-24"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -24,16 +24,16 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #messages-for-rabbitmq-18mar2025}
 {: release-note}
 
-{{site.data.keyword.messages-for-rabbitmq}} version 4 is available in Preview.
-: Customers are encouraged to validate their application on {{site.data.keyword.messages-for-rabbitmq}} version 4. There are important changes in this version in alignment with the [RabbitMQ v4 release](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v4.0.1).
+{{site.data.keyword.messages-for-rabbitmq}} version 4 is available in Preview
+: Validate your application on {{site.data.keyword.messages-for-rabbitmq}} version 4. There are important changes in this version in alignment with the [RabbitMQ v4 release](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v4.0.1).
 
-  1. Mirrored (HA) Classic Queues will be unsupported: Starting version 4, [Mirrored Classic Queues](https://www.rabbitmq.com/docs/3.13/ha) will not be supported. When migrating from v3.13 to v4, customers are expected to remove Classic Queue HA policy. More details on the migration will be published soon.
+  1. Mirrored (HA) Classic Queues will be unsupported: Starting version 4, [Mirrored Classic Queues](https://www.rabbitmq.com/docs/3.13/ha) will not be supported. When migrating from v3.13 to v4, remove the Classic Queue HA policy. More details on the migration will be published soon.
 
-  2. Quorum Queues will be the default queue type: Until v3.13, Classic Queues were the default queue type selected when {{site.data.keyword.messages-for-rabbitmq}} instance is provisioned. Staring v4, Quorum Queues will be the default queue type at the instance creation.
+  2. Quorum Queues will be the default queue type: Until v3.13, Classic Queues were the default queue type selected when {{site.data.keyword.messages-for-rabbitmq}} instance was provisioned. Starting with v4, Quorum Queues will be the default queue type at the instance creation.
 
-  3. Non-HA Classic Queue: Customers can still choose to use Classic Queues, however, it must be noted that messages cannot be highly-available due to the absence of Classic Queue HA policies. Using this configuration will be outside the scope of the support by {{site.data.keyword.messages-for-rabbitmq}} service.
+  3. Non-HA Classic Queue: You can still choose to use Classic Queues, however, it must be noted that messages cannot be highly-available due to the absence of Classic Queue HA policies. Using this configuration will be outside the scope of the support by the {{site.data.keyword.messages-for-rabbitmq}} service.
 
-  4. Feature compatibility: While Quorum Queues are a better queue type when compared to Mirrored Classic Queues, they are not 100% compatible feature wise with Mirrored Classic Queues. For more information, see the [feature matrix table](https://www.rabbitmq.com/docs/3.13/quorum-queues#feature-matrix) and [Migrate your RabbitMQ Mirrored Classic Queues to Quorum Queues](https://www.rabbitmq.com/docs/3.13/migrate-mcq-to-qq).
+  4. Feature compatibility: While Quorum Queues are a better queue type when compared to Mirrored Classic Queues, they are not 100% compatible feature-wise with Mirrored Classic Queues. For more information, see the [feature matrix table](https://www.rabbitmq.com/docs/3.13/quorum-queues#feature-matrix) and [Migrate your RabbitMQ Mirrored Classic Queues to Quorum Queues](https://www.rabbitmq.com/docs/3.13/migrate-mcq-to-qq).
 
 ## 10 March 2025
 {: #messages-for-rabbitmq-10mar2025}
@@ -47,7 +47,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 {{site.data.keyword.databases-for}} logs and events are now available on {{site.data.keyword.logs_full}}
-: {{site.data.keyword.databases-for}} has onboarded {{site.data.keyword.logs_full_notm}}, a scalable logging service that persists logs and provides users with capabilities for querying, tailing, and visualizing logs. Customers are expected to use {{site.data.keyword.logs_full_notm}} to review their database logs and events starting **November 15, 2024**. For more information, see [Set up logging and monitoring](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started-cdb-logging-monitoring) and [About IBM Cloud Logs](/docs/cloud-logs?topic=cloud-logs-about-cl).
+: {{site.data.keyword.databases-for}} has onboarded {{site.data.keyword.logs_full_notm}}, a scalable logging service that persists logs and provides users with capabilities for querying, tailing, and visualizing logs. Use {{site.data.keyword.logs_full_notm}} to review your database logs and events starting **November 15, 2024**. For more information, see [Set up logging and monitoring](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started-cdb-logging-monitoring) and [About IBM Cloud Logs](/docs/cloud-logs?topic=cloud-logs-about-cl).
 
 ## 29 September 2024
 {: #messages-for-rabbitmq-29sept2024}
@@ -71,7 +71,7 @@ RabbitMQ v3.13 is live
 : RabbitMQ v3.13 is available on {{site.data.keyword.messages-for-rabbitmq}}. It includes several new features, bug fixes, and optimizations, such as the following:
   - [MQTT QoS 0 queue type](https://www.rabbitmq.com/docs/mqtt#qos0-queue-type){: external} is available to be used if specific criteria is met.
   - [Overload protect](https://www.rabbitmq.com/docs/mqtt#overload-protection){: external} against high [memory usage](https://www.rabbitmq.com/docs/memory-use){: external} due to MQTT QoS 0 messages.
-  - Deprecated features are now listed via https API on RabbitMQ Management UI and a warning is logged upon their usage.
+  - Deprecated features are now listed via https API on RabbitMQ Management UI and a warning is logged upon their usage. Adopt new stable features, and stop using deprecated features.
   - Visibility of enabled feature flags via https API and RabbitMQ management UI for administrator users.
 
 ## 1 May 2024
