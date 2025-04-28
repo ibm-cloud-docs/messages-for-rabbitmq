@@ -74,8 +74,6 @@ toc:
           - include: ../cloud-databases/k8-tutorial.md
           - include: ../cloud-databases/truck-tracker-tutorial.md
           - include: ../cloud-databases/disk-util-alerts-tutorial.md
-          - include: ../cloud-databases/cbr-tutorial.md
-          - include: ../cloud-databases/cbr-tutorial.md
       - topicgroup:
           label: Observability
           topics:
@@ -88,6 +86,7 @@ toc:
           topics:
           - include: ../cloud-databases/manage-scc.md
           - include: ../cloud-databases/howto-cbr.md
+          - include: ../cloud-databases/cbr-tutorial.md
           - include: ../cloud-databases/howto-allowlists.md
           - include: ../cloud-databases/reference-service-endpoints.md
           - include: ../cloud-databases/howto-vpes.md
