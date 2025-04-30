@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-29"
+lastupdated: "2025-04-30"
 
 keywords: HA for rabbitmq, DR for rabbitmq, rabbitmq recovery time objective, rabbitmq recovery point objective
 
@@ -46,7 +46,7 @@ For more information about the available region and data center locations, see [
 
 The general strategy for disaster recovery is to create a new {{site.data.keyword.messages-for-rabbitmq}} instance using the backup, and restore it to same or another region.
 
-![Disaster recovery architecture](images/RabbitMQ DR1.drawio.svg){: caption="RabbitMQ disaster recovery architecture" caption-side="bottom"}
+![Disaster recovery architecture](images/RabbitMQ_DR1.drawio.svg){: caption="RabbitMQ disaster recovery architecture" caption-side="bottom"}
 
 ### Disaster recovery features
 {: #dr-features}
