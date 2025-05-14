@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-09-29"
+  years: 2017, 2025
+lastupdated: "2025-05-14"
 
 keywords: rabbitmq, rabbitmq connecting, connecting to rabbitmq
 
@@ -25,15 +25,15 @@ The information a driver needs to make a connection to your deployment is in the
 
 | Field Name | Index | Description |
 | ---------- | ----- | ----------- |
-| `Type` | | Type of connection - for RabbitMQ, it is `uri` |
-| `Scheme` | | Scheme for a URI - for RabbitMQ, it is `amqps` |
-| `Path` | | Path for a uri |
+| `Type` | | Type of connection - for RabbitMQ, it is `uri`. |
+| `Scheme` | | Scheme for a URI - for RabbitMQ, it is `amqps`. |
+| `Path` | | Path for a uri. |
 | `Authentication` | `Username` | The username that you use to connect. |
-| `Authentication` | `Password` | A password for the user - might be shown as `$PASSWORD` |
+| `Authentication` | `Password` | A password for the user - might be shown as `$PASSWORD`. |
 | `Authentication` | `Method` | How authentication takes place; "direct" authentication is handled by the driver. |
-| `Hosts` | `0...` | A hostname and port to connect to |
-| `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path |
-| `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
+| `Hosts` | `0...` | A hostname and port to connect to. |
+| `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path. |
+| `Certificate` | `Name` | The allocated name for the service proprietary certificate for database deployment. |
 | `Certificate` | `Base64` | A base64 encoded version of the certificate. |
 {: caption="RabbitMQ/uri connection information" caption-side="top"}
 
@@ -66,7 +66,7 @@ The information a STOMP client needs to make a connection to your deployment is 
 | `Hosts` | `0...` | A hostname and the STOMP-enabled port to connect to, as well as the protocol name "stomp-ssl" |
 | `Composed` | `0...` | A URI combining Authentication, Host, and TLS/SSL |
 | `ssl` | | The TLS/SSL setting needed for a connection. Should always be `true`. |
-| `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
+| `Certificate` | `Name` | The allocated name for the service proprietary certificate for database deployment |
 | `Certificate` | `Base64` | A base64 encoded version of the certificate. |
 {: caption="RabbitMQ/stomp_ssl connection information" caption-side="top"}
 
@@ -88,20 +88,20 @@ The "mqtts" section contains the information that an MQTT client needs to connec
 | `Authentication` | `Method` | How authentication takes place; "direct" authentication is handled by the driver. |
 | `Hosts` | `0...` | A hostname and port to connect to. |
 | `Composed` | `0...` | A URI combining Authentication, Host, and Port used to connect. |
-| `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
+| `Certificate` | `Name` | The allocated name for the service proprietary certificate for database deployment |
 | `Certificate` | `Base64` | A base64 encoded version of the certificate. |
 {: caption="RabbitMQ/mqtts connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-## TLS and self-signed certificate support
+## TLS and service proprietary certificate support
 {: #tls-cert-support}
 
-All connections to {{site.data.keyword.messages-for-rabbitmq}} are TLS 1.2 enabled, so the driver or client you use to connect needs to be able to support encryption. Your deployment also comes with a self-signed certificate so the driver can verify the server upon connection.
+All connections to {{site.data.keyword.messages-for-rabbitmq}} are TLS 1.2 enabled, so the driver or client you use to connect needs to be able to support encryption. Your deployment also comes with a service proprietary certificate so the driver can verify the server upon connection.
 
 For more information, see [{{site.data.keyword.databases-for}} Certificates FAQ](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-faq-cert){: external}.
 
-### Using the self-signed certificate
+### Using the service proprietary certificate
 {: #using-selfsigned-cert}
 
 1. Copy the certificate information from the *Endpoints* panel or the Base64 field of the connection information.
@@ -110,7 +110,7 @@ For more information, see [{{site.data.keyword.databases-for}} Certificates FAQ]
 4. Provide the path to the certificate to the driver or client.
 5. (optional) If your driver or client supports it you can add the certificate its (or your system's) certificate store.
 
-### CLI plug-in support for the self-signed certificate
+### CLI plug-in support for the service proprietary certificate
 {: #cli-plugin-support-selfsigned-cert}
 
 You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the driver or client.
