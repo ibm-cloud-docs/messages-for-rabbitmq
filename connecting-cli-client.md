@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-10-16"
+  years: 2017, 2025
+lastupdated: "2025-05-14"
 
 keywords: rabbitmq, rabbitmq management
 
@@ -25,7 +25,7 @@ From _Connections_ in your deployment's _Dashboard Overview_, open RabbitMQ Mana
 
 The URL connection information is also in the "https" section of your [connection strings](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings). The web address for your RabbitMQ deployment is in the "composed" field of your connection strings.
 
-Since {{site.data.keyword.messages-for-rabbitmq}} deployments are signed with a self-signed certificate, you might encounter a security warning when you first try to open the page. You can configure your system to trust the [provided self-signed certificate](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-external-app#tls-and-self-signed-certificate-support). Review your browser's or your system's documentation on how to do this.
+Since {{site.data.keyword.messages-for-rabbitmq}} deployments are signed with a service proprietary certificate, you might encounter a security warning when you first try to open the page. You can configure your system to trust the [provided service proprietary certificate](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-external-app#tls-and-service-proprietary-certificate-support). Review your browser's or your system's documentation on how to do this.
 
 You are next asked to enter your username and password. After you have signed in, you can see an _Overview_ of your RabbitMQ deployment. 
 
@@ -69,11 +69,11 @@ The `rabbitmqadmin` connection information is in the "cli" section of your [conn
 | Field Name | Index | Description |
 | ---------- | ----- | ----------- |
 | `Bin` | | The recommended binary to create a connection; in this case it is `rabbitmqadmin`. |
-| `Composed` | | A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` | as command-line parameters. |
+| `Composed` | | A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command-line parameters. |
 | `Environment` | | A list of keys or values you set as environment variables. |
 | `Arguments` | 0... | The information that is passed as arguments to the command shown in the Bin field. |
-| `Certificate` | Base64 | A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
-| `Certificate` | Name | The allocated name for the self-signed certificate. |
+| `Certificate` | Base64 | A service proprietary certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
+| `Certificate` | Name | The allocated name for the service proprietary certificate. |
 | `Type` | | The type of package that uses this connection information; in this case `cli`.  |
 {: caption="rabbitmqadmin/cli connection information" caption-side="bottom"}
 
@@ -95,8 +95,8 @@ rabbitmqadmin --username=admin --password=$PASSWORD --ssl --ssl-ca-cert-file=0b2
 
 Documentation and other examples for `rabbitmqadmin` are on the RabbitMQ [Management Command-Line Tool](https://www.rabbitmq.com/management-cli.html){: .external} page.
 
-## Using the self-signed certificate
-{: #rabbitmq-selfsigned-cert}
+## Using the service proprietary certificate
+{: #rabbitmq-service-proprietary-cert}
 
 1. Copy the certificate information from the Base64 field of the connection information. 
 2. Decode the Base64 string into text and save it to a file. (You can use the Name that is provided or your own file name).
