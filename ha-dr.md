@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-05-14"
+lastupdated: "2025-05-15"
 
 keywords: HA for rabbitmq, DR for rabbitmq, rabbitmq recovery time objective, rabbitmq recovery point objective
 
@@ -41,24 +41,7 @@ For more information about the available region and data center locations, see [
 | Queue selection | Mirror Classic Queue and Quorum Queue ensure messages durability and fast fail-over.  | Select the correct queue type. |
 {: caption="HA features for {{site.data.keyword.messages-for-rabbitmq}}" caption-side="bottom"}
 
-#### High availability (replication)
-{: #ha-replication}
 
-The default v-host in an {{site.data.keyword.messages-for-rabbitmq}} deployment is created with a policy definition (*ha-all*) that is optimized for high availability. The key parameters in the definition are as follows:
-
-- *ha-mode*: all
-- *ha-promote-on-shutdown*: when-synced
-- *ha-sync-mode*: automatic
-
-For *ha-promote-on-shutdown*, the option of "always" can also be used. These are the differences:
-
-- *when-synced* will prioritize data consistency over availability. If you choose this option, your queue might be unavailable if the last node to be synced goes offline. It should recover once the node comes back online, which under very rare scenarios can take a long time. Also, this setting makes it more likely that a queue will be corrupted when there is no promotable leader.
-- *always* will prioritize availability. Even if there isn't a synced replica, one will be promoted and your queue won’t stop taking traffic, but data might be lost if there were any unsynced messages in the queue.
-
-RabbitMQ is very flexible and you can create different v-hosts with different policy configurations. If you create separate v-hosts, you will have to handle replication and availability policies for them.
-
-If you want high availability, you should make sure that all your important v-hosts have the above settings in their policies, with one of the two *ha-promote-on-shutdown* options. Familiarize yourself with the different queue types and policies to make sure that you are using the ones that are optimized for your use case.
-{: tip}
 
 ## Disaster recovery architecture
 {: #disaster-recovery-intro}
