@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-05-15"
+lastupdated: "2025-05-16"
 
 keywords: HA for rabbitmq, DR for rabbitmq, rabbitmq recovery time objective, rabbitmq recovery point objective
 
@@ -40,8 +40,6 @@ For more information about the available region and data center locations, see [
 | Member count | 3 member deployment. It is resilient to the failure of one member during the same failure period. | |
 | Queue selection | Mirror Classic Queue and Quorum Queue ensure messages durability and fast fail-over.  | Select the correct queue type. |
 {: caption="HA features for {{site.data.keyword.messages-for-rabbitmq}}" caption-side="bottom"}
-
-
 
 ## Disaster recovery architecture
 {: #disaster-recovery-intro}
