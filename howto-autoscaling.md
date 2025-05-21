@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-11-26"
+  years: 2020, 2025
+lastupdated: "2025-05-21"
 
 keywords: rabbitmq, databases, rabbitmq autoscaling, disk I/O, memory
 
@@ -56,7 +56,15 @@ The resource numbers refer to each database node in a deployment. For example, t
 
 - If you need to add resources to your deployment occasionally or rarely, you can [manually scale](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-resources-scaling) your deployment.
 
+## Configuring Autoscaling in the UI
+{: #config-autoscaling-ui}
+{: ui}
 
+The Autoscaling panel is on the _Resources_ tab of your deployment's _Manage_ page. To enable scaling, enter your parameters. Then, check the boxes to enable the parameters you are using. Be sure to click **Save changes** for your configuration to be saved and your changes to take effect.
+
+To disable autoscaling, clear the boxes for the parameters that you no longer want to use. If you clear all the boxes, autoscaling is unavailable. Click **Save changes** to save the configuration.
+
+CPU and RAM autoscaling is not supported on Isolated Compute. Disk autoscaling is available. If you provisioned an isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 
 ## Configuring Autoscaling in the CLI
 {: #config-autoscaling-cli}
