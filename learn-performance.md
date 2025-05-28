@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-05-26"
 
 keywords: rabbitmq, databases, memory alarms, disk alarms, monitoring, disk I/O, rabbitmq performance
 
@@ -25,9 +25,12 @@ subcollection: messages-for-rabbitmq
 ## RabbitMQ memory usage
 {: #rabbitmq-mem-usage}
 
-[RabbitMQ provides a robust breakdown of memory usage](https://www.rabbitmq.com/memory-use.html#breakdown){: external}, which can provide you information on how memory resources are allocated and being used in your deployment. Most notably, connections, queue mirrors, and accumulated messages all use memory. If your use-case calls for many open connections at a time, you might want to look into increasing memory. Likewise, if you have queues that contain only transient messages that don't need replication, you can bring down memory usage by adjusting their [mirroring policy](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-high-availability#high-availability-queue-configuration). Changes to mirroring policy, where messages have fewer or no mirrors, can cause messages to be deleted on node restarts and those messages are gone forever.
+[RabbitMQ provides a robust breakdown of memory usage](https://www.rabbitmq.com/memory-use.html#breakdown){: external}, which can provide you information on how memory resources are allocated and being used in your deployment. Most notably, connections, queue mirrors, and accumulated messages all use memory. If your use-case calls for many open connections at a time, you might want to look into increasing memory. Likewise, if you have queues that contain only transient messages that don't need replication, you can bring down memory usage by adjusting their Mirror Classic Queue policy.  Changes to mirroring policy, where messages have fewer or no mirrors, can cause messages to be deleted on node restarts and those messages are gone forever.
 
 Occasionally, RabbitMQ can experience memory spikes. Specifically, with {{site.data.keyword.messages-for-rabbitmq}} deployments, updates and maintenance where we restart or delete a node causes memory usage to increase to resync the restarted or new node. If your RabbitMQ consistently uses a high percentage of its available memory, one of these spikes can run your deployment out of memory and cause it to crash. It is a good idea to scale your memory so that it can accommodate resyncing a node.
+
+Mirror Classic Queue is deprecated from RabbitMQ v4.x. Customers are expected to use Quorum Queues or Streams for durability of messages.
+{: important}
 
 ### RabbitMQ memory alarms
 {: #rabbitmq-mem-alarms}
@@ -46,10 +49,11 @@ More information about memory alarms can be found in the [RabbitMQ documentation
 
 The number of input/output operations per second (IOPS) is limited by the type of storage volume that is being used. Storage volumes for {{site.data.keyword.messages-for-rabbitmq}} deployments are provisioned on [Block Storage Endurance Volumes in the 10 IOPS per GB tier](/docs/BlockStorage?topic=BlockStorage-orderingBlockStorage&interface=ui). IOPS limits can affect RabbitMQ message throughput and storage operations. Reaching these limits can cause disk to fall behind on reclaiming space after messages are consumed, leading to disk alarms and publisher throttling until activity slows down. You can increase the number IOPS available to your deployment by increasing disk space.
 
-## Quorum queues
+## Quorum queues 
 {: #quorum-queues}
 
-High-availability can be managed with [quorum queues](https://www.rabbitmq.com/quorum-queues.html). Using quorum queues impacts performance; it needs more memory and disk space for the WAL that it uses to maintain state for operations. It also needs more disk I/O as it persists all data on disk. If you have implemented quorum queues, or are considering them, the RabbitMQ documentation has a good write-up of their effect on both [resource use](https://www.rabbitmq.com/quorum-queues.html#resource-use) and [performance](https://www.rabbitmq.com/quorum-queues.html#performance).
+High-availability can be managed with [quorum queues](https://www.rabbitmq.com/quorum-queues.html). Using quorum queues impacts performance; it needs more memory and disk space for the WAL that it uses to maintain state for operations. It also needs more disk I/O as it persists all data on disk. If you have implemented quorum queues, or are considering them, the RabbitMQ documentation has a good write-up of their effect on both [resource use](https://www.rabbitmq.com/quorum-queues.html#resource-use) and [performance](https://www.rabbitmq.com/quorum-queues.html#performance). 
+Quorum Queues will be the default queue type that will support high-availability with version 4. Mirrored (HA) Classic Queues will be unsupported after v3.13. For more information, see the [release notes](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes&interface=ui#messages-for-rabbitmq-18mar2025) and [Migrating from Classic Queues to Quorum Queues](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-migrating_classic_quorum&interface=ui).
 
 ## RabbitMQ alarm monitoring
 {: #alarm-monitoring}
