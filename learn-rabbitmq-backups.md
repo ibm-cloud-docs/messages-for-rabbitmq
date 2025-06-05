@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-06-20"
+  years: 2020, 2025
+lastupdated: "2025-06-05"
 
 keywords: messages, backups, rabbitmq backups, messages for rabbitmq backups
 
@@ -10,12 +10,7 @@ subcollection: messages-for-rabbitmq
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Backups with {{site.data.keyword.messages-for-rabbitmq}} 
 {: #backups-for-rabbitmq}
@@ -32,12 +27,10 @@ Review the [management responsibilities and terms and conditions](/docs/messages
 
 The expected operation for a {{site.data.keyword.messages-for-rabbitmq}} deployment is to keep queues short: messages are written and read in a short cycle with focus on throughput. {{site.data.keyword.messages-for-rabbitmq}} deployments are not intended as a data store like other {{site.data.keyword.cloud}} offerings. 
 
-For message delivery with durability and consistent quality of service, you must use [quorum queues](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-high-availability#quorum-queues). 
+For message delivery with durability and consistent quality of service, you must use [quorum queues](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-ha-dr#ha-features). 
 
 The [Shovel plug-in](https://www.rabbitmq.com/shovel.html) can also help move messages across instances. While not a backup mechanism, this plug-in can aid in message retention. 
 
 Remember, messages are not part of the {{site.data.keyword.messages-for-rabbitmq}} deployment backups regardless of the queue types or plug-ins implemented. 
 
-More information on {{site.data.keyword.cloud}} can be found in the [high availability and disaster recovery](/docs/messages-for-rabbitmq?topic=cloud-databases-ha-dr) section. 
-
-
+For more information, see [high availability and disaster recovery](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-ha-dr). 
