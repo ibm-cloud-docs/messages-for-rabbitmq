@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-24"
+lastupdated: "2025-06-05"
 
 keyowrds: rabbitmq, upgrading, major versions, changing versions, rabbitmq upgrading, new deployment, major version
 
@@ -16,7 +16,7 @@ subcollection: messages-for-rabbitmq
 
 When a major version of a database is at its end of life (EOL), it is a good idea to upgrade to a current major version.
 
-Find the available versions of RabbitMQ on the [{{site.data.keyword.messages-for-rabbitmq_full}} catalog](https://cloud.ibm.com/catalog/messages-for-rabbitmq){: external} page, from the {{site.data.keyword.databases-for}} CLI plug-in command [`ibmcloud cdb deployables-show`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show), or through the {{site.data.keyword.databases-for}} API [`/deployables` endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases).
+Find the available versions of RabbitMQ on the [{{site.data.keyword.messages-for-rabbitmq_full}} catalog](https://cloud.ibm.com/databases/messages-for-rabbitmq/create?catalog_query){: external} page, from the {{site.data.keyword.databases-for}} CLI plug-in command [`ibmcloud cdb deployables-show`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show), or through the {{site.data.keyword.databases-for}} API [`/deployables` endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases).
 
 Upgrade your new deployment by [restoring a backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) of your data into the new version. Restoring from a backup has a number of advantages:
 
