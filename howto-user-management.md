@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2025
-lastupdated: "2025-04-04"
+lastupdated: "2025-06-05"
 
 keywords: rabbitmq, rabbitmq users
 
@@ -63,7 +63,7 @@ curl -X PATCH `https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{
 ## _Service credential_ users
 {: #service-cred-user}
 
-Users that you [create through the _Service Credentials_ panel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings#from-_service-credentials_) are given full permissions to configure, write, and read on the default Virtual Host.  
+Users that you [create through the _Service Credentials_ panel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-connection-strings) are given full permissions to configure, write, and read on the default Virtual Host.  
 
 They are also automatically tagged with the "monitoring" tag, allowing users to access the management plug-in and see all connections, channels, and node-related information. These users given a limited view of the _Admin_ tab and the functions that are found there. 
 
