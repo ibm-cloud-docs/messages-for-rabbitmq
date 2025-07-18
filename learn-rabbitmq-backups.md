@@ -17,9 +17,9 @@ subcollection: messages-for-rabbitmq
 
 The {{site.data.keyword.messages-for-rabbitmq_full}} backups do not contain the actual messages. Your {{site.data.keyword.messages-for-rabbitmq}} deployment backups contain *only* configuration data.  
 
-For more information on backing up your {{site.data.keyword.messages-for-rabbitmq}} service configurations, see the [Managing backups](/docs/databases-for-mongodb?topic=databases-for-mongodb-dashboard-backups&interface=ui) section of the {{site.data.keyword.cloud}} documentation. 
+For more information on backing up your {{site.data.keyword.messages-for-rabbitmq}} service configurations, see the [Managing backups](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-dashboard-backups&interface=ui) section of the {{site.data.keyword.cloud}} documentation. 
 
-Review the [management responsibilities and terms and conditions](/docs/databases-for-mongodb?topic=databases-for-mongodb-responsibilities-cloud-databases) that you have when you use {{site.data.keyword.messages-for-rabbitmq}} service.
+Review the [management responsibilities and terms and conditions](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-responsibilities-cloud-databases) that you have when you use {{site.data.keyword.messages-for-rabbitmq}}.
 
 
 ## Concepts and suggestions 
