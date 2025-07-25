@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-24"
+lastupdated: "2025-07-25"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -40,7 +40,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 {{site.data.keyword.messages-for-rabbitmq}} {{site.data.keyword.satelliteshort}} plan is deprecated
-:   {{site.data.keyword.satellitelong}} is now deprecated due to changes in market expectations, client fit, and lack of adoption. As of March 10 2025, all documentation relating to Satellite has been removed, as well as the ability to select {{site.data.keyword.messages-for-rabbitmq}} {{site.data.keyword.satelliteshort}} plan in the Cloud console.
+:   {{site.data.keyword.messages-for-rabbitmq}} {{site.data.keyword.satelliteshort}} plan is now deprecated. As of March 10 2025, all documentation relating to {{site.data.keyword.messages-for-rabbitmq}} {{site.data.keyword.satelliteshort}} plan has been removed, as well as the ability to select {{site.data.keyword.messages-for-rabbitmq}} {{site.data.keyword.satelliteshort}} plan in the Cloud console.
 
 ## 15 November 2024
 {: #messages-for-rabbitmq-15nov2024}
