@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-07-18"
 
 keywords: rabbitmq, rabbitmq getting started
 
@@ -37,7 +37,7 @@ If you have already created your deployment and want to connect to your RabbitMQ
 {: #create-service-instance}
 {: step}
 
-Create a {{site.data.keyword.messages-for-rabbitmq}} service from the [{{site.data.keyword.messages-for-rabbitmq}} page](https://cloud.ibm.com/catalog/messages-for-rabbitmq/) in the {{site.data.keyword.cloud_notm}} catalog.
+Create a {{site.data.keyword.messages-for-rabbitmq}} service from the [{{site.data.keyword.messages-for-rabbitmq}} page](https://cloud.ibm.com/databases/messages-for-rabbitmq/create) in the {{site.data.keyword.cloud_notm}} catalog.
 
 Choose a service name, region, organization, and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_. In this example, the service name is "example-rabbitmq".
 
@@ -210,8 +210,6 @@ The app is now running at `http://localhost:8080`. You can add words and definit
 
 ## Next steps
 {: #next-steps}
-
-Check out [Best Practices for RabbitMQ on the IBM Cloud](https://www.ibm.com/cloud/blog/best-practices-for-rabbitmq-on-the-ibm-cloud){: .external}.
 
 To understand more about how the [sample app](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples/tree/node/rabbitmq){: .external} works, you can read the application's readme file, or the code comments in `server.js`, which give some information about the app's functions.
 
