@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-25"
+lastupdated: "2025-09-16"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -20,6 +20,17 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
+## 10 September 2025
+{: #messages-for-rabbitmq-10sep2025}
+{: release-note}
+
+{{site.data.keyword.messages-for-rabbitmq}} version 4.1 is Preferred
+:  There are important changes in this version in alignment with the [RabbitMQ v4 release series](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v4.0.1).
+
+RabbitMQ v4.1 is available on {{site.data.keyword.messages-for-rabbitmq}} in [Preferred](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-versioning-policy&interface=ui#version-tags). Service changes applied on {{site.data.keyword.messages-for-rabbitmq}} version 4.0 Preview will continue on v4.1 and future versions. For more information, see the [version 4 realease note](#messages-for-rabbitmq-18mar2025).
+
+Customers on RabbitMQ v3.13 can upgrade to v4.1 using [backup and restore](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading&interface=ui) or by [shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel&interface=ui).
+
 ## 18 March 2025
 {: #messages-for-rabbitmq-18mar2025}
 {: release-note}
@@ -27,7 +38,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {{site.data.keyword.messages-for-rabbitmq}} version 4 is available in Preview
 : Validate your application on {{site.data.keyword.messages-for-rabbitmq}} version 4. There are important changes in this version in alignment with the [RabbitMQ v4 release](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v4.0.1).
 
-  1. Mirrored (HA) Classic Queues will be unsupported: Starting version 4, [Mirrored Classic Queues](https://www.rabbitmq.com/docs/3.13/ha) will not be supported. When migrating from v3.13 to v4, remove the Classic Queue HA policy. More details on the migration will be published soon.
+  1. Mirrored (HA) Classic Queues will be unsupported: Starting version 4, [Mirrored Classic Queues](https://www.rabbitmq.com/docs/3.13/ha) will not be supported. When migrating from v3.13 to v4, remove the Classic Queue HA policy. Details can be found at [Migrating from Classic Queues to Quorum Queues](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-migrating_classic_quorum), and [Upgrading from v3.13 to v4](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading&interface=ui#upgrading-ui-v313-to-v4).
 
   2. Quorum Queues will be the default queue type: Until v3.13, Classic Queues were the default queue type selected when {{site.data.keyword.messages-for-rabbitmq}} instance was provisioned. Starting with v4, Quorum Queues will be the default queue type at the instance creation.
 
