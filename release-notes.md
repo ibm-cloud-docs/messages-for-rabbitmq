@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-16"
+lastupdated: "2025-09-22"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -29,7 +29,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 
 RabbitMQ v4.1 is available on {{site.data.keyword.messages-for-rabbitmq}} in [Preferred](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-versioning-policy&interface=ui#version-tags). Service changes applied on {{site.data.keyword.messages-for-rabbitmq}} version 4.0 Preview will continue on v4.1 and future versions. For more information, see the [version 4 realease note](#messages-for-rabbitmq-18mar2025).
 
-Customers on RabbitMQ v3.13 can upgrade to v4.1 using [backup and restore](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading&interface=ui) or by [shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel&interface=ui).
+Customers on RabbitMQ v3.13 can upgrade to v4.1 using [backup and restore](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading&interface=ui) or by [shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel&interface=ui). Customers are encouraged to switch to [Quorum Queues](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-migrating_classic_quorum&interface=ui) with this version upgrade, as Classic Queues does not guarantee high-availability of the messages. 
 
 ## 18 March 2025
 {: #messages-for-rabbitmq-18mar2025}
