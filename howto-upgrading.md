@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-11-03"
 
 keyowrds: rabbitmq, upgrading, major versions, changing versions, rabbitmq upgrading, new deployment, major version
 
@@ -94,11 +94,11 @@ You can use a shovel to move messages from a current cluster to a new cluster du
 ## Upgrading from v3.13 to v4
 {: #upgrading-ui-v313-to-v4}
 
-There are [major changes](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes&interface=ui#messages-for-rabbitmq-18mar2025) between v3.x and v4.x. To upgrade your {{site.data.keyword.messages-for-rabbitmq}} instance from v3.13 to v4, perform the following extra step of deleting the high availability related policies before performing Backup-Restore.
+There are [major changes](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes&interface=ui#messages-for-rabbitmq-18mar2025) between v3.x and v4.x. To upgrade your {{site.data.keyword.messages-for-rabbitmq}} instance from v3.13 to v4, perform the following extra step with [the admin user](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#admin-user) provisioned with your deployment of deleting the high availability related policies before performing Backup-Restore.
 
 Starting from v4, {{site.data.keyword.messages-for-rabbitmq}} does not support high availability of Classic Queues, hence, when you try to import definitions from v3.13 to v4, the restore fails because the definitions contain Classic Queue high availability related policies that are not recognized by the policy setting.
 
-To avoid this error and to have a successful upgrade, perform the following steps.
+To avoid this error and to have a successful upgrade, perform the following steps as the `admin` user.
 
 1. Log in to the UI of the v3.13 instance.
 2. Navigate to the **Policies** side panel in the *Admin* tab.
