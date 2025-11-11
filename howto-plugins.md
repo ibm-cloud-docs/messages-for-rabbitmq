@@ -34,7 +34,7 @@ RabbitMQ supports various plug-ins to extend its core functions. {{site.data.key
 | [RabbitMQ Management plug-in](#rabbitmq-management-plug-in) | `rabbitmq_management` |
 | [JMS plug-in](#jms-plug-in) | `rabbitmq_jms_topic_exchange` |
 | [MQTT plug-in](#mqtt-plug-in) | `rabbitmq_mqtt` |
-| [RabbitMQ Consistent Hash Exchange Type plugin](#consistent-hash-exchange-type-plug-in) | `rabbitmq_consistent_hash_exchange` |
+| [RabbitMQ Consistent Hash Exchange Type plug-in](#consistent-hash-exchange-type-plug-in) | `rabbitmq_consistent_hash_exchange` |
 {: caption="Available RabbitMQ plug-ins" caption-side="top"}
 
 
@@ -86,4 +86,4 @@ The MQTT plug-in, `rabbitmq_mqtt`, is enabled by default for {{site.data.keyword
 ## RabbitMQ Consistent Hash Exchange Type plug-in
 {: #consistent-hash-exchange-type-plug-in}
 
-The RabbitMQ plug-in, `rabbitmq_consistent_hash_exchange`, is enabled by default for {{site.data.keyword.messages-for-rabbitmq}} deployments. Information on using the Consistent Hash Exchange plug-in is available in the [consistent_hash_exchange plug-in readme](https://github.com/rabbitmq/rabbitmq-server/blob/main/deps/rabbitmq_consistent_hash_exchange/README.md){: .external} page.
+The RabbitMQ plug-in, `rabbitmq_consistent_hash_exchange`, is enabled by default for {{site.data.keyword.messages-for-rabbitmq}} deployments. This plug-in adds a consistent-hash exchange type to RabbitMQ.Information on using the Consistent Hash Exchange plug-in is available in the [consistent_hash_exchange plug-in readme](https://github.com/rabbitmq/rabbitmq-server/blob/main/deps/rabbitmq_consistent_hash_exchange/README.md){: .external} page.
