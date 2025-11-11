@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2025
-lastupdated: "2025-11-10"
+lastupdated: "2025-11-11"
 
 keywords: rabbitmq, databases, jms, shovel, delayed, stomp, mqtt, rabbitmq plug-in
 
@@ -87,7 +87,3 @@ The MQTT plug-in, `rabbitmq_mqtt`, is enabled by default for {{site.data.keyword
 {: #consistent-hash-exchange-type-plug-in}
 
 The RabbitMQ plug-in, `rabbitmq_consistent_hash_exchange`, is enabled by default for {{site.data.keyword.messages-for-rabbitmq}} deployments. Information on using the consistent_hash_exchange plug-in is available on the [consistent_hash_exchange plug-in readme](https://github.com/rabbitmq/rabbitmq-server/blob/main/deps/rabbitmq_consistent_hash_exchange/README.md){: .external} page. 
-
-This plugin adds a consistent-hash exchange type to RabbitMQ. This exchange type uses consistent hashing (intro blog posts: one, two, three) to distribute messages between the bound queues. It is recommended to get a basic understanding of the concept before evaluating this plugin and its alternatives.
-
-rabbitmq-sharding is another plugin that provides a way to partition a stream of messages among a set of consumers while trading off total stream ordering for processing parallelism.
