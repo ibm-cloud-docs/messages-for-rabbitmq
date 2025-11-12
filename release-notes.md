@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-22"
+lastupdated: "2025-11-11"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -19,6 +19,34 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 5 November 2025
+{: #messages-for-rabbitmq-05november2025}
+{: release-note}
+
+{{site.data.keyword.messages-for-rabbitmq}} version policy changes starting version v4.x
+: To align with the open-source project owners of RabbitMQ, {{site.data.keyword.messages-for-rabbitmq}} (an {{site.data.keyword.cloud}} managed service) is updating its version lifecycle policies starting with RabbitMQ v4.x.
+  1. Two months advance notification of version deprecation will be provided for a major version.
+  2. {{site.data.keyword.messages-for-rabbitmq}} will support only one version, the latest, outside of the few weeks period (minimum 2 weeks) during which you should upgrade from the version being deprecated to the new version.
+  3. Instances that are using a deprecated version will be ‘automatically force upgraded’ to the next major version after the EOL date. However, no SLA will be provided for this upgrade method.
+
+**Please note:**
+We do not recommend that you wait until the end-of-life date for the following reasons: 
+   - We provide **no SLAs** for this type of forced upgrade.
+   - You may experience some data loss.
+   - Your application may experience downtime.
+   - Your application may stop working if it has any incompatibilities with the new database version.
+   - You cannot control the timing of when this upgrade will happen for your deployment.
+   - There is no rollback process for this forced upgrade.
+
+For more information on upcoming version EOL, see the [{{site.data.keyword.databases-for}} version policy page](/docs/cloud-databases?topic=cloud-databases-versioning-policy).
+
+**Note**: {{site.data.keyword.messages-for-rabbitmq}} backup includes only configuration. Data (messages) is not backed up.
+
+**Customer impact**: Frequent major version upgrades are expected with a shorter 2-month timeline to upgrade. Automatic forced upgrade will occur on EOL date.
+
+**Customer action needed**: You are expected to [perform major version upgrade](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading&interface=ui) using *backup & restore* or *Shovel* before EOL date to align with the updated policy and to be on a supported version of the service.
+
 
 ## 10 September 2025
 {: #messages-for-rabbitmq-10sep2025}
