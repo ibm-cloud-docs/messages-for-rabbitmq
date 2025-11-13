@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2025
-lastupdated: "2025-11-11"
+lastupdated: "2025-11-13"
 
 keywords: rabbitmq, databases, jms, shovel, delayed, stomp, mqtt, consistent hash exchange, rabbitmq plug-in
 
@@ -9,13 +9,7 @@ subcollection: messages-for-rabbitmq
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Using RabbitMQ plug-ins
 {: #plug-ins}
@@ -86,4 +80,4 @@ The MQTT plug-in, `rabbitmq_mqtt`, is enabled by default for {{site.data.keyword
 ## RabbitMQ Consistent Hash Exchange Type plug-in
 {: #consistent-hash-exchange-type-plug-in}
 
-The RabbitMQ plug-in, `rabbitmq_consistent_hash_exchange`, is enabled by default for {{site.data.keyword.messages-for-rabbitmq}} deployments. This plug-in adds a consistent-hash exchange type to RabbitMQ.Information on using the Consistent Hash Exchange plug-in is available in the [consistent_hash_exchange plug-in readme](https://github.com/rabbitmq/rabbitmq-server/blob/main/deps/rabbitmq_consistent_hash_exchange/README.md){: .external} page.
+The RabbitMQ plug-in, `rabbitmq_consistent_hash_exchange`, is enabled by default for {{site.data.keyword.messages-for-rabbitmq}} deployments. This plug-in adds a consistent-hash exchange type to RabbitMQ. Information on using the Consistent Hash Exchange plug-in is available in the [consistent_hash_exchange plug-in readme](https://github.com/rabbitmq/rabbitmq-server/blob/main/deps/rabbitmq_consistent_hash_exchange/README.md){: .external} page.
