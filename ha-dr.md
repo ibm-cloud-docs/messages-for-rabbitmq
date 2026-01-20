@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-11-13"
+  years: 2026
+lastupdated: "2026-01-20"
 
 keywords: HA for rabbitmq, DR for rabbitmq, rabbitmq recovery time objective, rabbitmq recovery point objective
 
@@ -44,7 +44,7 @@ For more information about the available region and data center locations, see [
 ## Disaster recovery architecture
 {: #disaster-recovery-intro}
 
-The general strategy for disaster recovery is to create a new {{site.data.keyword.messages-for-rabbitmq}} instance using the backup, and restore it to same or another region.
+The general strategy for disaster recovery is to create a new {{site.data.keyword.messages-for-rabbitmq}} instance using the backup, and restore it to the same or another region.
 
 ![Disaster recovery architecture](images/RabbitMQ_disaster_recovery.svg){: caption="RabbitMQ disaster recovery architecture" caption-side="bottom"}
 
@@ -77,7 +77,7 @@ The DR steps must be practiced regularly. As you build your plan, consider the f
 ### Connection limits
 {: #connection-limits}
 
-Is it important to prevent overwhelming your deployment with connections. If the number of connections to the database exceeds the connection limit, new connections fail and return an error. For more information {{site.data.keyword.messages-for-rabbitmq}}, see [Connection limits](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-ha-dr#connection-limits).
+It is important to prevent overwhelming your deployment with connections. If the number of connections to the database exceeds the connection limit, new connections fail and return an error. For more information {{site.data.keyword.messages-for-rabbitmq}}, see [Connection limits](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-ha-dr#connection-limits).
 
 ## Your responsibilities for HA and DR
 {: #feature-responsibilities}
