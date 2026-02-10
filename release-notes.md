@@ -24,7 +24,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #messages-for-rabbitmq-12february2026}
 {: release-note}
 
-{{site.data.keyword.messages-for-rabbitmq}} version 4.2 is preferred
+{{site.data.keyword.messages-for-rabbitmq}} version 4.2 is Preferred
 : There are important changes in this version in alignment with the [RabbitMQ v4.2 release series](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v4.2.0){: external}.
 
   - RabbitMQ v4.2 is available on {{site.data.keyword.messages-for-rabbitmq}} in [Preferred](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-versioning-policy&interface=ui#version-tags). Service changes applied on {{site.data.keyword.messages-for-rabbitmq}} version 4.1 will continue on v4.2 and future versions. For more information, see the [version 4 realease notes](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes#messages-for-rabbitmq-10sep2025).
