@@ -15,7 +15,7 @@ subcollection: messages-for-rabbitmq
 # Provisioning
 {: #provisioning}
 
-Provision a {{site.data.keyword.messages-for-rabbitmq_full}} deployment through the [catalog](https://cloud.ibm.com/databases/messages-for-rabbitmq/create){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5){: external}, through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external} or through pre-built, open-source and enterprise-ready [Terraform IBM Modules (TIM)](https://registry.terraform.io/modules/terraform-ibm-modules/icd-rabbitmq/ibm/latest){: external}.
+Provision a {{site.data.keyword.messages-for-rabbitmq_full}} deployment through the [catalog](https://cloud.ibm.com/databases/messages-for-rabbitmq/create){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5){: external}, through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}, or through pre-built, open-source, and enterprise-ready [Terraform IBM Modules (TIM)](https://registry.terraform.io/modules/terraform-ibm-modules/icd-rabbitmq/ibm/latest){: external}.
 
 ## Provisioning through the {{site.data.keyword.cloud_notm}} console
 {: #catalog}
@@ -423,8 +423,8 @@ To make a Shared Compute instance, follow this example:
        "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
        "resource_plan_id": "messages-for-rabbitmq-standard"
        "parameters": {
-        "members_host_flavor": "multitenant", 
-        "members_memory_allocation_mb": 12288, 
+        "members_host_flavor": "multitenant",
+        "members_memory_allocation_mb": 12288,
         "members_cpu_allocation_count": 3
       }
      }'
