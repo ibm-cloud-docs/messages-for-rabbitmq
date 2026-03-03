@@ -305,7 +305,7 @@ curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}
 {: #resources-switching-api}
 {: api}
 
-To scale any {{site.data.keyword.databases-for}} Shared Compute instance, use the the following command, setting `host_flavor` to `multitenant`. If your database is not on Shared Compute, this command also moves a database from a different hosting model to the Shared Compute hosting model.
+To scale any {{site.data.keyword.databases-for}} Shared Compute instance, use the following command, setting `host_flavor` to `multitenant`. If your database is not on Shared Compute, this command also moves a database from a different hosting model to the Shared Compute hosting model.
 
 ```sh
 curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/member
@@ -407,7 +407,8 @@ output "ICD RabbitMQ database connection string" {
 ```
 {: codeblock}
 
-Alternatively, you can use pre-built, open-source, and enterprise-ready [Terraform IBM Modules (TIM)](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.databases-for-rabbitmq}}](https://registry.terraform.io/modules/terraform-ibm-modules/icd-rabbitmq/ibm/latest){: external} that support the auto-scaling feature.
+Alternatively, you can use pre-built, open-source, and enterprise-ready [Terraform IBM Modules (TIM)](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.messages-for-rabbitmq}}](https://registry.terraform.io/modules/terraform-ibm-modules/icd-rabbitmq/ibm/latest){: external} that support the auto-scaling feature.
+
 
 ## Switching to and scaling hosting models in Terraform
 {: #resources-switching-terraform}
