@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2025
-lastupdated: "2025-06-05"
+  years: 2019, 2026
+lastupdated: "2026-03-03"
 
 keywords: rabbitmq, databases, manual scaling, disk I/O, memory, CPU, rabbitmq scaling
 
@@ -406,6 +406,8 @@ output "ICD RabbitMQ database connection string" {
 }
 ```
 {: codeblock}
+
+Alternatively, you can use pre-built, open-source and enterprise-ready [Terraform IBM Modules (TIM)](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.databases-for-rabbitmq}}](https://registry.terraform.io/modules/terraform-ibm-modules/icd-rabbitmq/ibm/latest){: external} that supports auto-scaling feature.
 
 ## Switching to and scaling hosting models in Terraform
 {: #resources-switching-terraform}
