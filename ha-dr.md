@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-03-19"
 
 keywords: HA for rabbitmq, DR for rabbitmq, rabbitmq recovery time objective, rabbitmq recovery point objective
 
@@ -93,10 +93,9 @@ The following information can help you create and continuously practice your pla
 
 When restoring from backups, a new instance is created with new connection strings. Existing workloads and processes must be adjusted to consume the new connection strings.
 
-A recovered database may also need the same customer-created dependencies of the disaster database - make sure these and other services exist in the recovered region:
+A recovered database may also need the same customer-created dependencies of the disaster database - make sure this and other services exist in the recovered region:
 
-   - IBM® Key Protect for IBM Cloud®
-   - Hyper Protect Crypto Services
+   - {{site.data.keyword.keymanagementserviceshort}}
 
 Remember that deleting an instance also deletes its associated backups. However, deleted instance may be recoverable within a limited timeframe. For more information, see the [Backups FAQ](/docs/cloud-databases?topic=cloud-databases-faq-backups).
 
