@@ -122,7 +122,7 @@ rabbitmqadmin --username=admin_username --password=password_of_admin_user --use-
 ```
 {: pre}
 
-4. After deleting the policy, take an on-demand backup of this instance from either the {{site.data.keyword.cloud_notm}} [UI](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#ondemand-backup), [API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#startondemandbackup), or [CLI](https://cloud.ibm.com/docs/cli?topic=cli-cdb-reference#deployment-backup-now)
+4. After deleting the policy, take an on-demand backup of this instance from either the {{site.data.keyword.cloud_notm}} [UI](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#ondemand-backup), [API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#startondemandbackup), or [CLI](https://cloud.ibm.com/docs/cli?topic=cli-cdb-reference#deployment-backup-now).
 5. After successfully creating a backup, restore this particular backup to the v4 instance by completing [these steps](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#restore-backup).
 
 ### Upgrade using the API
