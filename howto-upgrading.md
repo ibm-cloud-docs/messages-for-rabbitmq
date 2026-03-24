@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-20"
+lastupdated: "2026-03-24"
 
 keyowrds: rabbitmq, upgrading, major versions, changing versions, rabbitmq upgrading, new deployment, major version
 
@@ -11,7 +11,7 @@ subcollection: messages-for-rabbitmq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Upgrading to a new Major Version
+# Upgrading to a new major version
 {: #upgrading}
 
 When a major version of a database is at its end of life (EOL), it is a good idea to upgrade to a current major version.
@@ -94,49 +94,50 @@ You can use a shovel to move messages from a current cluster to a new cluster du
 ## Upgrading from v3.13 to v4
 {: #upgrading-v313-to-v4}
 
-There are [major changes](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes&interface=ui#messages-for-rabbitmq-18mar2025) between v3.x and v4.x. To upgrade your {{site.data.keyword.messages-for-rabbitmq}} instance from v3.13 to v4, perform the following extra step with [the admin user](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#admin-user) provisioned with your deployment of deleting the high availability related policies before performing Backup-Restore.
+There are [major changes](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes&interface=ui#messages-for-rabbitmq-18mar2025) between v3.x and v4.x. To upgrade your {{site.data.keyword.messages-for-rabbitmq}} instance from v3.13 to v4, complete the following extra step with [the admin user](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-user-management&interface=ui#admin-user) provisioned with your deployment that deletes the high availability related policies. Finally, complete Backup-Restore.
 
-Starting from v4, {{site.data.keyword.messages-for-rabbitmq}} does not support high availability of Classic Queues, hence, when you try to import definitions from v3.13 to v4, the restore fails because the definitions contain Classic Queue high availability related policies that are not recognized by the policy setting.
+Starting from v4, {{site.data.keyword.messages-for-rabbitmq}} does not support high availability of Classic Queues. Therefore, when you try to import definitions from v3.13 to v4, the restore fails because the definitions contain Classic Queue high availability related policies that are not recognized by the policy setting.
 
-To avoid this error and to have a successful upgrade, perform the following steps as the `admin` user.
-### Upgrade through UI
+To avoid this error and to upgrade successfully, complete the following steps as the `admin` user.
+
+### Upgrade using the UI
 {: #upgrade-ui-v313-to-v4}
 {: ui}
 
 1. Log in to the UI of the v3.13 instance.
 2. Navigate to the **Policies** side panel in the *Admin* tab.
 3. Delete the **ha-all** policy in *Policies* tab.
-4. After deletion of the policy, take an on-demand backup of this instance from either the IBM Cloud [UI](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#ondemand-backup), [API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#startondemandbackup) or [CLI](https://cloud.ibm.com/docs/cli?topic=cli-cdb-reference#deployment-backup-now)
-5. Upon successful backup creation, restore this particular backup to the v4 instance by following [these steps](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#restore-backup).
+4. After deleting the policy, take an on-demand backup of this instance from either the {{site.data.keyword.cloud_notm}} [UI](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#ondemand-backup), [API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#startondemandbackup), or [CLI](https://cloud.ibm.com/docs/cli?topic=cli-cdb-reference#deployment-backup-now).
+5. After successfully creating a backup, restore this particular backup to the v4 instance by completing the steps in [Restoring a backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#restore-backup).
 
-### Upgrade through CLI
+### Upgrade using the CLI
 {: #upgrade-cli-v313-to-v4}
 {: cli}
 
-1. Install **rabbitmqadmin** CLI following the steps mentioned [here](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-management-plugin#rabbitmq-install-rabbitmqadmin)
-2. Get the **cacert file** using IBM Cloud CLI following the steps mentioned [here](/docs/cli?topic=cli-cdb-reference#deployment-cacert)
-3. Use the **cacert file** from the above step and run the below `rabbitmqadmin` command to delete the **ha-all** policy -
+1. Install the **rabbitmqadmin** CLI by completing the steps at [Installing rabbitmqadmin](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-management-plugin#rabbitmq-install-rabbitmqadmin).
+2. Get the **cacert file** using the {{site.data.keyword.cloud_notm}} CLI by completing the steps at [ibmcloud cdb deployment-cacert](/docs/cli?topic=cli-cdb-reference#deployment-cacert)
+3. Using the **cacert file** from the previous step, run the following `rabbitmqadmin` command to delete the **ha-all** policy:
 ```sh
 rabbitmqadmin --username=admin_username --password=password_of_admin_user --use-tls --tls-ca-cert-file=/path/to/cacert --host=<hostname> --port=<https_port> --vhost "/" policies delete --name "ha-all"
 ```
 {: pre}
 
-4. After deletion of the policy, take an on-demand backup of this instance from either the IBM Cloud [UI](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#ondemand-backup), [API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#startondemandbackup) or [CLI](https://cloud.ibm.com/docs/cli?topic=cli-cdb-reference#deployment-backup-now)
-5. Upon successful backup creation, restore this particular backup to the v4 instance by following [these steps](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#restore-backup).
+4. After deleting the policy, take an on-demand backup of this instance from either the {{site.data.keyword.cloud_notm}} [UI](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#ondemand-backup), [API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#startondemandbackup), or [CLI](https://cloud.ibm.com/docs/cli?topic=cli-cdb-reference#deployment-backup-now).
+5. After successfully creating a backup, restore this particular backup to the v4 instance by completing [these steps](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#restore-backup).
 
-### Upgrade through API
+### Upgrade using the API
 {: #upgrade-api-v313-to-v4}
 {: api}
 
-1. Get the **cacert file** using IBM Cloud CLI following the steps mentioned [here](/docs/cli?topic=cli-cdb-reference#deployment-cacert)
-2. Use the downloaded **cacert file** and your admin user credentials to authenticate and delete the **ha-all** policy, here **%2F** is the default vhost "/" where ha-all policy will be created, you change the name of the vhost accordingly -
+1. Get the **cacert file** using the {{site.data.keyword.cloud_notm}} CLI completing the steps at [ibmcloud cdb deployment-cacert](/docs/cli?topic=cli-cdb-reference#deployment-cacert).
+2. Use the downloaded **cacert file** and your admin user credentials to authenticate and delete the **ha-all** policy. In this example, **%2F** is the default vhost "/" where ha-all policy will be created. Change the name of the vhost accordingly:
 ```sh
 curl --cacert /path/to/cacert -u admin_username:password_of_admin_user -X DELETE https://<hostname>:<https_port>/api/policies/%2F/ha-all
 ```
 {: pre}
 
-3. After deletion of the policy, take an on-demand backup of this instance from either the IBM Cloud [UI](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#ondemand-backup), [API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#startondemandbackup) or [CLI](https://cloud.ibm.com/docs/cli?topic=cli-cdb-reference#deployment-backup-now)
-4. Upon successful backup creation, restore this particular backup to the v4 instance by following [these steps](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#restore-backup).
+3. After deleting the policy, take an on-demand backup of this instance from either the {{site.data.keyword.cloud_notm}} [UI](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#ondemand-backup), [API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#startondemandbackup), or [CLI](https://cloud.ibm.com/docs/cli?topic=cli-cdb-reference#deployment-backup-now).
+4. After successfully creating a backup, restore this particular backup to the v4 instance by completing the steps at [Restoring a backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=api#restore-backup).
 
 ## Troubleshooting
 {: #upgrading-ts}
