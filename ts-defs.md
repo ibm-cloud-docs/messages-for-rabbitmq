@@ -35,13 +35,14 @@ Encountered an error when importing definitions
 ```
 {: pre}
 
-If this error is found, check which argument is causing the issue. Once you have identified the argument causing the issue, correct it and try to import the definition again.
+If this error is found, check which argument is causing the issue. When you have identified the argument causing the issue, correct it and try to import the definition again.
 
-How can I restore the backup if my instances have temporary or server-named queues?
-{: tsResolve}
+## How can I restore the backup if my instances have temporary or server-named queues?
+{: #troubleshoot-queues}
 
 Users will encounter an error while restoring with temporary queues. RabbitMQ can create temporary queues if those are not declared. These queues start with prefix "amq.gen-". These temporary queues are exported in the definition of the backup, and RabbitMQ attempts to restore them. However, RabbitMQ does not allow temporary queue definitions to be imported, which will fail the restore when exchange binding is created.
-For a successful restore(import) of the backup, users **must** remove the temporary queues from their instances before they create a backup(export).
+
+For a successful restore (import) of the backup, users **must** remove the temporary queues from their instances before they create a backup (export).
 
 RabbitMQ allows you to export and import definitions, which are configurations for exchanges, users, permissions, and non-transient queues.
 {: note}
