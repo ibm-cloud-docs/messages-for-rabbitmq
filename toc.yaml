@@ -9,7 +9,7 @@ toc:
     console-page: /catalog/services/messages-for-rabbitmq
     product-page: https://www.ibm.com/products/messages-for-rabbitmq
     path: messages-for-rabbitmq
-    label: Messages For RabbitMQ
+    label: Messages for RabbitMQ Gen 1
   entries:
   - navgroup:
       id: learn

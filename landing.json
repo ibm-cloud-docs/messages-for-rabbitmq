@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "title": "IBM Cloud® Messages for RabbitMQ docs",
+  "title": "IBM Cloud® Messages for RabbitMQ Gen 1",
   "introduction": "RabbitMQ is an open source multi-protocol messaging broker.",
   "product_page": "https://www.ibm.com/products/databases-for-rabbitmq",
   "console_page": "/databases/databases-for-rabbitmq/create",
