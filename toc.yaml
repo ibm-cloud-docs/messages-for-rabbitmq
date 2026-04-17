@@ -18,7 +18,7 @@ toc:
           label: IBM Cloud Databases
           href: https://cloud.ibm.com/docs/cloud-databases
       - link:
-          label: What is MySQL?
+          label: What is Messages for RabbitMQ?
           href: https://www.ibm.com/products/messages-for-rabbitmq
       - topic: getting-started.md
         navtitle: Getting started
