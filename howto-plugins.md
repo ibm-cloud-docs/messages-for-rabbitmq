@@ -48,7 +48,7 @@ In the RabbitMQ Management API, the Shovel Management plug-in adds endpoints for
 ## Delayed Message plug-in
 {: #delayed-message-plug-in}
 
-The delayed Message plug-in is deprecated starting with v4.2. 
+The Delayed Message plug-in is deprecated starting with v4.2. 
 {: deprecated}
 
 ## STOMP plug-in
