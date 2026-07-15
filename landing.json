@@ -27,12 +27,12 @@
         "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-security-compliance"
       },
       {
-        "title": "Connecting with the RabbitMQ Management plug-in",
-        "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-management-plugin"
-      },
-      {
         "title": "Using RabbitMQ plug-ins",
         "href": "/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-plug-ins"
+      },
+      {
+        "title": "Gen 2 docs",
+        "href": "/docs/messages-for-rabbitmq-gen2"
       }
     ]
   },
