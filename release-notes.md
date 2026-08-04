@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-31"
+lastupdated: "2026-08-04"
 
 keywords: messages-for-rabbitmq release notes
 
@@ -20,8 +20,16 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.messages-for-rabbitmq_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
+## 29 July 2026
+{: #messages-for-rabbitmq-29july2026}
+{: release-note}
+
+{{site.data.keyword.messages-for-rabbitmq}} Version 4.3 is Preferred
+: There are important changes in this version to align with the [RabbitMQ v4.3 release series](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v4.3.0){: external}.
+
+
 ## 27 March 2026
-{: #databases-for-elasticsearch-27mar2026}
+{: #messages-for-rabbitmq-27mar2026}
 {: release-note}
 
 Deprecation of {{site.data.keyword.hscrypto}}
