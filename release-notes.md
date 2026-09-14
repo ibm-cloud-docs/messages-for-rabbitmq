@@ -27,11 +27,11 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {{site.data.keyword.messages-for-rabbitmq}} Version 4.3 is Preferred.
 : There are important changes in this version to align with the [RabbitMQ v4.3 release series](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v4.3.0){: external}.
 
-RabbitMQ v4.3 is available on {{site.data.keyword.messages-for-rabbitmq}} in Preferred. Service changes applied in previous RabbitMQ 4.x releases continue to apply in v4.3.
+:   RabbitMQ v4.3 is available on {{site.data.keyword.messages-for-rabbitmq}} in Preferred. Service changes applied in previous RabbitMQ 4.x releases continue to apply in v4.3.
 
-If you are using RabbitMQ v4.2, you can upgrade to v4.3 by using backup and restore or Shovel.
+:   If you are using RabbitMQ v4.2, you can upgrade to v4.3 by using backup and restore or Shovel.
 
-Some highlights of v4.3 are as follows:
+:   Some highlights of v4.3 are as follows:
 
 - RabbitMQ 4.3 features and enhancements are designed for use with Quorum Queues.
 - Quorum Queues now support configurable consumer timeouts. {{site.data.keyword.messages-for-rabbitmq}} uses the RabbitMQ default timeout value of 30 minutes unless explicitly configured at the queue level.
