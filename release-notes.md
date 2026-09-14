@@ -24,7 +24,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #messages-for-rabbitmq-29july2026}
 {: release-note}
 
-{{site.data.keyword.messages-for-rabbitmq}} Version 4.3 is Preferred
+{{site.data.keyword.messages-for-rabbitmq}} Version 4.3 is Preferred.
 There are important changes in this version to align with the [RabbitMQ v4.3 release series](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v4.3.0){: external}.
 
 RabbitMQ v4.3 is available on {{site.data.keyword.messages-for-rabbitmq}} in Preferred. Service changes applied in previous RabbitMQ 4.x releases continue to apply in v4.3.
@@ -59,13 +59,13 @@ To ensure continued service availability and support, you must migrate all exist
   - RabbitMQ v4.2 is available on {{site.data.keyword.messages-for-rabbitmq}} in [Preferred](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-versioning-policy&interface=ui#version-tags). Service changes applied on {{site.data.keyword.messages-for-rabbitmq}} version 4.1 will continue on v4.2 and future versions. For more information, see the [version 4 realease notes](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes#messages-for-rabbitmq-10sep2025).
   - If you are using RabbitMQ v3.13 or RabbitMQ v4.1, you can upgrade to v4.2 directly using [backup and restore](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading&interface=ui) or by using [shovel](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-shovel&interface=ui).
   - Some highlights of v4.2 are as follows:
-      - You are encouraged to switch to [Quorum Queues](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-migrating_classic_quorum&interface=ui) with this version upgrade, because Classic Queues do not guarantee high availability of the messages.
-      - Khepri will be the default datastore for the newly created instances.
-      - Quorum queues now have a default [redelivery limit](https://www.rabbitmq.com/docs/next/quorum-queues#poison-message-handling){: external} set to 20. Messages that are redelivered 20 times or more will be [dead-lettered](https://www.rabbitmq.com/docs/dlx) or dropped (removed).
+      - You are encouraged to switch to [Quorum Queues](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-migrating_classic_quorum&interface=ui) with this version upgrade because Classic Queues do not guarantee high availability of the messages.
+      - Khepri is the default datastore for the newly created instances.
+      - Quorum queues now have a default [redelivery limit](https://www.rabbitmq.com/docs/next/quorum-queues#poison-message-handling){: external} set to 20. Messages that are redelivered 20 times or more are [dead-lettered](https://www.rabbitmq.com/docs/dlx) or dropped (removed).
 
 
-{{site.data.keyword.messages-for-rabbitmq}} version 4.1 End of Life on August 12 2026
-: Action is required before August 12 2026 for RabbitMQ v4.1 deployments. After August 12 2026, active v4.1 instances will automatically be force upgraded to v4.2.
+{{site.data.keyword.messages-for-rabbitmq}} version 4.1 End of Life on 12 August 2026
+: Action is required before 12 August 2026 for RabbitMQ v4.1 deployments. After 12 August 2026, active v4.1 instances will automatically be force upgraded to v4.2.
   - Deployments of IBM Cloud Messages for RabbitMQ v4.1 can be upgraded to v4.2.
   - Deployments of IBM Cloud Messages for RabbitMQ v3.13 can be upgraded to v4.2, skipping v4.1.
   - For more information, see [Upgrading to a new major version](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading&interface=ui) and [Migrating from Classic Queues to Quorum Queues](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-migrating_classic_quorum&interface=ui).
@@ -77,7 +77,7 @@ Policy update: reverting to Standard Versioning
    - The latest vendor versions are offered; you should upgrade as soon as new versions are available on {{site.data.keyword.cloud_notm}}.
    - Deprecated versions will be automatically force upgraded after the EOL date.
 
-     No SLA is provided for instances upgraded using this automatic method.
+     No SLA is provided for instances that are upgraded by using this automatic method.
      {: note}
 
 
@@ -89,15 +89,15 @@ Policy update: reverting to Standard Versioning
 {{site.data.keyword.messages-for-rabbitmq}} version policy changes starting version v4.x
 : To align with the open-source project owners of RabbitMQ, {{site.data.keyword.messages-for-rabbitmq}} (an {{site.data.keyword.cloud_notm}} managed service) is updating its version lifecycle policies starting with RabbitMQ v4.x.
   1. Two months advance notification of version deprecation will be provided for a major version.
-  2. {{site.data.keyword.messages-for-rabbitmq}} will support only one version, the latest, outside of the few weeks period (minimum 2 weeks) during which you should upgrade from the version being deprecated to the new version.
+  2. {{site.data.keyword.messages-for-rabbitmq}} will support only one version, the latest, outside of the few weeks period (minimum 2 weeks) during which you should upgrade from the deprecated version to the new version.
   3. Instances that are using a deprecated version will be ‘automatically force upgraded’ to the next major version after the EOL date. However, no SLA will be provided for this upgrade method.
 
-**Please note:**
+**Note:**
 We do not recommend that you wait until the end-of-life date for the following reasons:
    - We provide **no SLAs** for this type of forced upgrade.
-   - You may experience some data loss.
-   - Your application may experience downtime.
-   - Your application may stop working if it has any incompatibilities with the new database version.
+   - You might experience some data loss.
+   - Your application might experience downtime.
+   - Your application might stop working if it has any incompatibilities with the new database version.
    - You cannot control the timing of when this upgrade will happen for your deployment.
    - There is no rollback process for this forced upgrade.
 
@@ -148,14 +148,14 @@ Customers on RabbitMQ v3.13 can upgrade to v4.1 using [backup and restore](/docs
 {: release-note}
 
 {{site.data.keyword.databases-for}} logs and events are now available on {{site.data.keyword.logs_full}}
-: {{site.data.keyword.databases-for}} has onboarded {{site.data.keyword.logs_full_notm}}, a scalable logging service that persists logs and provides users with capabilities for querying, tailing, and visualizing logs. Use {{site.data.keyword.logs_full_notm}} to review your database logs and events starting **November 15, 2024**. For more information, see [Set up logging and monitoring](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started-cdb-logging-monitoring) and [About IBM Cloud Logs](/docs/cloud-logs?topic=cloud-logs-about-cl).
+: {{site.data.keyword.databases-for}} has onboarded {{site.data.keyword.logs_full_notm}}, a scalable logging service that persists logs and provides users with capabilities for querying, tailing, and visualizing logs. Use {{site.data.keyword.logs_full_notm}} to review your database logs and events starting **15 November 2024**. For more information, see [Set up logging and monitoring](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started-cdb-logging-monitoring) and [About IBM Cloud Logs](/docs/cloud-logs?topic=cloud-logs-about-cl).
 
 ## 29 September 2024
 {: #messages-for-rabbitmq-29sept2024}
 {: release-note}
 
-{{site.data.keyword.messages-for-rabbitmq}} version 3.12 End of Life on April 30, 2025
-:  Action is required before April 30, 2025, for your RabbitMQ 3.12 deployments. After April 30, 2025, {{site.data.keyword.messages-for-rabbitmq}} instances on version 3.12 that are still active will have their access removed, in line with our database versioning policy. You are expected to be on version 3.13, the latest version of {{site.data.keyword.messages-for-rabbitmq}}. For more information, see [Upgrading to a new major version](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading).
+{{site.data.keyword.messages-for-rabbitmq}} version 3.12 End of Life on 30 April 2025
+:  Action is required before 30 April 2025, for your RabbitMQ 3.12 deployments. After 30 April 2025, {{site.data.keyword.messages-for-rabbitmq}} instances on version 3.12 that are still active will have their access removed, in line with our database versioning policy. You are expected to be on version 3.13, the latest version of {{site.data.keyword.messages-for-rabbitmq}}. For more information, see [Upgrading to a new major version](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading).
 
 ## 16 September 2024
 {: #databases-for-rabbitmq-16sept2024}
@@ -195,7 +195,7 @@ For more information, see [RabbitMQ Streams](/docs/messages-for-rabbitmq?topic=m
 {: release-note}
 
 {{site.data.keyword.messages-for-rabbitmq}} version 3.11 End of Life on July 24, 2024
-:  Action is required before July 24, 2024, for your RabbitMQ 3.11 deployments. After July 24, 2024, {{site.data.keyword.messages-for-rabbitmq}} instances on version 3.11 that are still active will have their access removed, in line with our Database Versioning Policy. You are expected to be on version 3.12, the latest preferred version of {{site.data.keyword.messages-for-rabbitmq}}.
+:  Action is required before 24 July 2024, for your RabbitMQ 3.11 deployments. After 24 July 2024, {{site.data.keyword.messages-for-rabbitmq}} instances on version 3.11 that are still active will have their access removed, in line with our Database Versioning Policy. You are expected to be on version 3.12, the latest preferred version of {{site.data.keyword.messages-for-rabbitmq}}.
 For more information, see [Upgrading to a new Major Version](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading){: external}.
 
 ## 20 December 2023
@@ -256,8 +256,8 @@ Definition Troubleshooting Documentation Added
 {: #messages-for-rabbitmq-20jul2023}
 {: release-note}
 
-{{site.data.keyword.messages-for-rabbitmq}} version 3.9 End of Life on September 21, 2023
-:  On September 21, 2023 {{site.data.keyword.messages-for-rabbitmq}} version 3.9 reaches its end of life. On that date, all {{site.data.keyword.messages-for-rabbitmq}} instances on version 3.9 that are still active will have their access removed, in line with our [Database Versioning Policy](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-versioning-policy){: external}. You are expected to be on version 3.11, the latest preferred version of {{site.data.keyword.messages-for-rabbitmq}}. If needed, [upgrade](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading) your database instances.
+{{site.data.keyword.messages-for-rabbitmq}} version 3.9 End of Life on 21 September 2023
+:  On 21 September 2023 {{site.data.keyword.messages-for-rabbitmq}} version 3.9 reaches its end of life. On that date, all {{site.data.keyword.messages-for-rabbitmq}} instances on version 3.9 that are still active will have their access removed, in line with our [Database Versioning Policy](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-versioning-policy){: external}. You are expected to be on version 3.11, the latest preferred version of {{site.data.keyword.messages-for-rabbitmq}}. If needed, [upgrade](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading) your database instances.
 
 ## 23 May 2023
 {: #messages-for-rabbitmq-23may2023}
