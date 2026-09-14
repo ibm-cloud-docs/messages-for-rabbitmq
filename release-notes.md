@@ -27,18 +27,18 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {{site.data.keyword.messages-for-rabbitmq}} Version 4.3 is Preferred
 There are important changes in this version to align with the [RabbitMQ v4.3 release series](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v4.3.0){: external}.
 
-RabbitMQ v4.3 is available on Messages for RabbitMQ in Preferred. Service changes applied in previous RabbitMQ 4.x releases continue to apply in v4.3.
+RabbitMQ v4.3 is available on {{site.data.keyword.messages-for-rabbitmq}} in Preferred. Service changes applied in previous RabbitMQ 4.x releases continue to apply in v4.3.
 
-If you are using RabbitMQ v4.2, you can upgrade to v4.3 by using backup and restore or Shovel. 
+If you are using RabbitMQ v4.2, you can upgrade to v4.3 by using backup and restore or Shovel.
 
-Some highlights of v4.3 are as follows: 
+Some highlights of v4.3 are as follows:
 
-- RabbitMQ 4.3 features and enhancements are designed to be utilized with Quorum Queues.
-- Quorum Queues now support configurable consumer timeouts. Messages for RabbitMQ uses the RabbitMQ default timeout value of 30 minutes unless explicitly configured at the queue level.
-- A new consumer_disconnected_timeout setting is available for Quorum Queues. Messages for RabbitMQ uses the RabbitMQ default value of 60 seconds. Customers can alternatively configure this timeout at the policy or queue level for workload-specific requirements 
-- The RabbitMQ Delayed Message Exchange plugin is no longer supported in RabbitMQ v4.3. Customers using delayed messaging workloads should migrate to supported alternatives such as Time-To-Live (TTL) with Dead Letter Exchanges (DLX) or the native delayed retry capabilities available with Quorum Queues that is introduced in 4.3. 
-- RabbitMQ 4.3 introduces enhanced connection limit controls, including enforcement of max_connections for AMQP 1.0 connections and new configuration options for MQTT (mqtt.max_connections) and Stream Protocol (stream.max_connections) clients.  
-- RabbitMQ 4.3 x-consumer-timeout and x-consumer-disconnected-timeout values during queue declaration. Invalid timeout values may cause queue declarations to fail. Review custom timeout settings before upgrading.
+- RabbitMQ 4.3 features and enhancements are designed for use with Quorum Queues.
+- Quorum Queues now support configurable consumer timeouts. {{site.data.keyword.messages-for-rabbitmq}} uses the RabbitMQ default timeout value of 30 minutes unless explicitly configured at the queue level.
+- A new `consumer_disconnected_timeout` setting is available for Quorum Queues. {{site.data.keyword.messages-for-rabbitmq}} uses the RabbitMQ default value of 60 seconds. Alternatively, customers can configure this timeout at the policy or queue level for workload-specific requirements.
+- The RabbitMQ Delayed Message Exchange plug-in is no longer supported in RabbitMQ v4.3. Customers using delayed messaging workloads should migrate to supported alternatives. For example, Time-To-Live (TTL) with Dead Letter Exchanges (DLX) or the native delayed retry capabilities available with Quorum Queues that is introduced in 4.3.
+- RabbitMQ 4.3 introduces enhanced connection limit controls, including enforcement of max_connections for AMQP 1.0 connections and new configuration options for MQTT (mqtt.max_connections) and Stream Protocol (stream.max_connections) clients.
+- RabbitMQ 4.3 x-consumer-timeout and x-consumer-disconnected-timeout values during queue declaration. Invalid timeout values can cause queue declarations to fail. Review custom timeout settings before you upgrade.
 
 
 ## 27 March 2026
