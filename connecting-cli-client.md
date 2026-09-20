@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-05-14"
+  years: 2017, 2026
+lastupdated: "2026-09-20"
 
 keywords: rabbitmq, rabbitmq management
 
@@ -31,6 +31,8 @@ You are next asked to enter your username and password. After you have signed in
 
 Use any user on your deployment to access the UI. Some features are only available to the admin user provisioned with your deployment.
 {: .tip} 
+
+The RabbitMQ Management UI can be accessed over HTTPS (https://<hostname>:15671/) from a Windows Virtual Server Instance connected through a Virtual Private Endpoint (VPE). This provides secure private network access to the RabbitMQ Management UI without requiring public connectivity. 
 
 For more information, see the [RabbitMQ Management plug-in](https://www.rabbitmq.com/management.html){: .external} page.
 
