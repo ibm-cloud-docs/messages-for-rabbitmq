@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-03-03"
+lastupdated: "2026-11-05"
 
 keywords: rabbitmq, databases, manual scaling, disk I/O, memory, CPU, rabbitmq scaling
 
@@ -93,6 +93,8 @@ Old style dedicated core instances are deprecated, and will be removed in May 20
 - Scaling between hosting models (Shared Compute, Isolated Compute, and Dedicated Cores) moves your deployment to new hosts. Your databases are restarted as part of that move. As your deployment is moved to a new host, this can also take longer than just adding more resources. For more information, see [Shared Compute and Isolated Compute](/docs/cloud-databases?topic=cloud-databases-hosting-models).
 
 - Similarly, drastically increasing RAM or disk can take longer than smaller increases to account for provisioning more underlying hardware resources.
+
+- Scaling can be queued behind a running or planned backup and does not start until the backup completes.
 
 - Scaling operations are logged in [{{site.data.keyword.atracker_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-at_events).
 
